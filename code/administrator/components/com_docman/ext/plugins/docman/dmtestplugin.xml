@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="plugin" group="docman">
+    <name>dmtestplugin</name>
+    <author>Joomlatools</author>
+    <creationDate>December 2009</creationDate>
+    <copyright>(C) 2007 DOCman Development Team. All rights reserved.</copyright>
+    <license>GNU/GPL</license>
+    <authorEmail>support@joomlatools.eu</authorEmail>
+    <authorUrl>http://www.joomlatools.eu</authorUrl>
+    <version>1.5</version>
+    <description>Writes a line to a log file on each DOCman event. The log file is in /plugins/docman</description>
+    <files>
+        <filename plugin="dmtestplugin">dmtestplugin.php</filename>
+    </files>
+    <params>
+
+    </params>
+</install>

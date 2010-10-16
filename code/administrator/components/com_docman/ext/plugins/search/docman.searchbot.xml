@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="plugin" version="1.5" group="search">
+  <name>Search - DOCman</name>
+  <creationDate>December 2009</creationDate>
+  <author>Joomlatools</author>
+  <copyright>This extension is released under the GNU/GPL License</copyright>
+  <authorEmail>support@joomlatools.eu</authorEmail>
+  <authorUrl>www.joomlatools.eu</authorUrl>
+  <version>1.5.8</version>
+  <description>Plugin for searching DOCman Files</description>
+  <files>
+		<filename plugin="docman.searchbot">docman.searchbot.php</filename>
+  </files>
+  <params>
+    <param name="prefix" type="text" default="Download: "
+        label="Prefix for Section:"
+        description="The section name can be prefixed with fixed text to help clarify the source" />
+    <param name="suffix" type="text" default=""
+        label="Suffix for Section:"
+        description="The section name can include a suffix for clarity." />
+    <param name="href" type="list" default="download"
+        label="Type of link to show:"
+        description="Download the file direct, display the details page or display the category page.">
+	<option value="download">Download file direct</option>
+	<option value="details">Display document details</option>
+	<option value="display">Display parent category</option>
+     </param>
+
+    <param name="search_name" type="radio" default="1"
+        label="Search Name:"
+        description="Search the name of the download file.">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </param>
+
+    <param name="search_description" type="radio" default="1"
+        label="Search Description:"
+        description="Search the description of the download file.">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </param>
+
+    <param name="search_cat" type="radio" default="0"
+        label="Search Category Name:"
+        description="Search the Category name for each download." >
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </param>
+
+  </params>
+</install>

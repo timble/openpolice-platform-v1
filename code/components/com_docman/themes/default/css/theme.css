@@ -1,0 +1,363 @@
+/**
+ * @version		$Id: theme.css 1355 2010-04-30 14:12:55Z tom $
+ * @category	DOCman
+ * @package		DOCman15
+ * @copyright	Copyright (C) 2003 - 2009 Johan Janssens and Mathias Verraes. All rights reserved.
+ * @license	    This file can not be redistributed without the written consent of the 
+ 				original copyright holder. This file is not licensed under the GPL. 
+ * @link     	http://www.joomladocman.org
+ */
+
+/* ---------- Reset styles ------------------------------------- */
+img { border: 0 none; }
+
+h1.dm_title,
+h2.dm_title,
+h3.dm_title { width: auto !important; margin: 0 !important; padding: 0 !important; }
+
+/* Remove the following line if you have problems with the alignment of your theme */
+.clr { clear: both; }
+
+/* ---------- Global styles ------------------------------------ */
+
+#dm_header {
+	height: 55px;
+	border-bottom: 1px dotted #ddd;
+	text-align: center;
+}
+#dm_header div {
+	float: left;
+	padding: 3px;
+	width: 30%;
+}
+#dm_header a, #dm_header span  {
+	display: block;
+	padding-bottom: 5px;
+	text-decoration:none;
+	text-align: center;
+}
+
+#dm_pathway {
+	font-size: 11px;
+	text-align: left;
+	background: #ddd;
+	margin-bottom: 5px;
+	padding: 3px 3px 3px 10px;
+}
+
+.dm_row { background: url(../images/bg-gradient.png) repeat-x; }
+
+
+/* ---------- Categories styles ------------------------------------- */
+
+#dm_cats 	{ text-align: left; }
+
+#dm_cats h2.dm_title { margin: 14px 0 !important; }
+#dm_cats h3.dm_title { margin: 0 0 7px 0 !important; }
+
+#dm_cats .dm_row { padding: 15px; }
+
+#dm_cats .dm_row img {
+	float: left !important;
+	margin: 0 10px 0 0 !important;
+	padding: 0 !important;
+}
+
+
+/* ---------- Category styles --------------------------------------- */
+
+.dm_cat { padding: 10px 0; }
+.dm_cat h1.dm_title { margin: 0 0 10px 0 !important; }
+
+.dm_cat img.dm_thumb-left 	{ margin: 0 15px 0 0 !important; float: left !important; }
+.dm_cat img.dm_thumb-right 	{ margin: 0 0 0 15px !important; float: right !important; }
+
+
+/* ---------- Documents styles -------------------------------------- */
+
+#dm_docs { text-align: left; }
+#dm_docs h2.dm_title { margin: 14px 0 !important; }
+#dm_docs h3.dm_title { 
+	margin: 0 0 10px 0 !important; 
+	padding: 15px 0 5px 0 !important;
+	min-height: 30px !important;
+	height: auto !important;
+  	height: 30px;
+}
+
+#dm_docs h3.dm_title img { float: left !important; margin: 0 10px 0 0; }
+
+#dm_docs .dm_row { padding: 0 15px 15px 15px; line-height: 1.2em; }
+
+#dm_docs .dm_row .dm_details {
+	float: right;
+	width: 200px;
+	margin: 0 0 0 10px;
+}
+
+#dm_docs .dm_row .dm_details div {
+	width: 100%;
+	margin: 0 0 5px 0;
+	padding: 3px 0;
+	text-align: center;
+	border: 1px dotted #E0E0E0;
+	background: #F8F8F8;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+#dm_docs .dm_row .dm_details table {
+	padding: 5px 0 0 0 !important;
+	margin: 0 !important;
+	border: 1px dotted #D0D0D0;
+	width: 100%;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+#dm_docs .dm_row .dm_details td {
+	padding: 0 0 5px 5px !important;
+	margin: 0 !important;
+}
+
+#dm_docs .dm_row .dm_description,
+#dm_docs .dm_row .dm_homepage 		{ padding: 0 5px 0 0; margin: 0; }
+
+#dm_docs .dm_row .dm_unpublished,
+#dm_docs .dm_row .dm_unapproved,
+#dm_docs .dm_row .dm_checked_out 	{ padding: 5px; margin: 5px 0 0 0; height: 15px;}
+
+#dm_docs .dm_row .dm_unpublished 	{ border: 1px dotted red; 	background-color: #FFCCCC; }
+#dm_docs .dm_row .dm_unapproved 	{ border: 1px dotted green; background-color: #CCFFCC; }
+#dm_docs .dm_row .dm_checked_out 	{ border: 1px dotted blue; 	background-color: #CCCCFF; }
+
+
+/* ---------- License styles ---------------------------------------- */
+
+#dm_license								{ margin: 25px; }
+#dm_license .dm_license_body 			{ }
+#dm_license .dm_license_form 			{ margin: 15px 0; padding: 10px; text-align: center; border: 1px dotted #E8E8E8;  }
+
+
+/* ---------- Orderby styles ---------------------------------------- */
+
+.dm_orderby { margin: 10px 0 10px 0px; padding: 3px 1px 0px 10px; height: 17px; background: url(../images/bg-header.png) #F8F8F8 bottom repeat-x; border: 1px solid #eee; }
+
+/* ---------- Details styles ---------------------------------------- */
+
+#dm_details {
+	clear:left;
+	width: 725px;
+	text-align: left;
+	float: left;
+	margin: 15px 25px;
+}
+
+#dm_details img {
+	margin: 10px 10px 10px 0px;
+}
+
+#dm_details table {
+	width: 100%;
+	border-top: 1px solid #D0D0D0;
+	border-left: 1px solid #D0D0D0;
+	border-collapse: collapse;
+}
+
+#dm_details table caption {
+	margin: auto;
+	padding: 5px 0 5px 0;
+	font-weight: bold;
+}
+
+#dm_details table td {
+	padding: 5px;
+	border-right: 1px solid #D0D0D0;
+	border-bottom: 1px solid #D0D0D0;
+}
+
+#dm_details table thead 		{ background: url(../images/bg-header.png) #F8F8F8 bottom repeat-x; font-weight: bold; padding: 5px; }
+#dm_details table thead td 	{ text-align: left; }
+#dm_details table col#prop 	{ width: 25%; }
+
+
+/* ---------- Taskbar styles ---------------------------------------- */
+
+.dm_taskbar {
+	padding: 0 0 6px 0;
+	margin: 0 0 6px 0;
+	list-style-type: none;
+}
+
+.dm_taskbar ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.dm_taskbar li {
+	float: left !important;
+	list-style-type: none !important;
+	background-image: none !important;
+	padding: 0 5px 0 0 !important;
+	margin: 0.5em 0 2px 0 !important;
+}
+.dm_taskbar li a {
+	display: block;
+	padding: 4px 15px;
+	background: url(../images/button.png) #F8F8F8 bottom repeat-x;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+.dm_taskbar li a:link,
+.dm_taskbar li a:visited,
+.dm_taskbar li a:hover {
+	text-decoration: none;
+}
+.dm_taskbar li a:link,
+.dm_taskbar li a:visited {
+	border: 1px solid #cecece;
+}
+.dm_taskbar li a:hover {
+   border-bottom: 1px solid #cecece;
+   border-top: 1px solid Gray;
+   border-right: 1px solid #cecece;
+   border-left: 1px solid Gray;
+}
+
+.dm_taskbar li.approve a { border: 1px solid #CCFFCC; }
+.dm_taskbar li.publish a { border: 1px solid #FFCCCC; }
+.dm_taskbar li.checkin a { border: 1px solid #CCCCFF; }
+
+/* ---------- Toolbar styles --------------------------------------- */
+
+.dm_toolbar    { height: 32px; margin-right: 25px; }
+.dm_toolbar li { float: right; background-image: none !important; list-style: none !important; }
+
+.dm_toolbar .dm_btn_save,
+.dm_toolbar .dm_btn_cancel { padding: 30px 3px 0px 3px; margin: 0 5px 0 0; display: block; border: 1px solid #FFFFFF; }
+.dm_toolbar .dm_btn_save   { background: url(../images/save.png) center top no-repeat; }
+.dm_toolbar .dm_btn_cancel { background: url(../images/cancel.png) center top no-repeat; }
+.dm_toolbar .dm_btn_cancel:hover,
+.dm_toolbar .dm_btn_save:hover   { 
+	border-bottom: 1px solid #cecece;
+   border-top: 1px solid Gray;
+   border-right: 1px solid #cecece;
+   border-left: 1px solid Gray;
+}
+ 
+
+/* ---------- Form styles ------------------------------------------ */
+
+.dm_form 						{ margin: 0; padding: 0; }
+.dm_form p  					{ text-align: left; }
+.dm_form fieldset.dm_button    	{ }
+.dm_form select option.label 	{ background-color: #EEE; border: 1px solid #DDD; color : #333; }
+.dm_form .editor 				{ float: none;  }
+
+.dm_form fieldset.dm_adminform {
+	margin: 0 0 10px 0;
+	border: 1px #ccc solid;
+	padding: 5px;
+	text-align: left;
+}
+
+.dm_form fieldset.dm_adminform p { margin: 10px 0px; }
+
+.dm_form fieldset.dm_adminform legend    {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.dm_form table.dm_admintable td { padding: 3px; }
+.dm_form table.dm_admintable td.dm_key,
+.dm_form table.dm_admintable td.dm_paramlist_key {
+	background-color: #f6f6f6;
+	text-align: right;
+	width: 140px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+#dm_frmupload label 			{ width: 100px; padding-right: 10px;}
+#dm_frmupload #dm_btn_back  	{ float: left;  }
+#dm_frmupload #dm_btn_submit 	{ float: right; }
+
+#dm_frmedit 					{ width: 90%; border: 0 none;}
+#dm_frmedit #dmthumbnail_preview { float: right; margin-right: 30px; height: 80px; width: 80px; padding: 3px; border: 1px solid silver; }
+#dm_frmedit #license-page label  { width: 250px; }
+
+
+/* ---------- Nav styles ------------------------------------------ */
+
+#dm_nav 	  	{ clear: both; padding-top: 15px; margin-top: 15px; border-top: 2px dotted #ddd;}
+#dm_nav div 	{ margin-top: 10px; }
+
+/* --- pane-sliders --- */
+.pane-sliders .title {
+	margin: 0;
+	padding: 2px;
+	color: #666;
+	cursor: pointer;
+}
+
+.pane-sliders .panel   		{ border: 1px solid #ccc; margin-bottom: 3px;}
+.pane-sliders .panel h3 	{ background: #f6f6f6; color: #666}
+
+.pane-sliders .content 		{ background: #f6f6f6; }
+
+.pane-sliders .adminlist    { border: 0 none; }
+.pane-sliders .adminlist td { border: 0 none; }
+
+.jpane-toggler  span     	{ background: transparent url(../images/j_arrow.png) 5px 50% no-repeat; padding-left: 20px;}
+
+.jpane-toggler-down 		{ border-bottom: 1px solid #ccc; }
+.jpane-toggler-down span 	{ background: transparent url(../images/j_arrow_down.png) 5px 50% no-repeat; padding-left: 20px;}
+
+/* --- tabs --- */
+dl.tabs {
+	float: left;
+	margin: 10px 0 -1px 0;
+	z-index: 50;
+}
+
+dl.tabs dt {
+	float: left;
+	padding: 4px 10px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin-left: 3px;
+	background: #f0f0f0;
+	color: #666;
+}
+
+dl.tabs dt.open {
+	background: #F9F9F9;
+	border-bottom: 1px solid #F9F9F9;
+	z-index: 100;
+	color: #000;
+}
+
+div.current {
+	clear: both;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+}
+
+div.current dd {
+	padding: 0;
+	margin: 0;
+}
+
+/* ---------- Dark styles ---------------------------------------- */
+.dm_row.dm_dark 							{ background: url(../images/bg-gradient-dark.png) repeat-x; }
+#dm_docs .dm_row .dm_details.dm_dark div,
+#dm_docs .dm_row .dm_details.dm_dark table 	{ border: 1px dotted #555; background: none; }
+#dm_license .dm_license_form.dm_dark 		{ border: 1px dotted #555;  }
+.dm_orderby.dm_dark 						{ background: url(../images/bg-header-dark.png) bottom repeat-x; border: 1px solid #555; }
+#dm_details.dm_dark table thead 			{ background: url(../images/bg-header-dark.png) bottom repeat-x; }
+.dm_taskbar.dm_dark li a 					{ background: url(../images/button-dark.png) bottom repeat-x; }
+.dm_taskbar.dm_dark li a:link,
+.dm_taskbar.dm_dark li a:visited 			{ border: 1px solid #555; }

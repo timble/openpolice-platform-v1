@@ -1,0 +1,681 @@
+/* Phoca Gallery http://www.phoca.cz */
+#phocagallery {
+	padding:0;
+	margin:0;
+}
+
+#phocagallery a img {
+	padding:0;
+	margin:0;
+	border:0px;
+}
+#phocagallery-pane .phocagallery-box-file,
+#phocagallery .phocagallery-box-file,
+.phocagallery-box-file {
+	position:relative;
+	float:left;
+	text-align:center;
+	/*overflow:visible;*/
+}
+#phocagallery-pane .phocagallery-box-file-first,
+#phocagallery .phocagallery-box-file-first,
+.phocagallery-box-file-first {
+	
+	overflow: hidden;
+	display: table;
+	vertical-align:middle;
+}
+#phocagallery-pane .phocagallery-box-file-second,
+#phocagallery .phocagallery-box-file-second,
+.phocagallery-box-file-second {
+	display: table-cell;
+	vertical-align: middle;
+}
+#phocagallery-pane .phocagallery-box-file-third,
+#phocagallery .phocagallery-box-file-third,
+.phocagallery-box-file-third {
+	text-align:center;
+}
+
+#phocagallery-pane a img,
+#phocagallery a img,
+#phocagallery-statistics a img{
+	border: 0px;
+}
+
+#phocagallery a:hover, #phocagallery a:active, #phocagallery a:focus,
+#phocagallery-statistics a:hover, #phocagallery-statistics a:active, #phocagallery-statistics a:focus {
+	background: none;
+	border:0px;
+	text-decoration:none;
+}
+
+#phocagallery .phocaname,
+#phocagallery-statistics .phocaname{ 
+	margin:0px;
+	padding:0px;
+	margin-top:2px;
+	color:#135cae;
+	text-align:center;
+}
+#phocagallery .detail,
+#phocagallery-statistics .detail {
+	text-align:right;
+	margin:0px;
+	padding:0px;
+}
+
+#phocagallery .phocagallery-box-file:hover,
+#phocagallery .phocagallery-box-file.hover,
+#phocagallery-pane .phocagallery-box-file:hover,
+#phocagallery-pane .phocagallery-box-file.hover,
+.phocagallery-box-file:hover, 
+.phocagallery-box-file.hover  {
+	/*border:1px solid #135cae;
+	background:#f5f5f5;*/
+	text-decoration:none;
+}
+/*hotnew*/
+#phocagallery div.phocagallery-box-file-first img.pg-img-ovr1 {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}
+
+#phocagallery div.phocagallery-box-file-first img.pg-img-ovr2 {
+	position: absolute;
+	top: 3px;
+	left: 35px;
+}
+
+/*detail*/
+.phocagallery-box-file-d	{
+	position:relative;
+	float:left;
+	border:1px solid #E8E8E8;
+	background:#fcfcfc;
+	text-align:center;
+	overflow:visible;
+	width:640px;
+	height:480px;
+}
+
+.phocagallery-box-file-first-d {
+	background:#f5f5f5;
+	width:640px;
+	height:480px;
+	overflow: hidden;
+	display: table;
+	vertical-align:middle;
+}
+
+/*download message*/
+#download-msg{
+	font-family:sans-serif;
+	font-size:83%;
+	position:absolute;
+	left: 10%;
+	top:10%;
+	background-color: #ebecff;
+	border: 5px solid #cccccc;
+	filter:alpha(opacity=80);
+	opacity: 0.8;
+	-moz-opacity:0.8;
+	z-index:1000;
+}
+	
+/*download message text*/ 
+#download-msg div table{ 
+	padding: 10px; 
+	filter:alpha(opacity=100); 
+	opacity: 0.8; 
+	-moz-opacity:0.8; 
+	position: relative; 
+	z-index:1000; 
+	background-color:#ebecff; 
+} 
+#download-msg div table tr td, 
+#download-msg div table tr td small, 
+#download-msg a { 
+	color:#000000; 
+	font-weight: bold; 
+}
+
+#phocagallery .main-switch-image {
+	margin:0px;
+	padding:7px 5px 7px 5px;
+	margin-bottom:15px;
+}
+#phocagallery .main-switch-image-table {
+	/*border:1px solid #c2c2c2;*/
+}
+
+#loading-label,
+#loading-label-user{
+	text-align:center;
+	display:none;
+}
+
+#image-box {
+	position:relative;
+}
+#description-msg{
+	font-size:83%;
+	text-align:left;
+	margin:0;padding:0;
+	position:absolute;
+	bottom: 0px;
+	left:0px;
+	right:0px;
+	background-color: #000;
+	filter:alpha(opacity=60);
+	opacity: 0.6;
+	-moz-opacity:0.6;
+	z-index:1000;
+	width:100%;
+}
+
+#description-text{
+	color:#fff;
+	padding:10px;
+/*	filter:alpha(opacity=100); 
+	opacity: 0.8; 
+	-moz-opacity:0.8; */
+	position: relative; 
+	z-index:1000; 
+	background-color:#000;
+}
+
+/* Voting - style by http://www.jluvip.com/works/css/starvote/index2-1.html*/
+#phocagallery ul.star-rating li,
+#phocagallery-pane ul.star-rating li,
+#phocagallery ul.star-rating-small li{
+	background: none;
+	list-style-type:none;
+}
+
+#phocagallery .star-rating,
+#phocagallery-pane .star-rating,
+.star-rating{
+	list-style:none;
+	margin: 0px;
+	margin-top:5px;
+	margin-bottom:5px;
+	padding:0px;
+	width: 110px;
+	height: 22px;
+	position: relative;
+	background: url(images/icon-voting.gif) top left repeat-x;
+}
+#phocagallery .star-rating li,
+#phocagallery-pane .star-rating li,
+.star-rating li{
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+	/*\*/
+	float: left;
+	/* */
+}
+#phocagallery .star-rating li a,
+#phocagallery-pane .star-rating li a,
+.star-rating li a{
+	display:block;
+	width:22px;
+	height: 22px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 20;
+	position: absolute;
+	padding: 0px;
+}
+#phocagallery .star-rating li a:hover,
+#phocagallery-pane .star-rating li a:hover,
+.star-rating li a:hover{
+	background: url(images/icon-voting.gif) left center;
+	z-index: 2;
+	left: 0px;
+}
+#phocagallery .star-rating a.star1,
+#phocagallery-pane .star-rating a.star1,
+.star-rating a.star1{
+	left: 0px;
+}
+#phocagallery .star-rating a.star1:hover,
+#phocagallery-pane .star-rating a.star1:hover,
+.star-rating a.star1:hover{
+	width:22px;
+}
+#phocagallery .star-rating a.stars2,
+#phocagallery-pane .star-rating a.stars2,
+.star-rating a.stars2{
+	left:22px;
+}
+#phocagallery .star-rating a.stars2:hover,
+#phocagallery-pane .star-rating a.stars2:hover,
+.star-rating a.stars2:hover{
+	width: 44px;
+}
+#phocagallery .star-rating a.stars3,
+#phocagallery-pane .star-rating a.stars3,
+.star-rating a.stars3{
+	left: 44px;
+}
+#phocagallery .star-rating a.stars3:hover,
+#phocagallery-pane .star-rating a.stars3:hover,
+.star-rating a.stars3:hover{
+	width: 66px;
+}
+#phocagallery .star-rating a.stars4,
+#phocagallery-pane .star-rating a.stars4,
+.star-rating a.stars4{
+	left: 66px;
+}
+#phocagallery .star-rating a.stars4:hover,
+#phocagallery-pane .star-rating a.stars4:hover,
+.star-rating a.stars4:hover{
+	width: 88px;
+}
+#phocagallery .star-rating a.stars5,
+#phocagallery-pane .star-rating a.stars5,
+.star-rating a.stars5{
+	left: 88px;
+}
+#phocagallery .star-rating a.stars5:hover,
+#phocagallery-pane .star-rating a.stars5:hover,
+.star-rating a.stars5:hover{
+	width: 110px;
+}
+#phocagallery .star-rating li.current-rating,
+#phocagallery-pane .star-rating li.current-rating,
+.star-rating li.current-rating{
+	background: url(images/icon-voting.gif) left bottom;
+	position: absolute;
+	height: 22px;
+	/*width:77px;*/
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+}
+
+/* Voting small */
+#phocagallery .star-rating-small,
+.star-rating-small{
+	list-style:none;
+	margin: 0px;
+	margin-top:5px;
+	margin-bottom:5px;
+	padding:0px;
+	width: 80px;
+	height: 16px;
+	position: relative;
+	background: url(images/icon-voting-small.gif) top left repeat-x;
+}
+#phocagallery .star-rating-small li,
+.star-rating-small li{
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+	/*\*/
+	float: left;
+	/* */
+}
+
+#phocagallery .star-rating-small li a,
+.star-rating-small li a{
+	display:block;
+	width:16px;
+	height: 16px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 20;
+	position: absolute;
+	padding: 0px;
+}
+#phocagallery .star-rating-small li a:hover,
+.star-rating-small li a:hover{
+	background: url(images/icon-voting-small.gif) left center;
+	z-index: 2;
+	left: 0px;
+}
+#phocagallery .star-rating-small a.star1,
+.star-rating-small a.star1{
+	left: 0px;
+}
+#phocagallery .star-rating-small a.star1:hover,
+.star-rating-small a.star1:hover{
+	width:16px;
+}
+#phocagallery .star-rating-small a.stars2,
+.star-rating-small a.stars2{
+	left:16px;
+}
+#phocagallery .star-rating-small a.stars2:hover,
+.star-rating-small a.stars2:hover{
+	width: 32px;
+}
+#phocagallery .star-rating-small a.stars3,
+.star-rating-small a.stars3{
+	left: 32px;
+}
+#phocagallery .star-rating-small a.stars3:hover,
+.star-rating-small a.stars3:hover{
+	width: 48px;
+}
+#phocagallery .star-rating-small a.stars4,
+.star-rating-small a.stars4{
+	left: 48px;
+}
+#phocagallery .star-rating-small a.stars4:hover,
+.star-rating-small a.stars4:hover{
+	width: 64px;
+}
+#phocagallery  .star-rating-small a.stars5,
+.star-rating-small a.stars5{
+	left: 64px;
+} 
+#phocagallery  .star-rating-small a.stars5:hover,
+.star-rating-small a.stars5:hover{
+	width: 80px;
+}
+#phocagallery .star-rating-small li.current-rating,
+.star-rating-small li.current-rating{
+	background: url(images/icon-voting-small.gif) left bottom;
+	position: absolute;
+	height: 16px;
+	/*width:77px;*/
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+}
+
+
+/* Pane*/
+
+#phocagallery-votes,
+#phocagallery-comments,
+#phocagallery-upload,
+#phocagallery-category-creating,
+#phocagallery-subcategory-creating,
+#phocagallery-statistics,
+#phocagallery-user{
+	margin-top:0px;/*IE bug*/
+	margin-bottom:15px;
+}
+
+#phocagallery-votes a img,
+#phocagallery-comments a img,
+#phocagallery-upload a img,
+#phocagallery-category-creating a img,
+#phocagallery-subcategory-creating a img,
+#phocagallery-user a img,
+#phocagallery-statistics a img{
+	border: 0px;
+}
+#phocagallery-categories-detail fieldset, 
+#phocagallery-votes fieldset,
+#phocagallery-comments fieldset,
+#phocagallery-upload fieldset,
+#phocagallery-category-creating fieldset,
+#phocagallery-subcategory-creating fieldset,
+#phocagallery-user fieldset,
+#phocagallery-statistics fieldset {
+	border:1px solid #ccc;
+	padding:10px;
+	margin:5px;
+}
+#phocagallery-categories-detail legend, 
+#phocagallery-votes legend,
+#phocagallery-comments legend,
+#phocagallery-upload legend,
+#phocagallery-category-creating legend,
+#phocagallery-subcategory-creating legend, 
+#phocagallery-user legend,
+#phocagallery-statistics legend {
+	font-weight:bold;
+	color:#aa0000;
+	padding:10px;
+}
+#phocagallery-votes small, 
+#phocagallery-comments small, 
+#phocagallery-upload small ,
+#phocagallery-statistics small,
+#phocagallery-category-creating small,
+#phocagallery-subcategory-creating small, 
+#phocagallery-user small {
+	color:#ccc;
+}
+
+#phocagallery-votes form,
+#phocagallery-comments form,
+#phocagallery-upload form,
+#phocagallery-category-creating form,
+#phocagallery-subcategory-creating form,
+#phocagallery-user form {
+	margin:0;
+	padding:0;
+}
+
+
+#phocagallery-comments .comment-input,
+#phocagallery-upload .comment-input,
+#phocagallery-category-creating .comment-input,
+#phocagallery-subcategory-creating .comment-input,
+#phocagallery-user .comment-input {
+	width: 98%;
+}
+
+#phocagallery-comments .comment-input2,
+#phocagallery-upload .comment-input2,
+#phocagallery-category-creating .comment-input2,
+#phocagallery-subcategory-creating .comment-input2,
+#phocagallery-user .comment-input {
+	width: 40px;
+	border:0px;
+	font-weight:bold;
+}
+
+
+/* tabs */
+form {
+  margin: 0;
+  padding: 0;
+}
+
+
+dl.tabs {
+	float: left;
+	margin: 10px 0 -1px 0;
+	z-index: 50;
+	
+}
+
+dl.tabs dt {
+	float: left;
+	padding: 4px 10px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin-left: 3px;
+	background: #f0f0f0;
+	color: #666;
+	
+}
+
+dl.tabs dt.open {
+	background: #ffffff;
+	border-bottom: 1px solid #ffffff;
+	z-index: 100;
+	color: #000;
+	
+}
+
+div.current {
+	clear: both;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+	background: #ffffff;
+	
+}
+
+div.current dd {
+	padding: 0;
+	margin: 0;
+}
+
+#uploadForm {
+	margin:0;
+	padding:0;
+}
+
+#phocagallery-comments-form{
+	margin:0;
+	padding:0;
+}
+
+#phocaexif{
+	padding:10px;
+
+}
+
+#phocaexif h2{
+	font-size:130%;
+	background: url(images/icon-info.gif) left center no-repeat;
+	padding-left: 20px;
+}
+
+#phocaexif table{
+	border-collapse:collapse;
+
+}
+#phocaexif table tr.first{
+	background:#fdfdfd;
+	border-bottom:1px dotted #ccc;
+	border-collapse:collapse;
+
+}
+#phocaexif table tr.second{
+	background:#fff;
+	border-bottom:1px dotted #ccc;
+	border-collapse:collapse;
+
+}
+#phocaexif table tr td{
+	padding:5px;
+	border-collapse:collapse;
+
+}
+.phoca-hr {
+	margin-top:10px;
+	border-bottom:1px solid #e8e8e8;
+	margin-bottom:10px;
+	clear:both;
+}
+
+/* IE Shadowbox */
+#shadowbox_title,
+#shadowbox_info {
+	border: 0px;
+}
+
+#phocagallery-img-votes {
+	margin:0;
+	padding:0;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+/** Table styles **/
+
+#phocagallery-subcategory-creating  table.adminlist,
+#phocagallery-upload  table.adminlist {
+	width: 100%;
+	border-spacing: 1px;
+	background-color: #e7e7e7;
+	color: #666;
+}
+
+#phocagallery-subcategory-creating  table.adminlist td,
+#phocagallery-subcategory-creating  table.adminlist th,
+#phocagallery-upload  table.adminlist td,
+#phocagallery-upload  table.adminlist th { 
+	padding: 4px;
+}
+
+#phocagallery-subcategory-creating  table.adminlist thead th,
+#phocagallery-upload  table.adminlist thead th {
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #fff;
+}
+
+#phocagallery-subcategory-creating  table.adminlist thead a:hover,
+#phocagallery-upload  table.adminlist thead a:hover { text-decoration: none; }
+
+#phocagallery-subcategory-creating  table.adminlist thead th img,
+#phocagallery-upload  table.adminlist thead th img { vertical-align: middle; }
+
+#phocagallery-subcategory-creating  table.adminlist tbody th,
+#phocagallery-upload  table.adminlist tbody th { font-weight: bold; }
+
+#phocagallery-subcategory-creating  table.adminlist tbody tr,
+#phocagallery-upload  table.adminlist tbody tr						{ background-color: #fff;  text-align: left; }
+#phocagallery-subcategory-creating  table.adminlist tbody tr.row1,
+#phocagallery-upload  table.adminlist tbody tr.row1 					{ background: #f9f9f9; border-top: 1px solid #fff; }
+
+#phocagallery-subcategory-creating  table.adminlist tbody tr.row0:hover td,
+#phocagallery-subcategory-creating  table.adminlist tbody tr.row1:hover td,
+#phocagallery-upload  table.adminlist tbody tr.row0:hover td,
+#phocagallery-upload  table.adminlist tbody tr.row1:hover td { background-color: #ffd ; }
+
+#phocagallery-subcategory-creating  table.adminlist tbody tr td,
+#phocagallery-upload  table.adminlist tbody tr td 	   { height: 25px; background: #fff; border: 1px solid #fff; }
+
+#phocagallery-subcategory-creating  table.adminlist tbody tr.row1 td,
+#phocagallery-upload  table.adminlist tbody tr.row1 td { background: #f9f9f9; border-top: 1px solid #FFF; }
+
+#phocagallery-subcategory-creating  table.adminlist tfoot tr,
+#phocagallery-upload  table.adminlist tfoot tr { text-align: center;  color: #333; }
+ 
+#phocagallery-subcategory-creating  table.adminlist tfoot td,
+#phocagallery-subcategory-creating  table.adminlist tfoot th,
+#phocagallery-upload  table.adminlist tfoot td,
+#phocagallery-upload  table.adminlist tfoot th { background-color: #f3f3f3; border-top: 1px solid #999; text-align: center; }
+
+#phocagallery-subcategory-creating  table.adminlist td.order,
+#phocagallery-upload  table.adminlist td.order		{ text-align: center; white-space: nowrap; }
+
+#phocagallery-subcategory-creating  table.adminlist td.order span,
+#phocagallery-upload  table.adminlist td.order span { float: left; display: block; width: 20px; text-align: center; }
+
+
+#phocagallery .pgcenter,
+#phocagallery-upload .pgcenter,
+#phocagallery-subcategory-creating .pgcenter {
+	text-align:center;
+	vertical-align:middle;
+}
+#phocagallery .pginline,
+#phocagallery-upload .pginline,
+#phocagallery-subcategory-creating .pginline {
+	margin:0 10px 0 10px;
+	display:inline;
+}
+
+.bgPhocaClass {
+	padding:10px;
+	/*border:1px solid #d2d2d2;*/
+}
+
+.phocaimgdesc {
+	text-align: left;
+}
+
+#phocagallery table #image-box{
+   margin: 0 auto;
+}
+
+
+

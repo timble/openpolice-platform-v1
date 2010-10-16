@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="4.5.1">
+    <name>DOCman Lister</name>
+    <creationDate>December 2009</creationDate>
+	<author>Joomlatools</author>
+	<copyright>This extension is released under the GNU/GPL License</copyright>
+	<authorEmail>support@joomlatools.eu</authorEmail>
+	<authorUrl>www.joomlatools.eu</authorUrl>
+	<version>1.5</version>
+    <description>Show a list of popular/latest documents</description>
+    <files>
+      <filename module="mod_docman_lister">mod_docman_lister.php</filename>
+    </files>
+    <params>
+    
+      <!-- Display parameters -->
+      <param name="show_icon" type="radio" default="1" label="Show icon" description="Display a generic icon near the name of the document, using the theme defined?">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	  </param>
+	  <param name="show_counter" type="radio" default="1" label="Show counter" description="Display the number of downloads after the download name?">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	  </param>
+      <param name="show_category" type="radio" default="1" label="Show category" description="Display the category of the document after the download name?">
+    		<option value="0">No</option>
+    		<option value="1">Yes</option>
+      </param>    
+	  <param name="link_type" type="list" default="0" label="Link type" description="What sort of links are generated?">
+			<option value="0">List category (default)</option>
+			<option value="1">Search for single file</option>
+			<option value="2">Show details page</option>
+			<option value="3">Direct download</option>
+	  </param>
+	  <param name="show_list" type="radio" default="0" label="Show as list" description="Show the output using a list ( ul tag )?">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	  </param>
+      <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+      <param name="text_pfx" type="text" default="" label="Text prefix" description="Some text to be included before the list (optional)" />
+      <param name="text_sfx" type="text" default="" label="Text Suffix" description="Some text to be included after the list (optional)" />
+      
+      <!-- Search parameters -->
+      <param name="limits" type="text" default="" label="Limit" description="Maximum number of downloads to display ( use 0 or blank for unlimited )." />
+	  <param name="cat_limit" type="text" default="" label="Category limit" description="Leave blank to use all categories, or enter a specific DOCman category ID here ( enter multiple categories seperated by commas )." />
+      <param name="order_by" type="list" default="0" label="Order by" description="How do you want to order the results?">
+			<option value="0">Most hits first</option>
+			<option value="1">Least hits first</option>
+			<option value="2">Newest first</option>
+			<option value="3">Oldest first</option>
+			<option value="4">Alphabetically</option>
+			<option value="5">Alphabetically, reverse</option>
+	  </param>
+      <param name="cache" type="radio" default="0" label="Enable Cache" description="Select whether to cache the content of this module">
+            <option value="0">No</option>
+        	<option value="1">Yes</option>
+      </param>
+			  
+    </params>
+
+  </install>

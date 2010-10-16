@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params addpath="/administrator/components/com_phocagallery/elements">
+
+	
+	
+<param name="@phocahead" type="phocahead" phocaimage="icon-param-csv.png" default="CATEGORIES VIEW SETTINGS LABEL" />
+
+<param name="categories_columns" default="1" size="10" type="phocatext" label="Number of Columns" description="Number of Columns DESC" />
+<param name="equal_percentage_width" type="list" default="1" label="PHOCAGALLERY_EQUAL_PERCENTAGE_COL_WIDTH" description="PHOCAGALLERY_EQUAL_PERCENTAGE_COL_WIDTH_DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+
+<param name="display_image_categories" type="list" default="1" label="Display Categories Style" description="Display Categories Style DESC">
+	<option value="0">Categories without images</option>
+	<option value="1">Categories and images</option>
+	<option value="2">Categories, images and detail information</option>
+	<option value="3">Categories, images and detail information (Float)</option>
+	<option value="4">Categories, images and description (Float)</option>
+</param>
+<param name="categories_box_width" default="33%" size="10" type="phocatext" label="PHOCAGALLERY_CATEGORIES_BOX_WIDTH" description="PHOCAGALLERY_CATEGORIES_BOX_WIDTH_DESC" />
+<param name="image_categories_size" type="list" default="4" label="Image Categories Size" description="Image Categories Size DESC">
+	<option value="0">Small</option>
+	<option value="1">Medium</option>
+	<option value="2">Small Folder Icon</option>
+	<option value="3">Medium Folder Icon</option>
+	<option value="4">Small with Shadow</option>
+	<option value="5">Medium with Shadow</option>
+	<option value="6">Small Folder Icon with Shadow</option>
+	<option value="7">Medium Folder Icon with Shadow</option>
+</param>
+<param name="categories_image_ordering" type="list" default="9" label="Categories Image Ordering" description="Categories Image Ordering DESC">
+	<option value="1">Ordering ASC</option>
+	<option value="2">Ordering DESC</option>
+	<option value="3">Title ASC</option>
+	<option value="4">Title DESC</option>
+	<option value="5">Date ASC</option>
+	<option value="6">Date DESC</option>
+	<option value="7">Id ASC</option>
+	<option value="8">Id DESC</option>
+	<option value="9">Random</option>
+	<option value="10">Special</option>
+	
+</param>
+<param name="categories_display_avatar" type="list" default="0" label="PHOCAGALLERY_CAT_AVATAR_DISPLAY" description="PHOCAGALLERY_CAT_AVATAR_DISPLAY_DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+		
+<param name="display_subcategories" type="list" default="1" label="Display Subcategories" description="Display Subcategories DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="display_empty_categories" type="list" default="0" label="Display Empty Categories" description="Display Empty Categories DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="hide_categories" type="phocatextarea" rows="2" cols="26" default="" label="Hide Categories" description="Hide Categories DESC" />
+<param name="show_categories" type="phocatextarea" rows="2" cols="26" default="" label="Show Categories" description="Show Categories DESC" />
+<param name="display_access_category" type="list" default="0" label="Display Access Categories" description="Display Access Categories DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="default_pagination_categories" default="0" size="18" type="phocatext" label="Default Value Pagination Categories" description="Default Value Pagination Categories DESC" />
+<param name="pagination_categories" default="5;10;15;20;50" size="18" type="phocatext" label="Pagination Categories" description="Pagination Categories DESC" />	
+
+		
+
+<param name="@phocahead" type="phocahead" phocaimage="icon-param-cv.png" default="CATEGORY VIEW SETTINGS LABEL" />
+
+<param name="font_color" default="#b36b00" size="10" type="phocacolortext" label="Font Color" description="Font Color Desc" />
+<param name="background_color" default="#fcfcfc" size="10" type="phocacolortext" label="Background Color" description="Background Color DESC" />
+<param name="background_color_hover" default="#f5f5f5" size="10" type="phocacolortext" label="Background Color Hover" description="Background Color Hover DESC" />
+<param name="image_background_color" default="#f5f5f5" size="10" type="phocacolortext" label="Image Background Color" description="Image Background Color DESC" />
+<param name="image_background_shadow" type="list" default="shadow1" label="Image Background Shadow" description="Image Background Shadow DESC">
+	<option value="none">None</option>
+	<option value="shadow1">shadow1</option>
+	<option value="shadow3">shadow3</option>
+	<option value="shadow2">shadow2</option>
+	<option value="shadow4">shadow4</option>
+	<option value="shadow5">shadow5</option>
+</param>
+<param name="border_color" default="#e8e8e8" size="10" type="phocacolortext" label="Border Color" description="Border Color DESC" />
+<param name="border_color_hover" default="#b36b00" size="10" type="phocacolortext" label="Border Color Hover" description="Border Color Hover DESC" />
+<param name="margin_box" default="5" size="10" type="phocatext" label="Margin Box" description="Margin Box DESC" />
+<param name="padding_box" default="5" size="10" type="phocatext" label="Padding Box" description="Padding Box DESC" />
+		
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="display_new" default="0" size="10" type="phocatext" label="COM_PHOCAGALLERY_FIELD_DISPLAY_NEW_ICON_LABEL" description="COM_PHOCAGALLERY_FIELD_DISPLAY_NEW_ICON_DESC" />
+
+<param name="display_hot" default="0" size="10" type="phocatext" label="COM_PHOCAGALLERY_FIELD_DISPLAY_HOT_ICON_LABEL" description="COM_PHOCAGALLERY_FIELD_DISPLAY_HOT_ICON_DESC" />
+		
+<param name="display_name" type="list" default="1" label="Display Name" description="Display/Hide Name DESC">
+		<option value="0">Hide</option>
+		<option value="1">Show</option>
+		<option value="2">Show Category Name Only</option>
+	</param>
+<param name="display_icon_detail" type="list" default="1" label="Display Detail Icon" description="Display/Hide Detail Icon DESC">
+		<option value="0">Hide</option>
+		<option value="1">Show</option>
+	</param>
+<param name="display_icon_download" type="list" default="2" label="Display Download Icon" description="Display/Hide Download Icon DESC">
+	<option value="0">Hide</option>
+	<option value="1">Show</option>
+	<option value="2">Show (Direct Download)</option>
+</param>
+<param name="display_icon_folder" type="list" default="0" label="Display Folder Icon" description="Display/Hide Folder Icon DESC">
+	<option value="0">Hide</option>
+	<option value="1">Show</option>
+</param>
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="font_size_name" default="12" size="4" type="phocatext" label="Font Size Name" description="Font Size Name DESC" />
+<param name="char_length_name" default="15" size="4" type="phocatext" label="Char Length Name" description="Char Length Name DESC" />
+<param name="category_box_space" default="0" size="4" type="phocatext" label="Category Box Space" description="Category Box Space DESC" />
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+<param name="display_categories_sub" type="list" default="0" label="Display Categories Sub" description="Display Categories Sub DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="display_subcat_page" type="list" default="0" label="Display Subcategories on Page" description="Display Subcategories on Page DESC">
+	<option value="1">All Pages</option>
+	<option value="0">First Page</option>
+	<option value="2">Nowhere</option>
+</param>
+<param name="display_category_icon_image" type="list" default="0" label="Display Category Icon Image" description="Display Category Icon Image DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="category_image_ordering" type="list" default="9" label="Category Image Ordering" description="Category Image Ordering DESC">
+	<option value="1">Ordering ASC</option>
+	<option value="2">Ordering DESC</option>
+	<option value="3">Title ASC</option>
+	<option value="4">Title DESC</option>
+	<option value="5">Date ASC</option>
+	<option value="6">Date DESC</option>
+	<option value="7">Id ASC</option>
+	<option value="8">Id DESC</option>
+	<option value="9">Random</option>
+	<option value="10">Special</option>
+</param>
+<param name="display_back_button" type="list" default="1" label="Display Back Button" description="Display Back Button DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="display_categories_back_button" type="list" default="1" label="Display Categories Back Button" description="Display Categories Back Button DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="default_pagination_category" default="20" size="18" type="phocatext" label="Default Value Pagination Category" description="Default Value Pagination Category DESC" />
+<param name="pagination_category" default="5;10;15;20;50" size="18" type="phocatext" label="Pagination Category" description="Pagination Category DESC" />
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="display_img_desc_box" default="0"  type="list" label="Display Image Description in Box" description="Display Image Description in Box DESC" >
+	<option value="1">Yes</option>
+	<option value="2">Yes(HTML)</option>
+	<option value="0">No</option>
+</param>
+<param name="font_size_img_desc" default="10" size="4" type="phocatext" label="Image Description Font Size" description="Image Description Font Size DESC" />
+<param name="img_desc_box_height" default="30" size="4" type="phocatext" label="Image Description Box Height" description="Image Description Box Height DESC" />
+<param name="char_length_img_desc" default="300" size="4" type="phocatext" label="Image Description Char Length" description="Image Description Char Length DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" phocaimage="icon-param-cscv.png" default="CATEGORY VIEW SETTINGS CV LABEL" />
+
+<param name="display_categories_cv" type="list" default="0" label="Display Categories CV" description="Display Categories CV DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="display_subcat_page_cv" type="list" default="0" label="Display Subcategories on Page CV" description="Display Subcategories on Page CV DESC">
+	<option value="1">All Pages</option>
+	<option value="0">First Page</option>
+	<option value="2">Nowhere</option>
+</param>
+
+<param name="display_category_icon_image_cv" type="list" default="0" label="Display Category Icon Image CV" description="Display Category Icon Image CV DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="category_image_ordering_cv" type="list" default="9" label="Category Image Ordering CV" description="Category Image Ordering CV DESC">
+	<option value="1">Ordering ASC</option>
+	<option value="2">Ordering DESC</option>
+	<option value="3">Title ASC</option>
+	<option value="4">Title DESC</option>
+	<option value="5">Date ASC</option>
+	<option value="6">Date DESC</option>
+	<option value="7">Id ASC</option>
+	<option value="8">Id DESC</option>
+	<option value="9">Random</option>
+	<option value="10">Special</option>
+	
+</param>
+
+<param name="display_back_button_cv" type="list" default="1" label="Display Back Button CV" description="Display Back Button CV DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="display_categories_back_button_cv" type="list" default="1" label="Display Categories Back Button CV" description="Display Categories Back Button CV DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="categories_columns_cv" default="1" size="10" type="phocatext" label="Number of Columns CV" description="Number of Columns CV DESC" />
+
+<param name="display_image_categories_cv" type="list" default="1" label="Display Image Categories CV" description="Display Image Categories CV DESC">
+		<option value="0">Hide</option>
+		<option value="1">Show</option>
+</param>
+
+	<param name="image_categories_size_cv" type="list" default="4" label="Image Categories Size CV" description="Image Categories Size CV DESC">
+	<option value="0">Small</option>
+	<option value="1">Medium</option>
+	<option value="4">Small with Shadow</option>
+	<option value="5">Medium with Shadow</option>
+</param>
+
+
+
+
+<param name="@phocahead" type="phocahead" phocaimage="icon-param-dv.png" default="DETAIL VIEW SETTINGS LABEL" />
+<param name="detail_window" type="list" default="0" label="Detail Window" description="Detail Window Desc">
+	<option value="1">Standard Popup Window</option>
+	<option value="0">Modal Popup Box</option>
+	<option value="2">Modal Popup Box (Image only)</option>
+	<option value="3">Shadowbox</option>
+	<option value="4">Highslide</option>
+	<option value="5">Highslide (Image only)</option>
+	<option value="6">JAK Lightbox</option>
+	<option value="7">No Popup</option>
+	<option value="8">Slimbox</option>
+</param>
+
+<param name="@spacer" type="spacer" default="Modal Box" label="Modal Box" description="" />
+
+<param name="detail_window_background_color" default="#ffffff" size="10" type="phocacolortext" label="Detail Window Background Color" description="Detail Window Background Color DESC" />
+<param name="modal_box_overlay_color" default="#000000" size="10" type="phocacolortext" label="Modal Box Overlay Color" description="Modal Box Overlay Color DESC" />
+<param name="modal_box_overlay_opacity" default="0.3" size="10" type="list" label="Modal Box Overlay Opacity" description="Modal Box Overlay Opacity DESC" >
+<option value="0">0 %</option>
+<option value="0.1">10 %</option>
+<option value="0.2">20 %</option>
+<option value="0.3">30 %</option>
+<option value="0.4">40 %</option>
+<option value="0.5">50 %</option>
+<option value="0.6">60 %</option>
+<option value="0.7">70 %</option>
+<option value="0.8">80 %</option>
+<option value="0.9">90 %</option>
+<option value="1">100 %</option>
+
+</param>
+<param name="modal_box_border_color" default="#6b6b6b" size="10" type="phocacolortext" label="Modal Box Border Color" description="Modal Box Border Color DESC" />
+<param name="modal_box_border_width" default="2" size="10" type="phocatext" label="Modal Box Border Width" description="Modal Box Border Width DESC" />
+
+<param name="@spacer" type="spacer" default="Shadow Box" label="Shadow Box" description="" />
+
+<param name="sb_slideshow_delay" default="5" size="10" type="list" label="Shadow Box Slideshow Delay" description="Shadow Box Slideshow Delay DESC" >
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</param>
+
+<param name="sb_lang" default="en" size="10" type="phocatext" label="Shadow Box Language" description="Shadow Box Language Desc" />
+
+<param name="@spacer" type="spacer" default="Highslide" label="Highslide" description="" />
+
+<param name="highslide_class" default="rounded-white" size="10" type="list" label="Highslide Class" description="Highslide Class DESC" >
+	<option value="rounded-white">Rounded White</option>
+	<option value="wide-border">Wide Border</option>
+	<option value="dark">Dark</option>
+	<option value="outer-glow">Outer Glow</option>
+	<option value="floating-caption">Floating Caption</option>
+	<option value="borderless floating-caption">Borderless Floating Caption</option>
+</param>
+
+<param name="highslide_opacity" default="0" size="10" type="list" label="Highslide Opacity" description="Highslide Opacity DESC" >
+	<option value="0">0 %</option>
+	<option value="0.1">10 %</option>
+	<option value="0.2">20 %</option>
+	<option value="0.3">30 %</option>
+	<option value="0.4">40 %</option>
+	<option value="0.5">50 %</option>
+	<option value="0.6">60 %</option>
+	<option value="0.7">70 %</option>
+	<option value="0.8">80 %</option>
+	<option value="0.9">90 %</option>
+	<option value="1">100 %</option>
+</param>
+
+<param name="highslide_outline_type" default="rounded-white" size="10" type="list" label="Highslide Outline Type" description="Highslide Outline Type DESC" >
+	<option value="rounded-white">Rounded White</option>
+	<option value="none">None</option>
+</param>
+
+<param name="@spacer" type="spacer" default="Highslide (Image Only)" label="Highslide (Image Only)" description="" />
+
+<param name="highslide_fullimg" default="0" size="10" type="list" label="Highslide Full Image" description="Highslide Full Image DESC" >
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+
+<param name="highslide_close_button" default="0" size="10" type="list" label="Highslide Close Button" description="Highslide Close Button DESC" >
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+
+<param name="highslide_slideshow" default="1" size="10" type="list" label="Highslide Slideshow" description="Highslide Slideshow DESC" >
+	<option value="0">No</option>
+	<option value="1">Standard</option>
+	<option value="2">Slideshow with small thumbnails</option>
+</param>
+
+<param name="@spacer" type="spacer" default="JAK Lightbox" label="JAK Lightbox" description="" />
+
+<param name="jak_slideshow_delay" default="5" size="10" type="list" label="JAK Lightbox Slideshow Delay" description="JAK Lightbox Slideshow Delay DESC" >
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</param>
+
+<param name="jak_orientation" default="none" size="10" type="list" label="JAK Lightbox Orientation" description="JAK Lightbox Orientation DESC" >
+	<option value="vertical">Vertical</option>
+	<option value="horizontal">Horizontal</option>
+	<option value="none">None</option>
+</param>
+
+<param name="jak_description" default="1" size="10" type="list" label="JAK Lightbox Description" description="JAK Lightbox Description DESC" >
+	<option value="1">Only Title</option>
+	<option value="2">Only Description</option>
+	<option value="3">Title and Description</option>
+	<option value="0">None</option>
+</param>
+<param name="jak_description_height" default="10" size="4" type="phocatext" label="JAK Lightbox Description Height" description="JAK Lightbox Description Height DESC" />
+
+<param name="@phocahead" type="phocahead" default="DESCRIPTION SETTINGS LABEL" />
+
+<param name="display_description_detail" type="list" default="0" label="Display Description Detail" description="Display/Hide Description Detail DESC">
+		<option value="0">Hide</option>
+		<option value="1">Show (Standard)</option>
+		<option value="2">Show (Lightbox)</option>
+	</param>
+	
+<param name="display_title_description" type="list" default="0" label="Display Title Description" description="Display Title Description DESC">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</param>
+	
+<param name="@spacer" type="spacer" default="Standard Description" label="Standard Description" description="" />
+<param name="font_size_desc" default="11" size="4" type="phocatext" label="Font Size Desc" description="Font Size Desc DESC" />
+<param name="font_color_desc" default="#333333" size="10" type="phocacolortext" label="Font Color Description" description="Font Color Description DESC" />
+<param name="description_detail_height" default="16" size="4" type="phocatext" label="Description Detail Height" description="Description Detail Height DESC" />
+
+<param name="@spacer" type="spacer" default="Lightbox Description" label="Lightbox Description" description="" />
+
+<param name="description_lightbox_font_size" default="12" size="4" type="phocatext" label="Description Lightbox Font Size" description="Description Lightbox Font Size DESC" />
+<param name="description_lightbox_font_color" default="#ffffff" size="10" type="phocacolortext" label="Description Lightbox Font Color" description="Description Lightbox Font Color DESC" />
+<param name="description_lightbox_bg_color" default="#000000" size="10" type="phocacolortext" label="Description Lightbox Background Color" description="Description Lightbox Background Color DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" default="SLIDESHOW SETTINGS LABEL" />
+
+<param name="slideshow_delay" type="list" default="3000" label="Slideshow Delay" description="Slideshow Delay DESC">
+	<option value="1000">1 sec</option>
+	<option value="2000">2 sec</option>
+	<option value="3000">3 sec</option>
+	<option value="5000">5 sec</option>
+	<option value="10000">10 sec</option>
+</param>
+<param name="slideshow_pause" type="list" default="0" label="Slideshow Pause" description="Slideshow Pause DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>	
+<param name="slideshow_random" type="list" default="0" label="Slideshow Random" description="Slideshow Random DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>	
+<param name="detail_buttons" type="list" default="1" label="Display Buttons" description="Display Buttons DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+
+
+<param name="@phocahead" type="phocahead" default="GENERAL SETTINGS LABEL" />
+
+<param name="phocagallery_width" default="" size="10" type="phocatext" label="Phoca Gallery Width" description="Phoca Gallery Width Desc" />
+<param name="phocagallery_center" type="list" default="0" label="Phoca Gallery Center" description="Phoca Gallery Center DESC">
+	<option value="1">Yes (Category View)</option>
+	<option value="2">Yes (Categories View)</option>
+	<option value="3">Yes (Category and Categories View)</option>
+	<option value="0">No</option>
+</param>
+
+<param name="category_ordering" type="list" default="1" label="Category Ordering" description="Category Ordering DESC">
+	<option value="1">Ordering ASC</option>
+	<option value="2">Ordering DESC</option>
+	<option value="3">Title ASC</option>
+	<option value="4">Title DESC</option>
+	<option value="5">Date ASC</option>
+	<option value="6">Date DESC</option>
+	<option value="7">Id ASC</option>
+	<option value="8">Id DESC</option>
+	<option value="11">Count ASC</option>
+   <option value="12">Count DESC</option>
+   <option value="13">Average ASC</option>
+   <option value="14">Average DESC</option>
+</param>
+<param name="image_ordering" type="list" default="1" label="Image Ordering" description="Image Ordering DESC">
+	<option value="1">Ordering ASC</option>
+	<option value="2">Ordering DESC</option>
+	<option value="3">Title ASC</option>
+	<option value="4">Title DESC</option>
+	<option value="5">Date ASC</option>
+	<option value="6">Date DESC</option>
+	<option value="7">Id ASC</option>
+	<option value="8">Id DESC</option>
+	<option value="11">Count ASC</option>
+   <option value="12">Count DESC</option>
+   <option value="13">Average ASC</option>
+   <option value="14">Average DESC</option>
+	<option value="15">Hits ASC</option>
+	<option value="16">Hits DESC</option>
+</param>
+
+<param name="gallery_metadesc" type="phocatextarea" label="PHOCAGALLERY_METADESC" description="PHOCAGALLERY_METADESC_DESC" rows="2" cols="26" default="" />
+<param name="gallery_metakey" type="phocatextarea" label="PHOCAGALLERY_METAKEY" description="PHOCAGALLERY_METAKEY_DESC" rows="2" cols="26" default="" />
+
+<param name="alt_value" type="list" default="1" label="PHOCAGALLERY_ALTVALUE" description="PHOCAGALLERY_ALTVALUE_DESC">
+	<option value="0">Empty</option>
+	<option value="1">Title</option>
+	<option value="2">Description</option>
+	<option value="3">Title - Description</option>
+	<option value="4">Meta Description</option>
+	<option value="5">Title > Description > Meta Description</option>
+	<option value="6">Description > Title > Meta Description</option>
+	<option value="7">Description > Meta Description > Title</option>
+	<option value="8">Meta Description > Title > Description</option>
+	<option value="9">Meta Description > Description > Title</option>
+</param>
+
+<param name="@phocahead" type="phocahead" default="USER CONTROL PANEL SETTINGS LABEL" />
+<param name="enable_user_cp" type="list" default="0" label="Enable User Control Panel" description="Enable User Control Panel DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="enable_upload_avatar" type="list" default="1" label="PHOCAGALLERY_ENABLE_AVATAR_UPLOADING" description="PHOCAGALLERY_ENABLE_AVATAR_UPLOADING_DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="enable_avatar_approve" type="list" default="0" label="PHOCAGALLERY_ENABLE_APPROVE_AVATAR" description="PHOCAGALLERY_ENABLE_APPROVE_AVATAR_DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="enable_usercat_approve" type="list" default="0" label="PHOCAGALLERY_ENABLE_APPROVE_USERCAT" description="PHOCAGALLERY_ENABLE_APPROVE_USERCAT_DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="enable_usersubcat_approve" type="list" default="0" label="PHOCAGALLERY_ENABLE_APPROVE_USERSUBCAT" description="PHOCAGALLERY_ENABLE_APPROVE_USERSUBCAT_DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="user_subcat_count" default="5" size="6" type="phocatext" label="PHOCAGALLERY_MAX_SUBCAT_COUNT" description="PHOCAGALLERY_MAX_SUBCAT_COUNT_DESC" />
+<param name="max_create_cat_char" default="1000" size="6" type="phocatext" label="Maximum Category Description Characters" description="Maximum Category Description Characters DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" default="UPLOAD SETTINGS LABEL" />
+
+<param name="enable_userimage_approve" type="list" default="0" label="PHOCAGALLERY_ENABLE_APPROVE_USERIMAGE" description="PHOCAGALLERY_ENABLE_APPROVE_USERIMAGE_DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="max_upload_char" default="1000" size="6" type="phocatext" label="Maximum Upload Characters" description="Maximum Upload Characters DESC" />
+<param name="upload_maxsize" type="phocatext" size="20" default="3145728" label="MAXIMUM SIZE UPLOAD FILE" description="MAXIMUM SIZE UPLOAD FILE DESC" />
+<param name="upload_maxres_width" type="phocatext" size="20" default="3072" label="PHOCAGALLERY_MAXIMUM_RES_UPLOAD_WIDTH" description="PHOCAGALLERY_MAXIMUM_RES_UPLOAD_WIDTH_DESC" />
+<param name="upload_maxres_height" type="phocatext" size="20" default="2304" label="PHOCAGALLERY_MAXIMUM_RES_UPLOAD_HEIGHT" description="PHOCAGALLERY_MAXIMUM_RES_UPLOAD_HEIGHT_DESC" />
+<param name="user_images_max_size" type="phocatext" size="20" default="20971520" label="PHOCAGALLERY_MAXIMUM_SIZE_USER_IMAGES" description="PHOCAGALLERY_MAXIMUM_SIZE_USER_IMAGES_DESC" />
+<param name="@spacer" type="spacer" default="" label="" description="" />
+<param name="enable_java" type="list" default="0" label="ENABLE JAVA UPLOADER" description="ENABLE JAVA UPLOADER DESC">
+	<option value="0">NO</option>
+	<option value="1">YES</option>
+</param>
+<param name="enable_java_admin" type="list" default="1" label="PHOCAGALLERY_ENABLE_JAVAUPLOAD_ADMIN" description="PHOCAGALLERY_ENABLE_JAVAUPLOAD_ADMIN_DESC">
+	<option value="0">NO</option>
+	<option value="1">YES</option>
+</param>
+<param name="java_resize_width" type="phocatext" size="20" default="-1" label="JAVA RESIZE WIDTH" description="JAVA RESIZE WIDTH DESC" />
+<param name="java_resize_height" type="phocatext" size="20" default="-1" label="JAVA RESIZE HEIGHT" description="JAVA RESIZE HEIGHT DESC" />
+
+<param name="java_box_width" type="phocatext" size="20" default="480" label="JAVA BOX WIDTH" description="JAVA BOX WIDTH DESC" />
+<param name="java_box_height" type="phocatext" size="20" default="480" label="JAVA BOX HEIGHT" description="JAVA BOX HEIGHT DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" default="RATING SETTINGS LABEL" />
+
+<param name="display_rating" type="list" default="0" label="Display Rating" description="Display Rating DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="display_rating_img" type="list" default="0" label="Display Rating Image" description="Display Rating Image DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+
+
+
+<param name="@phocahead" type="phocahead" default="COMMENT SETTINGS LABEL" />
+<param name="display_comment" type="list" default="0" label="PHOCAGALLERY_DISPLAY_COMMENT_CAT" description="PHOCAGALLERY_DISPLAY_COMMENT_CAT_DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="display_comment_img" type="list" default="0" label="PHOCAGALLERY_DISPLAY_COMMENT_IMG" description="PHOCAGALLERY_DISPLAY_COMMENT_IMG_DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="comment_width" default="500" size="6" type="phocatext" label="Comment Width" description="Comment Width DESC" />
+<param name="max_comment_char" default="1000" size="6" type="phocatext" label="Maximum Comment Characters" description="Maximum Comment Characters DESC" />
+
+<param name="display_comment_nopup" type="list" default="0" label="Display Comments in No Popup Window" description="Display Comments in No Popup Window DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+<param name="external_comment_system" type="list" default="0" label="PHOCAGALLERY_EXTERNAL_COMMENT_SYSTEM" description="PHOCAGALLERY_EXTERNAL_COMMENT_SYSTEM_DESC">
+	<option value="0">None</option>
+	<option value="1">JComments</option>
+	<option value="2">Facebook</option>
+</param>
+
+<param name="fb_comment_app_id" default="" size="18" type="phocatext" label="Facebook Comments Application ID" description="Facebook Comments Application ID DESC" />
+<param name="fb_comment_width" default="550" size="6" type="phocatext" label="Facebook Comments Width" description="Facebook Comments Width DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" default="PICLENS SETTINGS LABEL" />
+<param name="enable_piclens" type="list" default="0" label="Enable PicLens" description="Enable PicLens DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="start_piclens" type="list" default="0" label="Start PicLens" description="Start PicLens DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="piclens_image" type="list" default="1" label="PicLens Image" description="PicLens Image DESC">
+	<option value="0">Original Image</option>
+	<option value="1">Thumbnail Image</option>
+</param>
+
+<param name="@phocahead" type="phocahead" default="SWITCH IMAGE SETTINGS LABEL" />
+<param name="switch_image" type="list" default="0" label="Switch Image" description="Switch Image DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="switch_width" default="640" size="4" type="phocatext" label="Switch Image Width" description="Switch Image Width DESC" />
+<param name="switch_height" default="480" size="4" type="phocatext" label="Switch Image Height" description="Switch Image Height DESC" />
+<param name="switch_fixed_size" type="list" default="0" label="Switch Fixed Size" description="Switch Fixed Size DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+
+<param name="@phocahead" type="phocahead" default="OVERLIB EFFECT SETTINGS LABEL" />
+<param name="enable_overlib" type="list" default="0" label="Overlib Effect" description="Overlib Effect DESC">
+	<option value="1">Only Image</option>
+	<option value="2">Only Description</option>
+	<option value="3">Image and Description</option>
+	<option value="0">No</option>
+</param>
+
+<param name="ol_bg_color" default="#666666" size="10" type="phocacolortext" label="Overlib Border Color" description="Overlib Border Color Desc" />
+<param name="ol_fg_color" default="#f6f6f6" size="10" type="phocacolortext" label="Overlib Background Color" description="Overlib Background Color Desc" />
+<param name="ol_tf_color" default="#000000" size="10" type="phocacolortext" label="Overlib Text Font Color" description="Overlib Text Font Color Desc" />
+<param name="ol_cf_color" default="#ffffff" size="10" type="phocacolortext" label="Overlib Caption Font Color" description="Overlib Caption Font Color Desc" />
+
+<param name="overlib_overlay_opacity" default="0.7" size="10" type="list" label="Overlib Overlay Opacity" description="Overlib Overlay Opacity DESC" >
+<option value="0">0 %</option>
+<option value="0.1">10 %</option>
+<option value="0.2">20 %</option>
+<option value="0.3">30 %</option>
+<option value="0.4">40 %</option>
+<option value="0.5">50 %</option>
+<option value="0.6">60 %</option>
+<option value="0.7">70 %</option>
+<option value="0.8">80 %</option>
+<option value="0.9">90 %</option>
+<option value="1">100 %</option>
+
+</param>
+
+<param name="overlib_image_rate" default="" size="10" type="list" label="PHOCAGALLERY_OVERLIB_IMAGE_RATE_SIZE" description="PHOCAGALLERY_OVERLIB_IMAGE_RATE_SIZE_DESC" >
+<option value="">Default</option>
+<option value="2">1/2</option>
+<option value="3">1/3</option>
+<option value="4">1/4</option>
+</param>
+
+
+<param name="@phocahead" type="phocahead" default="WATERMARK SETTINGS LABEL" />
+<param name="create_watermark" type="list" default="0" label="Create Watermark" description="Create Watermark DESC">
+	<option value="1">Yes (Folder)</option>
+	<option value="2">Yes (Root)</option>
+	<option value="0">No</option>
+</param>
+<param name="watermark_position_x" type="list" default="center" label="X-Position of Watermark" description="X-Position of Watermark DESC">
+	<option value="left">left</option>
+	<option value="center">center</option>
+	<option value="right">right</option>
+</param>
+<param name="watermark_position_y" type="list" default="middle" label="Y-Position of Watermark" description="Y-Position of Watermark DESC">
+	<option value="top">top</option>
+	<option value="middle">middle</option>
+	<option value="bottom">bottom</option>
+</param>
+
+
+
+<param name="@phocahead" type="phocahead" default="VIRTUEMART SETTINGS LABEL" />
+<param name="display_icon_vm" type="list" default="0" label="Display VM Link" description="Display VM Link DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+
+
+<param name="@phocahead" type="phocahead" default="STATISTICS SETTINGS LABEL" />
+<param name="display_category_statistics" type="list" default="0" label="Display Statistics" description="Display Statistics DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="display_main_cat_stat" type="list" default="1" label="Display Main Category Statistics" description="Display Main Category Statistics DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="display_lastadded_cat_stat" type="list" default="1" label="Display Last Added Category Statistics" description="Display Last Added Category Statistics DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="count_lastadded_cat_stat" default="3" size="6" type="phocatext" label="Number Last Added" description="Number Last Added DESC" />
+<param name="display_mostviewed_cat_stat" type="list" default="1" label="Display Most Viewed Category Statistics" description="Display Most Viewed Category Statistics DESC">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+</param>
+<param name="count_mostviewed_cat_stat" default="3" size="6" type="phocatext" label="Number Most Viewed" description="Number Most Viewed DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" default="INFORMATION SETTINGS LABEL" />
+
+<param name="display_camera_info" type="list" default="0" label="Display Camera Info Icon" description="Display Camera Info Icon DESC">
+	<option value="0">Hide</option>
+	<option value="1">Show</option>
+</param>
+
+<param name="exif_information" type="phocatextarea" rows="2" cols="26" default="FILE.FileName;FILE.FileDateTime;FILE.FileSize;FILE.MimeType;COMPUTED.Height;COMPUTED.Width;COMPUTED.IsColor;COMPUTED.ApertureFNumber;IFD0.Make;IFD0.Model;IFD0.Orientation;IFD0.XResolution;IFD0.YResolution;IFD0.ResolutionUnit;IFD0.Software;IFD0.DateTime;IFD0.Exif_IFD_Pointer;IFD0.GPS_IFD_Pointer;EXIF.ExposureTime;EXIF.FNumber;EXIF.ExposureProgram;EXIF.ISOSpeedRatings;EXIF.ExifVersion;EXIF.DateTimeOriginal;EXIF.DateTimeDigitized;EXIF.ShutterSpeedValue;EXIF.ApertureValue;EXIF.ExposureBiasValue;EXIF.MaxApertureValue;EXIF.MeteringMode;EXIF.LightSource;EXIF.Flash;EXIF.FocalLength;EXIF.SubSecTimeOriginal;EXIF.SubSecTimeDigitized;EXIF.ColorSpace;EXIF.ExifImageWidth;EXIF.ExifImageLength;EXIF.SensingMethod;EXIF.CustomRendered;EXIF.ExposureMode;EXIF.WhiteBalance;EXIF.DigitalZoomRatio;EXIF.FocalLengthIn35mmFilm;EXIF.SceneCaptureType;EXIF.GainControl;EXIF.Contrast;EXIF.Saturation;EXIF.Sharpness;EXIF.SubjectDistanceRange;GPS.GPSLatitudeRef;GPS.GPSLatitude;GPS.GPSLongitudeRef;GPS.GPSLongitude;GPS.GPSAltitudeRef;GPS.GPSAltitude;GPS.GPSTimeStamp;GPS.GPSStatus;GPS.GPSMapDatum;GPS.GPSDateStamp" label="Exif Info" description="Exif Info DESC" />
+
+
+<param name="@phocahead" type="phocahead" default="GEOTAGGING SETTINGS LABEL" />
+
+<param name="display_categories_geotagging" type="list" default="0" label="Display Categories Geotagging" description="Display Categories Geotagging DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="categories_lng" default="" size="10" type="phocatext" label="CATEGORIES LONGITUDE" description="CATEGORIES LONGITUDE DESC" />
+<param name="categories_lat" default="" size="10" type="phocatext" label="CATEGORIES LATITUDE" description="CATEGORIES LATITUDE DESC" />
+<param name="categories_zoom" default="2" size="10" type="phocatext" label="CATEGORIES GEOTAGGING ZOOM" description="CATEGORIES GEOTAGGING ZOOM DESC" />
+<param name="categories_map_width" default="" size="10" type="phocatext" label="CATEGORIES MAP WIDTH" description="CATEGORIES MAP WIDTH DESC" />
+<param name="categories_map_height" default="500" size="10" type="phocatext" label="CATEGORIES MAP HEIGHT" description="CATEGORIES MAP HEIGHT DESC" />
+
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="display_icon_geotagging" type="list" default="0" label="Display Geotagging Icon" description="Display/Hide Geotagging Icon DESC">
+	<option value="0">Hide</option>
+	<option value="1">Show</option>
+</param>
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="display_category_geotagging" type="list" default="0" label="Display Category Geotagging" description="Display Category Geotagging DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="category_map_width" default="" size="10" type="phocatext" label="CATEGORY MAP WIDTH" description="CATEGORY MAP WIDTH DESC" />
+<param name="category_map_height" default="400" size="10" type="phocatext" label="CATEGORY MAP HEIGHT" description="CATEGORY MAP HEIGHT DESC" />
+
+
+
+<param name="@phocahead" type="phocahead" default="THUMBNAIL CREATION SETTINGS LABEL" />
+<param name="pagination_thumbnail_creation" type="list" default="0" label="Pagination Thumbnail Creation" description="Pagination Thumbnail Creation DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="clean_thumbnails" type="list" default="0" label="Clean Thumbnails" description="Clean Thumbnails DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+<param name="enable_thumb_creation" type="list" default="1" label="Enable Thumbnails Creation" description="Enable Thumbnails Creation DESC">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+</param>
+
+<param name="crop_thumbnail" type="list" default="5" label="Crop Thumbnail" description="Crop Thumbnail DESC">
+	<option value="0">None</option>
+	<option value="1">Only Large Thumbnail</option>
+	<option value="2">Only Medium Thumbnail</option>
+	<option value="3">Only Small Thumbnail</option>
+	<option value="4">Large And Medium Thumbnail</option>
+	<option value="5">Medium And Small Thumbnail</option>
+	<option value="6">Small And Large Thumbnail</option>
+	<option value="7">All</option>
+
+</param>
+
+<param name="jpeg_quality" type="phocatext" size="3" default="85" label="JPEG Quality" description="JPEG Quality DESC" />
+
+<param name="enable_picasa_loading" type="list" default="1" label="PHOCAGALLERY_ENABLE_PICASA_LOADING_IMG" description="PHOCAGALLERY_ENABLE_PICASA_LOADING_IMG_DESC">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</param>
+
+<param name="picasa_load_pagination" type="list" default="20" label="PHOCAGALLERY_PICASA_LOAD_PAGINATION" description="PHOCAGALLERY_PICASA_LOAD_PAGINATION_DESC">
+<option value="20">20</option>
+<option value="30">30</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</param>
+
+<param name="@phocahead" type="phocahead" default="ICON SETTINGS LABEL" />
+<param name="icon_format" type="list" default="gif" label="Icon Format" description="Icon Format DESC">
+	<option value="gif">gif</option>
+	<option value="png">png</option>
+	<option value="jpg">jpg</option>
+</param>
+
+<param name="@phocahead" type="phocahead" default="IMAGE WINDOW SIZE SETTINGS LABEL" />
+
+<param name="large_image_width" default="640" size="4" type="phocatext" label="Large Image Width" description="Large Image Width DESC" />
+<param name="large_image_height" default="480" size="4" type="phocatext" label="Large Image Height" description="Large Image Height DESC" />
+
+<param name="medium_image_width" default="100" size="4" type="phocatext" label="Medium Image Width" description="Medium Image Width DESC" />
+<param name="medium_image_height" default="100" size="4" type="phocatext" label="Medium Image Height" description="Medium Image Height DESC" />
+
+<param name="small_image_width" default="50" size="4" type="phocatext" label="Small Image Width" description="Small Image Width DESC" />
+<param name="small_image_height" default="50" size="4" type="phocatext" label="Small Image Height" description="Small Image Height DESC" />
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="front_modal_box_width" default="680" size="4" type="phocatext" label="Front Detail Window Width" description="Front Detail Window Width DESC" />
+<param name="front_modal_box_height" default="560" size="4" type="phocatext" label="Front Detail Window Height" description="Front Detail Window Height DESC" />
+
+<param name="@spacer" type="spacer" default="" label="" description="" />
+
+<param name="admin_modal_box_width" default="680" size="4" type="phocatext" label="Admin Detail Window Width" description="Admin Detail Window Width DESC" />
+<param name="admin_modal_box_height" default="520" size="4" type="phocatext" label="Admin Detail Window Height" description="Admin Detail Window Height DESC" />
+
+<param name="@phocahead" type="phocahead" default="SECURITY SETTINGS LABEL" />
+
+<param name="folder_permissions" type="list" default="0755" label="Folder Permissions" description="Folder Permissions DESC">
+<option value="0777">777</option>
+<option value="0755">755</option>
+<option value="0705">705</option>
+<option value="0666">666</option>
+<option value="0644">644</option>
+</param>
+
+<param name="jfile_thumbs" type="list" default="1" label="JFile Thumbnail Creation" description="JFile Thumbnail Creation DESC">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</param>
+		
+		
+
+	</params>
+</config>

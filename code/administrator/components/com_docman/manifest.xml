@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+	<name>DOCman</name>
+	<creationDate>January 2010</creationDate>
+	<author>Joomlatools</author>
+	<copyright>Copyright (c) 2003-2010 Joomlatools</copyright>
+	<license>This extension is released under the GNU/GPL License</license>
+	<authorEmail>support@joomlatools.eu</authorEmail>
+	<authorUrl>http://www.joomlatools.eu</authorUrl>
+	<version>1.5.8</version>
+	<description>DOCman is a document management and download component for Joomla</description>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install/install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">install/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	<installfile>install/install.php</installfile>
+	<uninstallfile>install/uninstall.php</uninstallfile>
+	
+	<files folder="components/com_docman">
+		<filename>docman.html.php</filename>
+		<filename>docman.php</filename>
+		<filename>footer.php</filename>
+		<filename>router.php</filename>
+		<filename>metadata.xml</filename>
+		<folder>assets</folder>
+		<folder>includes</folder>
+		<folder>themes</folder>
+	</files>
+	
+	<administration>
+		<menu>DOCman</menu>
+		<submenu>
+			<menu task="cpanel">Home</menu>
+			<menu link="option=com_docman&amp;section=files">Files</menu>
+			<menu link="option=com_docman&amp;section=documents">Documents</menu>
+			<menu link="option=com_docman&amp;section=categories">Categories</menu>
+			<menu link="option=com_docman&amp;section=groups">Groups</menu>
+			<menu link="option=com_docman&amp;section=licenses">Licenses</menu>
+			<menu task="stats">Statistics</menu>
+			<menu link="option=com_docman&amp;section=logs">Download Logs</menu>
+			<menu link="option=com_docman&amp;section=config">Configuration</menu>
+			<menu link="option=com_docman&amp;section=themes">Themes</menu>
+		</submenu>
+	
+		<files folder="administrator/components/com_docman">
+			<folder>classes</folder>
+			<folder>contrib</folder>
+			<folder>images</folder>
+			<folder>includes</folder>
+			<folder>install</folder>
+			<folder>language</folder>
+			<folder>temp</folder>
+			<folder>ext</folder>
+			<filename>admin.docman.html.php</filename>
+			<filename>admin.docman.php</filename>
+			<filename>CHANGELOG.php</filename>
+			<filename>htaccess.txt</filename>
+			<filename>docman.class.php</filename>
+			<filename>docman.config.php</filename>
+			<filename>docman.params.xml</filename>
+			<filename>README.php</filename>
+			<filename>toolbar.docman.class.php</filename>
+			<filename>toolbar.docman.class15.php</filename>
+			<filename>toolbar.docman.html.php</filename>
+			<filename>toolbar.docman.php</filename>
+	</files>
+	</administration>
+</install>

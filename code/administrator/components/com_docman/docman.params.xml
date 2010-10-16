@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<form type="params" version="1.0">
+  <params>
+  	 <param name="crc_checksum" type="text" default="" size="15"
+        label="CRC Checksum"
+        description="The document\'s CRC checksum" />
+     <param name="md5_checksum" type="text" default="" size="40"
+        label="MD5 Checksum"
+        description="The document\'s MD5 checksum" />
+  </params>
+</form>

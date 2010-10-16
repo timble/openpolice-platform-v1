@@ -1,0 +1,87 @@
+/**
+ * @version		$Id: docman.css 955 2009-10-17 16:25:35Z mathias $
+ * @category	DOCman
+ * @package		DOCman15
+ * @copyright	Copyright (C) 2003 - 2009 Johan Janssens and Mathias Verraes. All rights reserved.
+ * @license	    This file can not be redistributed without the written consent of the 
+ 				original copyright holder. This file is not licensed under the GPL. 
+ * @link     	http://www.joomladocman.org
+ */
+
+th.licenses {
+	background:transparent url(../images/dm_licenses_48.png) no-repeat scroll left center !important;
+}
+
+th.logs {
+	background:transparent url(../images/dm_logs_48.png) no-repeat scroll left center !important;
+}
+
+th.stats {
+	background:transparent url(../images/dm_stats_48.png) no-repeat scroll left center !important;
+}
+
+th.files {
+	background:transparent url(../images/dm_files_48.png) no-repeat scroll left center !important;
+}
+
+th.documents {
+	background:transparent url(../images/dm_documents_48.png) no-repeat scroll left center !important;
+}
+th.categories {
+	background:transparent url(../images/dm_categories_48.png) no-repeat scroll left center !important;
+}
+
+th.groups {
+	background:transparent url(../../../images/user.png) no-repeat scroll left center !important;
+}
+
+th.cleardata {
+	background:transparent url(../images/dm_cleardata_48.png) no-repeat scroll left center !important;
+}
+th.sendemail {
+	background:transparent url(../images/dm_sendemail_48.png) no-repeat scroll left center !important;
+}
+
+.icon-32-dm_apply { background-image: url(../images/dm_apply_32.png); }
+.icon-32-dm_back { background-image: url(../images/dm_back_32.png); }
+.icon-32-dm_cancel { background-image: url(../images/dm_cancel_32.png); }
+.icon-32-dm_cleardata { background-image: url(../images/dm_cleardata_32.png); }
+.icon-32-dm_copy { background-image: url(../images/dm_copy_32.png); }
+.icon-32-dm_cpanel { background-image: url(../images/dm_cpanel_32.png); }
+.icon-32-dm_delete { background-image: url(../images/dm_delete_32.png); }
+.icon-32-dm_edit { background-image: url(../images/dm_edit_32.png); }
+.icon-32-dm_help { background-image: url(../images/dm_help_32.png); }
+.icon-32-dm_editcss { background-image: url(../images/dm_editcss_32.png); }
+.icon-32-dm_move { background-image: url(../images/dm_move_32.png); }
+.icon-32-dm_newdocument { background-image: url(../images/dm_newdocument_32.png); }
+.icon-32-dm_publish { background-image: url(../images/dm_publish_32.png); }
+.icon-32-dm_save { background-image: url(../images/dm_save_32.png); }
+.icon-32-dm_sendemail { background-image: url(../images/dm_sendemail_32.png); }
+.icon-32-dm_unpublish { background-image: url(../images/dm_unpublish_32.png); }
+.icon-32-dm_upload { background-image: url(../images/dm_upload_32.png); }
+
+.icon-48-dm_logo  { background-image: url(../images/dm_logo_small.png); }
+.icon-48-dm_documents  { background-image: url(../images/dm_documents_48.png); }
+.icon-48-dm_files  { background-image: url(../images/dm_files_48.png); }
+.icon-48-dm_categories  { background-image: url(../images/dm_categories_48.png); }
+.icon-48-dm_groups  { background-image: url(../images/dm_groups_48.png); }
+.icon-48-dm_help  { background-image: url(../images/dm_help_48.png); }
+.icon-48-dm_licenses  { background-image: url(../images/dm_licenses_48.png); }
+.icon-48-dm_stats  { background-image: url(../images/dm_stats_48.png); }
+.icon-48-dm_sendemail  { background-image: url(../images/dm_sendemail_48.png); }
+.icon-48-dm_logs  { background-image: url(../images/dm_logs_48.png); }
+.icon-48-dm_config  { background-image: url(../images/dm_config_48.png); }
+.icon-48-dm_templates  { background-image: url(../images/dm_templates_48.png); }
+.icon-48-dm_cleardata  { background-image: url(../images/dm_cleardata_48.png); }
+
+.dm_filters {
+	text-align: left;
+	padding-bottom: 5px;
+}
+
+table.cpanelmodule {
+	margin:0px  !important;
+}
+
+table.adminlist { margin:8px 0 15px };
+
