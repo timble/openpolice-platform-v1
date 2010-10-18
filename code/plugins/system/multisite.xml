@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>System - Multisite</name>
+	<author>Timble CVBA</author>
+	<creationDate>October 2010</creationDate>
+	<copyright>Copyright (C) 2010 Timble CVBA All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@timble.net</authorEmail>
+	<authorUrl>www.timble.net</authorUrl>
+	<version>1.50</version>
+	<description>DESCPLGSYSTEMMULTISITE</description>
+	<files>
+		<filename plugin="multisite">multisite.php</filename>
+	</files>
+	<params/>
+</install>
