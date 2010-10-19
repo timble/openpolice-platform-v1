@@ -93,8 +93,10 @@ class plgSystemMultisite extends JPlugin
 		
 		if($app->getName() == 'administrator' && !empty($site)) 
 		{
+			$index = $app->getCfg('sef_rewrite') ? ''  : 'index.php/';
+			
 			$body = str_replace('index.php/'.$site, 'index.php', JResponse::getBody());
-			$body = str_replace('index.php', JURI::base(true).'/index.php/'.$site, $body);
+			$body = str_replace('index.php', JURI::base(true).'/'.$index.$site, $body);
 			JResponse::setBody($body);
 		}
 	}

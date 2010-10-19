@@ -63,10 +63,15 @@ class JRouterMultisite extends JRouterAdministrator
 	{
 		$uri  = parent::_createURI($url);
 		$site = $this->getSite();
+		$path = $uri->getPath();
+		
+		if(JFactory::getApplication()->getCfg('sef_rewrite')) {
+			$path = str_replace('index.php', '', $path);
+		}
 		
 		//Exception for the default site
 		if($site != 'default') {
-			$uri->setPath($uri->getPath().'/'.$site);
+			$uri->setPath(empty($path) ? $site : $path.'/'.$site);
 		}
 		
 		return $uri;
