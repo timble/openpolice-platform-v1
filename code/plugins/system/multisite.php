@@ -101,7 +101,7 @@ class plgSystemMultisite extends JPlugin
 			$index = $app->getCfg('sef_rewrite') ? ''  : 'index.php/';
 			
 			//Make images paths absolute
-			$body = str_replace(array('../images', './images'), JURI::root(true).'/images', JResponse::getBody());
+			$body = str_replace(array('../images', './images'), JURI::root(true).'sites/'.$site.'/images', JResponse::getBody());
 			
 			//Make links absolute
 			$body = str_replace('index.php/'.$site, 'index.php', $body);
