@@ -447,7 +447,7 @@ class plgEditorTinymce extends JPlugin
 					remove_script_host : false,
 					// Layout
 					$content_css
-					document_base_url : \"". JURI::root() ."\",
+					document_base_url : \"". JURI::root().'/sites/'.JFactory::getApplication()->getRouter()->getSite()."\",
 				});
 				</script>";
 				break;
@@ -490,7 +490,7 @@ class plgEditorTinymce extends JPlugin
 					// URL
 					relative_urls : $relative_urls,
 					remove_script_host : false,
-					document_base_url : \"". JURI::root() ."\",
+					document_base_url : \"". JURI::root().'sites/'.JFactory::getApplication()->getRouter()->getSite().'/'."\",
 					// Layout
 					$content_css
 					// Advanced theme
