@@ -37,10 +37,15 @@ class plgSystemMultisite extends JPlugin
 		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
 		$config = JFactory::getConfig()->loadObject(new JConfigSite());	
 		
-		//Reset Database
+		//Set Database
 		$database = JFactory::getDBO();
 		$database->select($app->getCfg('db'));
-		$database->setPrefix($app->getCfg('dbprefix'));	
+		$database->setPrefix($app->getCfg('dbprefix'));
+
+		//Force a reload on the menu
+		if($app->getName() == 'site') { 
+			$app->getMenu()->load();
+		}
 		
 		//Re-login
 		if($app->getUserState('application.site') != $site && !$user->get('guest'))
