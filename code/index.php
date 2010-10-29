@@ -53,8 +53,6 @@ $mainframe->route();
 
 // authorization
 $Itemid = JRequest::getInt( 'Itemid');
-
-echo var_dump($Itemid);die;
 $mainframe->authorize($Itemid);
 
 // trigger the onAfterRoute events
