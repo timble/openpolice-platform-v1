@@ -52,8 +52,8 @@ class JRouterMultisite extends JRouterSite
 	
 	public function setSite($site) 
 	{
-		$this->_site = $site;
-		
+		$app = JFactory::getApplication();
+	
 		//Load the site configuration
 		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
 		$config = JFactory::getConfig()->loadObject(new JConfigSite());	
@@ -64,9 +64,12 @@ class JRouterMultisite extends JRouterSite
 		$database->setPrefix($app->getCfg('dbprefix'));
 
 		//Force a reload on the menu
-		if(JFactory::getApplication()->getName() == 'site') { 
-			JFactory::getApplication()->getMenu()->load();
+		if($app->getName() == 'site') { 
+			$app->getMenu()->load();
 		}
+		
+		//Set the site in the router
+		$this->_site = $site;
 		
 		return $this;
 	}

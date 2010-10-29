@@ -44,7 +44,7 @@ class JRouterMultisite extends JRouterAdministrator
 	
 	public function setSite($site) 
 	{
-		$this->_site = $site;
+		$app = JFactory::getApplication();
 			
 		//Load the site configuration
 		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
@@ -54,6 +54,9 @@ class JRouterMultisite extends JRouterAdministrator
 		$database = JFactory::getDBO();
 		$database->select($app->getCfg('db'));
 		$database->setPrefix($app->getCfg('dbprefix'));
+		
+		//Set the site in the router
+		$this->_site = $site;
 
 		return $this;
 	}
