@@ -31,21 +31,8 @@ class plgSystemMultisite extends JPlugin
 			$app->getRouter()->parse(clone(JURI::getInstance()));
 		}
 		
-		//Load Config
+		//Get the site
 		$site = $app->getRouter()->getSite();
-		
-		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
-		$config = JFactory::getConfig()->loadObject(new JConfigSite());	
-		
-		//Set Database
-		$database = JFactory::getDBO();
-		$database->select($app->getCfg('db'));
-		$database->setPrefix($app->getCfg('dbprefix'));
-
-		//Force a reload on the menu
-		if($app->getName() == 'site') { 
-			$app->getMenu()->load();
-		}
 		
 		//Re-login
 		if($app->getUserState('application.site') != $site && !$user->get('guest'))
@@ -92,31 +79,30 @@ class plgSystemMultisite extends JPlugin
 		$site = $app->getRouter()->getSite();
 		
 		//Exception for the default site
-		if($site == 'default') {
-			$site = '';
-		}
-		
-		if($app->getName() == 'site' && !empty($site)) 
+		if($site != 'default') 
 		{
-			//Make images paths absolute
-			$body = str_replace('/images/', '/sites/'.$site.'/images/', JResponse::getBody());
-			$body = str_replace('"images/', '"sites/'.$site.'/images/', $body);
+			if($app->getName() == 'site' ) 
+			{
+				//Make images paths absolute
+				$body = str_replace('/images/', '/sites/'.$site.'/images/', JResponse::getBody());
+				$body = str_replace('"images/', '"sites/'.$site.'/images/', $body);
 			
-			JResponse::setBody($body);
-		}
+				JResponse::setBody($body);
+			}
 		
-		if($app->getName() == 'administrator' && !empty($site)) 
-		{
-			$index = $app->getCfg('sef_rewrite') ? ''  : 'index.php/';
+			if($app->getName() == 'administrator') 
+			{
+				$index = $app->getCfg('sef_rewrite') ? ''  : 'index.php/';
 			
-			//Make images paths absolute
-			$body = str_replace(array('../images', './images'), JURI::root(true).'/sites/'.$site.'/images', JResponse::getBody());
+				//Make images paths absolute
+				$body = str_replace(array('../images', './images'), JURI::root(true).'/sites/'.$site.'/images', JResponse::getBody());
 			
-			//Make links absolute
-			$body = str_replace('index.php/'.$site, 'index.php', $body);
-			$body = str_replace('index.php', JURI::base(true).'/'.$index.$site, $body);
+				//Make links absolute
+				$body = str_replace('index.php/'.$site, 'index.php', $body);
+				$body = str_replace('index.php', JURI::base(true).'/'.$index.$site, $body);
 			
-			JResponse::setBody($body);
+				JResponse::setBody($body);
+			}
 		}
 	}
 }
