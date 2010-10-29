@@ -83,7 +83,7 @@ class plgSystemMultisite extends JPlugin
 		{
 			if($app->getName() == 'site' ) 
 			{
-				echo JURI::base().'/images/';
+				echo  JURI::base(true).'/sites/'.$site.'/images/';
 				die;
 				
 				//Make images paths absolute
