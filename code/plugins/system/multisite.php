@@ -96,6 +96,14 @@ class plgSystemMultisite extends JPlugin
 			$site = '';
 		}
 		
+		if($app->getName() == 'site' && !empty($site)) 
+		{
+			//Make images paths absolute
+			$body = str_replace(array('/images'), '/sites/'.$site.'/images', JResponse::getBody());
+		
+			JResponse::setBody($body);
+		}
+		
 		if($app->getName() == 'administrator' && !empty($site)) 
 		{
 			$index = $app->getCfg('sef_rewrite') ? ''  : 'index.php/';
@@ -106,6 +114,7 @@ class plgSystemMultisite extends JPlugin
 			//Make links absolute
 			$body = str_replace('index.php/'.$site, 'index.php', $body);
 			$body = str_replace('index.php', JURI::base(true).'/'.$index.$site, $body);
+			
 			JResponse::setBody($body);
 		}
 	}
