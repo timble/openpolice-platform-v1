@@ -87,7 +87,7 @@ class plgSystemMultisite extends JPlugin
 				//$body = str_replace('/images/', '/sites/'.$site.'/images/', JResponse::getBody());
 				//$body = str_replace('"images/', '"sites/'.$site.'/images/', $body);
 			
-				JResponse::setBody($body);
+				//JResponse::setBody($body);
 			}
 		
 			if($app->getName() == 'administrator') 
