@@ -64,9 +64,7 @@ class JRouterMultisite extends JRouterSite
 		$database->setPrefix($app->getCfg('dbprefix'));
 
 		//Force a reload on the menu
-		if($app->getName() == 'site') { 
-			$app->getMenu()->load();
-		}
+		$app->getMenu()->load();
 		
 		//Set the site in the router
 		$this->_site = $site;
