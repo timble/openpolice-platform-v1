@@ -3,11 +3,11 @@
 /** $Id$ */
 
 $config = array(
-	'host'			=> '',
-	'port'			=> 0,
-	'username'		=> '',
-	'password'		=> '',
-	'remote_path'	=> '/var/www'
+	'host'		=> '173.45.228.140',
+	'port'		=> 9791,
+	'username'	=> 'gergo',
+	'password'	=> 'Tobag70Guned65',
+	'remote_path'	=> '/var/www/private'
 );
 
 // Validate the arguments.
@@ -51,3 +51,12 @@ stream_set_blocking($stream, true);
 
 $response = fread($stream, 4096);
 fclose($stream);
+
+if($response == 'SUCCESS') {
+	echo "\t\tSUCCESS\n";
+}
+else
+{
+	echo "\t\tFAILED\n\n";
+	exit;
+}

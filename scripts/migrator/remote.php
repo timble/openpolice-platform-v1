@@ -12,7 +12,7 @@ $site	= trim(substr($_SERVER["argv"][2], 7));
 switch($action)
 {
 	case 'validate':
-		echo is_dir($config['site_path'].'/'.$site) ? 'OK' : 'FAILED';
+		echo is_dir($config['site_path'].'/'.$site) ? 'SUCCESS' : 'FAILED';
 		break;
 
 	case 'compress':
