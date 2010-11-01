@@ -86,7 +86,7 @@ $response	= fread($stream, 4096);
 fclose($stream);
 
 if($response == '') {
-	echo "\t\tSUCCESS\n";
+	echo "\t\tOK\n";
 }
 else
 {
@@ -98,7 +98,7 @@ else
 echo 'Retrieving site...';
 
 if(ssh2_scp_recv($connection, '/tmp/'.md5($site).'.tar.gz', '/tmp/'.md5($site).'.tar.gz')) {
-	echo "\t\tSUCCESS\n";
+	echo "\t\tOK\n";
 }
 else
 {
