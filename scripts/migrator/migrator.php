@@ -3,10 +3,10 @@
 /** $Id$ */
 
 $config = array(
-	'host'		=> '173.45.228.140',
-	'port'		=> 9791,
-	'username'	=> 'gergo',
-	'password'	=> 'Tobag70Guned65',
+	'host'		=> '',
+	'port'		=> 0,
+	'username'	=> '',
+	'password'	=> '',
 	'remote_path'	=> '/var/www/private'
 );
 
@@ -47,6 +47,24 @@ else
 echo 'Validating site...';
 
 $stream = ssh2_exec($ssh, $config['remote_path'].'/remote.php --action=validate --site='.$site);
+stream_set_blocking($stream, true);
+
+$response = fread($stream, 4096);
+fclose($stream);
+
+if($response == 'SUCCESS') {
+	echo "\t\tSUCCESS\n";
+}
+else
+{
+	echo "\t\tFAILED\n\n";
+	exit;
+}
+
+// Compress the site.
+echo 'Compressing site...';
+
+$stream = ssh2_exec($ssh, $config['remote_path'].'/remote.php --action=compress --site='.$site);
 stream_set_blocking($stream, true);
 
 $response = fread($stream, 4096);

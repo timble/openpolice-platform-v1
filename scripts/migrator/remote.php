@@ -3,7 +3,7 @@
 /** $Id$ */
 
 $config = array(
-	'site_path'	=> 'var/www'
+	'site_path'	=> '/var/www'
 );
 
 $action	= trim(substr($_SERVER["argv"][1], 9));
@@ -16,7 +16,9 @@ switch($action)
 		break;
 
 	case 'compress':
+		$response = shell_exec('tar -czf /tmp/'.md5($site).'.tar.gz '.$config['site_path'].'/'.$site.'/public');
 
+		echo $response == '' ? 'SUCCESS' : 'FAILED';
 		break;
 }
 
