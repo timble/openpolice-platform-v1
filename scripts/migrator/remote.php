@@ -3,6 +3,10 @@
 /** $Id$ */
 
 $config = array(
+	'mysql'		=> array(
+		'username'	=> '',
+		'password'	=> ''
+	),
 	'site_path'	=> '/var/www'
 );
 
@@ -16,7 +20,8 @@ switch($action)
 		break;
 
 	case 'compress':
-		$response = shell_exec('tar -czf /tmp/'.md5($site).'.tar.gz '.$config['site_path'].'/'.$site.'/public');
+		$response  = shell_exec('mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-table *database* | gzip > '.$config['site_path'].'/'.$site.'/database.sql.gz');
+		$response .= shell_exec('tar -czf /tmp/'.md5($site).'.tar.gz '.$config['site_path'].'/'.$site.'/public');
 
 		echo $response == '' ? 'SUCCESS' : 'FAILED';
 		break;
