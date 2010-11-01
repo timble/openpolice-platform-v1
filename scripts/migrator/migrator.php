@@ -3,10 +3,11 @@
 /** $Id$ */
 
 $config = array(
-	'host'		=> '',
-	'port'		=> 0,
-	'username'	=> '',
-	'password'	=> ''
+	'host'			=> '',
+	'port'			=> 0,
+	'username'		=> '',
+	'password'		=> '',
+	'remote_path'	=> '/var/www'
 );
 
 // Validate the arguments.
@@ -45,7 +46,8 @@ else
 // Validate the site.
 echo 'Validating site...';
 
-$stream = ssh2_exec($ssh, "/usr/bin/ls public_html/images");
-    stream_set_blocking( $stream, true );
-    $cmd=fread($stream,4096);
+$stream = ssh2_exec($ssh, $config['remote_path'].'/remote.php --action=validate --site='.$site);
+stream_set_blocking($stream, true);
+
+$response = fread($stream, 4096);
 fclose($stream);
