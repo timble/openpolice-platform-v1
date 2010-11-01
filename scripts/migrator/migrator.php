@@ -22,7 +22,7 @@ $site = trim(substr($_SERVER["argv"][1], 7));
 // Connect to the server.
 echo 'Connecting...';
 
-if($ssh = ssh2_connect($config['host'], $config['port'])) {
+if($connection = ssh2_connect($config['host'], $config['port'])) {
 	echo "\t\t\tSUCCESS\n";
 }
 else
@@ -34,7 +34,7 @@ else
 // Authenticate.
 echo 'Authenticating...';
 
-if(@ssh2_auth_password($ssh, $config['username'], $config['password'])) {
+if(@ssh2_auth_password($connection, $config['username'], $config['password'])) {
 	echo "\t\tSUCCESS\n";
 }
 else
@@ -46,7 +46,7 @@ else
 // Validate the site.
 echo 'Validating site...';
 
-$stream = ssh2_exec($ssh, $config['remote_path'].'/remote.php --action=validate --site='.$site);
+$stream = ssh2_exec($connection, $config['remote_path'].'/remote.php --action=validate --site='.$site);
 stream_set_blocking($stream, true);
 
 $response = fread($stream, 4096);
@@ -64,13 +64,25 @@ else
 // Compress the site.
 echo 'Compressing site...';
 
-$stream = ssh2_exec($ssh, $config['remote_path'].'/remote.php --action=compress --site='.$site);
+$stream = ssh2_exec($connection, $config['remote_path'].'/remote.php --action=compress --site='.$site);
 stream_set_blocking($stream, true);
 
 $response = fread($stream, 4096);
 fclose($stream);
 
 if($response == 'SUCCESS') {
+	echo "\t\tSUCCESS\n";
+}
+else
+{
+	echo "\t\tFAILED\n\n";
+	exit;
+}
+
+// Retrieve the compressed site.
+echo 'Retrieving site...';
+
+if(ssh2_scp_recv($connection, '/tmp/'.md5($site).'.tar.gz', '/tmp/'.md5($site).'.tar.gz')) {
 	echo "\t\tSUCCESS\n";
 }
 else
