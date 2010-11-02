@@ -215,9 +215,6 @@ class JRouterSite extends JRouter
 				{
 					$route   = substr($route, $lenght);
 					
-					echo var_dump($item);
-					die;
-
 					$vars['Itemid'] = $item->id;
 					$vars['option'] = $item->component;
 					break;
