@@ -163,8 +163,8 @@ echo 'Importing database...';
 shell_exec('cd /tmp/'.$site_md5.' && gunzip database.sql.gz');
 shell_exec('cd /tmp/'.$site_md5.' && mv database.sql database.sql.old');
 shell_exec('cd /tmp/'.$site_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$site.'\///g\' -e \'s/`jos_/`pol_/g\' database.sql.old > database.sql');
-shell_exec('cd /tmp/'.$site_md5.' && mysql --user="root" --password="timble4350$" < database.sql');
-shell_exec('mysql --user="root" --password="timble4350$" police_'.$site.' < migrator.sql');
+shell_exec('cd /tmp/'.$site_md5.' && mysql --user="police" --password="ywnPqKkflKC_+41" < database.sql');
+shell_exec('mysql --user="police" --password="ywnPqKkflKC_+41" police_'.$site.' < migrator.sql');
 
 echo "\t\tOK\n";
 
