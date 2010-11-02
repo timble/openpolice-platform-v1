@@ -114,6 +114,10 @@ class JComponentHelper
 		} else {
 			$path = JPATH_COMPONENT.DS.$file.'.php';
 		}
+		
+		echo var_dump($name);
+		echo var_dump($path);
+		die;
 
 		// If component disabled throw error
 		if (!JComponentHelper::isEnabled( $name ) || !file_exists($path)) {
