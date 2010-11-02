@@ -30,6 +30,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<link href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway_police/css/template_rtl.css" rel="stylesheet" type="text/css" />
 <?php endif; ?>
 
+<?php if($site = JFactory::getApplication()->getRouter()->getSite()) : ?>
+<style>
+div#logo {
+	background-image: url(/sites/<?php echo $site; ?>/logo.png);
+}
+</style>
+<?php endif; ?>
 </head>
 <body id="page_bg" class="color_<?php echo $this->params->get('colorVariation'); ?> bg_<?php echo $this->params->get('backgroundVariation'); ?> width_<?php echo $this->params->get('widthStyle'); ?>">
 <a name="up" id="up"></a>
