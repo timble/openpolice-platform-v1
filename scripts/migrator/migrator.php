@@ -96,7 +96,7 @@ if($response != '')
 	exit;
 }
 
-$stream		= ssh2_exec($connection, 'tar -C '.$config['document_root'].'/'.$site.' -czf /tmp/'.$site_md5.'.tar.gz images dmdocuments database.sql.gz');
+$stream		= ssh2_exec($connection, 'tar -C '.$config['document_root'].'/'.$site.' -czf /tmp/'.$site_md5.'.tar.gz images dmdocuments database.sql.gz configuration.php');
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
@@ -125,7 +125,7 @@ else
 // Uncompress the site.
 echo 'Uncompressing site...';
 
-mkdir('/tmp/'.$site_md5);
+mkdir('/tmp/'.$site_md5, 0775);
 shell_exec('cd /tmp/'.$site_md5.' && tar -xzf ../'.$site_md5.'.tar.gz');
 
 echo "\t\tOK\n";
@@ -160,9 +160,50 @@ echo "\t\t\tOK\n";
 // Import database.
 echo 'Importing database...';
 
-shell_exec('cd /tmp/'.$site_md5.' && gunzip database.sql.gz && mv database.sql database.sql.old');
+shell_exec('cd /tmp/'.$site_md5.' && gunzip database.sql.gz');
+shell_exec('cd /tmp/'.$site_md5.' && mv database.sql database.sql.old');
 shell_exec('cd /tmp/'.$site_md5.' && sed \'s/http:\/\/217.21.184.146\/'.$site.'\///g\' database.sql.old > database.sql');
-shell_exec('cd /tmp/'.$site_md5.' && mysql --user="root" --password="" < database.sql');
+shell_exec('cd /tmp/'.$site_md5.' && mysql --user="root" --password="timble4350$" < database.sql');
+
+echo "\t\tOK\n";
+
+// Create configuration.
+echo 'Creating configuration...';
+
+if(file_exists($file = '/tmp/'.$site_md5.'/configuration.php'))
+{
+	foreach($lines = file($file) as $line)
+	{
+		if(substr(trim($line), 0, 3) == 'var')
+		{
+			preg_match('/\$(\w+)\s.*\\\'(.*)\\\'\;$/', rtrim($line), $matches);
+			$data[$matches[1]] = $matches[2];
+		}
+	}
+
+	$variables = array('offline', 'debug', 'db', 'sitename', 'MetaDesc', 'MetaKeys');
+
+	$content[] = '<?php';
+	$content[] = 'class JConfigSite extends JConfig';
+	$content[] = '{';
+
+	foreach($variables as $variable) {
+		$content[] = "\t".'var $'.$variable.' = \''.$data[$variable].'\';';
+	}
+
+	$content[] = '}';
+
+	file_put_contents('/var/www/public/sites/'.$site.'/configuration.php', implode(PHP_EOL, $content));
+	chmod('/var/www/public/sites/'.$site.'/configuration.php', 0444);
+}
+
+echo "\tOK\n";
+
+// Cleanup files.
+echo 'Cleaning up files...';
+
+shell_exec('rm -rf /tmp/'.$site_md5);
+shell_exec('rm /tmp/'.$site_md5.'.tar.gz');
 
 echo "\t\tOK\n";
 
