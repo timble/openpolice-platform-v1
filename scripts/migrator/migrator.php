@@ -178,7 +178,10 @@ if(file_exists($file = '/tmp/'.$site_md5.'/configuration.php'))
 		if(substr(trim($line), 0, 3) == 'var')
 		{
 			preg_match('/\$(\w+)\s.*\\\'(.*)\\\'\;$/', rtrim($line), $matches);
-			$data[$matches[1]] = $matches[2];
+
+			if(!empty($matches[1]) && !empty($matches[2])) {
+				$data[$matches[1]] = $matches[2];
+			}
 		}
 	}
 
