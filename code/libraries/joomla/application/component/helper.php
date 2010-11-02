@@ -89,6 +89,9 @@ class JComponentHelper
 	function renderComponent($name = null, $params = array())
 	{
 		global $mainframe, $option;
+		
+		echo var_dump($name);
+		die;
 
 		if(empty($name)) {
 			// Throw 404 if no component
@@ -115,10 +118,6 @@ class JComponentHelper
 			$path = JPATH_COMPONENT.DS.$file.'.php';
 		}
 		
-		echo var_dump($name);
-		echo var_dump($path);
-		die;
-
 		// If component disabled throw error
 		if (!JComponentHelper::isEnabled( $name ) || !file_exists($path)) {
 			JError::raiseError( 404, JText::_( 'Component Not Found' ) );
