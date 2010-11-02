@@ -85,7 +85,7 @@ else
 // Compress the site.
 echo 'Compressing site...';
 
-$stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-table --add-drop-database --databases police_'.$site.' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
+$stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases police_'.$site.' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
@@ -162,8 +162,9 @@ echo 'Importing database...';
 
 shell_exec('cd /tmp/'.$site_md5.' && gunzip database.sql.gz');
 shell_exec('cd /tmp/'.$site_md5.' && mv database.sql database.sql.old');
-shell_exec('cd /tmp/'.$site_md5.' && sed \'s/http:\/\/217.21.184.146\/'.$site.'\///g\' database.sql.old > database.sql');
+shell_exec('cd /tmp/'.$site_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$site.'\///g\' -e \'s/`jos_/`pol_/g\' database.sql.old > database.sql');
 shell_exec('cd /tmp/'.$site_md5.' && mysql --user="root" --password="timble4350$" < database.sql');
+shell_exec('mysql --user="root" --password="timble4350$" police_'.$site.' < migrator.sql');
 
 echo "\t\tOK\n";
 
