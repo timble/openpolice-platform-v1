@@ -22,7 +22,7 @@ foreach($_SERVER['argv'] as $argument)
 	if(substr($argument, 0, 2) == '--' && strpos($argument, '=') !== false)
 	{
 		list($option, $value) = explode('=', substr($argument, 2), 2);
-		$arguments[$option] = trim($value, "\"");
+		$arguments[$option] = trim($value, '"');
 	}
 }
 
@@ -165,4 +165,11 @@ shell_exec('cd /tmp/'.$site_md5.' && sed \'s/http:\/\/217.21.184.146\/'.$site.'\
 shell_exec('cd /tmp/'.$site_md5.' && mysql --user="root" --password="" < database.sql');
 
 echo "\t\tOK\n";
+
+$users = array(
+	'gergo@timble.net'
+);
+
+mail(implode(', ', $users), 'Site migration completed', 'Migration of site \''.$site.'\' completed.');
+
 echo "\n";
