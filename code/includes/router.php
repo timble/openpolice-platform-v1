@@ -163,9 +163,6 @@ class JRouterSite extends JRouter
 		$menu  =& JSite::getMenu(true);
 		$route = $uri->getPath();
 		
-		echo var_dump($route);
-		die;
-
 		//Get the variables from the uri
 		$vars = $uri->getQuery(true);
 
@@ -217,6 +214,9 @@ class JRouterSite extends JRouter
 				if($lenght > 0 && strpos($route.'/', $item->route.'/') === 0 && $item->type != 'menulink')
 				{
 					$route   = substr($route, $lenght);
+					
+					echo var_dump($item);
+					die;
 
 					$vars['Itemid'] = $item->id;
 					$vars['option'] = $item->component;
