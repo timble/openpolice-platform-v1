@@ -96,7 +96,7 @@ if($response != '')
 	exit;
 }
 
-$stream		= ssh2_exec($connection, 'tar -C '.$config['document_root'].'/'.$site.' -czf /tmp/'.$site_md5.'.tar.gz images dmdocuments database.sql.gz configuration.php');
+$stream		= ssh2_exec($connection, 'tar -C '.$config['document_root'].'/'.$site.' -czf /tmp/'.$site_md5.'.tar.gz images dmdocuments database.sql.gz configuration.php templates/rhuk_milkyway_police/images/mw_joomla_logo.png');
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
@@ -153,6 +153,10 @@ if(is_dir('/tmp/'.$site_md5.'/dmdocuments'))
 	}
 
 	shell_exec('cp -R /tmp/'.$site_md5.'/dmdocuments/* /var/www/public/sites/'.$site.'/documents/');
+}
+
+if(file_exists('/tmp/'.$site_md5.'/templates/rhuk_milkyway_police/images/mw_joomla_logo.png')) {
+	copy('/tmp/'.$site_md5.'/templates/rhuk_milkyway_police/images/mw_joomla_logo.png', '/var/www/public/sites/'.$site.'/logo.png');
 }
 
 echo "\t\t\tOK\n";
