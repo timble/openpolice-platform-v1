@@ -90,9 +90,6 @@ class JComponentHelper
 	{
 		global $mainframe, $option;
 		
-		echo var_dump($name);
-		die;
-
 		if(empty($name)) {
 			// Throw 404 if no component
 			JError::raiseError(404, JText::_("Component Not Found"));
