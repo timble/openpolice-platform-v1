@@ -162,6 +162,9 @@ class JRouterSite extends JRouter
 
 		$menu  =& JSite::getMenu(true);
 		$route = $uri->getPath();
+		
+		echo var_dump($route);
+		die;
 
 		//Get the variables from the uri
 		$vars = $uri->getQuery(true);
