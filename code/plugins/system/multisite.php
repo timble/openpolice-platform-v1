@@ -105,6 +105,9 @@ class plgSystemMultisite extends JPlugin
 				
 				//Rewrite location.href="index.php
 				$body = str_replace("location.href='index.php", "location.href='".JURI::base(true).'/'.$index.$site, $body);
+				
+				//Rwrite href="index.php
+				$body = str_replace('href="index.php', 'href="'.JURI::base(true).'/'.$index.$site, $body);
 			
 				JResponse::setBody($body);
 			}
