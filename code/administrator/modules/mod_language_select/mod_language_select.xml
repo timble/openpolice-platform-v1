@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" client="administrator">
+	<name>Nooku - Language Select</name>
+	<author>Nooku</author>
+	<creationDate>July 2010</creationDate>
+	<copyright>(C) 2007 - 2010 Joomlatools. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@nooku.org</authorEmail>
+	<authorUrl>www.nooku.org</authorUrl>
+	<version>0.6.8</version>
+	<description>This module shows the language selector</description>
+	<params>
+		<param name="style" type="list" default="default" label="Style" description="Pick the style of the language switcher">
+			<option value="row">Row</option>
+			<option value="default">Select box</option>
+		</param>
+		<param name="langformat" type="list" default="name" label="Format" description="How should the languages name be formatted?">
+			<option value="name">Name (default)</option>
+			<option value="native_name">Native name</option>
+			<option value="fullname">Name and native name</option>
+			<option value="iso_code">ISO code</option>
+			<option value="alias">Alias</option>
+		</param>
+		<param name="display_flag" type="radio" default="1" label="Show Flag" description="Display the flag.">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="display_name" type="radio" default="1" label="Show Name" description="Display the name.">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+	</params>
+</install>

@@ -1,0 +1,28 @@
+/**
+ * @version		$Id: form.css 1121 2010-05-26 16:53:49Z johan $
+ * @package		Nooku
+ * @copyright	Copyright (C) 2007 - 2010 Johan Janssens and Mathias Verraes. All rights reserved.
+ * @license		http://www.gnu.org/copyleft/gpl.html GNU/GPLv2
+ * @link     	http://www.nooku.org
+ */
+
+.adminform fieldset    { border: 1px solid #ccc; margin: 0 10px 10px 10px; }
+
+.adminform dl {  }
+.adminform dt {
+	float: left;
+	background-color: #f6f6f6;
+	text-align: right;
+	width: 160px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	margin-right: 5px;
+}
+
+.adminform dd    { margin: 6px; padding-top: 2px; }
+.adminform label { margin: 4px; display: block; }
+
+.readonly 	    {background-color: buttonface;}
+.readonly:focus {background-color: buttonface;} 
