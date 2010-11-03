@@ -175,9 +175,9 @@ class JAdminCSSMenu extends JTree
 					// Build the CSS class for the icon
 					$class = preg_replace('#\.[^.]*$#', '', basename($identifier));
 					$class = preg_replace( '#\.\.[^A-Za-z0-9\.\_\- ]#', '', $class);
-
+					
 					$this->_css  .= "\n.icon-16-$class {\n" .
-							"\tbackground: url(".JURI::base(true).'/'.str_replace('administrator', '', $identifier).") no-repeat;\n" .
+							"\tbackground: url(".JURI::base().str_replace('administrator', '', $identifier).") no-repeat;\n" .
 							"}\n";
 
 					$classes[$identifier] = "icon-16-$class";
