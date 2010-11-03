@@ -100,9 +100,8 @@ class plgSystemMultisite extends JPlugin
 				//Make images paths absolute
 				$body = str_replace(array('../images', './images'), JURI::root(true).'/sites/'.$site.'/images', JResponse::getBody());
 			
-				//Make links absolute
-				$body = str_replace('index.php/'.$site, 'index.php', $body);
-				$body = str_replace('index.php', JURI::base(true).'/'.$index.$site, $body);
+				//Make form action links absolute
+				$body = str_replace('action="index.php', 'action="'.JURI::base(true).'/'.$index.$site, $body);
 			
 				JResponse::setBody($body);
 			}
