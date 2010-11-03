@@ -9,6 +9,9 @@ class plgSystemMultisite extends JPlugin
 	public function onAfterInitialise()
 	{
 		$app = JFactory::getApplication();
+		if($app instanceof KPatternProxy) {
+			$app = $app->getObject();
+		}
 		
 		//Define the sites folder
 		define( 'JPATH_SITES',	JPATH_ROOT.DS.'sites');
@@ -27,7 +30,7 @@ class plgSystemMultisite extends JPlugin
 		$user = JFactory::getUser();
 		
 		//Perform Route
-		if($app->getName() == 'administrator') {
+		if($app->isAdmin()) {
 			$app->getRouter()->parse(clone(JURI::getInstance()));
 		}
 		
@@ -84,7 +87,7 @@ class plgSystemMultisite extends JPlugin
 		//Exception for the default site
 		if($site != 'default') 
 		{
-			if($app->getName() == 'site' ) 
+			if($app->isSite()) 
 			{
 				//Make images paths absolute
 				$body = str_replace(JURI::base().'images/', JURI::base(true).'/sites/'.$site.'/images/', JResponse::getBody());
@@ -93,7 +96,7 @@ class plgSystemMultisite extends JPlugin
 				JResponse::setBody($body);
 			}
 		
-			if($app->getName() == 'administrator') 
+			if($app->isAdmin()) 
 			{
 				$index = $app->getCfg('sef_rewrite') ? ''  : 'index.php/';
 			
