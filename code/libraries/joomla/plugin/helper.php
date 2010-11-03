@@ -38,7 +38,7 @@ class JPluginHelper
 	{
 		$result = array();
 
-		$plugins = JPluginHelper::_load();
+		$plugins = JPluginHelper::load();
 
 		$total = count($plugins);
 		for($i = 0; $i < $total; $i++)
@@ -89,7 +89,7 @@ class JPluginHelper
 	{
 		$result = false;
 
-		$plugins = JPluginHelper::_load();
+		$plugins = JPluginHelper::load();
 
 		$total = count($plugins);
 		for($i = 0; $i < $total; $i++) {
@@ -161,42 +161,41 @@ class JPluginHelper
 	/**
 	 * Loads the published plugins
 	 *
-	 * @access private
+	 * @access public
 	 */
-	function _load()
+	function load($forcereload = false)
 	{
 		static $plugins;
 
-		if (isset($plugins)) {
-			return $plugins;
-		}
-
-		$db		=& JFactory::getDBO();
-		$user	=& JFactory::getUser();
-
-		if (isset($user))
+		if (!isset($plugins) && !$forcereload) 
 		{
-			$aid = $user->get('aid', 0);
+			$db		=& JFactory::getDBO();
+			$user	=& JFactory::getUser();
 
-			$query = 'SELECT folder AS type, element AS name, params'
-				. ' FROM #__plugins'
-				. ' WHERE published >= 1'
-				. ' AND access <= ' . (int) $aid
-				. ' ORDER BY ordering';
-		}
-		else
-		{
-			$query = 'SELECT folder AS type, element AS name, params'
-				. ' FROM #__plugins'
-				. ' WHERE published >= 1'
-				. ' ORDER BY ordering';
-		}
+			if (isset($user))
+			{
+				$aid = $user->get('aid', 0);
 
-		$db->setQuery( $query );
+				$query = 'SELECT folder AS type, element AS name, params'
+					. ' FROM #__plugins'
+					. ' WHERE published >= 1'
+					. ' AND access <= ' . (int) $aid
+					. ' ORDER BY ordering';
+			}
+			else
+			{
+				$query = 'SELECT folder AS type, element AS name, params'
+					. ' FROM #__plugins'
+					. ' WHERE published >= 1'
+					. ' ORDER BY ordering';
+			}
 
-		if (!($plugins = $db->loadObjectList())) {
-			JError::raiseWarning( 'SOME_ERROR_CODE', "Error loading Plugins: " . $db->getErrorMsg());
-			return false;
+			$db->setQuery( $query );
+
+			if (!($plugins = $db->loadObjectList())) {
+				JError::raiseWarning( 'SOME_ERROR_CODE', "Error loading Plugins: " . $db->getErrorMsg());
+				return false;
+			}
 		}
 
 		return $plugins;
