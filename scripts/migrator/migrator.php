@@ -181,11 +181,8 @@ if(file_exists($file = '/tmp/'.$site_md5.'/configuration.php'))
 	{
 		if(substr(trim($line), 0, 3) == 'var')
 		{
-			preg_match('/\$(\w+)\s.*\\\'(.*)\\\'\;$/', rtrim($line), $matches);
-
-			if(!empty($matches[1]) && !empty($matches[2])) {
-				$data[$matches[1]] = $matches[2];
-			}
+			list($key, $value) = explode('=', trim($line), 2);
+			$data[trim(substr($key, 5))] = trim($value, '\'" ;');
 		}
 	}
 
