@@ -55,6 +55,9 @@ class JRouterMultisite extends JRouterAdministrator
 		$database->select($app->getCfg('db'));
 		$database->setPrefix($app->getCfg('dbprefix'));
 		
+		//Force a reload on the plugins
+		JPluginHelper::load(true);
+		
 		//Set the site in the router
 		$this->_site = $site;
 

@@ -62,6 +62,9 @@ class JRouterMultisite extends JRouterSite
 		$database = JFactory::getDBO();
 		$database->select($app->getCfg('db'));
 		$database->setPrefix($app->getCfg('dbprefix'));
+		
+		//Force a reload on the plugins
+		JPluginHelper::load(true);
 
 		//Force a reload on the menu
 		$app->getMenu()->load();
