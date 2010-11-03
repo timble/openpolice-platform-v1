@@ -34,6 +34,9 @@ class plgSystemMultisite extends JPlugin
 		//Get the site
 		$site = $app->getRouter()->getSite();
 		
+		//Set the images path
+		define('JPATH_IMAGES', JPATH_SITES.'/'.$site.'/images');
+		
 		//Re-login
 		if($app->getUserState('application.site') != $site && !$user->get('guest'))
 		{
