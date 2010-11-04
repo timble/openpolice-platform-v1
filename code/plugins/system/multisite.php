@@ -84,12 +84,12 @@ class plgSystemMultisite extends JPlugin
 		$app  = JFactory::getApplication();
 		$site = $app->getRouter()->getSite();
 		
+		echo var_dump($site);
+			die;
+		
 		//Exception for the default site
 		if($site != 'default') 
 		{
-			echo var_dump($app->isSite());
-			die;
-			
 			if($app->isSite()) 
 			{
 				//Make images paths absolute
