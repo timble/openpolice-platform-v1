@@ -89,7 +89,7 @@ $stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site.'con
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
-
+var_dump($response);
 $database = trim(substr(trim($response), 10), ' \'";');
 var_dump($database);exit;
 
