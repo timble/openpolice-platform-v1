@@ -89,11 +89,10 @@ $stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site.'/co
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
-var_dump($response);
-$database = trim(substr(trim($response), 10), ' \'";');
-var_dump($database);exit;
 
-$stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases police_'.$site.' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
+$database = trim(substr(trim($response), 10), ' \'";');
+
+$stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases '.$database.' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
