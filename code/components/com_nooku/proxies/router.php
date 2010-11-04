@@ -19,7 +19,7 @@ require_once(JPATH_SITE.DS.'includes'.DS.'router.php');
  * @package 	Nooku_Site
  * @subpackage	Proxies
  */
-class NookuProxyRouter extends JRouterSite
+class NookuProxyRouter extends JRouterMultisite
 {
 	/*
 	 * The option (stored for each new call to build)
