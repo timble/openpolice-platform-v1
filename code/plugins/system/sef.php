@@ -65,9 +65,10 @@ class plgSystemSef extends JPlugin
 		$buffer 	= str_replace($editContents[0], $placeholders, $buffer);
 
 		// do the SEF substitutions
-       	$regex  = '#href="index.php\?([^"]*)#m';
+       	$regex  = '#(href|src|action|location.href)(="|=\')(index.php[^"]*)#m';
       	$buffer = preg_replace_callback( $regex, array('plgSystemSEF', 'route'), $buffer );
-
+      	
+  
        	$protocols = '[a-zA-Z0-9]+:'; //To check for all unknown protocals (a protocol must contain at least one alpahnumeric fillowed by :
       	$regex     = '#(src|href)="(?!/|'.$protocols.'|\#|\')([^"]*)"#m';
         $buffer    = preg_replace($regex, "$1=\"$base\$2\"", $buffer);
@@ -109,12 +110,9 @@ class plgSystemSef extends JPlugin
      */
    	 function route( &$matches )
      {
-		$original       = $matches[0];
-       	$url            = $matches[1];
-
-		$url = str_replace('&amp;','&',$url);
-
-       	$route          = JRoute::_('index.php?'.$url);
-      	return 'href="'.$route;
+     	$url    = str_replace('&amp;','&',$matches[3]);
+       	$route  = JRoute::_($url);
+       	
+      	return $matches[1].$matches[2].$route;
       }
 }
