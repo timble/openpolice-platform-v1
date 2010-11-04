@@ -53,8 +53,7 @@ class JHTMLList
 		}
 		
 		//Make the directory absolute
-		$site  = JFactory::getApplication()->getSite();
-		$directory =  JURI::root(true).'/sites/'.$site.$directory;
+		$directory = JURI::root(true).'/'.str_replace(JPATH_ROOT, '', JPATH_IMAGES).$directory;
 		
 		if ( !$javascript ) {
 			$javascript = "onchange=\"javascript:if (document.forms.adminForm." . $name . ".options[selectedIndex].value!='') {document.imagelib.src='..$directory' + document.forms.adminForm." . $name . ".options[selectedIndex].value} else {document.imagelib.src='../images/blank.png'}\"";
