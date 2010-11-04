@@ -46,8 +46,7 @@ class JSite extends JApplication
 	*/
 	function initialise( $options = array())
 	{
-		// if a language was specified it has priority
-		// otherwise use user or default language settings
+		// Set the language
 		if (empty($options['language']))
 		{
 			$user = & JFactory::getUser();
@@ -63,12 +62,11 @@ class JSite extends JApplication
 			}
 
 		}
-
-		// One last check to make sure we have something
+		
 		if ( ! JLanguage::exists($options['language']) ) {
 			$options['language'] = 'en-GB';
 		}
-
+		
 		parent::initialise($options);
 	}
 
@@ -77,7 +75,18 @@ class JSite extends JApplication
 	*
 	* @access public
 	*/
-	function route() {
+	function route() 
+	{
+		// get the full request URI
+ 		$uri = clone(JURI::getInstance());
+ 		
+ 		//Redirect to the default menu item if the route is empty
+ 		$route = trim(str_replace(array(JURI::base(true), 'index.php', $this->getSite()), '', $uri->getPath()), '/');
+			
+		if(empty($route)) {
+			$this->redirect(JRoute::_('index.php?Itemid='.$this->getMenu()->getDefault()->id));
+		}
+		
 		parent::route();
 	}
 

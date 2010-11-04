@@ -126,7 +126,14 @@ class JRouter extends JObject
 	function parse(&$uri)
 	{
 		$vars = array();
-
+		
+		//Remove site from the route
+		if($site = JFactory::getApplication()->getSite())
+		{
+			$path = trim(str_replace(array(JURI::base(true), 'index.php', $site), '', $uri->getPath()), '/');
+			$uri->setPath($path);	
+		}
+	
 		// Process the parsed variables based on custom defined rules
 		$vars = $this->_processParseRules($uri);
 
@@ -153,7 +160,13 @@ class JRouter extends JObject
 	{
 		//Create the URI object
 		$uri =& $this->_createURI($url);
-
+		
+		//Exception for the default site
+		$site = JFactory::getApplication()->getSite();
+		if($site != 'default') {
+			$uri->setPath($uri->getPath().'/'.$site);
+		}
+			
 		//Process the uri information based on custom defined rules
 		$this->_processBuildRules($uri);
 

@@ -43,8 +43,20 @@ class JRouterAdministrator extends JRouter
 	function &build($url)
 	{
 		//Create the URI object
-		$uri =& $this->_createURI($url);
-
+		$uri  = parent::_createURI($url);
+		
+		$site = JFactory::getApplication()->getSite();
+		$path = $uri->getPath();
+		
+		if(JFactory::getApplication()->getCfg('sef_rewrite')) {
+			$path = str_replace('index.php', '', $path);
+		}
+		
+		//Exception for the default site
+		if($site != 'default') {
+			$uri->setPath(empty($path) ? $site : $path.'/'.$site);
+		}
+		
 		return $uri;
 	}
 }

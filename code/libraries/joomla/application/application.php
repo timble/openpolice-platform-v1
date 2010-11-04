@@ -54,6 +54,13 @@ class JApplication extends JObject
 	 * @access	protected
 	 */
 	var $_name = null;
+	
+	/**
+	 * The site alias we are using.
+	 * 
+	 * @var string
+	 */
+	var $_site = '';
 
 	/**
 	 * The scope of the application
@@ -90,15 +97,23 @@ class JApplication extends JObject
 		if(!isset($config['config_file'])) {
 			$config['config_file'] = 'configuration.php';
 		}
-
+		
+		//Set the session default name
+		if(!isset($config['site'])) {
+			 $config['site'] = 'default';
+		}
+		
 		//create the configuration object
 		$this->_createConfiguration(JPATH_CONFIGURATION.DS.$config['config_file']);
+		
+		//create the site
+		$this->_createSite($config['site']);
 
 		//create the session if a session name is passed
 		if($config['session'] !== false) {
 			$this->_createSession(JUtility::getHash($config['session_name']));
 		}
-
+		
 		$this->set( 'requestTime', gmdate('Y-m-d H:i') );
 	}
 
@@ -188,9 +203,9 @@ class JApplication extends JObject
 	*/
 	function route()
  	{
-		// get the full request URI
-		$uri = clone(JURI::getInstance());
-
+ 		// get the full request URI
+ 		$uri = clone(JURI::getInstance());
+ 		
 		$router =& $this->getRouter();
 		$result = $router->parse($uri);
 
@@ -640,6 +655,16 @@ class JApplication extends JObject
 	{
 		return 'system';
 	}
+	
+	/**
+	 * Gets the name of site
+	 *
+	 * @return	string
+	 */
+	public function getSite()
+	{
+		return $this->_site;
+	}
 
 	/**
 	 * Return a reference to the application JRouter object.
@@ -709,7 +734,44 @@ class JApplication extends JObject
 		}
 		return $menu;
 	}
-
+	
+	public function _createSite($site = 'default') 
+	{
+		// Find the site
+		$uri =	 clone(JURI::getInstance()); 
+		$path = trim(str_replace(array(JURI::base(true), 'index.php'), '', $uri->getPath()), '/');
+		
+		$segments = array();
+		if(!empty($path)) {
+			$segments = explode('/', $path);
+		}
+		
+		if(!empty($segments))
+		{	
+			//Check to see if we found a matching site number
+			if(strlen($segments[0]) == 4)
+			{
+				$site = array_shift($segments);
+				
+				if(!is_int((int) $site)) {
+					JError::raiseError(404, JText::_('Site not found'));
+				}
+			}
+		}
+		
+		//Load the site configuration
+		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
+		$config = JFactory::getConfig()->loadObject(new JConfigSite());	
+		
+		//Set the images path
+		define('JPATH_IMAGES', JPATH_SITES.'/'.$site.'/images');
+		
+		//Set the site in the router
+		$this->_site = $site;
+		
+		return $this;
+	}
+	
 	/**
 	 * Create the configuration registry
 	 *

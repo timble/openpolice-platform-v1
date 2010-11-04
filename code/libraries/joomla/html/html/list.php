@@ -53,7 +53,7 @@ class JHTMLList
 		}
 		
 		//Make the directory absolute
-		$site  = JFactory::getApplication()->getRouter()->getSite();
+		$site  = JFactory::getApplication()->getSite();
 		$directory =  JURI::root(true).'/sites/'.$site.$directory;
 		
 		if ( !$javascript ) {

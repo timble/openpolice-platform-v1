@@ -6,41 +6,13 @@ jimport( 'joomla.plugin.plugin');
 
 class plgSystemMultisite extends JPlugin
 {
-	public function __construct($subject, $config = array())
-	{
-		$app = JFactory::getApplication();
-		if($app instanceof KPatternProxy) {
-			$app = $app->getObject();
-		}
-		
-		//Define the sites folder
-		define( 'JPATH_SITES',	JPATH_ROOT.DS.'sites');
-		
-		//Load the default router first
-		$router =& $app->getRouter();
-				
-		//Replace default with our custom router
-		require_once(dirname(__FILE__).'/multisite/'.$app->getName().'.php');
-		$router = new JRouterMultisite(array('mode' => $router->getMode()));
-
-		parent::__construct($subject, $config);
-	}
-	
 	public function onAfterRoute()
 	{
 		$app  = JFactory::getApplication();
 		$user = JFactory::getUser();
 		
-		//Perform Route
-		if($app->isAdmin()) {
-			$app->getRouter()->parse(clone(JURI::getInstance()));
-		}
-		
 		//Get the site
-		$site = $app->getRouter()->getSite();
-		
-		//Set the images path
-		define('JPATH_IMAGES', JPATH_SITES.'/'.$site.'/images');
+		$site = $app->getSite();
 		
 		//Re-login
 		if($app->getUserState('application.site') != $site && !$user->get('guest'))
@@ -84,7 +56,7 @@ class plgSystemMultisite extends JPlugin
 	public function onAfterRender()
 	{
 		$app  = JFactory::getApplication();
-		$site = $app->getRouter()->getSite();
+		$site = $app->getSite();
 		
 		//Exception for the default site
 		if($site != 'default') 

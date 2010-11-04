@@ -188,8 +188,7 @@ class JRouterSite extends JRouter
 
 			return $vars;
 		}
-
-
+		
 		/*
 		 * Parse the application route
 		 */
@@ -206,11 +205,11 @@ class JRouterSite extends JRouter
 		{
 			//Need to reverse the array (highest sublevels first)
 			$items = array_reverse($menu->getMenu());
-
+			
 			foreach ($items as $item)
 			{
 				$lenght = strlen($item->route); //get the lenght of the route
-
+				
 				if($lenght > 0 && strpos($route.'/', $item->route.'/') === 0 && $item->type != 'menulink')
 				{
 					$route   = substr($route, $lenght);
