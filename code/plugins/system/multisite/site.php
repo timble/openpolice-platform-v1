@@ -60,6 +60,10 @@ class JRouterMultisite extends JRouterSite
 		
 		//Set Database
 		$database = JFactory::getDBO();
+		if($database instanceof KPatternProxy) {
+			$database = $database->getObject();
+		}
+		
 		$database->select($app->getCfg('db'));
 		$database->setPrefix($app->getCfg('dbprefix'));
 		
