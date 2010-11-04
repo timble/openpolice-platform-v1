@@ -9,7 +9,11 @@ $config = array(
 		'username'	=> 'police',
 		'password'	=> 'P?W88nP3!eg'
 	),
-	'mysql'	=> array(),
+	'mysql'	=> array(
+		'database'	=> '',
+		'username'	=> '',
+		'password'	=> 'mWLnbw6d',
+	),
 	'document_root'	=> '/var/www/vhosts/police.be/httpdocs'
 );
 
@@ -33,6 +37,9 @@ if(!isset($arguments['site']))
 $site_old	= $arguments['site'];
 $site_new	= substr($site_old, 0, 4);
 $site_old_md5	= md5($site_old);
+
+$config['mysql']['username'] = 'tor'.str_replace('_', '', $site_old);
+$config['mysql']['database'] = 'police_'.$site_old;
 
 // Connect to the server.
 echo 'Connecting...';
@@ -77,27 +84,6 @@ else
 
 // Compress the site.
 echo 'Compressing site...';
-
-$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site_old.'/configuration.php | grep \'var $db = \'');
-stream_set_blocking($stream, true);
-$response	= trim(fread($stream, 4096));
-fclose($stream);
-
-$config['mysql']['database'] = trim(substr(trim($response), 10), ' \'";');
-
-$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site_old.'/configuration.php | grep \'var $user = \'');
-stream_set_blocking($stream, true);
-$response	= trim(fread($stream, 4096));
-fclose($stream);
-
-$config['mysql']['username'] = trim(substr(trim($response), 12), ' \'";');
-
-$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site_old.'/configuration.php | grep \'var $password = \'');
-stream_set_blocking($stream, true);
-$response	= trim(fread($stream, 4096));
-fclose($stream);
-
-$config['mysql']['password'] = trim(substr(trim($response), 16), ' \'";');
 
 $stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases '.$config['mysql']['database'].' | gzip > '.$config['document_root'].'/'.$site_old.'/database.sql.gz');
 stream_set_blocking($stream, true);
