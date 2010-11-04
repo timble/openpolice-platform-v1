@@ -9,10 +9,7 @@ $config = array(
 		'username'	=> 'police',
 		'password'	=> 'P?W88nP3!eg'
 	),
-	'mysql'	=> array(
-		'username'	=> '',
-		'password'	=> 'mWLnbw6d'
-	),
+	'mysql'	=> array(),
 	'document_root'	=> '/var/www/vhosts/police.be/httpdocs'
 );
 
@@ -90,9 +87,23 @@ stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
 
-$database = trim(substr(trim($response), 10), ' \'";');
+$config['mysql']['database'] = trim(substr(trim($response), 10), ' \'";');
 
-$stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases '.$database.' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
+$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site.'/configuration.php | grep \'var $user = \'');
+stream_set_blocking($stream, true);
+$response	= trim(fread($stream, 4096));
+fclose($stream);
+
+$config['mysql']['username'] = trim(substr(trim($response), 12), ' \'";');
+
+$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site.'/configuration.php | grep \'var $password = \'');
+stream_set_blocking($stream, true);
+$response	= trim(fread($stream, 4096));
+fclose($stream);
+
+$config['mysql']['password'] = trim(substr(trim($response), 16), ' \'";');
+
+$stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases '.$config['mysql']['database'].' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
