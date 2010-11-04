@@ -1,4 +1,4 @@
-DROP TABLE `pol_session`;
+DROP TABLE IF EXISTS `pol_session`;
 
 CREATE VIEW `pol_session` AS
 	SELECT * FROM `police_default`.`pol_session`;
@@ -19,3 +19,8 @@ CREATE VIEW `pol_jce_groups` AS
 
 CREATE VIEW `pol_jce_plugins` AS
 	SELECT * FROM `police_default`.`pol_jce_plugins`;
+
+DROP TABLE IF EXISTS `pol_plugins`;
+
+CREATE TABLE `pol_plugins` LIKE `police_defualt`.`pol_plugins`;
+INSERT INTO `pol_plugins` SELECT * FROM `police_default`.`pol_plugins`;
