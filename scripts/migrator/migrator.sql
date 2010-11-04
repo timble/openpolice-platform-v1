@@ -22,5 +22,5 @@ CREATE VIEW `pol_jce_plugins` AS
 
 DROP TABLE IF EXISTS `pol_plugins`;
 
-CREATE TABLE `pol_plugins` LIKE `police_defualt`.`pol_plugins`;
+CREATE TABLE `pol_plugins` LIKE `police_default`.`pol_plugins`;
 INSERT INTO `pol_plugins` SELECT * FROM `police_default`.`pol_plugins`;
