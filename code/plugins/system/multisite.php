@@ -6,7 +6,7 @@ jimport( 'joomla.plugin.plugin');
 
 class plgSystemMultisite extends JPlugin
 {
-	public function __construct($subject, $config = array())
+	public function onAfterInitialise()
 	{
 		$app = JFactory::getApplication();
 		if($app instanceof KPatternProxy) {
@@ -81,11 +81,11 @@ class plgSystemMultisite extends JPlugin
 	
 	public function onAfterRender()
 	{
+		echo 'test';
+		die;
+		
 		$app  = JFactory::getApplication();
 		$site = $app->getRouter()->getSite();
-		
-		echo var_dump($site);
-			die;
 		
 		//Exception for the default site
 		if($site != 'default') 
@@ -95,7 +95,7 @@ class plgSystemMultisite extends JPlugin
 				//Make images paths absolute
 				$body = str_replace(JURI::base().'images/', JURI::base(true).'/sites/'.$site.'/images/', JResponse::getBody());
 				$body = str_replace(array('"images/','"/images/') , '"/sites/'.$site.'/images/', $body);
-				
+			
 				JResponse::setBody($body);
 			}
 		
