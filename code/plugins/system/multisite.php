@@ -18,6 +18,9 @@ class plgSystemMultisite extends JPlugin
 		
 		//Load the default router first
 		$router =& $app->getRouter();
+		
+		echo var_dump($app->getName());
+		die;
 				
 		//Replace default with our custom router
 		require_once(dirname(__FILE__).'/multisite/'.$app->getName().'.php');
