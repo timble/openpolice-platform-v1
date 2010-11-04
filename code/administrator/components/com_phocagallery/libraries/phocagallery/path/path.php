@@ -13,15 +13,15 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 class PhocaGalleryPath extends JObject
 {
 	function __construct() {}
-	
+
 	function &getInstance() {
 		static $instance;
 		if (!$instance) {
 			$instance = new PhocaGalleryPath();
-			$instance->image_abs 			= JPATH_ROOT . DS . 'images' . DS . 'phocagallery' . DS ;
-			$instance->image_rel			= 'images/phocagallery/';
-			$instance->avatar_abs 			= JPATH_ROOT . DS . 'images' . DS . 'phocagallery' . DS . 'avatars' . DS ;
-			$instance->avatar_rel			= 'images/phocagallery/avatars/';
+			$instance->image_abs 			= JPATH_IMAGES . DS . 'phocagallery' . DS ;
+			$instance->image_rel			= JURI::root().str_replace(JPATH_ROOT, '', JPATH_IMAGES).'/phocagallery/';
+			$instance->avatar_abs 			= JPATH_IMAGES . DS . 'phocagallery' . DS . 'avatars' . DS ;
+			$instance->avatar_rel			= JURI::root().str_replace(JPATH_ROOT, '', JPATH_IMAGES).'/phocagallery/avatars/';
 			$instance->image_rel_full		= JURI::base(true) . '/' . $instance->image_rel;
 			$instance->image_rel_admin 		= 'administrator/components/com_phocagallery/assets/images/';
 			$instance->image_rel_admin_full = JURI::base(true) . '/' . $instance->image_rel_admin;
