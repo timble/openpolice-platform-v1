@@ -196,7 +196,10 @@ if(file_exists($file = '/tmp/'.$site_old_md5.'/configuration.php'))
 		if(substr(trim($line), 0, 3) == 'var')
 		{
 			list($key, $value) = explode('=', trim($line), 2);
-			$data[trim(substr($key, 5))] = trim($value, '\'" ;');
+			$key	= trim(substr($key, 5));
+			$value	= trim($value, '\'" ;');
+
+			$data[$key] = $key == 'db' ? 'police_'.$site_new : $value;
 		}
 	}
 
