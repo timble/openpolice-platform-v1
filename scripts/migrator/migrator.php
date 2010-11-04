@@ -85,7 +85,7 @@ else
 // Compress the site.
 echo 'Compressing site...';
 
-$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site.'configuration.php | grep \'var $db = \'');
+$stream		= ssh2_exec($connection, 'cat '.$config['document_root'].'/'.$site.'/configuration.php | grep \'var $db = \'');
 stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
