@@ -90,7 +90,7 @@ stream_set_blocking($stream, true);
 $response	= trim(fread($stream, 4096));
 fclose($stream);
 
-$database = trim(substr(trim($response, 10)), ' \'";');
+$database = trim(substr(trim($response), 10), ' \'";');
 var_dump($database);exit;
 
 $stream		= ssh2_exec($connection, 'mysqldump --user="'.$config['mysql']['username'].'" --password="'.$config['mysql']['password'].'" --add-drop-database --databases police_'.$site.' | gzip > '.$config['document_root'].'/'.$site.'/database.sql.gz');
