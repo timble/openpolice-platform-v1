@@ -19,7 +19,7 @@ require_once(JPATH_ADMINISTRATOR.DS.'includes'.DS.'router.php');
  * @package 	Nooku_Administrator
  * @subpackage	Proxies
  */
-class NookuProxyRouter extends JRouterMultisite
+class NookuProxyRouter extends JRouterAdministrator
 {
 	/**
 	 * Class constructor
