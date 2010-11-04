@@ -6,7 +6,7 @@ jimport( 'joomla.plugin.plugin');
 
 class plgSystemMultisite extends JPlugin
 {
-	public function __construct($subject, $config = array())
+	public function onAfterInitialise()
 	{
 		$app = JFactory::getApplication();
 		if($app instanceof KPatternProxy) {
