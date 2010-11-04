@@ -6,7 +6,7 @@ jimport( 'joomla.plugin.plugin');
 
 class plgSystemMultisite extends JPlugin
 {
-	public function onAfterInitialise()
+	public function __construct($subject, $config = array())
 	{
 		$app = JFactory::getApplication();
 		if($app instanceof KPatternProxy) {
@@ -21,7 +21,9 @@ class plgSystemMultisite extends JPlugin
 				
 		//Replace default with our custom router
 		require_once(dirname(__FILE__).'/multisite/'.$app->getName().'.php');
-		$router = new JRouterMultisite(array('mode' => $router->getMode())); 
+		$router = new JRouterMultisite(array('mode' => $router->getMode()));
+
+		parent::__construct($subject, $config);
 	}
 	
 	public function onAfterRoute()
@@ -81,9 +83,6 @@ class plgSystemMultisite extends JPlugin
 	
 	public function onAfterRender()
 	{
-		echo 'test';
-		die;
-		
 		$app  = JFactory::getApplication();
 		$site = $app->getRouter()->getSite();
 		
