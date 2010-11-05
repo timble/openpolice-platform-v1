@@ -175,8 +175,8 @@ class JApplication extends JObject
 	{
 		jimport('joomla.plugin.helper');
 
-		//Set the language in the class
-		$config =& JFactory::getConfig();
+		$config = JFactory::getConfig();
+		$user   = JFactory::getUser();
 
 		// Check that we were given a language in the array (since by default may be blank)
 		if(isset($options['language'])) {
@@ -184,10 +184,47 @@ class JApplication extends JObject
 		}
 
 		// Set user specific editor
-		$user	 =& JFactory::getUser();
-		$editor	 = $user->getParam('editor', $this->getCfg('editor'));
+		$editor	= $user->getParam('editor', $this->getCfg('editor'));
 		$editor = JPluginHelper::isEnabled('editors', $editor) ? $editor : $this->getCfg('editor');
 		$config->setValue('config.editor', $editor);
+				
+		//Re-login
+		if($this->getUserState('application.site') != $this->_site && !$user->get('guest'))
+		{
+			// Fork the session to prevent session fixation issues
+			$session = JFactory::getSession();
+			$session->fork();
+			
+			$this->_createSession($session->getId());
+			
+			// Import the user plugin group
+			JPluginHelper::importPlugin('user');
+
+			$response = array(
+				'username' 		=> $user->get('username'),
+				'email'	   		 => $user->get('username'),
+				'fullname' 		 => $user->get('fullname'),
+				'password_clear' => ''
+			);
+			
+			$options = array(
+				'group' 		=> 'Public Backend',
+				'autoregister' 	=> false,
+			);
+						
+			$results = $this->triggerEvent('onLoginUser', array($response, $options));
+			
+			if(JError::isError($results[0])) 
+			{
+				$this->triggerEvent('onLoginFailure', array((array)$response));
+				
+				//Log the user out
+				$this->logout();
+			}
+		}
+		
+		// Set session
+		$this->setUserState('application.site', $this->_site);
 	}
 
 	/**
