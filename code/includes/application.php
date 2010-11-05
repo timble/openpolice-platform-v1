@@ -174,7 +174,14 @@ class JSite extends JApplication
 			} break;
  		}
 
+ 		//Render the document
 		$data = $document->render( $this->getCfg('caching'), $params);
+		
+		//Make images paths absolute
+		$site = $this->getSite();
+		$data = str_replace(JURI::base().'images/', JURI::root(true).'/sites/'.$site.'/images/', $data);
+		$data = str_replace(array('"images/','"/images/') , '"/sites/'.$site.'/images/', $data);
+			
 		JResponse::setBody($data);
 	}
 

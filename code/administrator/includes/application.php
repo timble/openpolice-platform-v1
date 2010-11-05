@@ -172,8 +172,14 @@ class JAdministrator extends JApplication
 			'directory'	=> JPATH_THEMES
 		);
 
+		//Render the document
 		$document =& JFactory::getDocument();
 		$data = $document->render($this->getCfg('caching'), $params );
+		
+		//Make images paths absolute
+		$site = $this->getSite();
+		$data = str_replace(array('../images', './images'), JURI::root(true).'/sites/'.$site.'/images', $data);
+		
 		JResponse::setBody($data);
 	}
 
