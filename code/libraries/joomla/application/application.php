@@ -810,23 +810,13 @@ class JApplication extends JObject
 	 * @return	object	JSession on success. May call exit() on database error.
 	 * @since	1.5
 	 */
-	function &_createSession( $name )
+	function &_createSession( $name, $ssl = false )
 	{
-		$options = array();
-		$options['name'] = $name;
-		switch($this->_clientId) {
-			case 0:
-				if($this->getCfg('force_ssl') == 2) {
-					$options['force_ssl'] = true;
-				}
-				break;
-			case 1:
-				if($this->getCfg('force_ssl') >= 1) {
-					$options['force_ssl'] = true;
-				}
-				break;
-		}
-
+		$options = array(
+			'name' 		=> $name,
+			'force_ssl' => $ssl
+		);
+			
 		$session =& JFactory::getSession($options);
 
 		jimport('joomla.database.table');

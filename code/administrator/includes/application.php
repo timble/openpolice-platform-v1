@@ -292,6 +292,15 @@ class JAdministrator extends JApplication
 			$db->query();
 		}
 	}
+	
+	function &_createSession( $name, $ssl = false )
+	{
+		if($this->getCfg('force_ssl') >= 1) {
+			$ssl = true;
+		}
+		
+		return parent::_createSession($name, $ssl);
+	}
 
    /**
 	* Deprecated, use JURI::root() instead.

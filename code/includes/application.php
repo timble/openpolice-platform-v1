@@ -383,4 +383,13 @@ class JSite extends JApplication
 		$router =& parent::getRouter('site', $options);
 		return $router;
 	}
+	
+	function &_createSession( $name, $ssl = false )
+	{
+		if($this->getCfg('force_ssl') == 2) {
+			$ssl = true;
+		}
+		
+		return parent::_createSession($name, $ssl);
+	}
 }
