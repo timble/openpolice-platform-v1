@@ -798,10 +798,31 @@ class JApplication extends JObject
 		
 		//Load the site configuration
 		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
-		$config = JFactory::getConfig()->loadObject(new JConfigSite());	
+		$config = JFactory::getConfig();
+		$config->loadObject(new JConfigSite());	
+	
+		//Set error reporting
+		$error_reporting = $this->getCfg('error_reporting');	
+		if ($error_reporting >= 0) {
+			error_reporting( $error_reporting );
+		}
 		
+		if ($error_reporting > 0) {
+			ini_set( 'display_errors', 1 );
+		}
+	
 		//Set the images path
 		define('JPATH_IMAGES', JPATH_SITES.'/'.$site.'/images');
+		
+		//Set the debug
+		define( 'JDEBUG', $this->getCfg('debug') );
+		
+		//Set the profiler
+		if ($this->getCfg('debug')) 
+		{
+			jimport( 'joomla.error.profiler' );
+			$GLOBALS['_PROFILER'] =& JProfiler::getInstance( 'Application' );
+		}
 		
 		//Set the site in the router
 		$this->_site = $site;
