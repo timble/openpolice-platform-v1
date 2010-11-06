@@ -29,5 +29,6 @@ INSERT INTO `pol_plugins` SELECT * FROM `police_default`.`pol_plugins`;
 
 DROP TABLE IF EXISTS `pol_joomap`;
 DELETE FROM `pol_components` WHERE `option` = 'com_joomap';
+DELETE FROM `pol_menu` WHERE LOCATE('option=com_joomap', `link`) <> 0;
 
 DROP TABLE IF EXISTS `pol_linkr`;
