@@ -24,3 +24,8 @@ DROP TABLE IF EXISTS `pol_plugins`;
 
 CREATE TABLE `pol_plugins` LIKE `police_default`.`pol_plugins`;
 INSERT INTO `pol_plugins` SELECT * FROM `police_default`.`pol_plugins`;
+
+DROP TABLE IF EXISTS `pol_joomap`;
+DELETE FROM `pol_components` WHERE `option` = 'com_joomap';
+
+DROP TABLE IF EXISTS `pol_linkr`;
