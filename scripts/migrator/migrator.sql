@@ -14,10 +14,12 @@ INSERT INTO `pol_components` VALUES(0, 'JCE MENU INSTALL', '', 0, 34, 'option=co
 
 INSERT INTO `pol_plugins` VALUES(0, 'Editor - JCE', 'jce', 'editors', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', '');
 
-CREATE VIEW `pol_jce_groups` AS
+DROP TABLE IF EXISTS `pol_jce_groups`;
+CREATE OR REPLACE VIEW `pol_jce_groups` AS
 	SELECT * FROM `police_default`.`pol_jce_groups`;
 
-CREATE VIEW `pol_jce_plugins` AS
+DROP TABLE IF EXISTS `pol_jce_plugins`;
+CREATE OR REPLACE VIEW `pol_jce_plugins` AS
 	SELECT * FROM `police_default`.`pol_jce_plugins`;
 
 DROP TABLE IF EXISTS `pol_plugins`;
