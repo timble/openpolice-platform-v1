@@ -170,6 +170,27 @@ shell_exec('cd /tmp/'.$site_old_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$
 shell_exec('cd /tmp/'.$site_old_md5.' && mysql --user="root" --password="" < database.sql');
 shell_exec('mysql --user="root" --password="" police_'.$site_new.' < migrator.sql');
 
+$link	= mysql_connect('localhost', 'root', '');
+mysql_select_db('police_'.$site_new);
+$result	= mysql_query('SELECT * FROM `pol_menu` WHERE `alias` = \'\'');
+
+while($row = mysql_fetch_assoc($result))
+{
+	$alias = str_replace('-', ' ', $row['name']);
+	$alias = htmlentities(utf8_decode($alias));
+	$alias = preg_replace(
+			array('/&szlig;/','/&(..)lig;/', '/&([aouAOU])uml;/','/&(.)[^;]*;/'),
+			array('ss',"$1","$1".'e',"$1"),
+			$alias);
+	$alias = trim(strtolower($alias));
+	$alias = preg_replace(array('/\s+/','/[^A-Za-z0-9\-]/'), array('-', ''), $alias);
+	$alias = substr($alias, 0, 100);
+
+	mysql_query('UPDATE `pol_menu` SET `alias` = \''.$alias.'\' WHERE `id` = \''.$row['id'].'\'');
+}
+
+mysql_free_result($result);
+
 echo "\t\tOK\n";
 
 // Create configuration.
