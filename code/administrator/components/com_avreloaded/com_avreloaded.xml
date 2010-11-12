@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="component" method="upgrade">
+    <name>AvReloaded</name>
+    <version>1.2.6</version>
+    <creationDate>2009-05-05</creationDate>
+    <description>AllVideos Reloaded Bundle</description>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2</license>
+    <author>Fritz Elfert</author>
+    <authoremail>allvideos@fritz-elfert.de</authoremail>
+    <authorurl>http://allvideos.fritz-elfert.de</authorurl>
+    <copyright>Copyright 2008, Fritz Elfert</copyright>
+    <!-- Database setup -->
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">backup_utf8.sql</file>
+            <file charset="utf8" driver="mysql">install_utf8.sql</file>
+            <file driver="mysql">backup.sql</file>
+            <file driver="mysql">install.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">uninstall.sql</file>
+            <file driver="mysql">uninstall.sql</file>
+        </sql>
+    </uninstall>
+    <!-- Custom installer -->
+    <installfile>com_subinstall.php</installfile>
+    <uninstallfile>com_subinstall.php</uninstallfile>
+    <!-- The following tag(s) are evaluated by the above subinstall script -->
+    <subinstall>
+        <extension type="plugin" folder="content" subdir="content_plugin" name="avreloaded" publish="true">
+            AllVideos Reloaded Plugin
+        </extension>
+        <extension type="plugin" folder="editors-xtd" subdir="editor_plugin" name="avreloaded" publish="true">
+            AllVideos Reloaded Editor Button
+        </extension>
+        <extension type="plugin" folder="system" subdir="system_plugin" name="avreloaded" publish="true">
+            AllVideos Reloaded System Plugin
+        </extension>
+        <extension type="module" client="site" subdir="module" name="mod_avreloaded">
+            AllVideos Reloaded Module
+        </extension>
+    </subinstall>
+
+    <!-- Frontend files -->
+    <files folder="site">
+        <filename>avreloaded.php</filename>
+        <filename>controller.php</filename>
+        <filename>views/popup/index.html</filename>
+        <filename>views/popup/tmpl/index.html</filename>
+        <filename>views/popup/tmpl/default.php</filename>
+        <filename>views/popup/view.html.php</filename>
+    </files>
+    <languages folder="i18n">
+        <language tag="de-DE">de-DE.com_avreloaded.ini</language>
+        <language tag="en-GB">en-GB.com_avreloaded.ini</language>
+        <language tag="fr-FR">fr-FR.com_avreloaded.ini</language>
+        <language tag="nl-NL">nl-NL.com_avreloaded.ini</language>
+        <!--
+        <language tag="es-ES">es-ES.com_avreloaded.ini</language>
+        -->
+    </languages>
+    <!-- Backend files -->
+    <administration>
+        <submenu>
+            <menu view="players" img="components/com_avreloaded/assets/avreloaded-16x16.png">AVR_TITLE_MANAGE_PLAYERS</menu>
+            <menu view="rippers" img="components/com_avreloaded/assets/avreloaded-16x16.png">AVR_TITLE_MANAGE_RIPPERS</menu>
+            <menu view="tags" img="components/com_avreloaded/assets/avreloaded-16x16.png">AVR_TITLE_MANAGE_TAGS</menu>
+            <menu view="playlists" img="components/com_avreloaded/assets/avreloaded-16x16.png">AVR_TITLE_MANAGE_PLAYLISTS</menu>
+            <!--
+            <menu view="grabber">AVR_TITLE_GRABBER</menu>
+            -->
+        </submenu>
+        <files folder="admin/subinstall">
+            <filename>subinstall.php</filename>
+        </files>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>backup.sql</filename>
+            <filename>backup_utf8.sql</filename>
+            <filename>install.sql</filename>
+            <filename>install_utf8.sql</filename>
+            <filename>uninstall.sql</filename>
+            <filename>admin.avreloaded.php</filename>
+            <filename>assets/avreloaded-16x16.png</filename>
+            <filename>assets/avreloaded-32x32.png</filename>
+            <filename>assets/avreloaded-48x48.png</filename>
+            <filename>assets/avreloaded-logo.png</filename>
+            <filename>assets/blank.gif</filename>
+            <filename>assets/ChangeLog.html</filename>
+            <filename>assets/delete.png</filename>
+            <filename>assets/index.html</filename>
+            <filename>assets/j_arrow.png</filename>
+            <filename>assets/mooRainbow.css</filename>
+            <filename>assets/mooRainbow.js</filename>
+            <filename>assets/mooRainbow-uncompressed.js</filename>
+            <filename>assets/moor_woverlay.png</filename>
+            <filename>assets/moor_cursor.gif</filename>
+            <filename>assets/moor_arrows.gif</filename>
+            <filename>assets/moor_boverlay.png</filename>
+            <filename>assets/moor_slider.png</filename>
+            <filename>assets/new.png</filename>
+            <filename>assets/popup-insert.js</filename>
+            <filename>assets/popup-insert-uncompressed.js</filename>
+            <filename>assets/rainbow.png</filename>
+            <filename>assets/svn2html.css</filename>
+            <filename>controller.php</filename>
+            <filename>views/index.html</filename>
+            <filename>views/insert/index.html</filename>
+            <filename>views/insert/tmpl/index.html</filename>
+            <filename>views/insert/tmpl/default.php</filename>
+            <filename>views/insert/view.html.php</filename>
+            <filename>elements/index.html</filename>
+            <filename>elements/insertbutton.php</filename>
+            <filename>elements/color.php</filename>
+            <filename>helpers/avrgeneric.php</filename>
+            <filename>helpers/avrxml.php</filename>
+            <filename>helpers/playlist.php</filename>
+            <filename>helpers/playlists.php</filename>
+            <filename>models/players.php</filename>
+            <filename>models/player.php</filename>
+            <filename>models/playlist.php</filename>
+            <filename>models/playlists.php</filename>
+            <filename>models/rippers.php</filename>
+            <filename>models/ripper.php</filename>
+            <filename>models/tags.php</filename>
+            <filename>models/tag.php</filename>
+            <filename>models/track.php</filename>
+            <filename>tables/index.html</filename>
+            <filename>tables/ripper.php</filename>
+            <filename>tables/player.php</filename>
+            <filename>tables/tags.php</filename>
+            <!-- 
+            <filename>views/grabber/index.html</filename>
+            <filename>views/grabber/tmpl/index.html</filename>
+            <filename>views/grabber/tmpl/default.php</filename>
+            <filename>views/grabber/view.html.php</filename>
+            -->
+            <filename>views/about/index.html</filename>
+            <filename>views/about/tmpl/index.html</filename>
+            <filename>views/about/tmpl/default.php</filename>
+            <filename>views/about/view.html.php</filename>
+            <filename>views/player/index.html</filename>
+            <filename>views/player/tmpl/index.html</filename>
+            <filename>views/player/tmpl/form.php</filename>
+            <filename>views/player/view.html.php</filename>
+            <filename>views/players/index.html</filename>
+            <filename>views/players/tmpl/index.html</filename>
+            <filename>views/players/tmpl/default.php</filename>
+            <filename>views/players/view.html.php</filename>
+            <filename>views/playlist/index.html</filename>
+            <filename>views/playlist/tmpl/index.html</filename>
+            <filename>views/playlist/tmpl/default.php</filename>
+            <filename>views/playlist/view.html.php</filename>
+            <filename>views/playlists/index.html</filename>
+            <filename>views/playlists/tmpl/index.html</filename>
+            <filename>views/playlists/tmpl/default.php</filename>
+            <filename>views/playlists/view.html.php</filename>
+            <filename>views/ripper/index.html</filename>
+            <filename>views/ripper/tmpl/index.html</filename>
+            <filename>views/ripper/tmpl/form.php</filename>
+            <filename>views/ripper/view.html.php</filename>
+            <filename>views/rippers/index.html</filename>
+            <filename>views/rippers/tmpl/index.html</filename>
+            <filename>views/rippers/tmpl/default.php</filename>
+            <filename>views/rippers/view.html.php</filename>
+            <filename>views/tag/index.html</filename>
+            <filename>views/tag/tmpl/index.html</filename>
+            <filename>views/tag/tmpl/form.php</filename>
+            <filename>views/tag/view.html.php</filename>
+            <filename>views/tags/index.html</filename>
+            <filename>views/tags/tmpl/index.html</filename>
+            <filename>views/tags/tmpl/default.php</filename>
+            <filename>views/tags/view.html.php</filename>
+            <filename>views/track/index.html</filename>
+            <filename>views/track/tmpl/index.html</filename>
+            <filename>views/track/tmpl/form.php</filename>
+            <filename>views/track/view.html.php</filename>
+            <filename>controllers/index.html</filename>
+            <!--
+            <filename>controllers/grabber.php</filename>
+            -->
+            <filename>controllers/players.php</filename>
+            <filename>controllers/rippers.php</filename>
+            <filename>controllers/tags.php</filename>
+            <filename>controllers/playlists.php</filename>
+            <filename>controllers/playlist.php</filename>
+            <filename>controllers/track.php</filename>
+        </files>
+        <files folder="i18n">
+            <!-- _HELPFILES_ -->
+            <filename>help/fr-FR/index.html</filename>
+            <filename>help/fr-FR/tag.html</filename>
+            <filename>help/fr-FR/track.html</filename>
+            <filename>help/fr-FR/playlists.html</filename>
+            <filename>help/fr-FR/player.html</filename>
+            <filename>help/fr-FR/playlist.html</filename>
+            <filename>help/fr-FR/players.html</filename>
+            <filename>help/fr-FR/about.html</filename>
+            <filename>help/fr-FR/ripper.html</filename>
+            <filename>help/fr-FR/tags.html</filename>
+            <filename>help/fr-FR/rippers.html</filename>
+            <filename>help/en-GB/index.html</filename>
+            <filename>help/en-GB/tag.html</filename>
+            <filename>help/en-GB/track.html</filename>
+            <filename>help/en-GB/playlists.html</filename>
+            <filename>help/en-GB/player.html</filename>
+            <filename>help/en-GB/playlist.html</filename>
+            <filename>help/en-GB/players.html</filename>
+            <filename>help/en-GB/about.html</filename>
+            <filename>help/en-GB/ripper.html</filename>
+            <filename>help/en-GB/tags.html</filename>
+            <filename>help/en-GB/rippers.html</filename>
+            <filename>help/es-ES/index.html</filename>
+            <filename>help/es-ES/tag.html</filename>
+            <filename>help/es-ES/track.html</filename>
+            <filename>help/es-ES/playlists.html</filename>
+            <filename>help/es-ES/player.html</filename>
+            <filename>help/es-ES/playlist.html</filename>
+            <filename>help/es-ES/players.html</filename>
+            <filename>help/es-ES/about.html</filename>
+            <filename>help/es-ES/ripper.html</filename>
+            <filename>help/es-ES/tags.html</filename>
+            <filename>help/es-ES/rippers.html</filename>
+            <filename>help/de-DE/index.html</filename>
+            <filename>help/de-DE/tag.html</filename>
+            <filename>help/de-DE/track.html</filename>
+            <filename>help/de-DE/playlists.html</filename>
+            <filename>help/de-DE/player.html</filename>
+            <filename>help/de-DE/playlist.html</filename>
+            <filename>help/de-DE/players.html</filename>
+            <filename>help/de-DE/about.html</filename>
+            <filename>help/de-DE/ripper.html</filename>
+            <filename>help/de-DE/tags.html</filename>
+            <filename>help/de-DE/rippers.html</filename>
+            <filename>help/pt-BR/index.html</filename>
+            <filename>help/pt-BR/tag.html</filename>
+            <filename>help/pt-BR/track.html</filename>
+            <filename>help/pt-BR/playlists.html</filename>
+            <filename>help/pt-BR/player.html</filename>
+            <filename>help/pt-BR/playlist.html</filename>
+            <filename>help/pt-BR/players.html</filename>
+            <filename>help/pt-BR/about.html</filename>
+            <filename>help/pt-BR/ripper.html</filename>
+            <filename>help/pt-BR/tags.html</filename>
+            <filename>help/pt-BR/rippers.html</filename>
+            <filename>help/nl-NL/index.html</filename>
+            <filename>help/nl-NL/tag.html</filename>
+            <filename>help/nl-NL/track.html</filename>
+            <filename>help/nl-NL/playlists.html</filename>
+            <filename>help/nl-NL/player.html</filename>
+            <filename>help/nl-NL/playlist.html</filename>
+            <filename>help/nl-NL/players.html</filename>
+            <filename>help/nl-NL/about.html</filename>
+            <filename>help/nl-NL/ripper.html</filename>
+            <filename>help/nl-NL/tags.html</filename>
+            <filename>help/nl-NL/rippers.html</filename>
+            <filename>help/tr-TR/index.html</filename>
+            <filename>help/tr-TR/tag.html</filename>
+            <filename>help/tr-TR/track.html</filename>
+            <filename>help/tr-TR/playlists.html</filename>
+            <filename>help/tr-TR/player.html</filename>
+            <filename>help/tr-TR/playlist.html</filename>
+            <filename>help/tr-TR/players.html</filename>
+            <filename>help/tr-TR/about.html</filename>
+            <filename>help/tr-TR/ripper.html</filename>
+            <filename>help/tr-TR/tags.html</filename>
+            <filename>help/tr-TR/rippers.html</filename>
+            <filename>help/it-IT/index.html</filename>
+            <filename>help/it-IT/tag.html</filename>
+            <filename>help/it-IT/track.html</filename>
+            <filename>help/it-IT/playlists.html</filename>
+            <filename>help/it-IT/player.html</filename>
+            <filename>help/it-IT/playlist.html</filename>
+            <filename>help/it-IT/players.html</filename>
+            <filename>help/it-IT/about.html</filename>
+            <filename>help/it-IT/ripper.html</filename>
+            <filename>help/it-IT/tags.html</filename>
+            <filename>help/it-IT/rippers.html</filename>
+            <filename>assets/fr-FR.welcome.html</filename>
+            <filename>assets/es-ES.welcome.html</filename>
+            <filename>assets/nl-NL.welcome.html</filename>
+            <filename>assets/de-DE.welcome.html</filename>
+            <filename>assets/en-GB.welcome.html</filename>
+            <!-- _HELPFILES_ -->
+        </files>
+        <languages folder="i18n">
+            <language tag="de-DE">de-DE.com_avreloaded.ini</language>
+            <language tag="en-GB">en-GB.com_avreloaded.ini</language>
+            <language tag="es-ES">en-GB.com_avreloaded.ini</language>
+            <language tag="fr-FR">fr-FR.com_avreloaded.ini</language>
+            <language tag="nl-NL">nl-NL.com_avreloaded.ini</language>
+            <!-- Menu translations -->
+            <language tag="de-DE">de-DE.com_avreloaded.menu.ini</language>
+            <language tag="en-GB">en-GB.com_avreloaded.menu.ini</language>
+            <language tag="es-ES">en-GB.com_avreloaded.menu.ini</language>
+            <language tag="fr-FR">fr-FR.com_avreloaded.menu.ini</language>
+            <language tag="nl-NL">nl-NL.com_avreloaded.menu.ini</language>
+        </languages>
+    </administration>
+</install>
