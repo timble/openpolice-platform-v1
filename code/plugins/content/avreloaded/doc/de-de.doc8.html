@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-de" lang="de-de" >
+<head><title>AllVideos Reloaded Dokumentation</title>
+<style type="text/css">
+    body {
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:76%;
+        line-height:1.3;
+    }
+    a {
+        text-decoration:none;
+        font-weight:bold;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
+    a:active,a:focus {
+        outline:none;
+    }
+    a,h2,a:hover,li#current a,li.parent li#current a,li#current li a:hover {
+       color:#53a31c;
+    }
+    .small,.createdate,.modifydate {
+        font:0.9em Arial,Helvetica,sans-serif;
+        color:#53a31c;
+    }
+    table.avrtable {
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    table.avrtable td,
+    table.avrtable th {
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+    
+    span.alert {
+        background:#FFD6D6 url(notice-alert.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FE7B7A;
+        border-top:3px solid #FE7B7A;
+        color:#CC0000;
+    }
+    span.info {
+        background:#C0D2E8 url(notice-info.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #629DE3;
+        border-top:3px solid #629DE3;
+        color:#0055BB;
+    }
+    span.note {
+        background:#F0E6BE url(notice-note.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FDE179;
+        border-top:3px solid #FDE179;
+        color:#B79000;
+    }
+    span.download {
+        background:#DEE6C5 url(notice-download.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #C2DF88;
+        border-top:3px solid #C2DF88;
+        color:#57861A;
+    }
+    span.alert, span.info, span.download, span.note {
+        display:block;
+        margin:15px 0pt;
+        padding:10px 10px 10px 45px;
+    }
+    .contenttoc {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head><body>
+<table class="contentpaneopen">
+<tr>
+<td valign="top" colspan="2">
+	<table cellpadding="0" cellspacing="0" class="contenttoc">
+	<tr>
+		<th>Beitragsseiten</th>
+	</tr>
+	<tr>
+		<td>
+		<a href="de-de.doc0.html">Einführung</a>
+		</td>
+	</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc1.html">Lizenz</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc2.html">Lokale Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc3.html">Remote Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc4.html">Plugin Parameter</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc5.html">Verwendung von Playlisten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc6.html">Playlisten verwalten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc7.html">Den AVR Media Button verwenden</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc8.html">Popup Fenster und Lightbox</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc9.html">Das System-Plugin</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc10.html">Managing Players, Rippers and Tags</a>
+				</td>
+			</tr>
+			</table><div class="pagenavcounter">Seite 9 von 11</div>
+<h2>Popup Fenster und Lightbox</h2>
+<p>Mit Version 1.2 wurde die Anzeige von Medien in einem Popup-Fenster oder einer Lightbox stark vereinfacht. Die Anzeige von Medien auf diese Art und Weise ist ein zweistufiger Prozess:</p>
+<ol>
+	<li>Setzen des Attributs popup=&quot;true&quot; und Zuweisung einer eindeutigen ID mittels setzen des Attributs divid=&quot;bezeichner&quot;</li>
+	<li>Eine Verknüpfung erstellen, welche den Player an Hand der in Schritt 1 zugewiesenen ID anspricht und den Darstellungstyp (window oder lightbox) festlegt.</li>
+</ol>
+<p>Das Resultat von Schritt 1 ist ein &quot;unsichtbarer&quot; Einbettungs-Code. Tatsächlich wird hierbei der Code in eine Datenbank-Tabelle (statt - wie normal - in den Seiten-Inhalt) geschrieben. Dieser Datenbank-Eintrag wird dann später abgerufen, wenn die - durch Schritt 2 erstellte - Verknüpfung aufgerufen wird. Hier ein einfaches Beispiel:</p>
+<p><samp>{<kbd>flv</kbd> popup=&quot;true&quot; divid=&quot;mypopup&quot;}video{/flv}</samp></p>
+<p>In obigem Tag wird ein Player namens mypopup definiert, der das Video video.flv benutzt und zunächst unsichtbar ist.</p>
+<p><samp>{<kbd>avrpopup</kbd> type=&quot;window&quot; id=&quot;mypopup&quot;}Hier klicken um das Video in einem Popup-Fenster zu betrachten{/avrpopup}</samp></p>
+<p>Dieses Tag erzeugt eine Verknüpfung, welche beim Aufruf ein Popup-Fenster mit dem Player öffnet.</p>
+<p><samp>{<kbd>avrpopup</kbd> type=&quot;lightbox&quot; id=&quot;mypopup&quot;}Hier klicken um das Video in einer Lightbox zu betrachten{/avrpopup}</samp></p>
+<p>Dieses Tag erzeugt eine Verknüpfung, welche beim Aufruf den Player in einer Lightbox anzeigt.</p>
+<br /><div class="pagenavbar"><div><a href="de-de.doc7.html">&lt;&lt; Zurück</a> - <a href="de-de.doc9.html">Weiter &gt;&gt;</a></div></div><br /></td>
+</tr>
+<tr>
+	<td colspan="2"  class="modifydate">
+		Aktualisiert ( Samstag, 05. Juli 2008 03:49 )
+	</td>
+</tr>
+</table></body>
+</html>

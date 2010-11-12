@@ -1,0 +1,12 @@
+#sbox-btn-close {
+	background:				url(closebox.gif) no-repeat top left;
+}
+
+#sbox-content {
+	overflow:				hidden;
+	background-color:		#000;
+}
+
+#sbox-content>iframe {
+    overflow: hidden;
+}

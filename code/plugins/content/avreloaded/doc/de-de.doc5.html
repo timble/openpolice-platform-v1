@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-de" lang="de-de" >
+<head><title>AllVideos Reloaded Dokumentation</title>
+<style type="text/css">
+    body {
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:76%;
+        line-height:1.3;
+    }
+    a {
+        text-decoration:none;
+        font-weight:bold;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
+    a:active,a:focus {
+        outline:none;
+    }
+    a,h2,a:hover,li#current a,li.parent li#current a,li#current li a:hover {
+       color:#53a31c;
+    }
+    .small,.createdate,.modifydate {
+        font:0.9em Arial,Helvetica,sans-serif;
+        color:#53a31c;
+    }
+    table.avrtable {
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    table.avrtable td,
+    table.avrtable th {
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+    
+    span.alert {
+        background:#FFD6D6 url(notice-alert.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FE7B7A;
+        border-top:3px solid #FE7B7A;
+        color:#CC0000;
+    }
+    span.info {
+        background:#C0D2E8 url(notice-info.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #629DE3;
+        border-top:3px solid #629DE3;
+        color:#0055BB;
+    }
+    span.note {
+        background:#F0E6BE url(notice-note.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FDE179;
+        border-top:3px solid #FDE179;
+        color:#B79000;
+    }
+    span.download {
+        background:#DEE6C5 url(notice-download.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #C2DF88;
+        border-top:3px solid #C2DF88;
+        color:#57861A;
+    }
+    span.alert, span.info, span.download, span.note {
+        display:block;
+        margin:15px 0pt;
+        padding:10px 10px 10px 45px;
+    }
+    .contenttoc {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head><body>
+<table class="contentpaneopen">
+<tr>
+<td valign="top" colspan="2">
+	<table cellpadding="0" cellspacing="0" class="contenttoc">
+	<tr>
+		<th>Beitragsseiten</th>
+	</tr>
+	<tr>
+		<td>
+		<a href="de-de.doc0.html">Einführung</a>
+		</td>
+	</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc1.html">Lizenz</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc2.html">Lokale Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc3.html">Remote Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc4.html">Plugin Parameter</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc5.html">Verwendung von Playlisten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc6.html">Playlisten verwalten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc7.html">Den AVR Media Button verwenden</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc8.html">Popup Fenster und Lightbox</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc9.html">Das System-Plugin</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc10.html">Managing Players, Rippers and Tags</a>
+				</td>
+			</tr>
+			</table><div class="pagenavcounter">Seite 6 von 11</div>
+<h2>Verwendung von Playlisten</h2>
+<p>Wenn JW Media player zum Streamen von Medien verwendet wird, kann an Stelle einer einzelnen Medien-Datei auch eine Playlisten-XML-Datei verwendet werden. Natürlich muss in solchen Fällen entweder das <strong>auto</strong> Tag oder eine der <strong>remote</strong> Varianten verwendet werden, da nur dann keine vorgegebenen Dateierweiterungen angehängt werden. An Stelle der Medien-URL spezifiziert man dann einfach die URL der Playliste. Der Player unterstützt drei gängige Formate, um maximale Kompatibilität zu erreichen: <a href="http://en.wikipedia.org/wiki/XSPF">XSPF</a> (Meist für CC Musik verwendet), <a href="http://en.wikipedia.org/wiki/RSS">RSS</a> (meist für Podcasts verwendet) sowie <a href="http://en.wikipedia.org/wiki/ATOM">ATOM</a> (oft bei Blogs verwedet). Auf Jeroen's Website, hat er zusätzliche Beispiele von <a href="http://www.jeroenwijering.com/upload/xspf_example.xml">einer xspf Playliste</a> und <a href="http://www.jeroenwijering.com/upload/rss_example.xml">einer RSS Playliste</a> bereitgestellt, welche annähernd alle in der jeweiligen Liste verfügbaren Tags als Beispiel enthalten.</p>
+<p>Mit Playlisten können einige Effekte erreicht werden, die mit normalen Medien-Dateien nicht verfügbar sind. Zum Beispiel kann man ein Vorschau-Bild einem Video zuweisen. Das Bild wird dann angezeigt, solange der Player gestoppt ist. Hier ist ein einfaches Beispiel dafür. Dieses Beispiel wird auf dieser Webseite dafür verwendet, das Vorschaubild für das kleine Video auf der Einstiegsseite anzuzeigen:</p>
+<pre class="xml">&nbsp;
+  <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;playlist</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">xmlns</span>=<span style="color: #ff0000;">&quot;http://xspf.orig/ns/0/&quot;</span><span style="font-weight: bold; color: black;">&gt;</span></span>
+    <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;title<span style="font-weight: bold; color: black;">&gt;</span></span></span>CG Playlist<span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/title<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;trackList<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;track<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;title<span style="font-weight: bold; color: black;">&gt;</span></span></span>Reloaded<span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/title<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;location<span style="font-weight: bold; color: black;">&gt;</span></span></span>/images/stories/videos/matrix.flv<span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/location<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;image<span style="font-weight: bold; color: black;">&gt;</span></span></span>/images/stories/videos/matrix_thumb_small.jpg<span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/image<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/track<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/trackList<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="font-weight: bold; color: black;">&lt;/playlist<span style="font-weight: bold; color: black;">&gt;</span></span></span>
+&nbsp;</pre>
+<p><span class="info">Beachten Sie bitte, dass bei Verwendung des <strong>auto</strong> Tags (ohne absolute URL), die PlayList Datei im Ordner images/stories/<strong>videos</strong> erwartet wird, auch wenn in der Playliste selbst nur Audiodateien referenziert werden.</span> Weiterhin <strong>muss</strong> - wenn in der Playliste die Erweiterung <strong>m4v</strong> innerhalb eines location Tags verwendet wird - der Medientyp manuell gesetzt werden indem man folgendes Element <strong>am Ende</strong> des betroffenen track Elements einfügt: <samp>&lt;meta rel=&quot;type&quot;&gt;flv&lt;/meta&gt;</samp></p>
+<h2>Playlist Anzeige</h2>
+<p>Die Konfiguration der Playlisten-Anzeige kann manchmal recht mühselig werden, wenn man nicht verstanden hat, wie der Player die einzelnen Parameter berücksichtigt. Ich versuche hier daher, die dahinterliegende Logik zu Beschreiben: Für die beiden Parameter width und height des Players existiert jeweils ein Gegenstück, genannt <strong>displaywidth</strong> und <strong>displayheight</strong> welche die Größe der Leinwand (den Teil des Bereichs wo das Video zu sehen ist) beschreiben. Normalerweise bleiben diese Parameter undefiniert. Dies resultiert dann im Standard-Erscheinungsbild des Players (Bedienleiste unterhalb der Leinwand). Wenn allerdings eine dieser Variablen auf einen kleineren Wert gesetzt wird, so kommt das Playlisten-Fenster zum Vorschein. Wenn Sie den Parameter displaywidth setzen, dann erscheint die Playliste rechts von der Leinwand, <strong>oberhalb</strong> der Bedienleiste. Die Breite des Playlisten-Fensters ergibt sich dabei ganz einfach aus <samp>width - displaywidth</samp>. Beim Parameter displayheight ist es ein wenig komplizierter, weil hier die Höhe der Bedienleiste in die Berechnung mit eingeht. Die Höhe der Bedienleiste beträgt 20 Pixel. Wenn man also displayheight auf einen Wert kleiner <samp>height - 20</samp> setzt, dann füllt das Playlisten-Fenster die Differenz <strong>unterhalb</strong> des Bedienfeldes. Die Höhe des Playlisten-Fensters errechnet sich dann als <samp>height - displayheight - 20</samp>. Schliesslich gibt es noch einen Spezialfall, bei dem keine Playliste angezeigt wird, sondern ein anderer Effekt erzielt wird: Wenn displayheight auf den <strong>gleichen</strong> Wert wie height gesetzt wird, so erscheint die Bedienleiste - leicht in der Größe reduziert - transparent innerhalb des Leinwand-Bereichs. Sie wird dann ein/ausgeblendet, wenn der Mauszeiger den Bereich der Leinwand überfährt.</p>
+<h2>Parameter</h2>
+<p>Einige Parameter des Players beziehen sich auf den Inhalt der Playlisten-Anzeige: Wenn die den Einträgen der Playliste zugeordneten Vorschau-Bilder in der Playliste als Thumbnails angezeigt werden sollen, dann ist der Parameter <strong>plthumbs</strong> auf den Wert true zu setzen.</p>
+<br /><div class="pagenavbar"><div><a href="de-de.doc4.html">&lt;&lt; Zurück</a> - <a href="de-de.doc6.html">Weiter &gt;&gt;</a></div></div><br /></td>
+</tr>
+<tr>
+	<td colspan="2"  class="modifydate">
+		Aktualisiert ( Samstag, 05. Juli 2008 03:49 )
+	</td>
+</tr>
+</table></body>
+</html>

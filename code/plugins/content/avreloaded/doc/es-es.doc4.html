@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es" >
+<head><title></title>
+<style type="text/css">
+    body {
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:76%;
+        line-height:1.3;
+    }
+    a {
+        text-decoration:none;
+        font-weight:bold;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
+    a:active,a:focus {
+        outline:none;
+    }
+    a,h2,a:hover,li#current a,li.parent li#current a,li#current li a:hover {
+       color:#53a31c;
+    }
+    .small,.createdate,.modifydate {
+        font:0.9em Arial,Helvetica,sans-serif;
+        color:#53a31c;
+    }
+    table.avrtable {
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    table.avrtable td,
+    table.avrtable th {
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+    
+    span.alert {
+        background:#FFD6D6 url(notice-alert.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FE7B7A;
+        border-top:3px solid #FE7B7A;
+        color:#CC0000;
+    }
+    span.info {
+        background:#C0D2E8 url(notice-info.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #629DE3;
+        border-top:3px solid #629DE3;
+        color:#0055BB;
+    }
+    span.note {
+        background:#F0E6BE url(notice-note.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FDE179;
+        border-top:3px solid #FDE179;
+        color:#B79000;
+    }
+    span.download {
+        background:#DEE6C5 url(notice-download.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #C2DF88;
+        border-top:3px solid #C2DF88;
+        color:#57861A;
+    }
+    span.alert, span.info, span.download, span.note {
+        display:block;
+        margin:15px 0pt;
+        padding:10px 10px 10px 45px;
+    }
+    .contenttoc {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head><body>
+<table class="contentpaneopen">
+<tr>
+<td valign="top" colspan="2">
+	<table cellpadding="0" cellspacing="0" class="contenttoc">
+	<tr>
+		<th>Índice de artículos</th>
+	</tr>
+	<tr>
+		<td>
+		<a href="es-es.doc0.html">Introducción</a>
+		</td>
+	</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc1.html">Licencia</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc2.html">Reproducción de contenido local</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc3.html">Reproduciendo Contenido Remoto</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc4.html">Parámetros para el plugin</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc5.html">Usando listas de Reproducción</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc6.html">Managing playlists</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc7.html">Using the AVR Media button</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc8.html">Popup window and lightbox</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc9.html">The system plugin</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="es-es.doc10.html">Managing Players, Rippers and Tags</a>
+				</td>
+			</tr>
+			</table><div class="pagenavcounter">Página 5 de 11</div>
+<h2>Parámetros para el plugin</h2>
+<p>Los parámetros para el plugin pueden ser configurados de manera global en el área de administración y ésta configuración afectara a todos los videos. Sin embargo, el plugin también permite cambiar los valores por defecto para cada video indicando los nuevos valores dentro de cada etiqueta. Cuando se sobre escriben los parámetros por defecto, los nuevos valores se añaden en la primera parte de la etiqueta separados por espacios. Por ejemplo, si desea cambiar los valores de alto, ancho, e inicio de reproducción automática la etiqueta se vería como: <code>{<samp>flv</samp> width=&quot;180&quot; height=&quot;150&quot; autostart=&quot;true&quot;}fiesta{/flv}</code>. Note que cuando se definen los parámetros en la etiqueta el nombre del <strong>atributo debe ser escrito en minúsculas</strong> seguido por un signo <strong>de igualdad</strong> y finalizando con el valor del atributo <strong>encerrado en comillas dobles</strong>.</p>
+<p>La siguiente tabla muestra los nombres de los parámetros soportados, el nombre a usar en las etiquetas cuando se desea sobre escribir el valor por defecto y los valores posibles. Como se describió en la tabla de formatos soportados existen diferentes reproductores para reproducir los distintos formatos; El <strong>único</strong> reproductor que soporta <strong>todos</strong> los parámetros en éste listado es <strong>JW Media Player</strong>. Los reproductores restantes usualmente <strong>solo</strong> soportan ancho (width), alto (height) e inicio automático (autoplay). El reproductor de YouTube es una excepción, pues soporta algunos atributos especiales los cuales son descritos al final de la tabla. <span class="info">Nota: Algunos de los parámetros no se pueden configurar en el área de administración pero pueden ser configurados en la etiqueta. Estos parámetros son explicados al final en la sección de comentarios.</span></p>
+<table border="0" cellpadding="5" cellspacing="0" class="avrtable" id="paramtbl" summary="Parámetros del Plugin" width="100%">
+	<caption> </caption>
+	<thead>
+		<tr align="left" valign="top">
+			<th id="th119D85B00000">Sección</th>
+			<th id="th119D85B00001">Nombre del parámetro</th>
+			<th id="th119D85B00002">Nombre del atributo</th>
+			<th id="th119D85B00003">Valores</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Clase Contenedora</td>
+			<td headers="th119D85B00002">avcss</td>
+			<td headers="th119D85B00003">Cualquier nombre de clase</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Ancho del video</td>
+			<td headers="th119D85B00002">width</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Alto del video</td>
+			<td headers="th119D85B00002">height</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Ancho para videos de iFilm</td>
+			<td headers="th119D85B00002">iwidth</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Alto para videos de iFilm</td>
+			<td headers="th119D85B00002">iheight</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Ancho para videos de Metacafe</td>
+			<td headers="th119D85B00002">mwidth</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Alto para videos de Metacafe</td>
+			<td headers="th119D85B00002">mheight</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Modo de despliegue de Flash</td>
+			<td headers="th119D85B00002">wmode</td>
+			<td headers="th119D85B00003"><var>ventana</var>, <var>transparente</var> or <var>opaco</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Color de fondo para flash</td>
+			<td headers="th119D85B00002">bgcolor</td>
+			<td headers="th119D85B00003">Valor indicando un color <sup>1)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Ancho para el audio</td>
+			<td headers="th119D85B00002">awidth</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros del Plugin</td>
+			<td headers="th119D85B00001">Ancho para el audio</td>
+			<td headers="th119D85B00002">aheight</td>
+			<td headers="th119D85B00003">Valor en pixeles</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Colores para los controles</td>
+			<td headers="th119D85B00002">pbgcolor</td>
+			<td headers="th119D85B00003">Valor indicando un color <sup>1)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Colores para el texto de los controles</td>
+			<td headers="th119D85B00002">pfgcolor</td>
+			<td headers="th119D85B00003">Valor indicando un color <sup>1)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Colores para resaltar los controles</td>
+			<td headers="th119D85B00002">phicolor</td>
+			<td headers="th119D85B00003">Valor indicando un color <sup>1)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Fondo del video</td>
+			<td headers="th119D85B00002">psccolor</td>
+			<td headers="th119D85B00003">Valor indicando un color <sup>1)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Inicio automático</td>
+			<td headers="th119D85B00002">autostart</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar barra de control</td>
+			<td headers="th119D85B00002">shownav</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar dígitos</td>
+			<td headers="th119D85B00002">showdigits</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar iconos</td>
+			<td headers="th119D85B00002">showicons</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar stop</td>
+			<td headers="th119D85B00002">showstop</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar descargar</td>
+			<td headers="th119D85B00002">showdownload</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var> <sup>7)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar botón de pantalla completa</td>
+			<td headers="th119D85B00002">usefullscreen</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Scriptable</td>
+			<td headers="th119D85B00002">enablejs</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var> <sup>5)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Logo</td>
+			<td headers="th119D85B00002">logo</td>
+			<td headers="th119D85B00003">URL/Ruta relativa <sup>2)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Modo de video</td>
+			<td headers="th119D85B00002">screenmode</td>
+			<td headers="th119D85B00003">Identificador de modo <sup>3)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Tamñ de la lista de reproducción</td>
+			<td headers="th119D85B00002">plsize</td>
+			<td headers="th119D85B00003">Valor en pixeles <sup>3)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Ajustar contenido</td>
+			<td headers="th119D85B00002">stretch</td>
+			<td headers="th119D85B00003"><var>0</var>, <var>1</var>, <var>2</var> or <var>3</var> <sup>4)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mínima versión de Flash</td>
+			<td headers="th119D85B00002">flashver</td>
+			<td headers="th119D85B00003">Tres números separados por puntos<sup>10)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar Ecualizador</td>
+			<td headers="th119D85B00002">showeq</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Mostrar barra de búsqueda</td>
+			<td headers="th119D85B00002">searchbar</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Proveedor de búsqueda</td>
+			<td headers="th119D85B00002">searchlink</td>
+			<td headers="th119D85B00003">URL <sup>12)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">Parámetros Avanzados</td>
+			<td headers="th119D85B00001">Contenido alternativo</td>
+			<td headers="th119D85B00002">alt</td>
+			<td headers="th119D85B00003">Cualquier contenido HTML válido <sup>13)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">cfg</td>
+			<td headers="th119D85B00003">URL <sup>6)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">displaywidth</td>
+			<td headers="th119D85B00003">Valor en pixeles <sup>3)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">displayheight</td>
+			<td headers="th119D85B00003">Valor en pixeles <sup>3)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">divid</td>
+			<td headers="th119D85B00003">Valor de un ID de CSS <sup>5)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">link</td>
+			<td headers="th119D85B00003">URL <sup>7)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">linkfromdisplay</td>
+			<td headers="th119D85B00003"><var>true</var> or <var>false</var> <sup>7)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">linktarget</td>
+			<td headers="th119D85B00003">a window name (e.g. _blank) <sup>7)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">plthumbs</td>
+			<td headers="th119D85B00003"><var>true</var> o <var>false</var> <sup>8)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">type</td>
+			<td headers="th119D85B00003">Un tipo de archivo <sup>9)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">repeat</td>
+			<td headers="th119D85B00003"><var>false</var>, <var>true</var> or <var>list</var> <sup>8)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">shuffle</td>
+			<td headers="th119D85B00003"><var>true</var> o <var>false</var> <sup>8)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">autoscroll</td>
+			<td headers="th119D85B00003"><var>true</var> o <var>false</var> <sup>8)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">recurl</td>
+			<td headers="th119D85B00003">URL <sup>11)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">img</td>
+			<td headers="th119D85B00003">URL <sup>14)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">volume</td>
+			<td headers="th119D85B00003">int <sup>15)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">menu</td>
+			<td headers="th119D85B00003"><var>true</var> o <var>false</var> <sup>16)</sup></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th119D85B00000">-</td>
+			<td headers="th119D85B00001">-</td>
+			<td headers="th119D85B00002">popup</td>
+			<td headers="th119D85B00003"><var>true</var> o <var>false</var> <sup>17)</sup></td>
+		</tr>
+	</tbody>
+</table>
+<p>Comentarios:</p>
+<p class="left">1. Los valores para los colores pueden ser expresados en cualquiera de los siguientes formatos los cuales serán convertidos al formato correcto de forma automática</p>
+<ul>
+	<li>Valor hexadecimal de 6 dígitos precedido por # (e.g.: <samp>#223344</samp> Igual que la sintaxis de HTML)</li>
+	<li>Valor hexadecimal de 3 dígitos precedido por # (e.g.: <samp>#234</samp> similar a la sintaxis corta usada en hojas de estilo)</li>
+	<li>3 valores decimales entre paréntesis seguidos de la palabra rgb (e.g.: <samp>rgb(99,140,235)</samp> - Igual a la sintaxis rgb usada en hojas de estilo)</li>
+	<li>Un valor hexadecimal de 1 a 6 dígitos precedido por 0x (e.g.: <samp>0x2345</samp> como se usa en JavaScript)</li>
+	<li>Uno de los 16 nombre de colores especificados en HTML 2.0.1 (e.g.: <samp>red</samp>)</li>
+</ul>
+<p class="left">2. Las imágenes para el logo puede ser especificada usando la URL (e.g.: http://miservidor.com/logo.png) o si la imagen se encuentra en el mismo servidor, usando la ruta local a la imagen (e.g.: /images/stories/logo2.png). Se recomienda el uso de imágenes en formato gif o png (preferido) ya que estos formatos tienen soporte para transparencia. La posición del logo es estática: Esquina superior derecha de la pantalla de video; sin embargo, si usted desea una posición diferente lo que puede hacer es crear una imagen más grande donde la mayor parte de la imagen es transparente.</p>
+<p class="left">3. El parámetro modo de video es especial ya que este <strong>no</strong> es un parámetro real para el reproductor JW Media Player sino un forma sencilla de indicarle al plugin como calcular los valores para los parámetros <strong>displaywidth</strong> and <strong>displayheight</strong> (Estos dos parámetros controlan el tamaño de la pantalla de video del reproductor. Usted puede usar uno de los siguientes valores:</p>
+<table border="0" cellpadding="1" cellspacing="5" summary="Modos de despliegue" width="100%">
+	<thead>
+		<tr align="left" valign="top">
+			<th id="th11D087B80000"> </th>
+			<th id="th11D087B80001">Modo</th>
+			<th id="th11D087B80002">Descripción</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr align="left" valign="top">
+			<td align="left" headers="th11D087B80000" valign="top"> </td>
+			<td headers="th11D087B80001"><var>default</var></td>
+			<td headers="th11D087B80002">Este modo de despliega por defecto donde la barra de controles del reproductor se ubica debajo de la pantalla de video. La barra de control tiene un alto de 20 pixels luego el tamaño disponible para la pantalla de video es <strong>ancho x alto - 20</strong>.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td align="left" headers="th11D087B80000" valign="top"> </td>
+			<td headers="th11D087B80001"><var>coverlay</var></td>
+			<td headers="th11D087B80002">En este modo, éste modo, displaywidth and displayheight se les asignará el mismo valor de ancho y alto respectivamente. Esto produce que la barra de control se muestre en forma transparente dentro del área de la pantalla de video. Adicionalmente, la barra de control aparecerá y desaparecerá cuando el ratón entra o sale del área de la pantalla de video. El tamaño disponible para la pantalla de video es <strong>ancho x alto</strong>.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td align="left" headers="th11D087B80000" valign="top"> </td>
+			<td headers="th11D087B80001"><var>plbottom</var></td>
+			<td headers="th11D087B80002">Este modo pretende mostrar la lista de reproducción en la parte inferior debajo de la barra de controles. El alto de esta ventana desplegable es tomado del parámetro <strong>plsize</strong>. El tamaño disponible para la pantalla de video es <strong>ancho x alto - 20 - plsize</strong>.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td align="left" headers="th11D087B80000" valign="top"> </td>
+			<td headers="th11D087B80001"><var>plright</var></td>
+			<td headers="th11D087B80002">Es similar a plbottom, pero la lista de reproducción se desplegará a la derecha de la pantalla de video. El ancho de esta ventana desplegable es tomado del parámetro <strong>plsize</strong>. El tamaño disponible para la pantalla de video es <strong>ancho - plsize x alto - 20</strong>.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td align="left" headers="th11D087B80000" valign="top"> </td>
+			<td headers="th11D087B80001"><var>floatcplright</var></td>
+			<td headers="th11D087B80002">Este modo es una combinación de <strong>coverlay</strong> and <strong>plright</strong>. El tamaño disponible para la pantalla de video es <strong>ancho - plsize x alto</strong>.</td>
+		</tr>
+	</tbody>
+</table>
+<p><span class="info">Nota: Cuando se <strong>dan</strong> valores para <var>displaywidth</var> or <var>displayheight</var> <strong>dentro de la etiqueta</strong> los cálculos descritos en la tabla anterior se <strong>deshabilitan</strong>.</span></p>
+<p>4. Ajustar contenido define la forma de modificar el video para que este se ajuste al tamaño de la pantalla. <var>1</var> ajustará el video de forma proporcional para llenar la pantalla completa.<var>0</var> cambiará las dimensiones hasta que el video encaje.<var>2</var> ajustará el video de forma desproporcional para encajar tanto el alto como el ancho. <var>3</var> mostrará todos los ítems con sus dimensiones originales.</p>
+<p>5. Cuando la opción de scripting está habilitada el reproductor puede ser controlado vía Javascript. Para poder controlar el reproductor de ésta forma, y en caso de múltiples reproductores en la página distinguir cada uno de ellos, el reproductor debe ser identificado por su ID. Para facilitar el scripting el valor de este ID puede ser asignado usando el atributo <strong>divid</strong>. Si no asigna valor usando el atributo el plugin asignará un valor de forma automática. El ID asignado al objeto Flash que será manipulado usando Javascript es <strong>p_</strong> seguido del valor especificado.</p>
+<p>6. Si necesita especificar varios parámetros, usted puede terminar con etiquetas bastante largas. Para evitar este inconveniente el atributo <strong>cfg</strong> almacena la URL que referencia un archivo de configuración (en formato XML) con los parámetros. Los nombres de las variables en dicho archivo pueden diferir de los nombres definidos en la tabla. Para mayor información acerca del nombre de los parámetros revise la <a href="http://www.jeroenwijering.com/extras/readme.html" onclick="window.open(this.href);return false;" onkeypress="window.open(this.href);return false;">documentación del reproductor JW Media Player</a>. Pueden encontrar un ejemplo del archivo <a href="http://www.jeroenwijering.com/upload/config.xml" onclick="window.open(this.href);return false;" onkeypress="window.open(this.href);return false;">aquí</a>.</p>
+<p>7. La URL especificada en el atributo link es utilizada para proveer un medio de descarga de los videos/audio y/o información relacionada. La URL es utilizada cuando el botón de descargas es activado. Adicionalmente, si el valor del atributo <strong>linkfromdisplay</strong> es <strong>true</strong> un clic en la pantalla del reproductor cargará la URL en lugar de detener/reproducir el video. El atributo <strong>linktarget</strong> (Valoe por defecto: _blank) indica en que ventaba se debe cargar la URL.</p>
+<p>8. Si <strong>plthumbs</strong> es true <strong>y</strong> se mostrarán las imágenes en miniatura que se hayan definido en la lista de reproducción. Si <strong>autoscroll</strong> es <strong>true</strong> la lista de reproducción rotará con el movimiento del ratón en lugar de usar la barra de desplazamiento. El atributo <strong>repeat</strong> determina la forma como el reproductor se comporta cuando termina la reproducción de un video y/o audio. Los posibles valores son: <strong>false</strong> lo que le indica al reproductor que no debe reproducir nada más, <strong>true</strong> significa reproduzca de nuevo desde el principio y <strong>list</strong> que indica que inicie la reproducción del siguiente ítem en la lista de reproducción. Cuando se está reproduciendo la lista la forma como el reproductor define cual es el siguiente ítem depende del parámetro <strong>shuffle</strong> (valor por defecto: true). Si el valor es <strong>false</strong> los ítems en la lista son reproducidos de forma <strong>secuencial</strong>. Cómo utilizar listas de reproducción se explica en la siguiente sección.</p>
+<p>9. Cuando se usa la variante <strong>remote</strong> en la etiqueta usted puede referenciar cualquier archivo de video/audio con cualquier extensión o eventualmente sin ninguna. Cuando esto sucede, JW Media Player podría no reconocer el tipo de archivo de forma correcta. Este atributo permite <strong>forzar</strong> el tipo de medio a uno de los tipos soportados.</p>
+<p>10. Este atributo le permite definir la versión mínima de Flash requerida para el funcionamiento del reproductor. El reproductor requiere al menos la versión 7 de Flash, sin embargo cuando el reproductor se ejecuta con esa versión varias características <strong>no</strong> funcionaran. Algunas de ellas son: scripting, despliegue de imagenes gif/png, los dígitos en la barra de control. Adicionalmente, si se desea la funcionalidad de pantalla completa se requiere como mínimo la versión 9.0.28 de Flash y para reproducir videos codificados como H264 la versión debe ser mínimo la 9.0.98. Se recomienda el uso como mínimo de la versión 9.0.28 si se desea modo de pantalla completo ó la 8 sin el modo de pantalla completa.</p>
+<p>11. Este atributo permite proveer una URL a un archivo XML de recomendaciones. El archivo de recomendaciones contiene títulos, imágenes en miniatura y URLs a ítems relacionados como el video que se esta reproduciendo. El contenido se muestra una vez se termina la reproducción del video (similar a la forma como lo hace YouTube). Para mayor información acerca del archivo de recomendaciones vaya <a href="http://www.jeroenwijering.com/upload/recommendations.xml">aquí</a>.</p>
+<p>12. La URL indicada acá provee un proveedor de búsquedas alternativo que será utilizado cuando el usuario utiliza la función de búsquedas en la barra de búsqueda. El texto que el usuario entre será añadido al final de esta URL. Por ejemplo, si la URL es: <samp>http://youtube.com/results?search_query=</samp> y el usuario está buscando: <samp>salsa</samp> la consulta resultado será: <samp>http://youtube.com/results?search_query=salsa</samp>.</p>
+<p>13. Por defecto, el plugin provee dos advertencias cuando el contenido no puede ser reproducido. La primera advertencia se presenta cuando Javascript está deshabilitado. Otra advertencia se presenta cuando Javascript esta habilitado pero Flash no está disponible o la versión actual es menor a la especificada en el parámetro <strong>flashver</strong>. Utilizando este parámetro, la segunda advertencia puede ser reemplazada por un contenido personalizado. Si éste es el caso, la primera advertencia será deshabilitada por completo. El contenido personalizado <strong>no debe</strong> contener comillas sencillas (') ni el símbolo de llave (}). Si se desea colocar estos símbolos en el contenido estos deben ser escritos utilizando las entidades HTML correspondientes. Las advertencias son:</p>
+<p>La advertencia de Javascript se ve como (generalmente el texto depende de la configuración de idioma del navegador):</p>
+<ins>
+	<div style="background-color:red;color:white;width:160px"><strong>JavaScript is disabled!</strong><br />To display this content, you need a JavaScript capable browser.</div>
+</ins>
+<p>La advertencia de Flash se ve como (generalmente el texto depende de la configuración de idioma del navegador):</p>
+<div style="background-color:red;color:white;width:160px"><strong>Adobe Flash Player not installed or older than x.x.x!</strong><br /><a href="http://www.adobe.com/go/getflashplayer" onclick="window.open(this.href);return false;" onkeypress="window.open(this.href);return false;"><img alt="Get Adobe Flash Player here" border="0" height="41" src="../160x41_Get_Flash_Player.jpg" width="160" /></a></div>
+<p>14. Este atributo permite especificar una imagen para ser pre visualizada (en forma de miniatura) cada vez que el reproductor es detenido. Usted puede especificar una ruta absoluta (por ejemplo, el valor comienza con <samp>http://</samp> o <samp>https://</samp>) o una ruta relativa. <b>Si</b> la ruta es <b>relativa</b>, a este valor se le añadirá como prefijo el directorio que contiene las imágenes por defecto (<samp>images/stories</samp>).</p>
+<p>15. <!-- TRANSLATE -->The initial volume. Unit is percent, which implies a valid range of 0 .. 100.<!-- /TRANSLATE --></p>
+<p>16. <!-- TRANSLATE -->This attribute can be used to manipulate the context menu of the player. For flash based players, setting this to false restricts the menu to the basic entries. For the DivX player, this disables the menu completely.<!-- /TRANSLATE --></p>
+<p>17. <!-- TRANSLATE -->When this attribute is set to <strong>true</strong>, then the resulting player will be invisible and prepared to be displayed in a popup window or lightbox by using the <strong>avrpopup</strong> special tag.<!-- /TRANSLATE --></p>
+<h2>Parámetros especiales para el reproductor de YouTube</h2>
+<p>El reproductor de YouTube soporta algunos atributos adicionales que usted puede configurar cuando utiliza la etiqueta <samp>{<kbd>youtube</kbd>}</samp>. La siguiente tabla describe estos atributos (Todos los atributos con valor boolean tienen como valor por defecto <strong>false</strong>):</p>
+<table border="0" cellpadding="5" cellspacing="0" class="avrtable" id="ytparams" summary="Atributos especiales para YouTube" width="100%">
+	<caption>Â</caption>
+	<thead>
+		<tr align="left" valign="top">
+			<th id="th11E602500000">Sección Global</th>
+			<th id="th11E602500001">Nombre global del parámetro</th>
+			<th id="th11E602500002">Nombre del Atributo</th>
+			<th id="th11E602500003">Nombre en el API YouTube</th>
+			<th id="th11E602500004">Valores</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">Parámetros Avanzados</td>
+			<td headers="th11E602500001">Inicio Automático</td>
+			<td headers="th11E602500002">autostart</td>
+			<td align="left" headers="th11E602500003" valign="top">autoplay</td>
+			<td headers="th11E602500004"><var>true</var> or <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">Parámetros Avanzados</td>
+			<td headers="th11E602500001">Color de Controles</td>
+			<td headers="th11E602500002">pbgcolor</td>
+			<td align="left" headers="th11E602500003" valign="top">color1</td>
+			<td headers="th11E602500004">Valor de un color</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">Parámetros Avanzados</td>
+			<td headers="th11E602500001">Color de resaltado de controles</td>
+			<td headers="th11E602500002">phicolor</td>
+			<td align="left" headers="th11E602500003" valign="top">color2</td>
+			<td headers="th11E602500004">Valor de un color</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">-</td>
+			<td headers="th11E602500001">-</td>
+			<td headers="th11E602500002">ytborder</td>
+			<td align="left" headers="th11E602500003" valign="top">border</td>
+			<td headers="th11E602500004"><var>true</var> o <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">-</td>
+			<td headers="th11E602500001">-</td>
+			<td headers="th11E602500002">ytegm</td>
+			<td align="left" headers="th11E602500003" valign="top">egm</td>
+			<td headers="th11E602500004"><var>true</var> o <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">-</td>
+			<td headers="th11E602500001">-</td>
+			<td headers="th11E602500002">ytloop</td>
+			<td align="left" headers="th11E602500003" valign="top">loop</td>
+			<td headers="th11E602500004"><var>true</var> o <var>false</var></td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th11E602500000">-</td>
+			<td headers="th11E602500001">-</td>
+			<td headers="th11E602500002">ytrel</td>
+			<td align="left" headers="th11E602500003" valign="top">rel</td>
+			<td headers="th11E602500004"><var>true</var> o <var>false</var></td>
+		</tr>
+	</tbody>
+</table>
+<p>Más información acerca de estos atributos se encuentra en la <a href="http://code.google.com/apis/youtube/player_parameters.html" onclick="window.open(this.href);return false;" onkeypress="window.open(this.href);return false;">especificación del API</a> de YouTube.</p>
+<br /><div class="pagenavbar"><div><a href="es-es.doc3.html">&lt;&lt; Anterior</a> - <a href="es-es.doc5.html">Siguiente &gt;&gt;</a></div></div><br /></td>
+</tr>
+<tr>
+	<td colspan="2"  class="modifydate">
+		Ultima actualización ( Sábado 05 de Julio de 2008 03:46 )
+	</td>
+</tr>
+</table></body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-de" lang="de-de" >
+<head><title>AllVideos Reloaded Dokumentation</title>
+<style type="text/css">
+    body {
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:76%;
+        line-height:1.3;
+    }
+    a {
+        text-decoration:none;
+        font-weight:bold;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
+    a:active,a:focus {
+        outline:none;
+    }
+    a,h2,a:hover,li#current a,li.parent li#current a,li#current li a:hover {
+       color:#53a31c;
+    }
+    .small,.createdate,.modifydate {
+        font:0.9em Arial,Helvetica,sans-serif;
+        color:#53a31c;
+    }
+    table.avrtable {
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    table.avrtable td,
+    table.avrtable th {
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+    
+    span.alert {
+        background:#FFD6D6 url(notice-alert.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FE7B7A;
+        border-top:3px solid #FE7B7A;
+        color:#CC0000;
+    }
+    span.info {
+        background:#C0D2E8 url(notice-info.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #629DE3;
+        border-top:3px solid #629DE3;
+        color:#0055BB;
+    }
+    span.note {
+        background:#F0E6BE url(notice-note.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FDE179;
+        border-top:3px solid #FDE179;
+        color:#B79000;
+    }
+    span.download {
+        background:#DEE6C5 url(notice-download.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #C2DF88;
+        border-top:3px solid #C2DF88;
+        color:#57861A;
+    }
+    span.alert, span.info, span.download, span.note {
+        display:block;
+        margin:15px 0pt;
+        padding:10px 10px 10px 45px;
+    }
+    .contenttoc {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head><body>
+<table class="contentpaneopen">
+<tr>
+<td valign="top" colspan="2">
+	<table cellpadding="0" cellspacing="0" class="contenttoc">
+	<tr>
+		<th>Beitragsseiten</th>
+	</tr>
+	<tr>
+		<td>
+		<a href="de-de.doc0.html">Einführung</a>
+		</td>
+	</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc1.html">Lizenz</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc2.html">Lokale Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc3.html">Remote Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc4.html">Plugin Parameter</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc5.html">Verwendung von Playlisten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc6.html">Playlisten verwalten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc7.html">Den AVR Media Button verwenden</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc8.html">Popup Fenster und Lightbox</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc9.html">Das System-Plugin</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc10.html">Managing Players, Rippers and Tags</a>
+				</td>
+			</tr>
+			</table><div class="pagenavcounter">Seite 4 von 11</div>
+<h2>Remote Inhalte</h2>
+<p><strong>AllVideos Reloaded</strong> unterstützt einfache Kürzel zum Einbetten von Medien auf populären Video-Sites. Bitte beachten Sie, dass alle diese Sites ihren eigenen Player bereitstellen. Dieser wird dann jeweils in Ihrer Seite eingebettet. Diese &quot;fremden&quot; Player unterstützen meist nur wenige Parameter wie z.B. das Setzen der Breite und der Höhe des Videos. Einige unterstützen zusätzlich auch autostart. Alle darüber hinaus gehenden Parameter haben nur Wirkung, wenn der eingebaute Player für FLV, SWF oder MP3 Median benutzt wird (zum Streamen von <strong>lokalen</strong> Inhalten). Die folgende Tabelle zeigt die unterstützten Tags resp. Presets (alphabetisch sortiert) sowie Instruktionen zur Anwendung spezifischer Tags:</p>
+<p> </p>
+<p> </p>
+<table border="0" cellpadding="5" cellspacing="0" class="avrtable" summary="Remote streaming presets" width="100%">
+	<colgroup>
+		<col width="15%" />
+		<col width="30%" />
+	</colgroup>
+	<thead>
+		<tr align="left" valign="top">
+			<th id="th0FD12CB80000">Provider</th>
+			<th id="th0FD12CB80001">Tag</th>
+			<th id="th0FD12CB80002">Instruktionen</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">6.cn<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>6cn</kbd>}<strong>ID</strong>{/6cn}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://6.cn/watch/<strong>3809872</strong>.html</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>3809872</strong> zu verwenden. Mit anderen Worten: Der Teil der URL nach dem letzten / ohne die Endung .html.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Apple trailers<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>apple</kbd>}<strong>ID</strong>{/apple}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.apple.com/trailers/<strong>universal/wanted/medium/final.html</strong></samp>, angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>universal/wanted/medium/final.html</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Biku</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>biku</kbd>}<strong>ID</strong>{/biku}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.biku.com/opus/<strong>59150</strong>.html</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>59150</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Blip TV<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>blip</kbd>}<strong>ID</strong>{/blip}</samp> oder <samp>{<kbd>blip</kbd>jw}<strong>ID</strong>{/blipjw}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.blip.tv/file/<strong>1043970</strong>?utm_source=featured_ep&amp;utm_medium=featured_ep</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>1043970</strong> zu verwenden. Die erste Variante dieses Tags verwendet den Original Blip-Player während die zweite Variante den JW Media Player benutzt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Bofunk<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>bofunk</kbd>}<strong>ID</strong>{/bofunk}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.bofunk.com/video/<strong>3466/he_thinks_he_can_sing</strong>.html</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>3466/he_thinks_he_can_sing</strong> zu verwenden. <strong><span style="color:red">Warnung:</span></strong> Dieser Parameter wurde in Version 1.0beta3 geändert weil bofunk.com seine Player modifiziert hat! (Vorher bestand die ID nur aus der Nummer.)</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Break<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>break</kbd>}<strong>ID</strong>{/break}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.break.com/index/<strong>rally41</strong>.html</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>rally41</strong> zu verwenden. Break verwendet Windows Media Video (WMV) to stream content.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Brightcove TV</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>bcove</kbd>}<strong>ID</strong>{/bcove}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.brightcove.tv/title.jsp?title=<strong>1630381550</strong>&amp;channel=627259090</samp>angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>1630381550</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">ClipFish</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>clipfish</kbd>}<strong>ID</strong>{/clipfish}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.clipfish.de/player.php?videoid=<strong>NDE2fDMz</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>NDE2fDMz</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">College Humor</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>collegehumor</kbd>}<strong>ID</strong>{/collegehumor}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.collegehumor.com/video:<strong>1714080</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>1714080</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Current TV</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>currenttv</kbd>}<strong>ID</strong>{/currenttv}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://current.com/items/<strong>88803042</strong>_radiohead_s_scotch_mist</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>88803042</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">DailyMotion</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>dmotion</kbd>}<strong>ID</strong>{/dmotion}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.dailymotion.com/video/<strong>x52yga</strong>_church-imagine_music</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>x52yga</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Dropshots<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>dropshots</kbd> user=&quot;<strong>U</strong>&quot;}<strong>ID</strong>{/dropshots}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.dropshots.com/<strong>YourUserid</strong>#date/<strong>2007-12-21</strong>/<strong>03:03:20</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>2007-12-21 03:03:20</strong> und bei <strong>U</strong> der Text <strong>YourUserid</strong> zu verwenden. Bitte beachten: Der <strong>Schrägstrich</strong> zwischen Datum und Zeit ist durch ein <strong>Leerzeichen</strong> zu <strong>ersetzen</strong>!</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">FreeVideoBlog</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>freevideoblog</kbd>}<strong>ID</strong>{/freevideoblog}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://video.freevideoblog.com/video/<strong>06d6ce03-a0db-44e5-9afd-cb51fab7215d</strong>.htm</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>06d6ce03-a0db-44e5-9afd-cb51fab7215d</strong> zu verwenden. Dieser Anbieter hat sich in Vidiac.com umgenannt. Benutzen Sie das neue <strong>vidiac</strong> Tag.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">GameTrailers</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>gametrailers</kbd>}<strong>ID</strong>{/gametrailers}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.gametrailers.com/player/<strong>31617</strong>.html</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>31617</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Google Video</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>google</kbd>}<strong>ID</strong>{/google}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://video.google.com/videoplay?docid=<strong>-3406925506469882756</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>-3406925506469882756</strong> zu verwenden. D.h. die Zeichen hinter dem &quot;docid=&quot;. Bitte beachten: In einigen Fällen fehlt das Minus-Zeichen. Sofern es vorhanden ist, ist es auch in die ID zu übernehmen.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Google Video (local)</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>google</kbd>.<strong>TLD</strong>}<strong>ID</strong>{/google.<strong>TLD</strong>}</samp></td>
+			<td headers="th0FD12CB80002">Für lokale Google Video Sites benutzen Sie das gleiche Schema wie bei google. Zusätzlich hängen sie die <strong>TLD</strong> mit einem Punkt innerhalb des Tags an. Derzeit unterstützte TLDs sind: <strong>co.uk</strong>, <strong>com.au</strong>, <strong>de</strong>, <strong>es</strong>, <strong>fr</strong>, <strong>it</strong>, <strong>nl</strong> sowie <strong>pl</strong>.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">iFilm</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>ifilm</kbd>}<strong>ID</strong>{/ifilm}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.ifilm.com/video/<strong>2732615</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>2732615</strong> zu verwenden. Dieser Anbieter hat sich in Spike.com umbenannt. Benutzen Sie das neue <strong>spike</strong> Tag.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Jumpcut</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>jumpcut</kbd>}<strong>ID</strong>{/jumpcut}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.jumpcut.com/view?id=<strong>E227D48AF9B111DABAF94E6A17CD0207</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>E227D48AF9B111DABAF94E6A17CD0207</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Megavideo<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>mega</kbd>}<strong>ID</strong>{/mega}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.megavideo.com/?v=<strong>8ZF0N6XY</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>8ZF0N6XY</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Metacafe</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>metacafe</kbd>}<strong>ID</strong>{/metacafe}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.metacafe.com/<strong>watch/143709/i_get_knocked_down</strong>/</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>143709/i_get_knocked_down</strong> zu verwenden. <strong>Ohne</strong> den letzten Schrägstrich!</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Mofile TV</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>mofile</kbd>}<strong>ID</strong>{/mofile}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://tv.mofile.com/<strong>QM66Q9O8</strong>/</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>QM66Q9O8</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">MyShows</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>myshows</kbd>}<strong>ID</strong>{/myshows}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.myshows.cn/myplayvideo.aspx?vid=<strong>3142</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>3142</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">MyVideo.de</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>myvideo</kbd>}<strong>ID</strong>{/myvideo}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.myvideo.de/watch/<strong>17290</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>17290</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">QuXiu</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>quxiu</kbd>}<strong>ID</strong>{/quxiu}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.quxiu.com/video/play_<strong>1369220_570664</strong>.htm</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>1369220_570664</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Revver</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>revver</kbd>}<kbd>ID</kbd>{/revver}</samp> oder <samp>{<kbd>revver</kbd>-mov}<strong>ID</strong>{/revver-mov}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.revver.com/video/<strong>27335</strong>/extreme-diet-coke-mentos-experiments/</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>27335</strong> zu verwenden. Die revver-mov Variante benutzt QuickTime, während die revver Variante Flash verwendet.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Seehaha</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>seehaha</kbd>}<strong>ID</strong>{/seehaha}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.seehaha.com/play/<strong>19787</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>19787</strong> zu verwenden. Dieser Anbieter hat sich in MyShows.cn umbenannt. Verwenden Sie das neue <strong>myshows</strong> Tag.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Sevenload.de</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>sevenload</kbd>}<strong>ID</strong>{/sevenload}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://de.sevenload.com/videos/<strong>BqV1zFl</strong>/Ein-Kaefer-mischt-auf-Minuscule</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>BqV1zFl</strong> zu verwenden. Wenn die ID länger als 7 Zeichen enthält, ist sie auf 7 Zeichen zu kürzen.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Spike</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>spike</kbd>}<strong>ID</strong>{/spike}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.spike.com/video/no-more-heroes/<strong>2724128</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>2724128</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Stickam</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>stickam</kbd>}<strong>ID</strong>{/stickam}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.stickam.com/editMediaComment.do?method=load&amp;mId=<strong>174010582</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>174010582</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Streetfire Videos</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>streetfire</kbd>}<strong>ID</strong>{/streetfire}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://videos.streetfire.net/video/<strong>cf324233-408a-4e93-8c02-29147e71ab0e</strong>.htm</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>cf324233-408a-4e93-8c02-29147e71ab0e</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">TED<sup style="color:red">*</sup></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>ted</kbd>}<strong>ID</strong>{/ted}</samp> oder <samp>{<kbd>ted2</kbd>}<strong>ID</strong>{/ted2}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.ted.com/index.php/talks/view/id/<strong>127</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>127</strong> zu verwenden. Die erste Variante des tags benutzt den selben Player wie er auch auf TED.com zu sehen ist. (Dieser verwendet das RTMP-Protokoll, welches ein Springen im Video ohne nennenswerte Verzögerung erlaubt). Die zweite Variante benutzt TED's &quot;normalen&quot; Player.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Tudou</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>tudou</kbd>}<strong>ID</strong>{/tudou}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.tudou.com/programs/view/<strong>T7tcywVL8P0</strong>/</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>T7tcywVL8P0</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">UUme</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>uume</kbd>}<strong>ID</strong>{/uume}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.uume.com/play_<strong>0p7PhcCcJ2ra</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>0p7PhcCcJ2ra</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Vidiac</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>vidiac</kbd>}<strong>ID</strong>{/vidiac}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.vidiac.com/video/</samp><strong><samp>310a5f0f-681f-4454-a329-982d00cf6d25</samp></strong><samp>.htm</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong><samp>310a5f0f-681f-4454-a329-982d00cf6d25</samp></strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Vimeo</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>vimeo</kbd>}<strong>ID</strong>{/vimeo}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.vimeo.com/<strong>78198</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>78198</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Virb</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>virb</kbd> width=&quot;564&quot; height=&quot;380&quot;}<strong>ID</strong>{/virb}</samp></td>
+			<td headers="th0FD12CB80002">If you view a video on virb.com, look for the text field, named &quot;Embed&quot; below the Heading &quot;Share tis video&quot;. In this text field, a parameter, named &quot;data&quot; can be found. If this parameter reads <samp>data=&quot;http://www.virb.com/external/video/<strong>2795/uzlwyATf4Jjh3Sc3ZF7PE0Z3CqMhasV</strong>&quot;</samp>, then the <strong>ID</strong> to use is <strong>2795/uzlwyATf4Jjh3Sc3ZF7PE0Z3CqMhasV</strong>. Furthermore, videos on virb.com don't have a common size. So make shure, that you copy the <strong>width</strong> and <strong>height</strong> parameters into your tag as well.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">WangYou.com</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>wangyou</kbd>}<strong>ID</strong>{/wangyou}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://v.wangyou.com/play.php?id=<strong>1773127</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>1773127</strong> zu verwenden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">Yahoo Video<span style="color:red"><sup>*</sup></span></td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>yahoo</kbd>}<strong>ID</strong>{/yahoo}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://video.yahoo.com/video/play?vid=<strong>1739899</strong>&amp;fr=&amp;cache=1#4137681685219394371</samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>1739899</strong> zu verwenden. D.h. Alle Zeichen zwischen dem letzten <strong>Punkt</strong> und dem darauf folgenden <strong>&amp;</strong>.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">YouTube</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>youtube</kbd>}<strong>ID</strong>{/youtube}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.youtube.com/watch?v=<strong>cdXTDovB9K8</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>cdXTDovB9K8</strong> zu verwenden. Diese Variante benutzt YouTube's eigenen Player.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th0FD12CB80000">YouTube</td>
+			<td headers="th0FD12CB80001"><samp>{<kbd>youtubejw</kbd>}<strong>ID</strong>{/youtubejw}</samp></td>
+			<td headers="th0FD12CB80002">Wenn in der Adressleiste Ihres Browsers <samp>http://www.youtube.com/watch?v=<strong>cdXTDovB9K8</strong></samp> angezeigt wird, dann ist als <strong>ID</strong> der Text <strong>cdXTDovB9K8</strong> zu verwenden. Diese Variante benutzt den neuen JW Media Player.</td>
+		</tr>
+	</tbody>
+</table>
+<p>Presets, welche mit einem roten Stern (<span style="color:red"><sup>*</sup></span>) markiert sind, verwenden eine spezielle <strong>ripper</strong> Technik um die URL-Verschleierung des jeweiligen Providers zu umgehen: Hierbei wird <strong>zuerst</strong> die relevante Seite des Providers abgerufen und deren Inhalt dann im Plugin geparst um an die tatsächliche URL des Videos zu gelangen. <strong>Danach</strong> wird dann der für das Einbetten nötige Markup-Code generiert. Aus diesem Grund, können von diesen Providern abgerufene Videos den Seitenaufbau Ihrer Site verzögern. Seit Version 1.0beta3 des Plugins sorgt ein eingebauter Cache dafür, dass diese Verzögerungen auf ein absolutes Minimum reduziert werden. Nach dem erstmaligem Abrufen einer solchen Seite sollte sich also ein signifikanter Geschwindigkeitsvorteil einstellen. Darüberhinaus, erfordert das Einbetten von Medien solcher Provider natürlich den Aufbau einer ausgehenden Verbindung von Ihrem Server zum jeweiligen Video-Provider. Die meisten Hoster haben die Server so eingestellt das dies erlaubt ist. Falls jedoch anstelle des Videos eine Meldung &quot;Unable to fetch URL: ...&quot; erscheint, dann könnte es sein dass Ihr Hoster dies nicht zulässt. In diesem Fall kontaktieren Sie bitte Ihren Hoster.</p>
+<br /><div class="pagenavbar"><div><a href="de-de.doc2.html">&lt;&lt; Zurück</a> - <a href="de-de.doc4.html">Weiter &gt;&gt;</a></div></div><br /></td>
+</tr>
+<tr>
+	<td colspan="2"  class="modifydate">
+		Aktualisiert ( Samstag, 05. Juli 2008 03:49 )
+	</td>
+</tr>
+</table></body>
+</html>

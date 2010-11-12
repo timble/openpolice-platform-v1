@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-de" lang="de-de" >
+<head><title>AllVideos Reloaded Dokumentation</title>
+<style type="text/css">
+    body {
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:76%;
+        line-height:1.3;
+    }
+    a {
+        text-decoration:none;
+        font-weight:bold;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
+    a:active,a:focus {
+        outline:none;
+    }
+    a,h2,a:hover,li#current a,li.parent li#current a,li#current li a:hover {
+       color:#53a31c;
+    }
+    .small,.createdate,.modifydate {
+        font:0.9em Arial,Helvetica,sans-serif;
+        color:#53a31c;
+    }
+    table.avrtable {
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    table.avrtable td,
+    table.avrtable th {
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+    
+    span.alert {
+        background:#FFD6D6 url(notice-alert.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FE7B7A;
+        border-top:3px solid #FE7B7A;
+        color:#CC0000;
+    }
+    span.info {
+        background:#C0D2E8 url(notice-info.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #629DE3;
+        border-top:3px solid #629DE3;
+        color:#0055BB;
+    }
+    span.note {
+        background:#F0E6BE url(notice-note.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #FDE179;
+        border-top:3px solid #FDE179;
+        color:#B79000;
+    }
+    span.download {
+        background:#DEE6C5 url(notice-download.png) no-repeat scroll 10px 50%;
+        border-bottom:3px solid #C2DF88;
+        border-top:3px solid #C2DF88;
+        color:#57861A;
+    }
+    span.alert, span.info, span.download, span.note {
+        display:block;
+        margin:15px 0pt;
+        padding:10px 10px 10px 45px;
+    }
+    .contenttoc {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head><body>
+<table class="contentpaneopen">
+<tr>
+<td valign="top" colspan="2">
+	<table cellpadding="0" cellspacing="0" class="contenttoc">
+	<tr>
+		<th>Beitragsseiten</th>
+	</tr>
+	<tr>
+		<td>
+		<a href="de-de.doc0.html">Einführung</a>
+		</td>
+	</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc1.html">Lizenz</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc2.html">Lokale Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc3.html">Remote Inhalte</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc4.html">Plugin Parameter</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc5.html">Verwendung von Playlisten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc6.html">Playlisten verwalten</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc7.html">Den AVR Media Button verwenden</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc8.html">Popup Fenster und Lightbox</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc9.html">Das System-Plugin</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a href="de-de.doc10.html">Managing Players, Rippers and Tags</a>
+				</td>
+			</tr>
+			</table><div class="pagenavcounter">Seite 3 von 11</div>
+<h2>Lokale Inhalte</h2>
+<p>Mit <strong>AllVideos Reloaded</strong> können Inhalte, welche vorab mittels Joomla!'s auf den Server hochgeladen wurden eingebettet werden. Lokales Streaming kann aus vielen Gründen von Vorteil sein. Eine Firmen-Website möchte z.B. nicht unbedingt in jedem Firmen-Video ein YouTube Logo anzeigen. Unabhängigkeit von externen Servern wäre ein anderer Grund.<br /></p>
+<div><strong>Unterstützte Dateiformate</strong></div>
+<p>Sie können annähernd alle gängigen im Web verwendbaren Formate auf Ihren Server hochladen. Von Windows Media bis QuickTime, Flash, DivX oder Real Media und natürlich auch MP3!</p>
+<p>Wie fügt man nun eine Video- oder Audio-Datei mit dem <strong>AllVideos Reloaded</strong> Plugin in den Seiteninhalt ein? Ganz einfach!</p>
+<p>Bevor Sie loslegen, sollten Sie die master Video- und Audio- Ordner anlegen. Wenn Sie die Voreinstellungen in den Plugin-Parametern beibehalten, dann müssen diese Ordner <em>videos</em> bzw. <em>audio</em> benannt werden und sich im Bilder-Ordner Ihrer Joomla-Installation befinden. (Unter Joomla! 1.5, ist der Bilder-Ordner in der globalen Konfiguration im Tab &quot;System&quot; einstellbar.) Wenn Sie hier die vordefinierten Einstellungen (images/stories) übernehmen, läuft dies darauf hinaus, dass Sie die Ordner <em>ROOT/images/stories/videos</em> bzw.<em>ROOT/images/stories/audio</em> benutzen. Öffnen Sie also den Medien-Manager, klicken Sie dort auf den Ordner <em>stories</em> und erstellen Sie die beiden nötigen Unterordner. Danach können Sie dann dort hinein Ihre Dateien hochladen. Angenommen, Sie haben die Videos ferien.flv und party.avi in den Ordner videos hochgeladen, dann können Sie diese Videos in einem Artikel einbinden, indem Sie einfach folgenden Text in den Artikel schreiben: <code>{<samp>flv</samp>}ferien{/flv}</code> bzw. <code>{<samp>avi</samp>}party{/avi}</code>. <span class="info">Bitte beachten Sie hierbei: Der Pfad zur Datei wird hierbei <strong>automatisch</strong> vorangestellt und die Dateierweiterung (stets <strong>kleingeschieben!</strong>) wird <strong>automatisch</strong> angehängt.</span> Wenn sich die Ordner mit der Zeit füllen, wollen Sie sicher Ihre Medien in Unterordnern organisieren. Wenn Sie dies tun, dann stellen Sie einfach den Unterordner voran. Wenn Sich das gewünschte Video z.B. in <em>ROOT/images/stories/videos/ferien2007/film1.flv</em> befindet, dann lautet der zugehörige Aufruf: <code>{<samp>flv</samp>}ferien2007/film1{/flv}</code>. Haben Sie das System dahinter erfasst? Ok. Von nun an verwenden wir in dieser Dokumentation für den Markierungs-Text den üblichen englischen Namen <strong>Tag</strong>. Die folgende Tabelle zeigt die unterstützten Dateiformate sowie die für das jeweilige Format zu verwendenden Tags:</p>
+<table border="0" cellpadding="5" cellspacing="0" class="avrtable" summary="Unterstützte Formate für lokales Streaming">
+	<colgroup>
+		<col width="15%" />
+		<col width="20%" />
+		<col width="15%" />
+	</colgroup>
+	<thead>
+		<tr align="left" valign="top">
+			<th id="th126ADE980000">Format</th>
+			<th id="th126ADE980001">Zu benutzendes Tag</th>
+			<th id="th126ADE980002">Player, der verwendet wird</th>
+			<th id="th126ADE980003">Anmerkungen</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Flash video</td>
+			<td headers="th126ADE980001"><samp>{<kbd>flv</kbd>}name{/flv}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">JW Media Player</td>
+			<td headers="th126ADE980003">Das am Besten geeignete Format. Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .flv) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Shockwave flash video</td>
+			<td headers="th126ADE980001"><samp>{<kbd>swf</kbd>}name{/swf}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">JW Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .swf) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Flash <strong>Animation</strong></td>
+			<td headers="th126ADE980001"><samp>{<kbd>flash</kbd>}name{/flash}</samp></td>
+			<td headers="th126ADE980002">-</td>
+			<td headers="th126ADE980003">Dieses Tag dient zum Einbetten von Flash-Animationen (.swf) welche sich nicht mit dem Tag <samp>{<kbd>swf</kbd>}</samp> darstellen lassen. Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .swf) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">MP3 Audio</td>
+			<td headers="th126ADE980001"><samp>{<kbd>mp3</kbd>}name{/mp3}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">JW Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .mp3) wird automatisch angehängt. Die Darstelleung des Players reduziert sich automatisch so dass nur noch die Bedienungselemente sichtbar sind. Um korrekte Widergabe zu erziehlen muss das MP3 medium mit konstanter Bitrate (CBR) und unter Verwendung einer Sample-Frequenz von 11, 22, 33 oder 44 kHz codiert sein. Diese Einschrängung wird generell durch die Verwendung von Flash auferlegt, und nicht durch den JW Media Player!</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">3GP mobile media</td>
+			<td headers="th126ADE980001"><samp>{<kbd>3gp</kbd>}name{/3gp}</samp></td>
+			<td headers="th126ADE980002">JW Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .3gp) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">RBS Audio</td>
+			<td headers="th126ADE980001"><samp>{<kbd>rbs</kbd>}name{/rbs}</samp></td>
+			<td headers="th126ADE980002">JW Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .rbs) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Beliebig</td>
+			<td headers="th126ADE980001"><samp>{<kbd>auto</kbd>}name.flv{/auto}</samp></td>
+			<td headers="th126ADE980002">JW Media Player</td>
+			<td headers="th126ADE980003">Automatische Typ-Erkennung durch den Player. Der Pfad wird automatisch vorangestellt. Die Dateiendung muss allerdings im Tag mit angegeben werden.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Mpeg4 H.264</td>
+			<td headers="th126ADE980001"><samp>{<kbd>m4v</kbd>}name{/m4v}</samp></td>
+			<td headers="th126ADE980002">JW Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .m4v) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Windows Media Video</td>
+			<td headers="th126ADE980001"><samp>{<kbd>wmv</kbd>}name{/wmv}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Windows Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .wmv) wird automatisch angehängt. Bedingt durch die Tatsache, dass eine unüberschaubare Menge verschiedener Codecs für dieses Format existieren, ist es nicht vorhersagbar, ob eine bestimmte Datei sich auf allen Systemen abspielen lässt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Windows Media Audio</td>
+			<td headers="th126ADE980001"><samp>{<kbd>wma</kbd>}name{/wma}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Windows Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .wma) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">AVI</td>
+			<td headers="th126ADE980001"><samp>{<kbd>avi</kbd>}name{/avi}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Windows Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .avi) wird automatisch angehängt. Bedingt durch die Tatsache, dass eine unüberschaubare Menge verschiedener Codecs für dieses Format existieren, ist es nicht vorhersagbar, ob eine bestimmte Datei sich auf allen Systemen abspielen lässt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">MPEG</td>
+			<td headers="th126ADE980001"><samp>{<kbd>mpg</kbd>}name{/mpg}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Windows Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .mpg) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">MPEG</td>
+			<td headers="th126ADE980001"><samp>{<kbd>mpeg</kbd>}name{/mpeg}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Windows Media Player</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .mpeg) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">QuickTime</td>
+			<td headers="th126ADE980001"><samp>{<kbd>mov</kbd>}name{/mov}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Apple Quicktime</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .mov) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">MP4</td>
+			<td headers="th126ADE980001"><samp>{<kbd>mp4</kbd>}name{/mp4}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">Apple Quicktime</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .mp4) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Real Media</td>
+			<td headers="th126ADE980001"><samp>{<kbd>rm</kbd>}name{/rm}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">RealPlayer</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .rm) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">Real Media</td>
+			<td headers="th126ADE980001"><samp>{<kbd>ram</kbd>}name{/ram}</samp></td>
+			<td align="left" headers="th126ADE980002" valign="top">RealPlayer</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .ram) wird automatisch angehängt.</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td headers="th126ADE980000">DivX</td>
+			<td headers="th126ADE980001"><samp>{<kbd>divx</kbd>}name{/divx}</samp></td>
+			<td headers="th126ADE980002">DivX webPlayer</td>
+			<td headers="th126ADE980003">Der Pfad wird automatisch vorangestellt und die Dateiendung (kleingeschrieben .divx) wird automatisch angehängt.</td>
+		</tr>
+	</tbody>
+</table>
+<p>Zu allen oben aufgelisteten Tags gibt es jeweils eine zweite Variante welche den Pfad <strong>nicht</strong> voranstellt und auch <strong>keine</strong> Dateierweiterung anhängt. (Anders gesagt: Die URL wird <strong>unverändert</strong> übernommen). Diese Variante kann sowohl zum Streamen von lokalen wie auch remote verfügbaren Inhalten verwendet werden. Man erhält diese Variante durch das Anhängen des Wortes <strong>remote</strong> an das Original-Tag. Aus <samp>flv</samp> wird also <samp>flvremote</samp> z.B.: <samp>{<kbd>flvremote</kbd>}http://www.yoursite.com/images/stories/videos/name.flv{/flvremote}</samp></p>
+<br /><div class="pagenavbar"><div><a href="de-de.doc1.html">&lt;&lt; Zurück</a> - <a href="de-de.doc3.html">Weiter &gt;&gt;</a></div></div><br /></td>
+</tr>
+<tr>
+	<td colspan="2"  class="modifydate">
+		Aktualisiert ( Samstag, 05. Juli 2008 03:49 )
+	</td>
+</tr>
+</table></body>
+</html>
