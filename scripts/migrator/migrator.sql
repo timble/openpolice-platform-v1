@@ -48,30 +48,3 @@ DELETE FROM `pol_menu` WHERE LOCATE('option=com_joomap', `link`) <> 0;
 
 # Delete Linkr component.
 DROP TABLE IF EXISTS `pol_linkr`;
-
-
-# Install AvReloaded component and plugin.
-
-DELETE FROM `pol_components` WHERE `option` = 'com_avreloaded';
-
-INSERT INTO `pol_components` VALUES(0, 'AvReloaded', '', 0, 0, '', 'AvReloaded', 'com_avreloaded', 0, '', 0, '', 0);
-INSERT INTO `pol_components` VALUES(0, 'AVR_TITLE_MANAGE_PLAYERS', '', 0, 40, 'option=com_avreloaded&view=players', 'AVR_TITLE_MANAGE_PLAYERS', 'com_avreloaded', 0, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 0);
-INSERT INTO `pol_components` VALUES(0, 'AVR_TITLE_MANAGE_RIPPERS', '', 0, 40, 'option=com_avreloaded&view=rippers', 'AVR_TITLE_MANAGE_RIPPERS', 'com_avreloaded', 1, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 0);
-INSERT INTO `pol_components` VALUES(0, 'AVR_TITLE_MANAGE_TAGS', '', 0, 40, 'option=com_avreloaded&view=tags', 'AVR_TITLE_MANAGE_TAGS', 'com_avreloaded', 2, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 0);
-INSERT INTO `pol_components` VALUES(0, 'AVR_TITLE_MANAGE_PLAYLISTS', '', 0, 40, 'option=com_avreloaded&view=playlists', 'AVR_TITLE_MANAGE_PLAYLISTS', 'com_avreloaded', 3, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 0);
-
-DROP TABLE IF EXISTS `pol_avr_player`;
-CREATE OR REPLACE VIEW `pol_avr_player` AS
-	SELECT * FROM `police_default`.`pol_avr_player`;
-
-DROP TABLE IF EXISTS `pol_avr_popup`;
-CREATE OR REPLACE VIEW `pol_avr_popup` AS
-	SELECT * FROM `police_default`.`pol_avr_popup`;
-
-DROP TABLE IF EXISTS `pol_avr_ripper`;
-CREATE OR REPLACE VIEW `pol_avr_ripper` AS
-	SELECT * FROM `police_default`.`pol_avr_ripper`;
-
-DROP TABLE IF EXISTS `pol_avr_tags`;
-CREATE OR REPLACE VIEW `pol_avr_tags` AS
-	SELECT * FROM `police_default`.`pol_avr_tags`;
