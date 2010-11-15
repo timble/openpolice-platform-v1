@@ -4,7 +4,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.0.77)
 # Database: police_default
-# Generation Time: 2010-11-12 21:25:03 +0100
+# Generation Time: 2010-11-15 21:46:52 +0100
 # ************************************************************
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -15,250 +15,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table pol_avr_player
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `pol_avr_player`;
-
-CREATE TABLE `pol_avr_player` (
-  `id` int(11) NOT NULL auto_increment,
-  `version` int(11) NOT NULL default '0',
-  `minw` int(11) NOT NULL default '0',
-  `minh` int(11) NOT NULL default '0',
-  `isjw` int(1) NOT NULL default '0',
-  `name` varchar(25) NOT NULL,
-  `code` mediumtext NOT NULL,
-  `description` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
-
-LOCK TABLES `pol_avr_player` WRITE;
-/*!40000 ALTER TABLE `pol_avr_player` DISABLE KEYS */;
-INSERT INTO `pol_avr_player` (`id`,`version`,`minw`,`minh`,`isjw`,`name`,`code`,`description`)
-VALUES
-	(1,0,0,0,1,'flv','<script type=\"text/javascript\">\nswfobject.embedSWF(\'@RLOC@mediaplayer.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'@FLASHVER@\',@XPINST@,\n{file:\'@MURL@\',width:\'@WIDTH@\',height:\'@HEIGHT@\',@IF(ENABLEJS)@javascriptid:\'p_@DIVID@\',\n@/IF@@IFS(PLTHUMBS)@thumbsinplaylist:\'@PLTHUMBS@\',\n@/IFS@@IF(AUTOSCROLL)@autoscroll:\'@AUTOSCROLL@\',\n@/IF@@IFS(TYPE)@type:\'@TYPE@\',\n@/IFS@@IFS(VOLUME)@volume:\'@VOLUME@\',\n@/IFS@@IFS(CFG)@config:\'@CFG@\',\n@/IFS@@IFS(LINK)@link:\'@LINK@\',\n@/IFS@@IFS(IMG)@image:\'@IMG@\',\n@/IFS@@IFS(LINK)@linkfromdisplay:\'@LINKFROMDISPLAY@\',\n@/IFS@@IFS(LINK)@linktarget:\'@LINKTARGET@\',\n@/IFS@@IFS(REPEAT)@repeat:\'@REPEAT@\',\n@/IFS@@IFS(SHUFFLE)@shuffle:\'@SHUFFLE@\',\n@/IFS@@IFS(RECURL)@recommendations:\'@RECURL@\',\n@/IFS@@IFS(DISPLAYWIDTH)@displaywidth:\'@DISPLAYWIDTH@\',\n@/IFS@@IFS(DISPLAYHEIGHT)@displayheight:\'@DISPLAYHEIGHT@\',\n@/IFS@@IFS(LOGO)@logo:\'@LOGO@\',\n@/IFS@@IFS(CAPTIONS)@captions:\'@CAPTIONS@\',\n@/IFS@@IFS(USECAPTIONS)@usecaptions:\'@USECAPTIONS@\',\n@/IFS@@IFS(SEARCHLINK)@searchlink:\'@SEARCHLINK@\',\n@/IFS@showeq:\'@SHOWEQ@\',searchbar:\'@SEARCHBAR@\',enablejs:\'@ENABLEJS@\',autostart:\'@AUTOSTART@\',showicons:\'@SHOWICONS@\',@IF(!SHOWNAV)@shownavigation:\'@SHOWNAV@\',@/IF@@IF(SHOWNAV)@showstop:\'@SHOWSTOP@\',showdigits:\'@SHOWDIGITS@\',\nshowdownload:\'@SHOWDOWNLOAD@\',@/IF@usefullscreen:\'@USEFULLSCREEN@\',backcolor:\'@PBGCOLOR@\',frontcolor:\'@PFGCOLOR@\',\nlightcolor:\'@PHICOLOR@\',screencolor:\'@PSCCOLOR@\',overstretch:\'@STRETCH@\'}\n,{allowscriptaccess:\'always\',seamlesstabbing:\'true\',allowfullscreen:\'true\',wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},\n{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','JW Media Player'),
-	(2,0,0,0,0,'wmv','<object classid=\"CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6\"\n type=\"application/x-oleobject\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\">\n<param name=\"URL\" value=\"@MURL@\" />\n<param name=\"stretchToFit\" value=\"1\" />\n<param name=\"showControls\" value=\"1\" />\n<param name=\"showStatusBar\" value=\"0\" />\n<param name=\"animationAtStart\" value=\"1\" />\n<param name=\"autoStart\" value=\"@AUTOSTART!d@\" />\n<param name=\"enableFullScreenControls\" value=\"@USEFULLSCREEN!d@\" \n/><embed src=\"@MURL@\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\" autoStart=\"@AUTOSTART!d@\" animationAtStart=\"1\" enableFullScreenControls=\"@USEFULLSCREEN!d@\" type=\"application/x-mplayer2\"/></embed></object>','Windows Media Player'),
-	(3,0,0,0,0,'mov','<object codebase=\"http://www.apple.com/qtactivex/qtplugin.cab\" classid=\"clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\"><param name=\"src\" value=\"@MURL@\" /><param name=\"controller\" value=\"True\" /><param name=\"cache\" value=\"False\" /><param name=\"autoplay\" value=\"@AUTOSTART@\" /><param name=\"kioskmode\" value=\"False\" /><param name=\"scale\" value=\"tofit\" /><embed src=\"@MURL@\" pluginspage=\"http://www.apple.com/quicktime/download/\" scale=\"tofit\" kioskmode=\"False\" qtsrc=\"@MURL@\" cache=\"False\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\" controller=\"True\" type=\"video/quicktime\" autoplay=\"@AUTOSTART@\" /></object>','QuickTime Player'),
-	(4,0,0,0,0,'rm','<object classid=\"clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\"><param name=\"controls\" value=\"ControlPanel\" /><param name=\"autostart\" value=\"@AUTOSTART!d@\" /><param name=\"src\" value=\"@MURL@\" /><embed src=\"@MURL@\" type=\"audio/x-pn-realaudio-plugin\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\" controls=\"ControlPanel\" autostart=\"@AUTOSTART!d@\" /></object>','Real Media Player'),
-	(5,0,0,0,0,'divx','<object classid=\"CLSID:67DABFBF-D0AB-41fa-9C46-CC0F21721616\"\ncodebase=\"http://download.divx.com/webplayer/stage6/windows/AutoDLDivXWebPlayerInstaller.cab\" \n type=\"application/x-oleobject\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\">\n<param name=\"src\" value=\"@MURL@\" />\n<param name=\"custommode\" value=\"Stage6\" />\n<param name=\"showControls\" value=\"1\" />\n<param name=\"showpostplaybackad\" value=\"false\" />\n<param name=\"allowContextMenu\" value=\"@MENU@\" />\n@IFS(IMG)@<param name=\"previewImage\" value=\"@IMG@\" />\n@/IFS@<param name=\"autoplay\" value=\"@AUTOSTART@\" \n/><embed type=\"video/divx\" src=\"@MURL@\" style=\"width: @WIDTH@px; height: @HEIGHT@px;\" pluginspage=\"http://go.divx.com/plugin/download/\" showpostplaybackad=\"false\" custommode=\"Stage6\" autoplay=\"@AUTOSTART@\" allowContextMenu=\"@MENU@\"@@IFS(IMG)@ previewImage=\"@IMG@\"@/IFS@/></object>','DivX Webplayer'),
-	(6,0,0,0,0,'6cn','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://6.cn/player.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{vid:\'@CODE@\',flag:\'1\'},{allowfullscreen:\'true\',wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','6Cn.com original player'),
-	(7,0,0,0,0,'biku','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.biku.com/opus/player.swf?VideoID=@CODE@&embed=true&autoStart=@AUTOSTART@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',menu:\'@MENU@\',bgcolor:\'@BGCOLOR@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Biku.com original player'),
-	(8,0,0,0,0,'bofunk','<script type=\"text/javascript\">\nswfobject.embedSWF(\'@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{allowfullscreen:\'true\',wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Bofunk.com original player'),
-	(9,0,0,0,0,'break','<script type=\"text/javascript\">\nswfobject.embedSWF(\'@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Break.com original player'),
-	(10,0,0,0,0,'clipfish','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.clipfish.de/videoplayer.swf?videoid=@CODE@&r=1\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',allowfullscreen:\'true\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','ClipFish.de original player'),
-	(11,0,0,0,0,'collegehumor','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','CollegeHumor original player'),
-	(12,0,420,340,0,'currenttv','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://current.com/e/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','CurrentTV original player'),
-	(13,0,0,0,0,'dmotion','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.dailymotion.com/swf/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'8.0.0\',@XPINST@,\n{v3:\'1\',related:\'0\',autoPlay:\'@AUTOSTART!d@\',colors:\'background:DDDDDD;glow:FFFFFF;foreground:333333;special:FFC300;\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',quality:\'high\',allowScriptAccess:\'allways\',allowfullscreen:\'true\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','DailyMotion.com original player'),
-	(14,0,0,0,0,'vidiac','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.vidiac.com/vidiac.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{name:\'ePlayer\',video:\'@CODE@\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Vidiac.com original player'),
-	(15,0,0,0,0,'gametrailers','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.gametrailers.com/remote_wrap.php?mid=@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',allowfullscreen:\'true\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','GameTrailers.com original player'),
-	(16,0,0,0,0,'google','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://video.google.com/googleplayer.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{@IF(AUTOSTART)@autoPlay:\'true\',@/IF@docId:\'@CODE@\',hl:\'@LANG@\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Google Video original player'),
-	(17,0,0,0,0,'spike','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.spike.com/efp\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{flvBaseClip:\'@CODE@\'},{name:\'efp\',wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Spike.com original player (previously iFilm.com)'),
-	(18,0,0,0,0,'jumpcut','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.jumpcut.com/media/flash/jump.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{asset_type:\'movie\',asset_id:\'@CODE@\',eb:\'1\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','JumpCut.com original player'),
-	(19,0,0,0,0,'mega','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://wwwstatic.megavideo.com/tmp_mvplayer.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'8.0.0\',@XPINST@,\n{waitingtime:\'0\',flv:\'@CODE@\',k:\'@RRESA@\',poker:\'0\',v:\'@OCODE@\',rel_again:\'Play again\',rel_other:\'Related videos\',u:\'\',user:\'\',from:\'from:\',views:\'views\',vid_time:\'@RRESB@\',vid_name:\'\',videoname:\'\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',quality:\'high\',allowScriptAccess:\'sameDomain\',allowFullScreen:\'@USEFULLSCREEN@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','MegaVideo.com original player'),
-	(20,0,0,0,0,'metacafe','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.metacafe.com/fplayer/@CODE@.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{altServerURL:\'http://www.metacafe.com\',playerVars:\'showStats=no|autoPlay=no|videoTitle=\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','MetaCafe.com original player'),
-	(21,0,0,0,0,'mofile','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://tv.mofile.com/cn/xplayer.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{v:\'@CODE@\',autoplay:\'0\'},{wmode:\'@WMODE@\',allowScriptAccess:\'always\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Mofile.com original player'),
-	(22,0,0,0,0,'myvideo','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.myvideo.de/movie/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','MyVideo.com original player'),
-	(23,0,0,0,0,'quxiu','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.quxiu.com/photo/swf/swfobj.swf?id=@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Quixu.com original player'),
-	(24,0,0,0,0,'revver','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://flash.revver.com/player/1.0/player.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{mediaId:\'@CODE@\',javascriptContext:\'true\',skinURL:\'http://flash.revver.com/player/1.0/skins/Default_Raster.swf\',skinImgURL:\'http://flash.revver.com/player/1.0/skins/night_skin.png\',actionBarSkinURL:\'http://flash.revver.com/player/1.0/skins/DefaultNavBarSkin.swf\',resizeVideo:\'true\'},\n{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Revver.com original player'),
-	(25,0,0,0,0,'seehaha','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.seehaha.com/flash/playvid2.swf?vidID=@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','SeeHaha.com original player'),
-	(26,0,0,0,0,'sevenload','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://de.sevenload.com/pl/@CODE@/503x403/swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',allowfullscreen:\'true\',allowscriptaccess:\'always\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'\n},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','SevenLoad.com original player'),
-	(27,0,0,0,0,'stickam','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.stickam.com/flashVarMediaPlayer/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',allowfullscreen:\'true\',scale:\'noscale\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','StickAm.com original player'),
-	(28,0,0,0,0,'streetfire','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://videos.streetfire.net/vidiac.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{name:\'ePlayer\',video:\'@CODE@\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','StreetFire original player'),
-	(29,0,432,285,0,'ted','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.ted.com/swf/videoplayer.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'8.0.0\',@XPINST@,\n{jsonStr:\'@CODE@\',flashID:\'swfVideoPlayer\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',quality:\'high\',allowScriptAccess:\'always\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','TED.com original player'),
-	(30,0,0,0,0,'ted2','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://static.videoegg.com/ted/flash/loader.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'8.0.0\',@XPINST@,\n{file:\'@CODE@\',autoPlay:\'@AUTOSTART@\',allowFullscreen:\'@USEFULLSCREEN@\',forcePlay:\'false\',logo:\'\',fullscreenURL:\'http://static.videoegg.com/ted/flash/fullscreen.html\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',quality:\'high\',allowScriptAccess:\'always\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','TED.com alternative player'),
-	(31,0,0,0,0,'tudou','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.tudou.com/v/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Tudou.com original player'),
-	(32,0,0,0,0,'uume','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.uume.com/v/@CODE@_UUME\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',allowfullscreen:\'true\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Uume.com original player'),
-	(33,0,0,0,0,'vimeo','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.vimeo.com/moogaloop.swf?clip_id=@CODE@&server=www.vimeo.com&show_title=1&show_byline=1&show_portrait=0&autoplay=@AUTOSTART!d@&fullscreen=@USEFULLSCREEN!d@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',allowfullscreen:\'true\',scale:\'showall\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Vimeo.com original player'),
-	(34,0,0,0,0,'virb','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.virb.com/external/video/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',salign:\'tl\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Virb.com original player'),
-	(35,0,0,0,0,'wangyou','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://v.wangyou.com/images/x_player.swf?id=@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\nfalse,{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','WangYou.com original player'),
-	(36,0,0,0,0,'yahoo','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{onsite:\'0\',embed:\'1\',id:\'@CODE@\'},{allowfullscreen:\'@USEFULLSCREEN@\',wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Yahoo video original player'),
-	(37,0,0,0,0,'youtube','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.youtube.com/v/@CODE@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{autoplay:\'@AUTOSTART!d@\',color1:\'@PBGCOLOR@\',color2:\'@PHICOLOR@\',rel:\'@YTREL!d@\',egm:\'@YTEGM!d@\',border:\'@YTBORDER!d@\',loop:\'@YTLOOP!d@\'},{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','YouTube original player'),
-	(38,0,0,0,0,'jwwmv','<script type=\"text/javascript\">\nnew jeroenwijering.Player($(\'@DIVID@\'),\'@RLOC@wmvplayer.xaml\',\n{file:\'@MURL@\',width:\'@WIDTH@\',height:\'@HEIGHT@\',@IF(ENABLEJS)@javascriptid:\'p_@DIVID@\',\n@/IF@@IFS(PLTHUMBS)@thumbsinplaylist:\'@PLTHUMBS@\',\n@/IFS@@IF(AUTOSCROLL)@autoscroll:\'@AUTOSCROLL@\',\n@/IF@@IFS(TYPE)@type:\'@TYPE@\',\n@/IFS@@IFS(CFG)@config:\'@CFG@\',\n@/IFS@@IFS(LINK)@link:\'@LINK@\',\n@/IFS@@IFS(IMG)@image:\'@IMG@\',\n@/IFS@@IFS(LINK)@linkfromdisplay:\'@LINKFROMDISPLAY@\',\n@/IFS@@IFS(LINK)@linktarget:\'@LINKTARGET@\',\n@/IFS@@IFS(REPEAT)@repeat:\'@REPEAT@\',\n@/IFS@@IFS(SHUFFLE)@shuffle:\'@SHUFFLE@\',\n@/IFS@@IFS(RECURL)@recommendations:\'@RECURL@\',\n@/IFS@@IFS(DISPLAYWIDTH)@displaywidth:\'@DISPLAYWIDTH@\',\n@/IFS@@IFS(DISPLAYHEIGHT)@displayheight:\'@DISPLAYHEIGHT@\',\n@/IFS@@IFS(LOGO)@logo:\'@LOGO@\',\n@/IFS@@IFS(SEARCHLINK)@searchlink:\'@SEARCHLINK@\',\n@/IFS@showeq:\'@SHOWEQ@\',searchbar:\'@SEARCHBAR@\',enablejs:\'@ENABLEJS@\',autostart:\'@AUTOSTART@\',showicons:\'@SHOWICONS@\',@IF(!SHOWNAV)@shownavigation:\'@SHOWNAV@\',@/IF@@IF(SHOWNAV)@showstop:\'@SHOWSTOP@\',showdigits:\'@SHOWDIGITS@\',\nshowdownload:\'@SHOWDOWNLOAD@\',@/IF@usefullscreen:\'@USEFULLSCREEN@\',backcolor:\'@PBGCOLOR@\',frontcolor:\'@PFGCOLOR@\',\nlightcolor:\'@PHICOLOR@\',screencolor:\'@PSCCOLOR@\',overstretch:\'@STRETCH@\'}\n);\n</script>','JW WMV Player (needs MS-SilverLight)'),
-	(39,0,0,0,0,'swf','<script type=\"text/javascript\">\nswfobject.embedSWF(\'@MURL@\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'@FLASHVER@\',@XPINST@,\nfalse,{allowscriptaccess:\'always\',seamlesstabbing:\'true\',allowfullscreen:\'true\',wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',menu:\'@MENU@\'},\n{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Plain flash embedding (for flash animations)'),
-	(40,0,0,0,0,'brightcove','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.brightcove.tv/playerswf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{initVideoId:\'@CODE@\',servicesURL:\'http://www.brightcove.tv\',\nviewerSecureGatewayURL:\'https://www.brightcove.tv\',\ncdnURL:\'http://admin.brightcove.com\',autoStart:\'@AUTOSTART@\'},\n{base:\'http://admin.brightcove.com\',\nwmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',allowFullScreen:\'true\',\nallowScriptAccess:\'always\',seamlesstabbing:\'false\',swLiveConnect:\'true\'\n,menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Brightcove.tv original player'),
-	(41,0,0,0,0,'myshows','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://www.seehaha.com/flash/player.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'9.0.28\',@XPINST@,\n{vidFileName:\'@CODE@\'},\n{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',allowFullScreen:\'@USEFULLSCREEN@\',menu:\'@MENU@\'},{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Myshows.cn (previouslyly seehaha.com)'),
-	(42,0,0,0,0,'blip','<script type=\"text/javascript\">\nswfobject.embedSWF(\'http://blip.tv/scripts/flash/showplayer.swf\',\'@DIVID@\',\'@WIDTH@\',\'@HEIGHT@\',\'@FLASHVER@\',@XPINST@,\n{file:\'http://blip.tv/rss/flash/@CODE@?referrer=blip.tv&source=1\',enablejs:\'true\',feedurl:\'http://WatchMojo.blip.tv/rss\',\nshowplayerpath:\'showplayerpath=http://blip.tv/scripts/flash/showplayer.swf\'},\n{wmode:\'@WMODE@\',bgcolor:\'@BGCOLOR@\',quality:\'high\',allowScriptAccess:\'sameDomain\',allowFullScreen:\'@USEFULLSCREEN@\',menu:\'@MENU@\'},\n{id:\'p_@DIVID@\',styleclass:\'@AVCSS@\'});\n</script>','Blip.tv original player');
-
-/*!40000 ALTER TABLE `pol_avr_player` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table pol_avr_popup
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `pol_avr_popup`;
-
-CREATE TABLE `pol_avr_popup` (
-  `id` int(11) NOT NULL auto_increment,
-  `divid` varchar(255) NOT NULL,
-  `code` mediumtext NOT NULL,
-  `width` int(11) NOT NULL,
-  `height` int(11) NOT NULL,
-  `wtime` datetime NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`id`,`divid`)
-) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table pol_avr_ripper
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `pol_avr_ripper`;
-
-CREATE TABLE `pol_avr_ripper` (
-  `id` int(11) NOT NULL auto_increment,
-  `version` int(11) NOT NULL default '0',
-  `flags` int(11) NOT NULL default '0',
-  `cindex` int(11) NOT NULL default '0',
-  `name` varchar(25) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `regex` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
-
-LOCK TABLES `pol_avr_ripper` WRITE;
-/*!40000 ALTER TABLE `pol_avr_ripper` DISABLE KEYS */;
-INSERT INTO `pol_avr_ripper` (`id`,`version`,`flags`,`cindex`,`name`,`url`,`regex`,`description`)
-VALUES
-	(1,0,0,0,'6cn','http://6.cn/watch/@CODE@.html','pageMessage.evid\\s*=\\s*\'([^\']+)\'\\s*;','6CN.com'),
-	(2,0,0,0,'bofunk','http://www.bofunk.com/video/@CODE@.html','<input\\stype=\'text\'\\svalue=\'<embed\\ssrc=\"([^\"]+)\"','Bofunk.com'),
-	(3,0,0,0,'break','http://www.break.com/index/@CODE@.html','<param name=\"movie\" value=\"([^\"]+)\">','Break.com'),
-	(4,0,0,0,'dropshots','http://www.dropshots.com/V1.0/Media.getList?appid=dropshots&username=@USER@&min_taken_date=@CODE@&passwordprotection=false&output=xml','<video>(.+)</video>','Dropshots.com'),
-	(5,0,0,0,'mega','http://www.megavideo.com/?v=@CODE@','addVariable\\s*\\(\\s*\"flv\"\\s*,\\s*\"([^\"]+)\"[\\s\\S]*?addVariable\\s*\\(\\s*\"k\"\\s*,\\s*\"([^\"]+)\"[\\s\\S]*?addVariable\\s*\\(\\s*\"vid_time\"\\s*,\\s*\"([^\"]+)\"','MegaVideo.com'),
-	(6,0,0,0,'ted','http://www.ted.com/index.php/talks/view/id/@CODE@','firstRun\\s*=\\s*\"([^\"]+)\"','TED.com'),
-	(7,0,0,0,'ted2','http://www.ted.com/index.php/talks/view/id/@CODE@','paste-->.+&file=([^&]+).*</object>','TED.com (for alternate player)'),
-	(8,0,0,0,'yahoo','http://video.yahoo.com/watch/@CODE@','addVariable\\s*\\(\\s*\"id\"\\s*,\\s*\"([^\"]+)\"','Yahoo Video'),
-	(9,0,0,0,'streetfire','http://videos.streetfire.net/video/@CODE@.htm','_embedCodeID.*video=([\\dabcdef\\-]+)','StreetFire'),
-	(10,0,0,0,'myshows','http://www.myshows.cn/myplayvideo.aspx?vid=@CODE@','vidFileName=([^\"]+)','Myshows.cn (previouslyly seehaha.com)'),
-	(11,0,0,0,'virb','http://www.virb.com/@CODE@','external/video/([^&\"]+)','Virb.com'),
-	(12,0,0,0,'blip','http://www.blip.tv/file/@CODE@','setPostsId\\s*\\(\\s*(\\d+)\\s*\\)','Blip.tv'),
-	(13,0,0,0,'apple','http://www.apple.com/trailers/@CODE@','\'(http:\\/\\/movies\\.apple\\.com\\/.*?\\.mov)\'','Apple.com trailers');
-
-/*!40000 ALTER TABLE `pol_avr_ripper` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table pol_avr_tags
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `pol_avr_tags`;
-
-CREATE TABLE `pol_avr_tags` (
-  `id` int(11) NOT NULL auto_increment,
-  `version` int(11) NOT NULL default '0',
-  `player_id` int(11) NOT NULL,
-  `ripper_id` int(11) NOT NULL default '0',
-  `local` int(1) NOT NULL default '0',
-  `plist` int(1) NOT NULL default '0',
-  `name` varchar(25) NOT NULL,
-  `postreplace` varchar(255) NOT NULL default '',
-  `sampleregex` varchar(255) NOT NULL default '',
-  `description` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id`),
-  KEY `tag` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
-
-LOCK TABLES `pol_avr_tags` WRITE;
-/*!40000 ALTER TABLE `pol_avr_tags` DISABLE KEYS */;
-INSERT INTO `pol_avr_tags` (`id`,`version`,`player_id`,`ripper_id`,`local`,`plist`,`name`,`postreplace`,`sampleregex`,`description`)
-VALUES
-	(1,0,1,0,1,1,'flv','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.flv\";}','^(.+)\\.flv$','Local FLV'),
-	(2,0,1,0,0,1,'flvremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.flv)$','Generic Remote FLV'),
-	(3,0,1,0,1,1,'swf','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.swf\";}','^(.+)\\.swf$','Local SWF Video'),
-	(4,0,1,0,0,1,'swfremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.swf)$','Generic Remote SWF Video'),
-	(5,0,1,0,1,1,'mp3','a:3:{s:7:\"@WIDTH@\";s:8:\"@AWIDTH@\";s:8:\"@HEIGHT@\";s:9:\"@AHEIGHT@\";s:6:\"@MURL@\";s:16:\"@ALOC@@CODE@.mp3\";}','^(.+)\\.mp3$','Local MP3'),
-	(6,0,1,0,0,1,'mp3remote','a:3:{s:7:\"@WIDTH@\";s:8:\"@AWIDTH@\";s:8:\"@HEIGHT@\";s:9:\"@AHEIGHT@\";s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.mp3)$','Generic Remote MP3'),
-	(7,0,1,0,1,1,'mp4-flv','a:2:{s:6:\"@TYPE@\";s:3:\"flv\";s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.mp4\";}','^(.+)\\.mp4$','Local MP4 (JW Media Player)'),
-	(8,0,1,0,0,1,'mp4-flvremote','a:4:{s:7:\"@WIDTH@\";s:7:\"@WIDTH@\";s:8:\"@HEIGHT@\";s:8:\"@HEIGHT@\";s:6:\"@TYPE@\";s:3:\"flv\";s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.mp4)$','Generic Remote MP4 (JW Media Player)'),
-	(9,0,1,0,1,1,'m4v','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.m4v\";}','^(.+)\\.m4v$','Local M4V'),
-	(10,0,1,0,0,1,'m4vremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.m4v)$','Generic Remote M4V'),
-	(11,0,1,0,1,1,'3gp','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.3gp\";}','^(.+)\\.3gp$','Local 3GP'),
-	(12,0,1,0,0,1,'3gpremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.3gp)$','Generic Remote 3GP'),
-	(13,0,1,0,1,1,'rbs','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.rbs\";}','^(.+)\\.rbs$','Local RBS'),
-	(14,0,1,0,0,1,'rbsremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.rbs)$','Generic Remote RBS'),
-	(15,0,1,0,1,0,'auto','a:1:{s:6:\"@MURL@\";s:12:\"@VLOC@@CODE@\";}','^(.+\\.xml)$','Local Playlist'),
-	(16,0,1,0,0,0,'autoremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.xml)$','Generic Remote Playlist'),
-	(17,0,2,0,1,0,'wmv','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.wmv\";}','^(.+)\\.wmv$','Local WMV'),
-	(18,0,2,0,0,0,'wmvremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.wmv)$','Generic Remote WMV'),
-	(19,0,2,0,1,0,'wma','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.wma\";}','^(.+)\\.wma$','Local WMA'),
-	(20,0,2,0,0,0,'wmaremote','a:3:{s:7:\"@WIDTH@\";s:8:\"@AWIDTH@\";s:8:\"@HEIGHT@\";s:9:\"@AHEIGHT@\";s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.wma)$','Generic Remote WMA'),
-	(21,0,2,0,1,0,'avi','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.avi\";}','^(.+)\\.avi$','Local AVI'),
-	(22,0,2,0,0,0,'aviremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.avi)$','Generic Remote AVI'),
-	(23,0,2,0,1,0,'mpg','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.mpg\";}','^(.+)\\.mpg$','Local MPG'),
-	(24,0,2,0,0,0,'mpgremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.mpg)$','Generic Remote MPG'),
-	(25,0,2,0,1,0,'mpeg','a:1:{s:6:\"@MURL@\";s:17:\"@VLOC@@CODE@.mpeg\";}','^(.+)\\.mpeg$','Local MPEG'),
-	(26,0,2,0,0,0,'mpegremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.mpeg)$','Generic Remote MPEG'),
-	(27,0,3,0,1,0,'mov','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.mov\";}','^(.+)\\.mov$','Local MOV (QuickTime)'),
-	(28,0,3,0,0,0,'movremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.mov)$','Generic Remote MOV (QuickTime)'),
-	(29,0,3,0,1,0,'mp4','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.mp4\";}','^(.+)\\.mp4','Local MP4 (QuickTime)'),
-	(30,0,3,0,0,0,'mp4remote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.mp4)$','Generic Remote MP4 (QuickTime)'),
-	(31,0,4,0,1,0,'rm','a:1:{s:6:\"@MURL@\";s:15:\"@VLOC@@CODE@.rm\";}','^(.+)\\.rm$','Local RM (RealMedia)'),
-	(32,0,4,0,2,0,'rmremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.rm)$','Generic Remote RM (RealMedia)'),
-	(33,0,4,0,1,0,'ram','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.ram\";}','^(.+)\\.ram$','Local RAM (RealMedia)'),
-	(34,0,4,0,0,0,'ramremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.ram)$','Generic Remote RAM (RealMedia)'),
-	(35,0,5,0,1,0,'divx','a:1:{s:6:\"@MURL@\";s:17:\"@VLOC@@CODE@.divx\";}','^(.+)\\.divx','Local DivX'),
-	(36,0,5,0,0,0,'divxremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.divx)$','Generic Remote DivX'),
-	(37,0,6,1,0,0,'6cn','','http:\\/\\/6\\.cn\\/watch\\/(\\d+)\\.html','6CN.com'),
-	(38,0,7,0,0,0,'biku','','http:\\/\\/www\\.biku\\.com\\/opus\\/(\\d+)\\.html','Biku.com'),
-	(39,0,8,2,0,0,'bofunk','','http:\\/\\/www.bofunk.com\\/video\\/(\\d+\\/[^\\.]+)\\.html$','Bofunk.com'),
-	(40,0,9,3,0,0,'break','','http:\\/\\/www\\.break\\.com\\/index\\/(.*)\\.html$','Break.com'),
-	(41,0,10,0,0,0,'clipfish','','http:\\/\\/www\\.clipfish\\.de\\/player\\.php\\?videoid=(.+)','ClipFish.de'),
-	(42,0,11,0,0,0,'collegehumor','','http:\\/\\/www\\.collegehumor\\.com\\/video:(\\d+)','College Humor'),
-	(43,0,12,0,0,0,'currenttv','','http:\\/\\/current\\.com\\/items\\/(\\d+)_.*','Current-TV'),
-	(44,0,13,0,0,0,'dmotion','','http:\\/\\/www\\.dailymotion\\.com\\/.*video\\/([^_]+)_[^\\/]+$','DailyMotion.com'),
-	(45,0,1,4,0,0,'dropshots','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','','Dropshots.com'),
-	(46,0,14,0,0,0,'freevideoblog','','http:\\/\\/www\\.vidiac\\.com\\/video\\/([\\dabcdef\\-]+)\\.htm$','Vidiac.com (previously FreeVideoBlog)'),
-	(47,0,15,0,0,0,'gametrailers','','http:\\/\\/www\\.gametrailers\\.com\\/player\\/(\\d+)\\.html$','GameTrailers'),
-	(48,0,16,0,0,0,'google','a:1:{s:6:\"@LANG@\";s:2:\"en\";}','http:\\/\\/video\\.google\\.com\\/videoplay\\?docid=(-{0,1}\\d+)','Google Video (international)'),
-	(49,0,16,0,0,0,'google.co.uk','a:1:{s:6:\"@LANG@\";s:5:\"en-GB\";}','http:\\/\\/video\\.google\\.co\\.uk\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (UK)'),
-	(50,0,16,0,0,0,'google.com.au','a:1:{s:6:\"@LANG@\";s:5:\"en-AU\";}','http:\\/\\/video\\.google\\.com\\.au\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (Australia)'),
-	(51,0,16,0,0,0,'google.de','a:1:{s:6:\"@LANG@\";s:2:\"de\";}','http:\\/\\/video\\.google\\.de\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (Germany)'),
-	(52,0,16,0,0,0,'google.es','a:1:{s:6:\"@LANG@\";s:2:\"es\";}','http:\\/\\/video\\.google\\.es\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (Spain)'),
-	(53,0,16,0,0,0,'google.fr','a:1:{s:6:\"@LANG@\";s:2:\"fr\";}','http:\\/\\/video\\.google\\.fr\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (France)'),
-	(54,0,16,0,0,0,'google.it','a:1:{s:6:\"@LANG@\";s:2:\"it\";}','http:\\/\\/video\\.google\\.it\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (Italy)'),
-	(55,0,16,0,0,0,'google.nl','a:1:{s:6:\"@LANG@\";s:2:\"nl\";}','http:\\/\\/video\\.google\\.nl\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (Netherlands)'),
-	(56,0,16,0,0,0,'google.pl','a:1:{s:6:\"@LANG@\";s:2:\"pl\";}','http:\\/\\/video\\.google\\.pl\\/videoplay\\?docid=(-{0,1}\\d+)$','Google Video (Poland)'),
-	(57,0,17,0,0,0,'ifilm','','','Spike.com (previously iFilm.com)'),
-	(58,0,18,0,0,0,'jumpcut','','http:\\/\\/www\\.jumpcut\\.com\\/view\\/{0,1}\\?id=([A-F\\d]+)$','JumpCut.com'),
-	(59,0,19,5,0,0,'mega','','http:\\/\\/www\\.megavideo\\.com\\/\\?v=(\\w+)$','MegaVideo.com'),
-	(60,0,20,0,0,0,'metacafe','','http:\\/\\/www\\.metacafe\\.com\\/watch\\/(\\d+\\/[a-z_]+)\\/$','Metacafe.com'),
-	(61,0,21,0,0,0,'mofile','','http:\\/\\/tv\\.mofile\\.com\\/([^\\/]+)\\/$','Mofile TV'),
-	(62,0,22,0,0,0,'myvideo','','http:\\/\\/www\\.myvideo\\.de\\/watch\\/(\\d+)','MyVideo.de'),
-	(63,0,23,0,0,0,'quxiu','','http:\\/\\/www\\.quxiu\\.com\\/video\\/play_(\\d+_\\d+)\\.htm$','Quixu.com'),
-	(64,0,24,0,0,0,'revver','','http:\\/\\/www\\.revver\\.com\\/video\\/(\\d+)\\/[^\\/]+\\/$','Revver.com (using Flash)'),
-	(65,0,25,0,0,0,'seehaha','','http:\\/\\/www\\.seehaha\\.com\\/play\\/(\\d+)$','SeeHaha.com'),
-	(66,0,26,0,0,0,'sevenload','','http:\\/\\/de\\.sevenload\\.com\\/videos\\/([^\\/\\-]{1,7})[^\\/\\-]?[\\/\\-][^\\/]+$','SevenLoad.de'),
-	(67,0,27,0,0,0,'stickam','','http:\\/\\/www\\.stickam\\.com\\/editMediaComment\\.do\\?method=load&mId=(\\d+)$','StickAm.com'),
-	(68,0,28,0,0,0,'streetfire','','http:\\/\\/videos\\.streetfire\\.net\\/video\\/([\\dabcdef-]+)\\.htm$','StreetFire Videos (Old variant)'),
-	(69,0,29,6,0,0,'ted','','http:\\/\\/www\\.ted\\.com\\/(?:index\\.php\\/)?talks\\/view\\/id\\/(\\d+)$','TED.com (Original Player)'),
-	(70,0,30,7,0,0,'ted2','','http:\\/\\/www\\.ted\\.com\\/index\\.php\\/talks\\/view\\/id\\/(\\d+)$','TED.com (Foreign Player)'),
-	(71,0,31,0,0,0,'tudou','','http:\\/\\/www\\.tudou\\.com\\/programs\\/view\\/([^\\/]+)\\/$','Tudou.com'),
-	(72,0,32,0,0,0,'uume','','http:\\/\\/www\\.uume\\.com\\/play_([^\\/]+)$','Uume.com'),
-	(73,0,33,0,0,0,'vimeo','','http:\\/\\/(?:www\\.)?vimeo\\.com\\/(\\d+)$','Vimeo'),
-	(74,0,34,0,0,0,'virb','','','Virb.com'),
-	(75,0,1,0,0,0,'wangyou','a:1:{s:6:\"@MURL@\";s:50:\"http://v.wangyou.com/playlistMedia.php%3Fid=@CODE@\";}','http:\\/\\/v\\.wangyou\\.com\\/p([^\\.]+)\\.html','WangYou.com'),
-	(76,0,36,8,0,0,'yahoo','','http:\\/\\/video\\.yahoo\\.com\\/watch\\/(\\d+)\\/.*$','Yahoo Video'),
-	(77,0,37,0,0,0,'youtube','','http:\\/\\/(?:\\w+\\.)?youtube\\.com\\/watch\\?.*v=([^&]+).*$','YouTube (Original Player)'),
-	(78,0,1,0,0,1,'youtubejw','a:2:{s:10:\"@IFS(IMG)@\";s:59:\"image:\'http://i.ytimg.com/vi/@CODE@/default.jpg\',@IFS(IMG)@\";s:6:\"@MURL@\";s:41:\"http://www.youtube.com/watch%3Fv%3D@CODE@\";}','http:\\/\\/(?:\\w+\\.)?youtube\\.com\\/watch\\?.*v=([^&]+).*$','YouTube (JW Media Player)'),
-	(81,0,3,0,0,0,'revver-mov','a:1:{s:6:\"@MURL@\";s:50:\"http://media.revver.com/broadcast/@CODE@/video.mov\";}','','Revver.com (using QuickTime)'),
-	(82,0,28,9,0,0,'streetfire2','','http:\\/\\/videos\\.streetfire\\.net\\/video\\/([^\\/\\.]+)\\.htm$','StreetFire Videos'),
-	(83,0,14,0,0,0,'vidiac','','http:\\/\\/www\\.vidiac\\.com\\/video\\/([\\dabcdef\\-]+)\\.htm$','Vidiac.com (previously FreeVideoBlog)'),
-	(84,0,39,0,1,0,'flash','a:1:{s:6:\"@MURL@\";s:16:\"@VLOC@@CODE@.swf\";}','^(.+)\\.swf$','Plain local flash embedding (for flash animations)'),
-	(85,0,39,0,0,0,'flashremote','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^(https{0,1}:\\/\\/.*\\.swf)$','Plain remote flash embedding (for flash animations)'),
-	(86,0,17,0,0,0,'spike','','^http:\\/\\/www\\.spike\\.com\\/video\\/.*\\/(\\d+)$','Spike.com (previously iFilm.com)'),
-	(87,0,40,0,0,0,'bcove','','^http:\\/\\/www\\.brightcove\\.tv\\/title\\.jsp\\?title=(\\d+).*$','Brightcove.tv'),
-	(88,0,41,10,0,0,'myshows','','http:\\/\\/www\\.myshows\\.cn\\/myplayvideo\\.aspx\\?vid=(\\d+)','Myshows.cn (previouslyly seehaha.com)'),
-	(89,0,34,11,0,0,'virb2','','http:\\/\\/www\\.virb\\.com\\/(.*)$','Virb.com'),
-	(90,0,42,12,0,0,'blip','','^http:\\/\\/(?:www\\.)?blip\\.tv\\/file\\/(\\d+).*','Blip.tv'),
-	(91,0,1,12,0,0,'blipjw','a:1:{s:6:\"@MURL@\";s:57:\"http://blip.tv/rss/flash/@CODE@?referrer=blip.tv&source=1\";}','^http:\\/\\/(?:www\\.)?blip\\.tv\\/file\\/(\\d+)\\?.*','Blip.tv using JW Media Player'),
-	(92,0,3,13,0,0,'apple','a:1:{s:6:\"@MURL@\";s:6:\"@CODE@\";}','^http:\\/\\/www\\.apple\\.com\\/trailers\\/(.*)','Apple.com trailers'),
-	(93,0,39,0,0,0,'movieweb','a:1:{s:6:\"@MURL@\";s:32:\"http://www.movieweb.com/v/@CODE@\";}','http:\\/\\/www\\.movieweb\\.com\\/video\\/(\\w+)$','MovieWeb');
-
-/*!40000 ALTER TABLE `pol_avr_tags` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table pol_banner
@@ -448,12 +204,7 @@ VALUES
 	(60,'JCE MENU GROUPS','',0,34,'option=com_jce&type=group','JCE MENU GROUPS','com_jce',2,'templates/khepri/images/menu/icon-16-user.png',0,'',1),
 	(61,'JCE MENU PLUGINS','',0,34,'option=com_jce&type=plugin','JCE MENU PLUGINS','com_jce',3,'templates/khepri/images/menu/icon-16-plugin.png',0,'',1),
 	(62,'JCE MENU INSTALL','',0,34,'option=com_jce&type=install','JCE MENU INSTALL','com_jce',4,'templates/khepri/images/menu/icon-16-install.png',0,'',1),
-	(84,'Nooku','option=com_nooku',0,0,'option=com_nooku','Nooku','com_nooku',0,'language',0,'primary_language=en-GB\n\n',1),
-	(85,'AvReloaded','',0,0,'','AvReloaded','com_avreloaded',0,'',0,'',1),
-	(86,'AVR_TITLE_MANAGE_PLAYERS','',0,40,'option=com_avreloaded&view=players','AVR_TITLE_MANAGE_PLAYERS','com_avreloaded',0,'components/com_avreloaded/assets/avreloaded-16x16.png',0,'',0),
-	(87,'AVR_TITLE_MANAGE_RIPPERS','',0,40,'option=com_avreloaded&view=rippers','AVR_TITLE_MANAGE_RIPPERS','com_avreloaded',1,'components/com_avreloaded/assets/avreloaded-16x16.png',0,'',0),
-	(88,'AVR_TITLE_MANAGE_TAGS','',0,40,'option=com_avreloaded&view=tags','AVR_TITLE_MANAGE_TAGS','com_avreloaded',2,'components/com_avreloaded/assets/avreloaded-16x16.png',0,'',0),
-	(89,'AVR_TITLE_MANAGE_PLAYLISTS','',0,40,'option=com_avreloaded&view=playlists','AVR_TITLE_MANAGE_PLAYLISTS','com_avreloaded',3,'components/com_avreloaded/assets/avreloaded-16x16.png',0,'',0);
+	(84,'Nooku','option=com_nooku',0,0,'option=com_nooku','Nooku','com_nooku',0,'language',0,'primary_language=en-GB\n\n',1);
 
 /*!40000 ALTER TABLE `pol_components` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1447,7 +1198,7 @@ CREATE TABLE `pol_plugins` (
   `params` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `idx_folder` (`published`,`client_id`,`access`,`folder`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pol_plugins` WRITE;
 /*!40000 ALTER TABLE `pol_plugins` DISABLE KEYS */;
@@ -1486,15 +1237,13 @@ VALUES
 	(32,'System - Remember Me','remember','system',0,10,1,1,0,0,'0000-00-00 00:00:00',''),
 	(33,'System - Backlink','backlink','system',0,11,0,1,0,0,'0000-00-00 00:00:00',''),
 	(34,'System - Mootools Upgrade','mtupgrade','system',0,4,0,0,0,0,'0000-00-00 00:00:00',''),
-	(50,'Content - AllVideos Reloaded','avreloaded','content',0,0,0,0,0,0,'0000-00-00 00:00:00','avcss=allvideos\nwidth=400\nheight=320\nvdir=videos\nwmode=window\nbgcolor=#FFFFFF\nadir=audio\nawidth=300\naheight=20\nripcache=1\ncache_time=3600\n'),
 	(39,'DOCman Standard Buttons','standardbuttons','docman',0,1,0,1,0,0,'0000-00-00 00:00:00','download=1\nview=1\ndetails=1\nedit=1\nmove=1\ndelete=1\nupdate=1\nreset=1\ncheckout=1\napprove=1\npublish=1'),
 	(40,'Search DOCman','docman.searchbot','search',0,0,0,0,0,0,'0000-00-00 00:00:00','prefix=Download: \nhref=download\nsearch_name=1\nsearch_description=1\n'),
 	(41,'DOCLink','doclink','editors-xtd',0,0,0,0,0,0,'0000-00-00 00:00:00',''),
 	(47,'Editor - JCE','jce','editors',0,0,1,0,0,0,'0000-00-00 00:00:00',''),
 	(48,'System - Koowa','koowa','system',0,2,0,0,0,0,'0000-00-00 00:00:00',''),
 	(49,'System - Nooku','nooku','system',0,3,0,0,0,0,'0000-00-00 00:00:00',''),
-	(51,'Button - AllVideos Reloaded','avreloaded','editors-xtd',0,0,0,0,0,0,'0000-00-00 00:00:00',''),
-	(52,'System - AllVideos Reloaded','avreloaded','system',0,0,0,0,0,0,'0000-00-00 00:00:00','');
+	(53,'AllVideos (by JoomlaWorks)','jw_allvideos','content',0,0,0,0,0,0,'0000-00-00 00:00:00','vfolder=images/stories/videos\nvwidth=400\nvheight=300\ntransparency=transparent\nbackground=#010101\nbackgroundQT=black\ncontrolBarLocation=bottom\nlightboxLink=1\nlightboxWidth=800\nlightboxHeight=600\nafolder=images/stories/audio\nawidth=300\naheight=20\ndownloadLink=1\nembedForm=1\n');
 
 /*!40000 ALTER TABLE `pol_plugins` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1617,7 +1366,7 @@ LOCK TABLES `pol_session` WRITE;
 /*!40000 ALTER TABLE `pol_session` DISABLE KEYS */;
 INSERT INTO `pol_session` (`username`,`time`,`session_id`,`guest`,`userid`,`usertype`,`gid`,`client_id`,`data`)
 VALUES
-	('','1289593090','8590faff71df9d3f64f9d5812bfd9c6b',1,0,'',0,0,'__default|a:8:{s:24:\"session.client.forwarded\";s:14:\"62.165.240.151\";s:22:\"session.client.browser\";s:127:\"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.2 Safari/533.18.5\";s:15:\"session.counter\";i:3;s:8:\"registry\";O:9:\"JRegistry\":3:{s:17:\"_defaultNameSpace\";s:7:\"session\";s:9:\"_registry\";a:2:{s:7:\"session\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}s:11:\"application\";a:1:{s:4:\"data\";O:8:\"stdClass\":1:{s:4:\"site\";s:4:\"5415\";}}}s:7:\"_errors\";a:0:{}}s:4:\"user\";O:5:\"JUser\":19:{s:2:\"id\";i:0;s:4:\"name\";N;s:8:\"username\";N;s:5:\"email\";N;s:8:\"password\";N;s:14:\"password_clear\";s:0:\"\";s:8:\"usertype\";N;s:5:\"block\";N;s:9:\"sendEmail\";i:0;s:3:\"gid\";i:0;s:12:\"registerDate\";N;s:13:\"lastvisitDate\";N;s:10:\"activation\";N;s:6:\"params\";N;s:3:\"aid\";i:0;s:5:\"guest\";i:1;s:7:\"_params\";O:10:\"JParameter\":7:{s:4:\"_raw\";s:0:\"\";s:4:\"_xml\";N;s:9:\"_elements\";a:0:{}s:12:\"_elementPath\";a:1:{i:0;s:55:\"/var/www/public/libraries/joomla/html/parameter/element\";}s:17:\"_defaultNameSpace\";s:8:\"_default\";s:9:\"_registry\";a:1:{s:8:\"_default\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}}s:7:\"_errors\";a:0:{}}s:9:\"_errorMsg\";N;s:7:\"_errors\";a:0:{}}s:19:\"session.timer.start\";i:1289593074;s:18:\"session.timer.last\";i:1289593074;s:17:\"session.timer.now\";i:1289593090;}');
+	('','1289854105','dfid5v3p4oi2otuatndjqpg0d1',1,0,'',0,0,'__default|a:8:{s:15:\"session.counter\";i:79;s:19:\"session.timer.start\";i:1289853299;s:18:\"session.timer.last\";i:1289854102;s:17:\"session.timer.now\";i:1289854103;s:22:\"session.client.browser\";s:248:\"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; GTB6.6; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; eSobiSubscriber 2.0.4.16; OfficeLiveConnector.1.5; OfficeLivePatch.1.3; .NET4.0C)\";s:8:\"registry\";O:9:\"JRegistry\":3:{s:17:\"_defaultNameSpace\";s:7:\"session\";s:9:\"_registry\";a:2:{s:7:\"session\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}s:11:\"application\";a:1:{s:4:\"data\";O:8:\"stdClass\":1:{s:4:\"site\";s:4:\"5421\";}}}s:7:\"_errors\";a:0:{}}s:4:\"user\";O:5:\"JUser\":19:{s:2:\"id\";i:0;s:4:\"name\";N;s:8:\"username\";N;s:5:\"email\";N;s:8:\"password\";N;s:14:\"password_clear\";s:0:\"\";s:8:\"usertype\";N;s:5:\"block\";N;s:9:\"sendEmail\";i:0;s:3:\"gid\";i:0;s:12:\"registerDate\";N;s:13:\"lastvisitDate\";N;s:10:\"activation\";N;s:6:\"params\";N;s:3:\"aid\";i:0;s:5:\"guest\";i:1;s:7:\"_params\";O:10:\"JParameter\":7:{s:4:\"_raw\";s:0:\"\";s:4:\"_xml\";N;s:9:\"_elements\";a:0:{}s:12:\"_elementPath\";a:1:{i:0;s:55:\"/var/www/public/libraries/joomla/html/parameter/element\";}s:17:\"_defaultNameSpace\";s:8:\"_default\";s:9:\"_registry\";a:1:{s:8:\"_default\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}}s:7:\"_errors\";a:0:{}}s:9:\"_errorMsg\";N;s:7:\"_errors\";a:0:{}}s:13:\"session.token\";s:32:\"1fae1590d36f11fa005c1bfa15f9e300\";}');
 
 /*!40000 ALTER TABLE `pol_session` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1690,7 +1439,7 @@ LOCK TABLES `pol_users` WRITE;
 /*!40000 ALTER TABLE `pol_users` DISABLE KEYS */;
 INSERT INTO `pol_users` (`id`,`name`,`username`,`email`,`password`,`usertype`,`block`,`sendEmail`,`gid`,`registerDate`,`lastvisitDate`,`activation`,`params`)
 VALUES
-	(62,'Administrator','administrator','admin@localhost.home','f4df914211f75594937e002293c0766f:9zWvbqlElCFly8U6Hajyzcb7ONjN2OcB','Super Administrator',0,1,25,'2010-10-16 22:19:31','2010-11-12 19:19:40','','admin_language=nl-NL\r\nlanguage=\r\neditor=\r\nhelpsite=\r\ntimezone=0\r\nsite=default\r\n');
+	(62,'Administrator','administrator','admin@localhost.home','f4df914211f75594937e002293c0766f:9zWvbqlElCFly8U6Hajyzcb7ONjN2OcB','Super Administrator',0,1,25,'2010-10-16 22:19:31','2010-11-15 06:25:10','','admin_language=nl-NL\r\nlanguage=\r\neditor=\r\nhelpsite=\r\ntimezone=0\r\nsite=default\r\n');
 
 /*!40000 ALTER TABLE `pol_users` ENABLE KEYS */;
 UNLOCK TABLES;
