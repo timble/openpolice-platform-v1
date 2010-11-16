@@ -61,6 +61,13 @@ class JApplication extends JObject
 	 * @var string
 	 */
 	var $_site = '';
+	
+	/**
+	 * List of available sites
+	 * 
+	 * @var array
+	 */
+	var $_sites = null;
 
 	/**
 	 * The scope of the application
@@ -201,8 +208,8 @@ class JApplication extends JObject
 			JPluginHelper::importPlugin('user');
 
 			$response = array(
-				'username' 		=> $user->get('username'),
-				'email'	   		 => $user->get('username'),
+				'username' 		 => $user->get('username'),
+				'email'	   		 => $user->get('email'),
 				'fullname' 		 => $user->get('fullname'),
 				'password_clear' => ''
 			);
@@ -702,6 +709,27 @@ class JApplication extends JObject
 	{
 		return $this->_site;
 	}
+	
+	/**
+	 * Get a list of all the sites
+	 *
+	 * @return	array
+	 */
+	public function getSites()
+	{
+		if(!isset($this->_sites))
+		{
+			// Load event listeners 
+			foreach(new DirectoryIterator(JPATH_SITES) as $file)
+			{
+				if($file->isDir() && !($file->isDot() || in_array($file->getFilename(), array('.svn')))) {
+        			$this->_sites[] = $file->getFilename();
+    			}
+			}
+		}
+		
+		return $this->_sites;
+	}
 
 	/**
 	 * Return a reference to the application JRouter object.
@@ -779,20 +807,15 @@ class JApplication extends JObject
 		$path = trim(str_replace(array(JURI::base(true), 'index.php'), '', $uri->getPath()), '/');
 		
 		$segments = array();
-		if(!empty($path)) {
+		if(!empty($path)) { 
 			$segments = explode('/', $path);
 		}
 		
 		if(!empty($segments))
 		{	
 			//Check to see if we found a matching site number
-			if(strlen($segments[0]) == 4)
-			{
+			if(in_array($segments[0], $this->getSites())) {
 				$site = array_shift($segments);
-				
-				if(!is_int((int) $site)) {
-					JError::raiseError(404, JText::_('Site not found'));
-				}
 			}
 		}
 		
@@ -812,7 +835,8 @@ class JApplication extends JObject
 		}
 	
 		//Set the images path
-		define('JPATH_IMAGES', JPATH_SITES.'/'.$site.'/images');
+		define('JPATH_IMAGES'   , JPATH_SITES.'/'.$site.'/images');
+		define('JPATH_DOCUMENTS', JPATH_SITES.'/'.$site.'/documents');
 		
 		//Set the debug
 		define( 'JDEBUG', $this->getCfg('debug') );
@@ -897,8 +921,7 @@ class JApplication extends JObject
 
 		return $session;
 	}
-
-
+	
 	/**
 	 * Gets the client id of the current running application.
 	 *
