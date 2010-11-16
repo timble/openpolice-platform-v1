@@ -55,6 +55,8 @@ class JRouterAdministrator extends JRouter
 		//Exception for the default site
 		if($site != 'default') {
 			$uri->setPath(empty($path) ? $site : $path.'/'.$site);
+		} else {
+			$uri->setPath($path);
 		}
 		
 		return $uri;
