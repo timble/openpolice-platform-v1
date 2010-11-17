@@ -191,6 +191,27 @@ while($row = mysql_fetch_assoc($result))
 
 mysql_free_result($result);
 
+$result	= mysql_query('SELECT * FROM `pol_components` WHERE `link` = \'option=com_jce\'');
+
+if(!mysql_num_rows($result))
+{
+	mysql_free_result($result);
+
+	$result = mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE\', \'option=com_jce\', 0, 0, \'option=com_jce\', \'JCE\', \'com_jce\', 0, \'components/com_jce/img/logo.png\', 0, \'\npackage=1\', 1);');
+	mysql_free_result($result);
+
+	$result = mysql_query('SELECT * FROM `pol_components` WHERE `link` = \'option=com_jce\'');
+	$row = mysql_fetch_assoc($result);
+
+	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU CPANEL\', \'\', 0, '.$row['id'].', \'option=com_jce\', \'JCE MENU CPANEL\', \'com_jce\', 0, \'templates/khepri/images/menu/icon-16-cpanel.png\', 0, \'\', 1);');
+	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU CONFIG\', \'\', 0, '.$row['id'].', \'option=com_jce&type=config\', \'JCE MENU CONFIG\', \'com_jce\', 1, \'templates/khepri/images/menu/icon-16-config.png\', 0, \'\', 1);');
+	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU GROUPS\', \'\', 0, '.$row['id'].', \'option=com_jce&type=group\', \'JCE MENU GROUPS\', \'com_jce\', 2, \'templates/khepri/images/menu/icon-16-user.png\', 0, \'\', 1);');
+	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU PLUGINS\', \'\', 0, '.$row['id'].', \'option=com_jce&type=plugin\', \'JCE MENU PLUGINS\', \'com_jce\', 3, \'templates/khepri/images/menu/icon-16-plugin.png\', 0, \'\', 1);');
+	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU INSTALL\', \'\', 0, '.$row['id'].', \'option=com_jce&type=install\', \'JCE MENU INSTALL\', \'com_jce\', 4, \'templates/khepri/images/menu/icon-16-install.png\', 0, \'\', 1);');
+
+	mysql_free_result($result);
+}
+
 echo "\t\tOK\n";
 
 // Create configuration.
