@@ -52,20 +52,20 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 						<?php echo JHTML::_('grid.order',  $this->items ); ?></th>
 					<th width="15%"  class="title">
 						<?php echo JHTML::_('grid.sort',  'Category', 'category', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-					
+
 					<th width="5%"><?php echo JHTML::_('grid.sort',  'PHOCAGALLERY_OWNER', 'ownerid', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-					
+
 					<th width="5%"><?php echo JHTML::_('grid.sort',  'Rating', 'v.average', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 					</th>
-					
+
 					<th width="5%"><?php echo JHTML::_('grid.sort',  'Hits', 'a.hits', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 					</th>
-					
+
 					<th width="1%" nowrap="nowrap"><?php echo JHTML::_('grid.sort',  'ID', 'a.id', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 					</th>
 				</tr>
 			</thead>
-			
+
 			<tbody>
 				<?php
 				$k = 0;
@@ -91,26 +91,26 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 									<div class="phocagallery-box-file-second">
 										<div class="phocagallery-box-file-third">
 											<center>
-											<?php 
+											<?php
 											// PICASA
 											if (isset($row->extid) && $row->extid !='') {
-											
+
 												$resW	= explode(',', $row->extw);
 												$resH	= explode(',', $row->exth);
-									
+
 												$correctImageRes = PhocaGalleryImage::correctSizeWithRate($resW[2], $resH[2], 50, 50);
 												?>
-												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', $row->exts.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
+												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', JURI::base(true).$row->exts.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
 												<?php
-											
-											
-											
+
+
+
 											} else if (isset ($row->fileoriginalexist) && $row->fileoriginalexist == 1) {
 
 												$imageRes	= PhocaGalleryImage::getRealImageSize($row->filename, 'small');
 												$correctImageRes = PhocaGalleryImage::correctSizeWithRate($imageRes['w'], $imageRes['h'], 50, 50);
 												?>
-												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', $row->linkthumbnailpath.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
+												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', JURI::base(true).$row->linkthumbnailpath.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
 												<?php
 											}
 											else
@@ -137,26 +137,26 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 						}
 						?>
 					</td>
-					
-					
+
+
 					<?php
 
 					if (isset($row->extid) && $row->extid !='') {
 						echo '<td align="center">'.JText::_('PHOCAGALLERY_PICASA_STORED_FILE').'</td>';
 						echo '<td></td>';
 					} else {
-					
+
 						?>
 						<td><?php echo $row->filename;?></td>
 						<td align="center">
-						<a href="<?php echo $linkRotate90; ?>" title="<?php echo JText::_( 'Rotate Left' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-rotate-left.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Rotate Left' ));?></a> 
-						
-						<a href="<?php echo $linkRotate270; ?>" title="<?php echo JText::_( 'Rotate Right' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-rotate-right.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Rotate Right' ));?></a> 
-						
+						<a href="<?php echo $linkRotate90; ?>" title="<?php echo JText::_( 'Rotate Left' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-rotate-left.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Rotate Left' ));?></a>
+
+						<a href="<?php echo $linkRotate270; ?>" title="<?php echo JText::_( 'Rotate Right' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-rotate-right.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Rotate Right' ));?></a>
+
 						<a href="<?php echo $linkDeleteThumbs; ?>" title="<?php echo JText::_( 'PHOCAGALLERY_RECREATE_THUMBS' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-remove-create.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Delete and Recreate Thumbnail' ));?></a>
-						
-						<a href="#" onclick="window.location.reload(true);" title="<?php echo JText::_( 'Reload Site' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-reload.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Reload Site' ));?></a> 
-						
+
+						<a href="#" onclick="window.location.reload(true);" title="<?php echo JText::_( 'Reload Site' ); ?>"><?php echo JHTML::_( 'image.administrator', 'icon-reload.gif', 'components/com_phocagallery/assets/images/','','', JText::_( 'Reload Site' ));?></a>
+
 						</td><?php
 					}
 					?>
@@ -170,25 +170,25 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 					</td>
 					<td><a href="<?php echo $row->cat_link; ?>" title="<?php echo JText::_( 'Edit Category' ); ?>"><?php echo $row->category; ?></a>
 					</td>
-					
+
 					<td align="center"><?php echo $row->usercatname; ?></td>
-					
+
 					<td align="center"><?php
 							$voteAvg 		= round(((float)$row->ratingavg / 0.5)) * 0.5;
 							$voteAvgWidth	= 16 * $voteAvg;
 							echo '<ul class="star-rating-small">'
 							.'<li class="current-rating" style="width:'.$voteAvgWidth.'px"></li>'
 							.'<li><span class="star1"></span></li>';
-					
+
 							for ($ir = 2;$ir < 6;$ir++) {
 								echo '<li><span class="stars'.$ir.'"></span></li>';
 							}
 							echo '</ul>';
-						
+
 						?></td>
 
 					<td align="center"><?php echo $row->hits; ?></td>
-					
+
 					<td align="center"><?php echo $row->id; ?></td>
 				</tr>
 				<?php
@@ -196,7 +196,7 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 				}
 			?>
 			</tbody>
-			
+
 			<tfoot>
 				<tr>
 					<td colspan="14"><?php echo $this->tmpl['pagination']->getListFooter(); ?></td>
