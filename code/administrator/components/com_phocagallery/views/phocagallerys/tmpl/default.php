@@ -100,7 +100,7 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 
 												$correctImageRes = PhocaGalleryImage::correctSizeWithRate($resW[2], $resH[2], 50, 50);
 												?>
-												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', JURI::base(true).$row->exts.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
+												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', JURI::base().$row->exts.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
 												<?php
 
 
@@ -110,7 +110,7 @@ if (isset($this->tmpl['notapproved']->count) && (int)$this->tmpl['notapproved']-
 												$imageRes	= PhocaGalleryImage::getRealImageSize($row->filename, 'small');
 												$correctImageRes = PhocaGalleryImage::correctSizeWithRate($imageRes['w'], $imageRes['h'], 50, 50);
 												?>
-												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', JURI::base(true).$row->linkthumbnailpath.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
+												<a class="<?php echo $this->button->modalname; ?>" title="<?php echo $this->button->text; ?>" href="<?php echo $this->button->link . '&amp;cid[]='.$row->id; ?>" rel="<?php echo $this->button->options; ?>" ><?php echo JHTML::_( 'image', JURI::base().$row->linkthumbnailpath.'?imagesid='.md5(uniqid(time())), '', array('width' => $correctImageRes['width'], 'height' => $correctImageRes['height'])); ?></a>
 												<?php
 											}
 											else
