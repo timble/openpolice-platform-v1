@@ -178,7 +178,7 @@ div#logo {
 						<jdoc:include type="modules" name="syndicate" />
 					</p>
 				<p style="float:right; padding-right: 25px;">
-     				 	 <table border="0" align="right" valign="top"><tr><td>Copyright VCLP-CPPL <?php echo date("Y") ?><sup>&copy;</sup> | <a href="http://217.21.184.146/5415/index.php?option=com_content&view=article&id=308&Itemid=94" target="_self">Disclaimer</a> | <a href="http://217.21.184.146/5415/index.php?option=com_content&view=article&id=504&Itemid=93" target="_self">Privacy</a><td><a href="http://www.belgium.be" target="_blank"><img src="templates/rhuk_milkyway_police/images/smallbe.gif" border="0"></a><td><jdoc:include type="modules" name="counter" /></tr></table>
+     				 	 <table border="0" align="right" valign="top"><tr><td>Copyright VCLP-CPPL <?php echo date("Y") ?><sup>&copy;</sup> | <a href="index.php?option=com_content&view=article&id=308&Itemid=94" target="_self">Disclaimer</a> | <a href="index.php?option=com_content&view=article&id=504&Itemid=93" target="_self">Privacy</a><td><a href="http://www.belgium.be" target="_blank"><img src="templates/rhuk_milkyway_police/images/smallbe.gif" border="0"></a><td><jdoc:include type="modules" name="counter" /></tr></table>
 
 
     				</p>
@@ -188,20 +188,6 @@ div#logo {
 	</div>
 </div>
 <jdoc:include type="modules" name="debug" />
-
-<script type="text/javascript">
-var clicky = { log: function(){ return; }, goal: function(){ return; }};
-var clicky_site_id = 207804;
-(function() {
-  var s = document.createElement('script');
-  s.type = 'text/javascript';
-  s.async = true;
-  s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com' : 'http://static.getclicky.com' ) + '/js';
-  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-})();
-</script>
-<a title="Real Time Web Analytics" href="http://getclicky.com/207804"></a>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/207804ns.gif" /></p></noscript>
 
 </body>
 </html>
