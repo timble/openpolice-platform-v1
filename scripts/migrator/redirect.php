@@ -35,7 +35,7 @@ foreach($iterator = new DirectoryIterator($path) as $directory)
 $config = '';
 foreach($sites as $key => $value)
 {
-	$config .= 'location ~ /('.implode('|', $value).') {'.PHP_EOL;
+	$config .= 'location ~ ^/('.implode('|', $value).') {'.PHP_EOL;
 	$config .= "\t".'rewrite ^ '.((strlen($key) == 4) ? 'http://217.21.184.146/'.$key : $key).';'.PHP_EOL;
 	$config .= '}'.PHP_EOL;
 	$config .= ''.PHP_EOL;
