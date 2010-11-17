@@ -197,8 +197,7 @@ if(!mysql_num_rows($result))
 {
 	mysql_free_result($result);
 
-	$result = mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE\', \'option=com_jce\', 0, 0, \'option=com_jce\', \'JCE\', \'com_jce\', 0, \'components/com_jce/img/logo.png\', 0, \'\npackage=1\', 1);');
-	mysql_free_result($result);
+	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE\', \'option=com_jce\', 0, 0, \'option=com_jce\', \'JCE\', \'com_jce\', 0, \'components/com_jce/img/logo.png\', 0, \'\\npackage=1\', 1);');
 
 	$result = mysql_query('SELECT * FROM `pol_components` WHERE `link` = \'option=com_jce\'');
 	$row = mysql_fetch_assoc($result);
