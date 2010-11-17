@@ -166,7 +166,7 @@ echo 'Importing database...';
 
 shell_exec('cd /tmp/'.$site_old_md5.' && gunzip database.sql.gz');
 shell_exec('cd /tmp/'.$site_old_md5.' && mv database.sql database.sql.old');
-shell_exec('cd /tmp/'.$site_old_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$site_old.'\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site_new.'`/g\' -e \'s/href="\.\/index\.php/href="index\.php/g\' database.sql.old > database.sql');
+shell_exec('cd /tmp/'.$site_old_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$site_old.'\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site_new.'`/g\' -e \'s/href="\\.\\/index\\.php/href="index\\.php/g\' database.sql.old > database.sql');
 shell_exec('cd /tmp/'.$site_old_md5.' && mysql --user="root" --password="" < database.sql');
 shell_exec('mysql --user="root" --password="" police_'.$site_new.' < migrator.sql');
 
