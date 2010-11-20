@@ -63,7 +63,7 @@
             <!-- File Upload Form -->
 			<?php $canUpload= ($this->user->authorize('com_media', 'upload')); ?> 	
 			<?php if ($canUpload) : ?>
-				<form action="index.php?option=com_media&amp;task=file.upload&amp;tmpl=component&amp;<?php echo $this->session->getName().'='.$this->session->getId(); ?>&amp;<?php echo JUtility::getToken();?>=1" id="uploadForm" method="post" enctype="multipart/form-data">
+				<form action="<?php echo JURI::base().JRoute::_('index.php?option=com_media&task=file.upload&tmpl=component&'.$this->session->getName().'='.$this->session->getId().'&'.JUtility::getToken().'=1'); ?>" id="uploadForm" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend><?php echo JText::_( 'Upload File' ); ?> [ <?php echo JText::_( 'Max' ); ?>&nbsp;<?php echo ($this->config->get('upload_maxsize') / 1000000); ?>M ]</legend>
 						<fieldset class="actions">
