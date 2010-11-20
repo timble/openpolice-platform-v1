@@ -76,7 +76,7 @@ echo $params->get('image_path', 'images/stories');?>/';
 <?php $user = & JFactory::getUser(); ?>
 <?php $canUpload= ($user->authorize('com_media', 'upload')); ?> 	
 <?php if ($canUpload) : ?>			
-	<form action="<?php echo JURI::base(); ?>index.php?option=com_media&amp;task=file.upload&amp;tmpl=component&amp;<?php echo $this->session->getName().'='.$this->session->getId(); ?>&amp;pop_up=1&amp;<?php echo JUtility::getToken();?>=1" id="uploadForm" method="post" enctype="multipart/form-data">
+	<form action="index.php?option=com_media&amp;task=file.upload&amp;tmpl=component&amp;<?php echo $this->session->getName().'='.$this->session->getId(); ?>&amp;pop_up=1&amp;<?php echo JUtility::getToken();?>=1" id="uploadForm" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<legend><?php echo JText::_('Upload'); ?></legend>
 			<fieldset class="actions">
