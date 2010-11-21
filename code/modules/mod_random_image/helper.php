@@ -64,9 +64,6 @@ class modRandomImageHelper
 
 		$dir = JPATH_IMAGES.DS.$folder;
 		
-		echo $dir;
-		die;
-
 		// check if directory exists
 		if (is_dir($dir))
 		{
