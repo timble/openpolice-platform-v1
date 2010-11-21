@@ -25,7 +25,7 @@ class modRandomImageHelper
 		$i 				= count($images);
 		$random 		= mt_rand(0, $i - 1);
 		$image 			= $images[$random];
-		$size 			= getimagesize (JPATH_BASE.DS.$image->folder .DS. $image->name);
+		$size 			= getimagesize (JPATH_IMAGES.DS.$image->folder .DS. $image->name);
 
 
 		if ($width == '') {
@@ -62,7 +62,7 @@ class modRandomImageHelper
 		$files	= array();
 		$images	= array();
 
-		$dir = JPATH_BASE.DS.$folder;
+		$dir = JPATH_IMAGES.DS.$folder;
 
 		// check if directory exists
 		if (is_dir($dir))
