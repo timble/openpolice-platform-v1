@@ -178,9 +178,7 @@ div#logo {
 						<jdoc:include type="modules" name="syndicate" />
 					</p>
 				<p style="float:right; padding-right: 25px;">
-     				 	 <table border="0" align="right" valign="top"><tr><td>Copyright VCLP-CPPL <?php echo date("Y") ?><sup>&copy;</sup> | <a href="index.php?option=com_content&view=article&id=308&Itemid=94" target="_self">Disclaimer</a> | <a href="index.php?option=com_content&view=article&id=504&Itemid=93" target="_self">Privacy</a><td><a href="http://www.belgium.be" target="_blank"><img src="templates/site/images/smallbe.gif" border="0"></a><td><jdoc:include type="modules" name="counter" /></tr></table>
-
-
+     				 	 <table border="0" align="right" valign="top"><tr><td>Copyright VCLP-CPPL <?php echo date("Y") ?><sup>&copy;</sup> | <a href="index.php?option=com_content&view=article&id=308&Itemid=94" target="_self">Disclaimer</a> | <a href="index.php?option=com_content&view=article&id=504&Itemid=93" target="_self">Privacy</a><td><a href="http://www.belgium.be" target="_blank"><img src="templates/site/images/smallbe.gif" border="0"></a><td></tr></table>
     				</p>
 				</div>
 			</div>
