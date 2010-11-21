@@ -20,14 +20,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway_police/css/template.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway_police/css/<?php echo $this->params->get('colorVariation'); ?>.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway_police/css/<?php echo $this->params->get('backgroundVariation'); ?>_bg.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/site/css/template.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/site/css/<?php echo $this->params->get('colorVariation'); ?>.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/site/css/<?php echo $this->params->get('backgroundVariation'); ?>_bg.css" type="text/css" />
 <!--[if lte IE 6]>
 <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ieonly.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 <?php if($this->direction == 'rtl') : ?>
-	<link href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway_police/css/template_rtl.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $this->baseurl ?>/templates/site/css/template_rtl.css" rel="stylesheet" type="text/css" />
 <?php endif; ?>
 
 <?php if($site = JFactory::getApplication()->getSite()) : ?>
@@ -178,7 +178,7 @@ div#logo {
 						<jdoc:include type="modules" name="syndicate" />
 					</p>
 				<p style="float:right; padding-right: 25px;">
-     				 	 <table border="0" align="right" valign="top"><tr><td>Copyright VCLP-CPPL <?php echo date("Y") ?><sup>&copy;</sup> | <a href="index.php?option=com_content&view=article&id=308&Itemid=94" target="_self">Disclaimer</a> | <a href="index.php?option=com_content&view=article&id=504&Itemid=93" target="_self">Privacy</a><td><a href="http://www.belgium.be" target="_blank"><img src="templates/rhuk_milkyway_police/images/smallbe.gif" border="0"></a><td><jdoc:include type="modules" name="counter" /></tr></table>
+     				 	 <table border="0" align="right" valign="top"><tr><td>Copyright VCLP-CPPL <?php echo date("Y") ?><sup>&copy;</sup> | <a href="index.php?option=com_content&view=article&id=308&Itemid=94" target="_self">Disclaimer</a> | <a href="index.php?option=com_content&view=article&id=504&Itemid=93" target="_self">Privacy</a><td><a href="http://www.belgium.be" target="_blank"><img src="templates/site/images/smallbe.gif" border="0"></a><td><jdoc:include type="modules" name="counter" /></tr></table>
 
 
     				</p>
