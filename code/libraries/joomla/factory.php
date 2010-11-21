@@ -200,8 +200,8 @@ class JFactory
 			'cachebase' 	=> $conf->getValue('config.cache_path'),
 			'lifetime' 		=> $conf->getValue('config.cachetime') * 60,	// minutes to seconds
 			'language' 		=> $conf->getValue('config.language'),
-			'storage'		=> $storage
-			'site'			=> JFactory::getApplication()->getSite();
+			'storage'		=> $storage,
+			'site'			=> JFactory::getApplication()->getSite()
 		);
 
 		jimport('joomla.cache.cache');
