@@ -8,10 +8,11 @@ CREATE VIEW `pol_session` AS
 
 # Rename admin user to administrator.
 
-UPDATE `pol_users` SET `username` = 'administrator' WHERE `username` = 'admin';
+UPDATE `pol_users` SET `username` = 'sheriff' WHERE `username` = 'admin';
 
 
 # Install JCE editor.
+
 DROP TABLE IF EXISTS `pol_jce_groups`;
 CREATE OR REPLACE VIEW `pol_jce_groups` AS
 	SELECT * FROM `police_default`.`pol_jce_groups`;
