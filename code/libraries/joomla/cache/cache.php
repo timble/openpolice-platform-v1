@@ -53,6 +53,12 @@ class JCache extends JObject
 		$this->_options =& $options;
 
 		// Get the default group and caching
+		if(isset($options['site'])) {
+			$this->_options['site'] = $options['site'];
+		} else {
+			$options['site'] = 'default';
+		}
+		
 		if(isset($options['language'])) {
 			$this->_options['language'] = $options['language'];
 		} else {

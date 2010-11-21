@@ -33,20 +33,21 @@ class JCacheStorage extends JObject
 	*/
 	function __construct( $options = array() )
 	{
+		$this->_site        = (isset($options['site'])) ? $options['site'] : 'default';
 		$this->_application	= (isset($options['application'])) ? $options['application'] : null;
 		$this->_language	= (isset($options['language'])) ? $options['language'] : 'en-GB';
 		$this->_locking		= (isset($options['locking'])) ? $options['locking'] : true;
 		$this->_lifetime	= (isset($options['lifetime'])) ? $options['lifetime'] : null;
-		$this->_now		= (isset($options['now'])) ? $options['now'] : time();
+		$this->_now		    = (isset($options['now'])) ? $options['now'] : time();
 
 		// Set time threshold value.  If the lifetime is not set, default to 60 (0 is BAD)
 		// _threshold is now available ONLY as a legacy (it's deprecated).  It's no longer used in the core.
-		if (empty($this->_lifetime)) {
+		if (empty($this->_lifetime)) 
+		{
 			$this->_threshold = $this->_now - 60;
 			$this->_lifetime = 60;
-		} else {
-			$this->_threshold = $this->_now - $this->_lifetime;
-		}
+		} 
+		else $this->_threshold = $this->_now - $this->_lifetime;
 	}
 
 	/**
