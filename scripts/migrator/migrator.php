@@ -243,10 +243,18 @@ if(file_exists($file = '/tmp/'.$site_old_md5.'/configuration.php'))
 	$content[] = '}';
 
 	file_put_contents('/var/www/public/sites/'.$site_new.'/configuration.php', implode(PHP_EOL, $content));
-	chmod('/var/www/public/sites/'.$site_new.'/configuration.php', 0444);
 }
 
 echo "\tOK\n";
+
+// Change file and directory permissions.
+echo 'Changing permissions...';
+
+shell_exec('find /var/www/public/sites/'.$site_new.'/ -type d -exec chmod 775 {} \;');
+shell_exec('find /var/www/public/sites/'.$site_new.'/ -type f -exec chmod 664 {} \;');
+shell_exec('chmod 444 /var/www/public/sites/'.$site_new.'/configuration.php');
+
+echo "\t\tOK\n";
 
 // Cleanup files.
 echo 'Cleaning up files...';
