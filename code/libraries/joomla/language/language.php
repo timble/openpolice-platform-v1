@@ -334,25 +334,33 @@ class JLanguage extends JObject
 	function _load( $filename, $extension = 'unknown', $overwrite = true )
 	{
 		$result	= false;
+		$newStrings = null;
 
-		if ($content = @file_get_contents( $filename ))
+		$cache = JFactory::getCache('language', 'output');
+		$identifier = md5($filename);
+		if (!$data = $cache->get($identifier)) 
 		{
-
-			//Take off BOM if present in the ini file
-			if ( $content[0] == "\xEF" && $content[1] == "\xBB" && $content[2] == "\xBF" )
-            {
-				$content = substr( $content, 3 );
-		  	}
-
-			$registry	= new JRegistry();
-			$registry->loadINI($content);
-			$newStrings	= $registry->toArray( );
-
-			if ( is_array( $newStrings) )
+			if ($content = @file_get_contents( $filename ))
 			{
-				$this->_strings = $overwrite ? array_merge( $this->_strings, $newStrings) : array_merge( $newStrings, $this->_strings);
-				$result = true;
+				//Take off BOM if present in the ini file
+				if ( $content[0] == "\xEF" && $content[1] == "\xBB" && $content[2] == "\xBF" ) {
+					$content = substr( $content, 3 );
+		  		}
+		
+				$registry	= new JRegistry();
+				$registry->loadINI($content);
+				$newStrings	= $registry->toArray( );
 			}
+			
+			//Store the strings in the cache
+		   	$cache->store(serialize($newStrings), $identifier);	
+		}
+		else $newStrings = unserialize($data);
+		
+		if ( is_array( $newStrings) )
+		{
+			$this->_strings = $overwrite ? array_merge( $this->_strings, $newStrings) : array_merge( $newStrings, $this->_strings);
+			$result = true;
 		}
 
 		// Record the result of loading the extension's file.
