@@ -224,7 +224,7 @@ if(file_exists($file = '/tmp/'.$site_old_md5.'/configuration.php'))
 		{
 			list($key, $value) = explode('=', trim($line), 2);
 			$key	= trim(substr($key, 5));
-			$value	= trim($value, '\'" ;');
+			$value	= substr(trim($value), 1, strlen(trim($value)) - 3);
 
 			$data[$key] = $key == 'db' ? 'police_'.$site_new : $value;
 		}
