@@ -6,6 +6,18 @@ CREATE VIEW `pol_session` AS
 	SELECT * FROM `police_default`.`pol_session`;
 
 
+# Demote super administrators to administrator.
+
+UPDATE `pol_core_acl_groups_aro_map` SET `group_id` = 24
+	WHERE `group_id` = 25 AND `aro_id` <> (
+		SELECT `aro`.`id` FROM `pol_core_acl_aro` AS `aro`
+		LEFT JOIN `pol_users` AS `user` ON `aro`.`value` = `user`.`id`
+		WHERE `user`.`username` = 'admin');
+
+UPDATE `pol_users` SET `usertype` = 'Administrator', `gid` = 24
+	WHERE `gid` = 25 AND `username` <> 'admin';
+
+
 # Rename admin user to administrator.
 
 UPDATE `pol_users` SET `username` = 'sheriff' WHERE `username` = 'admin';
