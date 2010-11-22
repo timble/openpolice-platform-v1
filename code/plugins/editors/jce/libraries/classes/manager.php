@@ -206,7 +206,10 @@ class Manager extends JContentEditorPlugin
 			$this->folderCreate($full);
 		}
 		// Fallback
-		$base = JFolder::exists($full) ? $base : 'images/stories';						
+		$base = JFolder::exists($full) ? $base : 'images/stories';	
+
+		//Set the base path to a fixed value
+		$base = 'sites/'.JFactory::getApplication()->getSite().'images/stories';
 		
 		return $base;
 	}
