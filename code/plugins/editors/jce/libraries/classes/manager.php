@@ -209,7 +209,7 @@ class Manager extends JContentEditorPlugin
 		$base = JFolder::exists($full) ? $base : 'images/stories';	
 
 		//Set the base path to a fixed value
-		$base = 'sites/'.JFactory::getApplication()->getSite().'images/stories';
+		$base = 'sites/'.JFactory::getApplication()->getSite().'/images/stories';
 		
 		return $base;
 	}
