@@ -54,7 +54,7 @@ $manager->printCss();
 				// Plugin parameters
 				params: {
 					// Relative base directory
-					base: '<?php 'sites/'.JFactory::getApplication()->getSite().'/'.$manager->getBase(); ?>',
+					base: '<?php echo $manager->getBase(); ?>',
 					// Default values
 					defaults : {	
 						'align': 		'<?php echo $params->get( 'imgmanager_align', 'default' );?>',
