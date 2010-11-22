@@ -50,4 +50,10 @@ DELETE FROM `pol_menu` WHERE LOCATE('option=com_joomap', `link`) <> 0;
 
 
 # Delete Linkr component.
+
 DROP TABLE IF EXISTS `pol_linkr`;
+
+
+# Updated front-end template name.
+
+UPDATE `pol_templates_menu` SET `template` = 'site' WHERE `template` = 'rhuk_milkyway_police';
