@@ -24,7 +24,7 @@
 				}
 
 				ed.windowManager.open({
-					file : ed.getParam('site_url') + 'index.php?option=com_jce&task=plugin&plugin=imgmanager&file=imgmanager',
+					file : ed.getParam('site_url') + '?option=com_jce&task=plugin&plugin=imgmanager&file=imgmanager',
 					width : 760 + ed.getLang('imgmanager.delta_width', 0),
 					height : 640 + ed.getLang('imgmanager.delta_height', 0),
 					inline : 1
