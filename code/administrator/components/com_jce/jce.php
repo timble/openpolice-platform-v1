@@ -35,13 +35,13 @@ $acl	=& JFactory::getACL();
 
 $tasks = array(
 	// Admin
-	'repair', 'purge', 
+	'repair', 'purge',
 	// Installer
-	'install', 'remove', 'manage', 
+	'install', 'remove', 'manage',
 	// Standard
-	'view', 'edit', 'save', 'apply', 'publish', 'unpublish', 'cancel', 'cancelEdit', 'orderup', 'orderdown', 'saveorder', 
+	'view', 'edit', 'save', 'apply', 'publish', 'unpublish', 'cancel', 'cancelEdit', 'orderup', 'orderdown', 'saveorder',
 	// Plugins
-	'add', 
+	'add',
 	// Groups
 	'copy', 'legend', 'addusers', 'removeusers',
 	// Cpanel
@@ -50,8 +50,6 @@ $tasks = array(
 
 foreach ($tasks as $auth) {
 	$acl->addACL('com_jce', $auth, 'users', 'super administrator');
-	$acl->addACL('com_jce', $auth, 'users', 'administrator');
-	$acl->addACL('com_jce', $auth, 'users', 'manager');
 }
 
 if (!$user->authorize('com_jce', $task)) {
@@ -98,7 +96,7 @@ $type 	= JRequest::getCmd('type');
 $task 	= JRequest::getCmd('task');
 
 switch ($type) {
-case 'plugin':	
+case 'plugin':
 	switch ($task) {
 	case 'install':
 	case 'remove':
@@ -111,7 +109,7 @@ case 'plugin':
 		break;
 	}
 	break;
-case 'group':	
+case 'group':
 	switch ($task) {
 	case 'view':
 	default:
@@ -156,7 +154,7 @@ default:
 		break;
 	default:
 	require_once(dirname(__FILE__) .DS. 'controller' .DS. 'cpanel.php');
-		break;	
+		break;
 	}
 	break;
 }
