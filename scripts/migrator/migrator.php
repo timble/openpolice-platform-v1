@@ -35,7 +35,7 @@ if(!isset($arguments['site']))
 }
 
 $site_old	= $arguments['site'];
-$site_new	= substr($site_old, 0, strpos($site_old, '_'));
+$site_new	= strpos($site_old, '_') === true ? substr($site_old, 0, strpos($site_old, '_')) : $site_old;
 $site_old_md5	= md5($site_old);
 
 $config['mysql']['username'] = 'tor'.str_replace('_', '', $site_old);
