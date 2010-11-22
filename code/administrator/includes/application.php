@@ -39,7 +39,7 @@ class JAdministrator extends JApplication
 		parent::__construct($config);
 
 		//Set the root in the URI based on the application name
-		JURI::root(null, '..');
+		JURI::root(null, '../');
 	}
 
 	/**
