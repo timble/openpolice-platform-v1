@@ -78,7 +78,7 @@ class plgEditorJCE extends JPlugin
 	    // TinyMCE url must be absolute!
         $document->addScript(JURI::root().'plugins/editors/jce/tiny_mce/tiny_mce'.$gzip.'.js?version='.$version.'&cid='.$component->id);
         // Utility functions for saving
-        $document->addScript(JURI::root(true).'/plugins/editors/jce/libraries/js/editor.js?version='.$version);
+        $document->addScript(JURI::root().'/plugins/editors/jce/libraries/js/editor.js?version='.$version);
 
         // Set parameter array
         $vars = array ();
