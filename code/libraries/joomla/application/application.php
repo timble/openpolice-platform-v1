@@ -54,17 +54,17 @@ class JApplication extends JObject
 	 * @access	protected
 	 */
 	var $_name = null;
-	
+
 	/**
 	 * The site alias we are using.
-	 * 
+	 *
 	 * @var string
 	 */
 	var $_site = '';
-	
+
 	/**
 	 * List of available sites
-	 * 
+	 *
 	 * @var array
 	 */
 	var $_sites = null;
@@ -104,15 +104,15 @@ class JApplication extends JObject
 		if(!isset($config['config_file'])) {
 			$config['config_file'] = 'configuration.php';
 		}
-		
+
 		//Set the session default name
 		if(!isset($config['site'])) {
 			 $config['site'] = 'default';
 		}
-		
+
 		//create the configuration object
 		$this->_createConfiguration(JPATH_CONFIGURATION.DS.$config['config_file']);
-		
+
 		//create the site
 		$this->_createSite($config['site']);
 
@@ -120,7 +120,7 @@ class JApplication extends JObject
 		if($config['session'] !== false) {
 			$this->_createSession(JUtility::getHash($config['session_name']));
 		}
-		
+
 		$this->set( 'requestTime', gmdate('Y-m-d H:i') );
 	}
 
@@ -191,19 +191,17 @@ class JApplication extends JObject
 		}
 
 		// Set user specific editor
-		$editor	= $user->getParam('editor', $this->getCfg('editor'));
-		$editor = JPluginHelper::isEnabled('editors', $editor) ? $editor : $this->getCfg('editor');
-		$config->setValue('config.editor', $editor);
-				
+		$config->setValue('config.editor', $this->getCfg('editor'));
+
 		//Re-login
 		if($this->getUserState('application.site') != $this->_site && !$user->get('guest'))
 		{
 			// Fork the session to prevent session fixation issues
 			$session = JFactory::getSession();
 			$session->fork();
-			
+
 			$this->_createSession($session->getId());
-			
+
 			// Import the user plugin group
 			JPluginHelper::importPlugin('user');
 
@@ -213,23 +211,23 @@ class JApplication extends JObject
 				'fullname' 		 => $user->get('fullname'),
 				'password_clear' => ''
 			);
-			
+
 			$options = array(
 				'group' 		=> 'Public Backend',
 				'autoregister' 	=> false,
 			);
-						
+
 			$results = $this->triggerEvent('onLoginUser', array($response, $options));
-			
-			if(JError::isError($results[0])) 
+
+			if(JError::isError($results[0]))
 			{
 				$this->triggerEvent('onLoginFailure', array((array)$response));
-				
+
 				//Log the user out
 				$this->logout();
 			}
 		}
-		
+
 		// Set session
 		$this->setUserState('application.site', $this->_site);
 	}
@@ -249,7 +247,7 @@ class JApplication extends JObject
  	{
  		// get the full request URI
  		$uri = clone(JURI::getInstance());
- 		
+
 		$router =& $this->getRouter();
 		$result = $router->parse($uri);
 
@@ -591,7 +589,7 @@ class JApplication extends JObject
 			// we fork the session to prevent session fixation issues
 			$session->fork();
 			$this->_createSession($session->getId());
-			
+
 			// Import the user plugin group
 			JPluginHelper::importPlugin('user');
 
@@ -699,7 +697,7 @@ class JApplication extends JObject
 	{
 		return 'system';
 	}
-	
+
 	/**
 	 * Gets the name of site
 	 *
@@ -709,7 +707,7 @@ class JApplication extends JObject
 	{
 		return $this->_site;
 	}
-	
+
 	/**
 	 * Get a list of all the sites
 	 *
@@ -719,7 +717,7 @@ class JApplication extends JObject
 	{
 		if(!isset($this->_sites))
 		{
-			// Load event listeners 
+			// Load event listeners
 			foreach(new DirectoryIterator(JPATH_SITES) as $file)
 			{
 				if($file->isDir() && !($file->isDot() || in_array($file->getFilename(), array('.svn')))) {
@@ -727,7 +725,7 @@ class JApplication extends JObject
     			}
 			}
 		}
-		
+
 		return $this->_sites;
 	}
 
@@ -799,61 +797,61 @@ class JApplication extends JObject
 		}
 		return $menu;
 	}
-	
-	public function _createSite($site = 'default') 
+
+	public function _createSite($site = 'default')
 	{
 		// Find the site
-		$uri =	 clone(JURI::getInstance()); 
+		$uri =	 clone(JURI::getInstance());
 		$path = trim(str_replace(array(JURI::base(true), 'index.php'), '', $uri->getPath()), '/');
-		
+
 		$segments = array();
-		if(!empty($path)) { 
+		if(!empty($path)) {
 			$segments = explode('/', $path);
 		}
-		
+
 		if(!empty($segments))
-		{	
+		{
 			//Check to see if we found a matching site number
 			if(in_array($segments[0], $this->getSites())) {
 				$site = array_shift($segments);
 			}
 		}
-		
+
 		//Load the site configuration
 		require_once( JPATH_SITES.'/'.$site.'/configuration.php');
 		$config = JFactory::getConfig();
-		$config->loadObject(new JConfigSite());	
-	
+		$config->loadObject(new JConfigSite());
+
 		//Set error reporting
-		$error_reporting = $this->getCfg('error_reporting');	
+		$error_reporting = $this->getCfg('error_reporting');
 		if ($error_reporting >= 0) {
 			error_reporting( $error_reporting );
 		}
-		
+
 		if ($error_reporting > 0) {
 			ini_set( 'display_errors', 1 );
 		}
-	
+
 		//Set the images path
 		define('JPATH_IMAGES'   , JPATH_SITES.'/'.$site.'/images');
 		define('JPATH_DOCUMENTS', JPATH_SITES.'/'.$site.'/documents');
-		
+
 		//Set the debug
 		define( 'JDEBUG', $this->getCfg('debug') );
-		
+
 		//Set the profiler
-		if ($this->getCfg('debug')) 
+		if ($this->getCfg('debug'))
 		{
 			jimport( 'joomla.error.profiler' );
 			$GLOBALS['_PROFILER'] =& JProfiler::getInstance( 'Application' );
 		}
-		
+
 		//Set the site in the router
 		$this->_site = $site;
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * Create the configuration registry
 	 *
@@ -898,7 +896,7 @@ class JApplication extends JObject
 			'name' 		=> $name,
 			'force_ssl' => $ssl
 		);
-			
+
 		$session =& JFactory::getSession($options);
 
 		jimport('joomla.database.table');
@@ -921,7 +919,7 @@ class JApplication extends JObject
 
 		return $session;
 	}
-	
+
 	/**
 	 * Gets the client id of the current running application.
 	 *
