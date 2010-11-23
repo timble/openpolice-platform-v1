@@ -582,6 +582,8 @@ class JApplication extends JObject
 		$authenticate = & JAuthentication::getInstance();
 		$response	  = $authenticate->authenticate($credentials, $options);
 
+		JPluginHelper::importPlugin('user');
+
 		if ($response->status === JAUTHENTICATE_STATUS_SUCCESS)
 		{
 			$session = &JFactory::getSession();
@@ -589,9 +591,6 @@ class JApplication extends JObject
 			// we fork the session to prevent session fixation issues
 			$session->fork();
 			$this->_createSession($session->getId());
-
-			// Import the user plugin group
-			JPluginHelper::importPlugin('user');
 
 			// OK, the credentials are authenticated.  Lets fire the onLogin event
 			$results = $this->triggerEvent('onLoginUser', array((array)$response, $options));
