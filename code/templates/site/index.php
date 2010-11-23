@@ -142,11 +142,9 @@ div#logo {
 							<table border="0" class="nopad">
 								<tr valign="top">
 									<td>
-										<?php if($this->params->get('showComponent')) : ?>
-											<jdoc:include type="component" />
-										<?php endif; ?>
+										<jdoc:include type="component" />
 									</td>
-									<?php if($this->countModules('right') and JRequest::getCmd('layout') != 'form') : ?>
+									<?php if($this->countModules('right') and JRequest::getCmd('task') != 'edit') : ?>
 										<td class="greyline">&nbsp;</td>
 										<td width="170">
 											<jdoc:include type="modules" name="right" style="xhtml"/>
