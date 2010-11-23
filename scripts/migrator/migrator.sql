@@ -57,3 +57,9 @@ DROP TABLE IF EXISTS `pol_linkr`;
 # Updated front-end template name.
 
 UPDATE `pol_templates_menu` SET `template` = 'site' WHERE `template` = 'rhuk_milkyway_police';
+
+
+# Change com_login to com_user.
+
+UPDATE `pol_components` SET `option` = 'com_user' WHERE `option` = 'com_login';
+UPDATE `pol_components` SET `link` = REPLACE(`link`, 'com_login', 'com_user') WHERE `link` LIKE '%com_login%';
