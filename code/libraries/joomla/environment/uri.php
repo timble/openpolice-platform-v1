@@ -229,14 +229,17 @@ class JURI extends JObject
 		{
 			$config =& JFactory::getConfig();
 			$live_site = $config->getValue('config.live_site');
-			if(trim($live_site) != '') {
+			if(trim($live_site) != '') 
+			{
 				$uri =& JURI::getInstance($live_site);
 				$base['prefix'] = $uri->toString( array('scheme', 'host', 'port'));
 				$base['path'] = rtrim($uri->toString( array('path')), '/\\');
-				if(JPATH_BASE == JPATH_ADMINISTRATOR) {
-					$base['path'] .= '/administrator';
-				}
-			} else {
+				//if(JPATH_BASE == JPATH_ADMINISTRATOR) {
+				//	$base['path'] .= '/administrator';
+				//}
+			} 
+			else 
+			{
 				$uri	         =& JURI::getInstance();
 				$base['prefix'] = $uri->toString( array('scheme', 'host', 'port'));
 
