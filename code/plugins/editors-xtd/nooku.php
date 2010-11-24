@@ -52,7 +52,7 @@ class plgButtonNooku extends JPlugin
 
 		$button = new JObject();
 		$button->set('modal', true);
-		$button->set('link', 'index.php?option=com_nooku&amp;view=translate&amp;tmpl=component&amp;id='.$cid.'&amp;editor='.$name);
+		$button->set('link', JRoute::_('index.php?option=com_nooku&amp;view=translate&amp;tmpl=component&amp;id='.$cid.'&amp;editor='.$name));
 		$button->set('text', JText::_('Translate'));
 		$button->set('name', 'translate');
 		$button->set('options', "{handler: 'iframe', size: {x: 900, y: 600}}");
