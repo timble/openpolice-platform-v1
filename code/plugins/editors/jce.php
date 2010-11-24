@@ -305,7 +305,8 @@ class plgEditorJCE extends JPlugin
 	
 	    $editor = "<textarea id=\"$name\" name=\"$name\" cols=\"$col\" rows=\"$row\" style=\"width:{$width};height:{$height};\" class=\"mceEditor\">$content</textarea>\n" . $buttons;
 	    return $editor;
-	}	
+	}
+		
 	function onGetInsertMethod($name)
 	{
 	    $doc =& JFactory::getDocument();
@@ -314,7 +315,8 @@ class plgEditorJCE extends JPlugin
 	    $doc->addScriptDeclaration($js);
 	
 	    return true;
-	}	
+	}
+		
     function _displayButtons($name, $buttons)
     {
         // Load modal popup behavior
@@ -330,7 +332,8 @@ class plgEditorJCE extends JPlugin
                 $return .= $result;
             }
         }  
-        if (! empty($buttons)) {
+        if (! empty($buttons)) 
+        {
             $results = $this->_subject->getButtons($name, $buttons);   
             /*
              * This will allow plugins to attach buttons or change the behavior on the fly using AJAX
@@ -343,7 +346,7 @@ class plgEditorJCE extends JPlugin
 		             */
 		            if ($button->get('name')) {
 		                $modal = ($button->get('modal'))?'class="modal-button"':null;
-		                $href = ($button->get('link'))?'href="'.JURI::base().$button->get('link').'"':null;
+		                $href = ($button->get('link'))?'href="'.$button->get('link').'"':null;
 		                $onclick = ($button->get('onclick'))?'onclick="'.$button->get('onclick').'"':null;
 		                $return .= "<div class=\"button2-left\"><div class=\"".$button->get('name')."\"><a ".$modal." title=\"".$button->get('text')."\" ".$href." ".$onclick." rel=\"".$button->get('options')."\">".$button->get('text')."</a></div></div>\n";
 		           }	
