@@ -4,7 +4,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.0.77)
 # Database: police_default
-# Generation Time: 2010-11-15 21:46:52 +0100
+# Generation Time: 2010-11-25 12:02:49 +0100
 # ************************************************************
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -338,7 +338,7 @@ CREATE TABLE `pol_core_acl_aro` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `pol_section_value_value_aro` (`section_value`(100),`value`(100)),
   KEY `pol_gacl_hidden_aro` (`hidden`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pol_core_acl_aro` WRITE;
 /*!40000 ALTER TABLE `pol_core_acl_aro` DISABLE KEYS */;
@@ -626,8 +626,8 @@ LOCK TABLES `pol_jce_groups` WRITE;
 /*!40000 ALTER TABLE `pol_jce_groups` DISABLE KEYS */;
 INSERT INTO `pol_jce_groups` (`id`,`name`,`description`,`users`,`types`,`components`,`rows`,`plugins`,`published`,`ordering`,`checked_out`,`checked_out_time`,`params`)
 VALUES
-	(1,'Default','Default group for all users with edit access','','19,20,21,23,24,25','','6,7,8,9,10,11,12,13,14,15,16,17,18,19;20,21,22,23,24,25,26,27,28,30,31,32,35,47;36,37,38,39,40,41,42,43,44,45,46;48,49,50,51,52,53,54,56,57','1,2,3,4,5,6,20,21,36,37,38,39,40,41,48,49,50,51,52,53,54,56,57',1,1,0,'0000-00-00 00:00:00',''),
-	(2,'Front End','Sample Group for Authors, Editors, Publishers','','19,20,21','','6,7,8,9,10,13,14,15,16,17,18,19,27,28;20,21,25,26,30,31,35,42,43,44,46,47,49,50;24,32,38,39,41,45,48,51,52,53,54,56,57','6,20,21,49,50,1,3,5,38,39,41,48,51,52,53,54,56,57',0,2,0,'0000-00-00 00:00:00','');
+	(1,'Default','Default group for all users with edit access','','19,20,21,23,24,25','','48,8,9,10,12,14,15,16,17,18,19,00,38,39,29;20,00,54,00,34,24,53,25,26,27,28,30,31,32,42,35,47,33,52','1,2,3,4,5,20,38,39,48,52,53,54',1,1,62,'2010-11-25 10:17:40','editor_width=\neditor_height=\neditor_theme_advanced_toolbar_location=top\neditor_theme_advanced_toolbar_align=center\neditor_skin=default\neditor_skin_variant=default\neditor_inlinepopups_skin=clearlooks2\nadvcode_toggle=1\nadvcode_editor_state=1\nadvcode_toggle_text=[show/hide]\neditor_relative_urls=1\neditor_invalid_elements=\neditor_extended_elements=\neditor_event_elements=a,img\ncode_allow_javascript=0\ncode_allow_css=0\ncode_allow_php=0\ncode_cdata=1\neditor_theme_advanced_blockformats=p,div,h1,h2,h3,h4,h5,h6,blockquote,dt,dd,code,samp,pre\neditor_theme_advanced_fonts_add=\neditor_theme_advanced_fonts_remove=\neditor_theme_advanced_font_sizes=8pt,10pt,12pt,14pt,18pt,24pt,36pt\neditor_theme_advanced_default_foreground_color=#000000\neditor_theme_advanced_default_background_color=#FFFF00\neditor_dir=images/stories\neditor_restrict_dir=administrator,cache,components,includes,language,libraries,logs,media,modules,plugins,templates,xmlrpc\neditor_max_size=1024\neditor_upload_conflict=\neditor_preview_height=550\neditor_preview_width=750\neditor_custom_colors=\nbrowser_dir=\nbrowser_max_size=\nbrowser_extensions=xml=xml;html=htm,html;word=doc,docx;powerpoint=ppt;excel=xls;text=txt,rtf;image=gif,jpeg,jpg,png;acrobat=pdf;archive=zip,tar,gz;flash=swf;winrar=rar;quicktime=mov,mp4,qt;windowsmedia=wmv,asx,asf,avi;audio=wav,mp3,aiff;openoffice=odt,odg,odp,ods,odf\nbrowser_extensions_viewable=html,htm,doc,docx,ppt,rtf,xls,txt,gif,jpeg,jpg,png,pdf,swf,mov,mpeg,mpg,avi,asf,asx,dcr,flv,wmv,wav,mp3\nbrowser_upload=1\nbrowser_upload_conflict=\nbrowser_folder_new=1\nbrowser_folder_delete=1\nbrowser_folder_rename=1\nbrowser_file_delete=1\nbrowser_file_rename=1\nbrowser_file_move=1\nmedia_use_script=0\nmedia_strict=0\nmedia_html5=1\nmedia_version_flash=10,0,32,18\nmedia_version_windowsmedia=5,1,52,701\nmedia_version_quicktime=6,0,2,0\nmedia_version_realmedia=7,0,0,0\nmedia_version_shockwave=11,0,0,458\npaste_dialog_width=450\npaste_dialog_height=400\npaste_html=1\npaste_text=1\npaste_use_dialog=0\npaste_strip_class_attributes=all\npaste_remove_spans=0\npaste_remove_styles=0\npaste_retain_style_properties=\npaste_remove_empty_paragraphs=1\npaste_remove_styles_if_webkit=0\nimgmanager_dir=\nimgmanager_max_size=\nimgmanager_extensions=image=jpeg,jpg,png,gif\nimgmanager_margin_top=default\nimgmanager_margin_right=default\nimgmanager_margin_bottom=default\nimgmanager_margin_left=default\nimgmanager_border=0\nimgmanager_border_width=default\nimgmanager_border_style=default\nimgmanager_border_color=#000000\nimgmanager_align=default\nimgmanager_upload=1\nimgmanager_upload_conflict=\nimgmanager_folder_new=1\nimgmanager_folder_delete=1\nimgmanager_folder_rename=1\nimgmanager_file_delete=1\nimgmanager_file_rename=1\nimgmanager_file_move=1\nadvlink_target=default\nadvlink_content=1\nadvlink_static=1\nadvlink_contacts=1\nadvlink_weblinks=1\nadvlink_menu=1\nspellchecker_engine=googlespell\nspellchecker_languages=Nederlands=nl, French=fr, Duits=de\nspellchecker_pspell_mode=PSPELL_FAST\nspellchecker_pspell_spelling=\nspellchecker_pspell_jargon=\nspellchecker_pspell_encoding=\nspellchecker_pspell_dictionary=plugins/editors/jce/tiny_mce/plugins/spellchecker/dictionary.pws\nspellchecker_pspellshell_aspell=/usr/bin/aspell\nspellchecker_pspellshell_tmp=/tmp\n\n'),
+	(2,'Front End','Sample Group for Authors, Editors, Publishers','','19,20,21','','6,7,8,9,10,13,14,15,16,17,18,19,27,28;20,21,25,26,30,31,35,42,43,44,46,47,49,50;24,32,38,39,41,45,48,51,52,53,54,56,57','6,20,21,49,50,1,3,5,38,39,41,48,51,52,53,54,56,57',0,2,62,'2010-11-25 10:17:53','');
 
 /*!40000 ALTER TABLE `pol_jce_groups` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1233,7 +1233,7 @@ VALUES
 	(28,'System - Debug','debug','system',0,6,1,0,0,0,'0000-00-00 00:00:00','queries=1\nmemory=1\nlangauge=1\n\n'),
 	(29,'System - Legacy','legacy','system',0,7,0,1,0,0,'0000-00-00 00:00:00','route=0\n\n'),
 	(30,'System - Cache','cache','system',0,9,0,1,0,0,'0000-00-00 00:00:00','browsercache=0\ncachetime=15\n\n'),
-	(31,'System - Log','log','system',0,8,0,1,0,0,'0000-00-00 00:00:00',''),
+	(31,'System - Log','log','system',0,8,1,1,0,0,'0000-00-00 00:00:00',''),
 	(32,'System - Remember Me','remember','system',0,10,1,1,0,0,'0000-00-00 00:00:00',''),
 	(33,'System - Backlink','backlink','system',0,11,0,1,0,0,'0000-00-00 00:00:00',''),
 	(34,'System - Mootools Upgrade','mtupgrade','system',0,4,0,0,0,0,'0000-00-00 00:00:00',''),
@@ -1362,14 +1362,6 @@ CREATE TABLE `pol_session` (
   KEY `time` (`time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `pol_session` WRITE;
-/*!40000 ALTER TABLE `pol_session` DISABLE KEYS */;
-INSERT INTO `pol_session` (`username`,`time`,`session_id`,`guest`,`userid`,`usertype`,`gid`,`client_id`,`data`)
-VALUES
-	('','1289854105','dfid5v3p4oi2otuatndjqpg0d1',1,0,'',0,0,'__default|a:8:{s:15:\"session.counter\";i:79;s:19:\"session.timer.start\";i:1289853299;s:18:\"session.timer.last\";i:1289854102;s:17:\"session.timer.now\";i:1289854103;s:22:\"session.client.browser\";s:248:\"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; GTB6.6; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; eSobiSubscriber 2.0.4.16; OfficeLiveConnector.1.5; OfficeLivePatch.1.3; .NET4.0C)\";s:8:\"registry\";O:9:\"JRegistry\":3:{s:17:\"_defaultNameSpace\";s:7:\"session\";s:9:\"_registry\";a:2:{s:7:\"session\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}s:11:\"application\";a:1:{s:4:\"data\";O:8:\"stdClass\":1:{s:4:\"site\";s:4:\"5421\";}}}s:7:\"_errors\";a:0:{}}s:4:\"user\";O:5:\"JUser\":19:{s:2:\"id\";i:0;s:4:\"name\";N;s:8:\"username\";N;s:5:\"email\";N;s:8:\"password\";N;s:14:\"password_clear\";s:0:\"\";s:8:\"usertype\";N;s:5:\"block\";N;s:9:\"sendEmail\";i:0;s:3:\"gid\";i:0;s:12:\"registerDate\";N;s:13:\"lastvisitDate\";N;s:10:\"activation\";N;s:6:\"params\";N;s:3:\"aid\";i:0;s:5:\"guest\";i:1;s:7:\"_params\";O:10:\"JParameter\":7:{s:4:\"_raw\";s:0:\"\";s:4:\"_xml\";N;s:9:\"_elements\";a:0:{}s:12:\"_elementPath\";a:1:{i:0;s:55:\"/var/www/public/libraries/joomla/html/parameter/element\";}s:17:\"_defaultNameSpace\";s:8:\"_default\";s:9:\"_registry\";a:1:{s:8:\"_default\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}}s:7:\"_errors\";a:0:{}}s:9:\"_errorMsg\";N;s:7:\"_errors\";a:0:{}}s:13:\"session.token\";s:32:\"1fae1590d36f11fa005c1bfa15f9e300\";}');
-
-/*!40000 ALTER TABLE `pol_session` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table pol_stats_agents
@@ -1401,7 +1393,7 @@ LOCK TABLES `pol_templates_menu` WRITE;
 /*!40000 ALTER TABLE `pol_templates_menu` DISABLE KEYS */;
 INSERT INTO `pol_templates_menu` (`template`,`menuid`,`client_id`)
 VALUES
-	('rhuk_milkyway',0,0),
+	('site',0,0),
 	('khepri',0,1);
 
 /*!40000 ALTER TABLE `pol_templates_menu` ENABLE KEYS */;
@@ -1433,16 +1425,32 @@ CREATE TABLE `pol_users` (
   KEY `gid_block` (`gid`,`block`),
   KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pol_users` WRITE;
 /*!40000 ALTER TABLE `pol_users` DISABLE KEYS */;
 INSERT INTO `pol_users` (`id`,`name`,`username`,`email`,`password`,`usertype`,`block`,`sendEmail`,`gid`,`registerDate`,`lastvisitDate`,`activation`,`params`)
 VALUES
-	(62,'Administrator','administrator','admin@localhost.home','f4df914211f75594937e002293c0766f:9zWvbqlElCFly8U6Hajyzcb7ONjN2OcB','Super Administrator',0,1,25,'2010-10-16 22:19:31','2010-11-15 06:25:10','','admin_language=nl-NL\r\nlanguage=\r\neditor=\r\nhelpsite=\r\ntimezone=0\r\nsite=default\r\n');
+	(62,'Administrator','administrator','admin@localhost.home','f4df914211f75594937e002293c0766f:9zWvbqlElCFly8U6Hajyzcb7ONjN2OcB','Super Administrator',0,1,25,'2010-10-16 22:19:31','2010-11-25 10:47:54','','admin_language=nl-NL\r\nlanguage=\r\neditor=\r\nhelpsite=\r\ntimezone=0\r\nsite=default\r\n');
 
 /*!40000 ALTER TABLE `pol_users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table pol_users_logs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pol_users_logs`;
+
+CREATE TABLE `pol_users_logs` (
+  `users_log_id` bigint(20) NOT NULL auto_increment,
+  `created_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `username` varchar(75) NOT NULL default '',
+  `status` enum('success','fail') NOT NULL,
+  `site` varchar(50) NOT NULL default '',
+  PRIMARY KEY  (`users_log_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table pol_weblinks
