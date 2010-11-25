@@ -21,7 +21,7 @@ class plgSystemLog extends JPlugin
 		$database	= JFactory::getDBO();
 		$site		= JFactory::getApplication()->getSite();
 
-		$query = 'INSERT INTO `#__users_logs` (`created_on`, `username`, `status`, `site`) VALUES (\''.gmdate('Y-m-d H:i:s').'\', \''.$user['username'].'\', \'success\', \''.$site.'\');';
+		$query = 'INSERT INTO `police_default`.`#__users_logs` (`created_on`, `username`, `status`, `site`) VALUES (\''.gmdate('Y-m-d H:i:s').'\', \''.$user['username'].'\', \'success\', \''.$site.'\');';
 		$database->setQuery($query);
 		$database->query();
 	}
@@ -31,7 +31,7 @@ class plgSystemLog extends JPlugin
 		$database	= JFactory::getDBO();
 		$site		= JFactory::getApplication()->getSite();
 
-		$query = 'INSERT INTO `#__users_logs` (`created_on`, `username`, `status`, `site`) VALUES (\''.gmdate('Y-m-d H:i:s').'\', \''.$user['username'].'\', \'fail\', \''.$site.'\');';
+		$query = 'INSERT INTO `police_default`.`#__users_logs` (`created_on`, `username`, `status`, `site`) VALUES (\''.gmdate('Y-m-d H:i:s').'\', \''.$user['username'].'\', \'fail\', \''.$site.'\');';
 		$database->setQuery($query);
 		$database->query();
 	}
