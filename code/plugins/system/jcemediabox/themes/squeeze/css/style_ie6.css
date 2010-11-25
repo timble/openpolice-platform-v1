@@ -1,0 +1,49 @@
+/**
+ * Squeeze Template for IE6
+ * @version		$Id: style_ie6.css 631 2010-06-01 11:17:40Z happynoodleboy $
+ * @package		JCE MediaBox
+ * @copyright	Copyright (C) 2009 - 2010 Ryan Demmer. All rights reserved.
+ * @license		GNU/GPL
+ * This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+#jcemediabox-popup-nav {
+	height: 10px;	
+	padding-top: 0px;
+}
+#jcemediabox-popup-caption { 
+	margin-top: -1px;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-top-left {
+	background: url(../../standard/img/tip-tl.gif) no-repeat top left;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-top-right {
+	background: url(../../standard/img/tip-tr.gif) no-repeat top right;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-bottom-left {
+	background: transparent url(../../standard/img/tip-bl.gif) no-repeat bottom left;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-bottom-right {
+	background: transparent url(../../standard/img/tip-br.gif) no-repeat bottom right;
+}
+.jcemediabox-popup-corner-bl {
+	background: url(../../standard/img/corner-bl.gif) no-repeat left bottom;
+}
+.jcemediabox-popup-corner-bc {
+	overflow: hidden;
+}
+.jcemediabox-popup-corner-br {
+	background: url(../../standard/img/corner-br.gif) no-repeat right bottom;
+}
+.jcemediabox-popup-corner-tl {
+	background: url(../../standard/img/corner-tl.gif) no-repeat left top;
+}
+.jcemediabox-popup-corner-tc {
+	overflow: hidden;
+}
+.jcemediabox-popup-corner-tr {
+	background: url(../../standard/img/corner-tr.gif) no-repeat right top;
+}

@@ -1,0 +1,12 @@
+div.jcemediabox-tooltip .jcemediabox-tooltip-top-left {
+	background: url(../img/tip-tl.gif) no-repeat top left;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-top-right {
+	background: url(../img/tip-tr.gif) no-repeat top right;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-bottom-left {
+	background: transparent url(../img/tip-bl.gif) no-repeat bottom left;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-bottom-right {
+	background: transparent url(../img/tip-br.gif) no-repeat bottom right;
+}
