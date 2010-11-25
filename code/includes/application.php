@@ -403,12 +403,12 @@ class JSite extends JApplication
 		return $router;
 	}
 	
-	function &_createSession( $name, $ssl = false )
+	function &_createSession( $name, $ssl = false, $auto_start = true )
 	{
 		if($this->getCfg('force_ssl') == 2) {
 			$ssl = true;
 		}
 		
-		return parent::_createSession($name, $ssl);
+		return parent::_createSession($name, $ssl, $auto_start);
 	}
 }
