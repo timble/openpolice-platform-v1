@@ -6,6 +6,14 @@ CREATE VIEW `pol_session` AS
 	SELECT * FROM `police_default`.`pol_session`;
 
 
+# Create a view for pol_users_logs.
+
+DROP TABLE IF EXISTS `pol_users_logs`;
+
+CREATE VIEW `pol_users_logs` AS
+	SELECT * FROM `police_default`.`pol_users_logs`;
+
+
 # Demote super administrators to administrator.
 
 UPDATE `pol_core_acl_groups_aro_map` SET `group_id` = 24
