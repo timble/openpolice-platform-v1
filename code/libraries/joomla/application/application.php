@@ -625,6 +625,7 @@ class JApplication extends JObject
 		}
 
 		// Trigger onLoginFailure Event
+		$response['username'] = $credentials['username'];
 		$this->triggerEvent('onLoginFailure', array((array)$response));
 
 
