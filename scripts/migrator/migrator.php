@@ -220,7 +220,7 @@ mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'
 $result	= mysql_query('SELECT `id`, `introtext`, `fulltext` FROM `pol_content`');
 
 while($row = mysql_fetch_assoc($result)) {
-	mysql_query('UPDATE `pol_content` SET `introtext` = \''.tidy_repair_string($row['introtext']).'\', `fulltext` = \''.$tidy_repair_string($row['fulltext']).'\' WHERE `id` = '.$row['id']);
+	mysql_query('UPDATE `pol_content` SET `introtext` = \''.tidy_repair_string($row['introtext']).'\', `fulltext` = \''.tidy_repair_string($row['fulltext']).'\' WHERE `id` = '.$row['id']);
 }
 
 mysql_free_result($result);
