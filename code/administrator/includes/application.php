@@ -299,13 +299,13 @@ class JAdministrator extends JApplication
 		}
 	}
 	
-	function &_createSession( $name, $ssl = false )
+	function &_createSession( $name, $ssl = false, $auto_start = true )
 	{
 		if($this->getCfg('force_ssl') >= 1) {
 			$ssl = true;
 		}
 		
-		return parent::_createSession($name, $ssl);
+		return parent::_createSession($name, $ssl, $auto_start);
 	}
 
    /**
