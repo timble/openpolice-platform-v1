@@ -166,7 +166,7 @@ echo 'Importing database...';
 
 shell_exec('cd /tmp/'.$site_old_md5.' && gunzip database.sql.gz');
 shell_exec('cd /tmp/'.$site_old_md5.' && mv database.sql database.sql.old');
-shell_exec('cd /tmp/'.$site_old_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$site_old.'\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site_new.'`/g\' -e \'s/href=\\\\"\\.\\/index\\.php/href=\\\\"index\\.php/g\' -e \'s/images\\//sites\\/'.$site_new.'\\/images\\//g\' database.sql.old > database.sql');
+shell_exec('cd /tmp/'.$site_old_md5.' && sed -e \'s/http:\/\/217.21.184.146\/'.$site_old.'\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site_new.'`/g\' -e \'s/href=\\\\"\\.\\/index\\.php/href=\\\\"index\\.php/g\' database.sql.old > database.sql');
 shell_exec('cd /tmp/'.$site_old_md5.' && mysql --user="root" --password="" < database.sql');
 shell_exec('mysql --user="root" --password="" police_'.$site_new.' < migrator.sql');
 
@@ -209,6 +209,12 @@ if(!mysql_num_rows($result))
 	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU INSTALL\', \'\', 0, '.$row['id'].', \'option=com_jce&type=install\', \'JCE MENU INSTALL\', \'com_jce\', 4, \'templates/khepri/images/menu/icon-16-install.png\', 0, \'\', 1);');
 
 	mysql_free_result($result);
+
+	mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+	mysql_query('UPDATE `pol_content` SET `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+	mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+	mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+	mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
 }
 
 echo "\t\tOK\n";
