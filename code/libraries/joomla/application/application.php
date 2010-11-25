@@ -109,16 +109,21 @@ class JApplication extends JObject
 		if(!isset($config['site'])) {
 			 $config['site'] = 'default';
 		}
-
+		
 		//create the configuration object
 		$this->_createConfiguration(JPATH_CONFIGURATION.DS.$config['config_file']);
 
 		//create the site
 		$this->_createSite($config['site']);
-
+		
+		//Set the session autostart
+		if(!isset($config['session_autostart'])) {
+			 $config['session_autostart'] = !is_null($this->getCfg('session_autostart')) ? $this->getCfg('session_autostart') :  true;
+		}
+		
 		//create the session if a session name is passed
 		if($config['session'] !== false) {
-			$this->_createSession(JUtility::getHash($config['session_name']));
+			$this->_createSession(JUtility::getHash($config['session_name']), false, $config['session_autostart']);
 		}
 
 		$this->set( 'requestTime', gmdate('Y-m-d H:i') );
@@ -194,10 +199,11 @@ class JApplication extends JObject
 		$config->setValue('config.editor', $this->getCfg('editor'));
 
 		//Re-login
-		if($this->getUserState('application.site') != $this->_site && !$user->get('guest'))
+		if(!$user->get('guest') && ($this->getUserState('application.site') != $this->_site))
 		{
-			// Fork the session to prevent session fixation issues
 			$session = JFactory::getSession();
+			
+			// Fork the session to prevent session fixation issues
 			$session->fork();
 
 			$this->_createSession($session->getId());
@@ -585,11 +591,16 @@ class JApplication extends JObject
 		if ($response->status === JAUTHENTICATE_STATUS_SUCCESS)
 		{
 			$session = &JFactory::getSession();
-
-			// we fork the session to prevent session fixation issues
-			$session->fork();
+			
+			// Fork the session to prevent session fixation issues if it's active
+			if($session->getState() != 'active') {
+				$session->start();
+			} else {
+				$session->fork();
+			}
+			
 			$this->_createSession($session->getId());
-
+			
 			// Import the user plugin group
 			JPluginHelper::importPlugin('user');
 
@@ -891,33 +902,52 @@ class JApplication extends JObject
 	 * @return	object	JSession on success. May call exit() on database error.
 	 * @since	1.5
 	 */
-	function &_createSession( $name, $ssl = false )
+	function &_createSession( $name, $ssl = false, $auto_start = true )
 	{
 		$options = array(
-			'name' 		=> $name,
-			'force_ssl' => $ssl
+			'name' 	 	 => $name,
+			'force_ssl'  => $ssl
 		);
 
-		$session =& JFactory::getSession($options);
-
-		jimport('joomla.database.table');
-		$storage = & JTable::getInstance('session');
-		$storage->purge($session->getExpire());
-
-		// Session exists and is not expired, update time in session table
-		if ($storage->load($session->getId())) {
-			$storage->update();
-			return $session;
+		//Create the session object
+		$session = JFactory::getSession($options);
+		
+		//Auto-start the session if a cookie is found or if auto_start is true
+		if($session->getState() != 'active') 
+		{	
+			if ($auto_start || JRequest::getCmd($session->getName(), null, 'cookie')) {
+				$session->start();
+			}	
 		}
-
-		//Session doesn't exist yet, initalise and store it in the session table
-		$session->set('registry',	new JRegistry('session'));
-		$session->set('user',		new JUser());
-
-		if (!$storage->insert( $session->getId(), $this->getClientId())) {
-			jexit( $storage->getError());
+		
+		//Only update the session table if the session is active
+		if($session->getState() == 'active')
+		{
+			jimport('joomla.database.table');
+			$storage = & JTable::getInstance('session');
+			$storage->purge($session->getExpire());
+				
+			// Session exists and is not expired, update time in session table
+			if ($storage->load($session->getId())) {
+				$storage->update();
+			}
+			else 
+			{
+				//Session doesn't exist, initalise and store it in the session table
+				$session->set('registry',	new JRegistry('session'));
+				$session->set('user',		new JUser());
+	
+				if (!$storage->insert( $session->getId(), $this->getClientId())) {
+					jexit( $storage->getError());
+				}
+			}
 		}
-
+		else 
+		{
+			$session->set('registry',	new JRegistry('session'));
+			$session->set('user',		new JUser());
+		}
+		
 		return $session;
 	}
 
