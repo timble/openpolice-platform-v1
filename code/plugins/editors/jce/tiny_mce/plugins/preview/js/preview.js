@@ -26,7 +26,7 @@ var PreviewDialog = {
 		ed.dom.addClass('content', 'loader');
 		
 		tinymce.util.JSONRequest.sendRPC({
-			url : tinymce.settings['site_url'] + 'index.php?option=com_jce&task=plugin&plugin=preview&file=preview&cid=' + tinymce.settings['component_id'],
+			url : tinymce.settings['site_url'] + '?option=com_jce&task=plugin&plugin=preview&file=preview&cid=' + tinymce.settings['component_id'],
 			method : 'POST',
 			params : ed.getContent(),
 			success : function(r) {
