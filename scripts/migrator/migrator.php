@@ -207,15 +207,47 @@ if(!mysql_num_rows($result))
 	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU GROUPS\', \'\', 0, '.$row['id'].', \'option=com_jce&type=group\', \'JCE MENU GROUPS\', \'com_jce\', 2, \'templates/khepri/images/menu/icon-16-user.png\', 0, \'\', 1);');
 	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU PLUGINS\', \'\', 0, '.$row['id'].', \'option=com_jce&type=plugin\', \'JCE MENU PLUGINS\', \'com_jce\', 3, \'templates/khepri/images/menu/icon-16-plugin.png\', 0, \'\', 1);');
 	mysql_query('INSERT INTO `pol_components` VALUES(0, \'JCE MENU INSTALL\', \'\', 0, '.$row['id'].', \'option=com_jce&type=install\', \'JCE MENU INSTALL\', \'com_jce\', 4, \'templates/khepri/images/menu/icon-16-install.png\', 0, \'\', 1);');
-
-	mysql_free_result($result);
-
-	mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site_new.'/images/\');');
-	mysql_query('UPDATE `pol_content` SET `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site_new.'/images/\');');
-	mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
-	mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site_new.'/images/\');');
-	mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
 }
+
+mysql_free_result($result);
+
+mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+mysql_query('UPDATE `pol_content` SET `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
+
+$result	= mysql_query('SELECT `id`, `introtext`, `fulltext` FROM `pol_content`');
+
+while($row = mysql_fetch_assoc($result)) {
+	mysql_query('UPDATE `pol_content` SET `introtext` = \''.tidy_repair_string($row['introtext']).'\', `fulltext` = \''.$tidy_repair_string($row['fulltext']).'\' WHERE `id` = '.$row['id']);
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SELECT `id`, `description` FROM `pol_categories`');
+
+while($row = mysql_fetch_assoc($result)) {
+	mysql_query('UPDATE `pol_categories` SET `description` = \''.tidy_repair_string($row['description']).'\' WHERE `id` = '.$row['id']);
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SELECT `id`, `content` FROM `pol_modules`');
+
+while($row = mysql_fetch_assoc($result)) {
+	mysql_query('UPDATE `pol_modules` SET `content` = \''.tidy_repair_string($row['content']).'\' WHERE `id` = '.$row['id']);
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SELECT `id`, `description` FROM `pol_sections`');
+
+while($row = mysql_fetch_assoc($result)) {
+	mysql_query('UPDATE `pol_sections` SET `description` = \''.tidy_repair_string($row['description']).'\' WHERE `id` = '.$row['id']);
+}
+
+mysql_free_result($result);
 
 echo "\t\tOK\n";
 
