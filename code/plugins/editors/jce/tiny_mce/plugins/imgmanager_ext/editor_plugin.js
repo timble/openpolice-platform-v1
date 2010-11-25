@@ -12,7 +12,7 @@
 					return;
 
 				ed.windowManager.open({
-					file : ed.getParam('site_url') + 'index.php?option=com_jce&task=plugin&plugin=imgmanager_ext&file=imgmanager',
+					file : ed.getParam('site_url') + '?option=com_jce&task=plugin&plugin=imgmanager_ext&file=imgmanager',
 					width : 760 + ed.getLang('imgmanager_ext.delta_width', 0),
 					height : 640 + ed.getLang('imgmanager_ext.delta_height', 0),
 					inline : 1
