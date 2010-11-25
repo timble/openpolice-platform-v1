@@ -102,7 +102,7 @@ class plgEditorJCE extends JPlugin
             $vars['theme'] = 'advanced';
             // Url
             $vars['document_base_url'] 					= JURI::root();
-            $vars['site_url'] 							= '/'.JFactory::getApplication()->getSite().'/';
+            $vars['site_url'] 							= '/'.JFactory::getApplication()->getSite();
 			
 			// Component ID (required for non-popup plugins)
 			$vars['component_id']						= $component->id;
