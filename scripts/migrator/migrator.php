@@ -217,10 +217,12 @@ mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, 
 mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site_new.'/images/\');');
 mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
 
+$tidy_options = array('show-body-only' => true);
+
 $result	= mysql_query('SELECT `id`, `introtext`, `fulltext` FROM `pol_content`');
 
 while($row = mysql_fetch_assoc($result)) {
-	mysql_query('UPDATE `pol_content` SET `introtext` = \''.tidy_repair_string($row['introtext']).'\', `fulltext` = \''.tidy_repair_string($row['fulltext']).'\' WHERE `id` = '.$row['id']);
+	mysql_query('UPDATE `pol_content` SET `introtext` = \''.tidy_repair_string($row['introtext'],$tidy_options).'\', `fulltext` = \''.tidy_repair_string($row['fulltext'], $tidy_options).'\' WHERE `id` = '.$row['id']);
 }
 
 mysql_free_result($result);
@@ -228,7 +230,7 @@ mysql_free_result($result);
 $result	= mysql_query('SELECT `id`, `description` FROM `pol_categories`');
 
 while($row = mysql_fetch_assoc($result)) {
-	mysql_query('UPDATE `pol_categories` SET `description` = \''.tidy_repair_string($row['description']).'\' WHERE `id` = '.$row['id']);
+	mysql_query('UPDATE `pol_categories` SET `description` = \''.tidy_repair_string($row['description'], $tidy_options).'\' WHERE `id` = '.$row['id']);
 }
 
 mysql_free_result($result);
@@ -236,7 +238,7 @@ mysql_free_result($result);
 $result	= mysql_query('SELECT `id`, `content` FROM `pol_modules`');
 
 while($row = mysql_fetch_assoc($result)) {
-	mysql_query('UPDATE `pol_modules` SET `content` = \''.tidy_repair_string($row['content']).'\' WHERE `id` = '.$row['id']);
+	mysql_query('UPDATE `pol_modules` SET `content` = \''.tidy_repair_string($row['content'], $tidy_options).'\' WHERE `id` = '.$row['id']);
 }
 
 mysql_free_result($result);
@@ -244,7 +246,7 @@ mysql_free_result($result);
 $result	= mysql_query('SELECT `id`, `description` FROM `pol_sections`');
 
 while($row = mysql_fetch_assoc($result)) {
-	mysql_query('UPDATE `pol_sections` SET `description` = \''.tidy_repair_string($row['description']).'\' WHERE `id` = '.$row['id']);
+	mysql_query('UPDATE `pol_sections` SET `description` = \''.tidy_repair_string($row['description'], $tidy_options).'\' WHERE `id` = '.$row['id']);
 }
 
 mysql_free_result($result);
