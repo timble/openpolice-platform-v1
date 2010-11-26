@@ -217,7 +217,7 @@ mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, 
 mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site_new.'/images/\');');
 mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site_new.'/images/\');');
 
-$tidy_options = array('show-body-only' => true, 'clean' => true, 'word-2000' => true, 'drop-font-tags' => true, 'drop-proprietary-attributes' => true);
+$tidy_options = array('show-body-only' => true, 'clean' => true, 'word-2000' => true, 'drop-font-tags' => true, 'drop-proprietary-attributes' => true, 'bare' => true);
 
 $result	= mysql_query('SELECT `id`, `introtext`, `fulltext` FROM `pol_content`');
 
