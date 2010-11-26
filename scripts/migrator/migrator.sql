@@ -60,6 +60,14 @@ DELETE FROM `pol_menu` WHERE LOCATE('option=com_joomap', `link`) <> 0;
 # Delete Linkr component.
 
 DROP TABLE IF EXISTS `pol_linkr`;
+DELETE FROM `pol_components` WHERE `option` = 'com_linkr';
+
+
+# Delete Phoca Guestbook.
+
+DROP TABLE IF EXISTS `pol_phocaguestbook_books`;
+DROP TABLE IF EXISTS `pol_phocaguestbook_items`;
+DELETE FROM `pol_components` WHERE `option` = 'com_phocaguestbook';
 
 
 # Updated front-end template name.
