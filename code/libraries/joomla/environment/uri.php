@@ -700,7 +700,7 @@ class JURI extends JObject
 		$host = $uri->toString(array('scheme', 'host', 'port'));
 		echo $base;
 		echo $host;
-		
+		die;
 		if(stripos($base, JURI::base()) !== 0 && !empty($host)) {
 			return false;
 		}
