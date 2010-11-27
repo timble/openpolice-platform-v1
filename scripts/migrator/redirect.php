@@ -1,5 +1,5 @@
 <?php
-$path = '/Users/GergoErdosi/Downloads/httpdocs';
+$path = '';
 
 foreach($iterator = new DirectoryIterator($path) as $directory)
 {
