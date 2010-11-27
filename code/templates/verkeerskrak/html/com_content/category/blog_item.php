@@ -25,7 +25,7 @@ endif; ?>
 
 <?php if ($this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
 <p class="buttonheading">
-	<img src="<?php echo $this->baseurl ?>/templates/beez/images/trans.gif" alt="<?php echo JText::_('attention open in a new window'); ?>" />
+	<img src="<?php echo $this->baseurl ?>/templates/verkeerskrak/images/trans.gif" alt="<?php echo JText::_('attention open in a new window'); ?>" />
 	<?php if ($this->item->params->get('show_pdf_icon')) :
 		echo JHTML::_('icon.pdf', $this->item, $this->item->params, $this->access);
 	endif;

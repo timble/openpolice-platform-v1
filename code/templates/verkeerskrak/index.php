@@ -21,27 +21,27 @@ $showRightColumn &= JRequest::getCmd('task') != 'edit'
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 	<jdoc:include type="head" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/beez/css/template.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/beez/css/position.css" type="text/css" media="screen,projection" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/beez/css/layout.css" type="text/css" media="screen,projection" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/beez/css/print.css" type="text/css" media="Print" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/beez/css/general.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/template.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/position.css" type="text/css" media="screen,projection" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/layout.css" type="text/css" media="screen,projection" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/print.css" type="text/css" media="Print" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/general.css" type="text/css" />
 	<?php if($this->direction == 'rtl') : ?>
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/beez/css/template_rtl.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/template_rtl.css" type="text/css" />
 	<?php endif; ?>
 	<!--[if lte IE 6]>
-		<link href="<?php echo $this->baseurl ?>/templates/beez/css/ieonly.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/ieonly.css" rel="stylesheet" type="text/css" />
 	<![endif]-->
 	<!--[if IE 7]>
-		<link href="<?php echo $this->baseurl ?>/templates/beez/css/ie7only.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $this->baseurl ?>/templates/verkeerskrak/css/ie7only.css" rel="stylesheet" type="text/css" />
 	<![endif]-->
-	<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/beez/javascript/md_stylechanger.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/verkeerskrak/javascript/md_stylechanger.js"></script>
 </head>
 <body>
 	<div id="all">
 		<div id="header">
 			<h1 id="logo">
-				<table><tr><td><a href="http://217.21.184.146/verkeerskrak"><img src="<?php echo $this->baseurl ?>/templates/beez/images/logo.gif" border="0" alt="<?php echo JText::_('De Verkeerskrak'); ?>"  height="97" /></a><span class="header1">
+				<table><tr><td><a href="http://217.21.184.146/verkeerskrak"><img src="<?php echo $this->baseurl ?>/templates/verkeerskrak/images/logo.gif" border="0" alt="<?php echo JText::_('De Verkeerskrak'); ?>"  height="97" /></a><span class="header1">
 <td><?php echo JText::_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://217.21.184.146/verkeerskrak/images/stories/long_logo.png">'); ?></span></tr></table>
 				
 			</h1>
