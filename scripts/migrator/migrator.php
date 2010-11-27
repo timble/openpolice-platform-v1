@@ -38,7 +38,7 @@ $site['old']['name']	= $arguments['site'];
 $site['old']['md5']		= md5($site['old']['name']);
 $site['new']['name']	= strtolower(strpos($site['old']['name'], '_') !== false ? substr($site['old']['name'], 0, strpos($site['old']['name'], '_')) : $site['old']['name']);
 
-$config['mysql']['username'] = 'tor'.str_replace('_', '', $site['old']['name']);
+$config['mysql']['username'] = 'tor'.strtolower(str_replace('_', '', $site['old']['name']));
 $config['mysql']['database'] = 'police_'.strtolower($site['old']['name']);
 
 // Connect to the server.
