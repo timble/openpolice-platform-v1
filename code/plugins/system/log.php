@@ -21,21 +21,21 @@ class plgSystemLog extends JPlugin
 {
 	public function onLoginUser($user, $options)
 	{
-		$this->_log('success');
+		$this->_log($user['username'], 'success');
 	}
 
 	public function onLoginFailure($user)
 	{
-		$this->_log('fail');
+		$this->_log($user['username'], 'fail');
 	}
 
-	protected function _log($status)
+	protected function _log($username, $status)
 	{
 		$database	= JFactory::getDBO();
 		$data		= array(
 			'created_on'	=> gmdate('Y-m-d H:i:s'),
 			'username'		=> $user['username'],
-			'status'		=> $status,
+			'status'		=> $username,
 			'site'			=> JFactory::getApplication()->getSite(),
 			'ip'			=> $_SERVER['REMOTE_ADDR'],
 			'referrer'		=> $_SERVER['HTTP_REFERER'],
