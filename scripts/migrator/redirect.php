@@ -1,5 +1,5 @@
 <?php
-$path = '';
+$path = '/Users/GergoErdosi/Downloads/httpdocs';
 
 foreach($iterator = new DirectoryIterator($path) as $directory)
 {
@@ -36,7 +36,7 @@ $config = '';
 foreach($sites as $key => $value)
 {
 	$config .= 'location ~ ^/('.implode('|', $value).') {'.PHP_EOL;
-	$config .= "\t".'rewrite ^ '.((strlen($key) == 4 && is_numeric($key)) ? 'http://217.21.184.146/'.$key : $key).' permanent;'.PHP_EOL;
+	$config .= "\t".'rewrite ^ '.(substr($key, 0, 7) != 'http://' ? 'http://217.21.184.146/'.$key : $key).' permanent;'.PHP_EOL;
 	$config .= '}'.PHP_EOL;
 	$config .= ''.PHP_EOL;
 }
