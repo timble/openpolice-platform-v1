@@ -2,7 +2,7 @@
 
 DROP TABLE IF EXISTS `pol_session`;
 
-CREATE VIEW `pol_session` AS
+CREATE OR REPLACE VIEW `pol_session` AS
 	SELECT * FROM `police_default`.`pol_session`;
 
 
@@ -10,7 +10,7 @@ CREATE VIEW `pol_session` AS
 
 DROP TABLE IF EXISTS `pol_users_logs`;
 
-CREATE VIEW `pol_users_logs` AS
+CREATE OR REPLACE VIEW `pol_users_logs` AS
 	SELECT * FROM `police_default`.`pol_users_logs`;
 
 
