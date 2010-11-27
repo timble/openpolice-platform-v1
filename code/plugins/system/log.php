@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS `pol_users_logs` (
 	`username` VARCHAR(75) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
 	`status` ENUM('success', 'fail') NOT NULL,
 	`site` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+	`ip` VARCHAR(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+	`referrer` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+	`user_agent` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
 	PRIMARY KEY (`users_log_id`)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8 COLLATE utf8_general_ci;
 */
@@ -18,20 +21,28 @@ class plgSystemLog extends JPlugin
 {
 	public function onLoginUser($user, $options)
 	{
-		$database	= JFactory::getDBO();
-		$site		= JFactory::getApplication()->getSite();
-
-		$query = 'INSERT INTO `police_default`.`#__users_logs` (`created_on`, `username`, `status`, `site`) VALUES (\''.gmdate('Y-m-d H:i:s').'\', \''.$user['username'].'\', \'success\', \''.$site.'\');';
-		$database->setQuery($query);
-		$database->query();
+		$this->_log('success');
 	}
 
 	public function onLoginFailure($user)
 	{
-		$database	= JFactory::getDBO();
-		$site		= JFactory::getApplication()->getSite();
+		$this->_log('fail');
+	}
 
-		$query = 'INSERT INTO `police_default`.`#__users_logs` (`created_on`, `username`, `status`, `site`) VALUES (\''.gmdate('Y-m-d H:i:s').'\', \''.$user['username'].'\', \'fail\', \''.$site.'\');';
+	protected function _log($status)
+	{
+		$database	= JFactory::getDBO();
+		$data		= array(
+			'created_on'	=> gmdate('Y-m-d H:i:s'),
+			'username'		=> $user['username'],
+			'status'		=> $status,
+			'site'			=> JFactory::getApplication()->getSite(),
+			'ip'			=> $_SERVER['REMOTE_ADDR'],
+			'referrer'		=> $_SERVER['HTTP_REFERER'],
+			'user_agent'	=> $_SERVER['HTTP_USER_AGENT']
+		);
+
+		$query = 'INSERT INTO `police_default`.`#__users_logs` (`'.implode('`, `', array_keys($data)).'`) VALUES (\''.implode('\', \'', array_values($data)).'\');';
 		$database->setQuery($query);
 		$database->query();
 	}
