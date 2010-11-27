@@ -34,8 +34,8 @@ class plgSystemLog extends JPlugin
 		$database	= JFactory::getDBO();
 		$data		= array(
 			'created_on'	=> gmdate('Y-m-d H:i:s'),
-			'username'		=> $user['username'],
-			'status'		=> $username,
+			'username'		=> $username,
+			'status'		=> $status,
 			'site'			=> JFactory::getApplication()->getSite(),
 			'ip'			=> $_SERVER['REMOTE_ADDR'],
 			'referrer'		=> $_SERVER['HTTP_REFERER'],
