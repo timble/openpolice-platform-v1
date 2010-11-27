@@ -36,7 +36,7 @@ if(!isset($arguments['site']))
 
 $site['old']['name']	= $arguments['site'];
 $site['old']['md5']		= md5($site['old']['name']);
-$site['new']['name']	= strpos($site['old']['name'], '_') !== false ? substr($site['old']['name'], 0, strpos($site['old']['name'], '_')) : $site['old']['name'];
+$site['new']['name']	= strtolower(strpos($site['old']['name'], '_') !== false ? substr($site['old']['name'], 0, strpos($site['old']['name'], '_')) : $site['old']['name']);
 
 $config['mysql']['username'] = 'tor'.str_replace('_', '', $site['old']['name']);
 $config['mysql']['database'] = 'police_'.strtolower($site['old']['name']);
@@ -166,12 +166,12 @@ echo 'Importing database...';
 
 shell_exec('cd /tmp/'.$site['old']['md5'].' && gunzip database.sql.gz');
 shell_exec('cd /tmp/'.$site['old']['md5'].' && mv database.sql database.sql.old');
-shell_exec('cd /tmp/'.$site['old']['md5'].' && sed -e \'s/http:\/\/217.21.184.146\/'.$site['old']['name'].'\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.strtolower($site['new']['name']).'`/g\' -e \'s/href=\\\\"\\.\\/index\\.php/href=\\\\"index\\.php/g\' database.sql.old > database.sql');
+shell_exec('cd /tmp/'.$site['old']['md5'].' && sed -e \'s/http:\/\/217.21.184.146\/'.$site['old']['name'].'\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site['new']['name'].'`/g\' -e \'s/href=\\\\"\\.\\/index\\.php/href=\\\\"index\\.php/g\' database.sql.old > database.sql');
 shell_exec('cd /tmp/'.$site['old']['md5'].' && mysql --user="root" --password="" < database.sql');
-shell_exec('mysql --user="root" --password="" police_'.strtolower($site['new']['name']).' < migrator.sql');
+shell_exec('mysql --user="root" --password="" police_'.$site['new']['name'].' < migrator.sql');
 
 $link	= mysql_connect('localhost', 'root', '');
-mysql_select_db('police_'.strtolower($site['new']['name']));
+mysql_select_db('police_'.$site['new']['name']);
 $result	= mysql_query('SELECT * FROM `pol_menu` WHERE `alias` = \'\'');
 
 while($row = mysql_fetch_assoc($result))
