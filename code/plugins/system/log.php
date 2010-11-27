@@ -38,7 +38,7 @@ class plgSystemLog extends JPlugin
 			'status'		=> $status,
 			'site'			=> JFactory::getApplication()->getSite(),
 			'ip'			=> $_SERVER['REMOTE_ADDR'],
-			'referrer'		=> $_SERVER['HTTP_REFERER'],
+			'referrer'		=> isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '',
 			'user_agent'	=> $_SERVER['HTTP_USER_AGENT']
 		);
 
