@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="language" client="both" method="upgrade">
+	<name>Nederlands</name>
+	<tag>nl-NL</tag>
+	<version>1.5.7.4</version>
+	<creationDate>2010-06-20</creationDate>
+	<author>Joomla!Community</author>
+	<authorEmail>taal@joomlacommunity.eu</authorEmail>
+	<authorUrl>www.joomlacommunity.eu</authorUrl>
+	<copyright>(C) 2010 Joomla!Community. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>JCE 1.5 Nederlandse taalbestanden</description>
+	<site>
+		<files folder="site">	
+			<filename>nl-NL.com_jce_advlink.ini</filename>
+			<filename>nl-NL.com_jce_browser.ini</filename>
+			<filename>nl-NL.com_jce_imgmanager.ini</filename>
+			<filename>nl-NL.com_jce_paste.ini</filename>
+			<filename>nl-NL.com_jce_media.ini</filename>
+			<filename>nl-NL.com_jce_spellchecker.ini</filename>
+			<filename>nl-NL.com_jce.ini</filename>
+			<filename>nl-NL.com_jce_caption.ini</filename>
+			<filename>nl-NL.com_jce_filemanager.ini</filename>
+			<filename>nl-NL.com_jce_iframe.ini</filename>
+			<filename>nl-NL.com_jce_imgmanager_ext.ini</filename>
+			<filename>nl-NL.com_jce_mediamanager.ini</filename>
+			<filename>nl-NL.com_jce_templatemanager.ini</filename>
+		</files>
+	</site>
+	<tinymce>
+		<files folder="tinymce">
+			<filename>langs/nl.js</filename>
+			<filename>langs/nl_dlg.js</filename>
+			<filename>themes/advanced/langs/nl.js</filename>
+			<filename>themes/advanced/langs/nl_dlg.js</filename>
+			<filename>plugins/advcode/langs/nl_dlg.js</filename>
+			<filename>plugins/advcode/langs/nl.js</filename>
+			<filename>plugins/advlink/langs/nl_dlg.js</filename>
+			<filename>plugins/article/langs/nl_dlg.js</filename>
+			<filename>plugins/article/langs/nl.js</filename>
+			<filename>plugins/browser/langs/nl_dlg.js</filename>
+			<filename>plugins/caption/langs/nl.js</filename>
+			<filename>plugins/emotions/langs/nl_dlg.js</filename>
+			<filename>plugins/filemanager/langs/nl.js</filename>
+			<filename>plugins/filemanager/langs/nl_dlg.js</filename>
+			<filename>plugins/iframe/langs/nl.js</filename>
+			<filename>plugins/imgmanager/langs/nl_dlg.js</filename>
+			<filename>plugins/imgmanager_ext/langs/nl_dlg.js</filename>
+			<filename>plugins/mediamanager/langs/nl_dlg.js</filename>
+			<filename>plugins/searchreplace/langs/nl_dlg.js</filename>
+			<filename>plugins/style/langs/nl_dlg.js</filename>
+			<filename>plugins/table/langs/nl_dlg.js</filename>
+			<filename>plugins/templatemanager/langs/nl.js</filename>
+			<filename>plugins/templatemanager/langs/nl_dlg.js</filename>
+			<filename>plugins/xhtmlxtras/langs/nl_dlg.js</filename>
+		</files>
+	</tinymce>
+	<administration>
+		<files folder="administration">
+			<filename>nl-NL.com_jce.ini</filename>
+			<filename>nl-NL.com_jce.menu.ini</filename>
+			<filename>nl-NL.plg_editors_jce.ini</filename>
+		</files>
+	</administration>
+</install>

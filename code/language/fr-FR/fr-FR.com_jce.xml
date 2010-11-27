@@ -2,8 +2,8 @@
 <install version="1.5" type="language" method="upgrade">
 	<name>Français</name>
 	<tag>fr-FR</tag>
-	<version>1.5.7.4</version>
-	<creationDate>7 juin 2010</creationDate>
+	<version>1.5.7.6</version>
+	<creationDate>11 novembre 2010</creationDate>
 	<author>Sarki</author>
 	<authorEmail>info@sarki.ch</authorEmail>
 	<authorUrl>www.sarki.ch</authorUrl>
@@ -66,6 +66,7 @@
 			<filename>fr-FR.com_jce.ini</filename>
 			<filename>fr-FR.com_jce.menu.ini</filename>
 			<filename>fr-FR.plg_editors_jce.ini</filename>
+			<filename>fr-FR.plg_system_jceutilities.ini</filename>
 			<filename>fr-FR.plg_system_jcemediabox.ini</filename>
 			<filename>fr-FR.plg_system_jcemediabox.sys.ini</filename>
         </files>
