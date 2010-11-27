@@ -696,10 +696,10 @@ class JURI extends JObject
 	function isInternal($url) 
 	{
 		$uri =& JURI::getInstance($url);
-		$base = $uri->toString(array('scheme', 'host', 'port', 'path'));
+		$base = $uri->toString(array('scheme', 'host', 'port'));
 		$host = $uri->toString(array('scheme', 'host', 'port'));
 	
-		if(stripos($base, JURI::root()) !== 0 && !empty($host)) {
+		if(stripos($base, JURI::root()) !== 0 && !empty($base)) {
 			return false;
 		}
 		return true;
