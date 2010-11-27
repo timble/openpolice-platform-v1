@@ -699,6 +699,10 @@ class JURI extends JObject
 		$base = $uri->toString(array('scheme', 'host', 'port'));
 		$host = $uri->toString(array('scheme', 'host', 'port'));
 	
+		echo $base;
+		echo JURI::root(true);
+		die;
+		
 		if(stripos($base, JURI::root()) !== 0 && !empty($base)) {
 			return false;
 		}
