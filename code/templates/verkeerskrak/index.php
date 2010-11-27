@@ -41,9 +41,9 @@ $showRightColumn &= JRequest::getCmd('task') != 'edit'
 	<div id="all">
 		<div id="header">
 			<h1 id="logo">
-				<table><tr><td><a href="http://217.21.184.146/verkeerskrak"><img src="<?php echo $this->baseurl ?>/templates/verkeerskrak/images/logo.gif" border="0" alt="<?php echo JText::_('De Verkeerskrak'); ?>"  height="97" /></a><span class="header1">
+				<table><tr><td><a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/verkeerskrak/images/logo.gif" border="0" alt="<?php echo JText::_('De Verkeerskrak'); ?>"  height="97" /></a><span class="header1">
 <td><?php echo JText::_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://217.21.184.146/verkeerskrak/images/stories/long_logo.png">'); ?></span></tr></table>
-				
+
 			</h1>
 
 			<ul>
