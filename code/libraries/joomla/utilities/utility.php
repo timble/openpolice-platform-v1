@@ -121,8 +121,14 @@ class JUtility
 	 */
 	function getToken($forceNew = false)
 	{
-		$user		= &JFactory::getUser();
-		$session	= &JFactory::getSession();
+		$user		= JFactory::getUser();
+		$session	= JFactory::getSession();
+		
+		//If the session is not active start it
+		if($session->getState() != 'active') {
+			$session->start();
+		} 
+		
 		$hash		= JUtility::getHash( $user->get( 'id', 0 ).$session->getToken( $forceNew ) );
 		return $hash;
 	}
