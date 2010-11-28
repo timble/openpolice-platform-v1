@@ -409,6 +409,11 @@ class JSession extends JObject
 	*/
 	function start()
 	{
+		// session was already started
+		if( $this->_state == 'active' ) {
+			return true;
+		}
+		
 		//  start session if not startet
 		if( $this->_state == 'restart' ) {
 			session_id( $this->_createId() );
