@@ -235,7 +235,7 @@ class PhocaGalleryRenderDetailButton
 					$jsSlideshowData['files'] .= 'fadeimages['.$countImg.']=["'. $value->extl .'", "", ""];'."\n";
 				} else {
 					$fileThumbnail 	= PhocaGalleryFileThumbnail::getThumbnailName($value->filename, 'large');
-					$imgLink		= JURI::root(false, '').$fileThumbnail->rel;
+					$imgLink		= JURI::root(false, '').substr($fileThumbnail->rel, 1);
 					if (JFile::exists($fileThumbnail->abs)) {
 						$jsSlideshowData['files'] .= 'fadeimages['.$countImg.']=["'. $imgLink .'", "", ""];'."\n"; ;
 					} else {
