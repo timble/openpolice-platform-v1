@@ -484,13 +484,13 @@ class JSession extends JObject
 		// Re-register the session handler after a session has been destroyed, to avoid PHP bug
 		$this->_store->register();
 
-		$this->_state	=   'restart';
+		$this->_state = 'restart';
+		
 		//regenerate session id
 		$id	=	$this->_createId( strlen( $this->getId() ) );
 		session_id($id);
-		$this->_start();
-		$this->_state	=	'active';
-
+		$this->start();
+	
 		$this->_validate();
 		$this->_setCounter();
 
