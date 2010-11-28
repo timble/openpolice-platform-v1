@@ -8,7 +8,8 @@ class plgContentTidy extends JPlugin
 			'clean'							=> true,
 			'word-2000'						=> true,
 			'drop-font-tags'				=> true,
-			'drop-proprietary-attributes'	=> true
+			'drop-proprietary-attributes'	=> true,
+			'wrap'							=> 0
 		);
 
 		$article->introtext	= tidy_repair_string($article->introtext, $tidy_options);
