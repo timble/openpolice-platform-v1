@@ -11,7 +11,8 @@ class plgContentTidy extends JPlugin
 			'drop-proprietary-attributes'	=> true
 		);
 
-		$article->text = tidy_repair_string($article->text, $tidy_options);
+		$article->introtext	= tidy_repair_string($article->introtext, $tidy_options);
+		$article->fulltext	= tidy_repair_string($article->fulltext, $tidy_options);
 
 		return true;
 	}
