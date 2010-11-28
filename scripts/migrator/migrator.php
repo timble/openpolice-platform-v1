@@ -217,7 +217,7 @@ mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, 
 mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
 mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
 
-$tidy_options = array('show-body-only' => true, 'clean' => true, 'word-2000' => true, 'drop-font-tags' => true, 'drop-proprietary-attributes' => true);
+/*$tidy_options = array('show-body-only' => true, 'clean' => true, 'word-2000' => true, 'drop-font-tags' => true, 'drop-proprietary-attributes' => true);
 
 $result	= mysql_query('SELECT `id`, `introtext`, `fulltext` FROM `pol_content`');
 
@@ -249,7 +249,7 @@ while($row = mysql_fetch_assoc($result)) {
 	mysql_query('UPDATE `pol_sections` SET `description` = \''.tidy_repair_string($row['description'], $tidy_options).'\' WHERE `id` = '.$row['id']);
 }
 
-mysql_free_result($result);
+mysql_free_result($result);*/
 
 echo "\t\tOK\n";
 
