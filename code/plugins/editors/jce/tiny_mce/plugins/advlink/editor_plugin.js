@@ -12,7 +12,7 @@
 					return;
 
 				ed.windowManager.open({
-					file : ed.getParam('site_url') + '?option=com_jce&task=plugin&plugin=advlink&file=advlink',
+					file : ed.getParam('site_url') + 'index.php?option=com_jce&task=plugin&plugin=advlink&file=advlink',
 					width : 500 + ed.getLang('advlink.delta_width', 0),
 					height : 480 + ed.getLang('advlink.delta_height', 0),
 					inline : 1
