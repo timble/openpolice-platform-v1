@@ -179,7 +179,7 @@ class PhocaGalleryViewDetail extends JView
 
 		} else {
 			$item->linkthumbnailpath	= PhocaGalleryImageFront::displayCategoryImageOrNoImage($item->filenameno, 'large');
-			$item->linkimage			= JHTML::_( 'image.site', JURI::root(false, '').substr($item->linkthumbnailpath, 1), '', '', '', $item->altvalue);
+			$item->linkimage			= JHTML::_( 'image.site', $item->linkthumbnailpath, '', '', '', $item->altvalue);
 			$realImageSize 				= PhocaGalleryImage::getRealImageSize ($item->filenameno);
 			$item->imagesize			= PhocaGalleryImage::getImageSize($item->filenameno, 1);
 			if (isset($realImageSize['w']) && isset($realImageSize['h'])) {
