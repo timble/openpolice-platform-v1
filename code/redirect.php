@@ -162,7 +162,7 @@ function MM_swapImage() { //v3.0
 	      </tr>
 	  </table>
 	  <br>
-	  <form action="redirect.php" method="POST" target="_blank">
+	  <form action="redirect.php" method="GET">
 	 <table width="255" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr bgcolor="#a3c0c5">
   <td colspan="2" class="style3 style4">De websites van de lokale politie  </td>
