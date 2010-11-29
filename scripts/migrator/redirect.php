@@ -41,4 +41,4 @@ foreach($sites as $key => $value)
 	$config .= ''.PHP_EOL;
 }
 
-file_put_contents(dirname(__FILE__).'/redirect.conf', $config);
+file_put_contents(dirname(__FILE__).'/../conf/redirect.conf', $config);
