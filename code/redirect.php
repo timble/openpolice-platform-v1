@@ -187,8 +187,8 @@ function MM_swapImage() { //v3.0
     <td colspan="3"><map name="Map2Map">
         <area shape="rect" coords="0,2,150,27" href="http://www.polfed-fedpol.be/police/ops/ops_fr.php">
         <area shape="rect" coords="0,27,148,53" href="http://www.polfed-fedpol.be/police/ops/ops_nl.php">
-      </map> 
-	  <!--new--> 
+      </map>
+	  <!--new-->
       <table width="750" border="0" align="center" cellpadding="2" cellspacing="2">
         <tr>
           <?php
