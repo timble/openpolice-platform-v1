@@ -13,7 +13,7 @@ window.addEvent('domready', function() {
     var sel = $('language-select');
     sel.addEvent('change', function() {
 		source_article = $('source_article');
-		source_article.src = 'index.php?option=com_nooku&view=translate.source&tmpl=component&id='
+		source_article.src =  window.location.pathname+'index.php?option=com_nooku&view=translate.source&tmpl=component&id='
 			+article_id+'&source_lang='+sel.value;
     });
 });
