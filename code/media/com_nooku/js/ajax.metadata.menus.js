@@ -52,7 +52,7 @@ var NookuMetadataMenus = new Class({
 	
 	displayPanel: function() 
 	{	
-		var url =  window.location.pathname+'index.php?option=com_nooku&view=metadata&layout=form&format=ajax&table_name='+this.table_name+'&row_id='+this.id;
+		var url =  window.location.pathname+'/index.php?option=com_nooku&view=metadata&layout=form&format=ajax&table_name='+this.table_name+'&row_id='+this.id;
 		
 		new Ajax(url, {
 			method: 'get',

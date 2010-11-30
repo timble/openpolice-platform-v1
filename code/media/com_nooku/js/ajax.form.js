@@ -34,7 +34,7 @@ var NookuForm = new Class({
 		this.form.option.value = 'com_nooku';
 		this.form.task.value   = 'validate';
 		
-		var url =  window.location.pathname+'index.php?option=com_nooku&controller=node&task=validate&format=json&component='+this.option;
+		var url =  window.location.pathname+'/index.php?option=com_nooku&controller=node&task=validate&format=json&component='+this.option;
 		
 		new Ajax(url, {
 			method: 'post',
