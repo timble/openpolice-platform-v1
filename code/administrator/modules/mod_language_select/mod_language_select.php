@@ -38,8 +38,8 @@ $langs = KFactory::get('admin::com.nooku.model.nooku')->getLanguages();
 $language = $app->getUserState('application.language.content', 'en-GB');
 
 $view->assign('langformat', 	$params->get('langformat', 'name'));
-$view->assign('show_flag', 		$params->get('show_flag', 1));
-$view->assign('show_name', 		$params->get('show_name', 1));
+$view->assign('show_flag', 		$params->get('display_flag', 1));
+$view->assign('show_name', 		$params->get('display_name', 1));
 $view->assignRef('uri', 		JURI::getInstance());
 $view->assign('language' , 		$language);
 $view->assign('languages', 		$langs);
