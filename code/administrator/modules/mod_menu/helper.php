@@ -96,7 +96,7 @@ class modMenuHelper
 			foreach ($menuTypes as $menuType) {
 				$menu->addChild(
 					new JMenuNode(
-						$menuType->title . ($menuType->home ? ' *' : ''), 
+						$menuType->title . ($menuType->home ? ' *' : ''),
 						'index.php?option=com_menus&task=view&menutype='
 						. $menuType->menutype,
 						'class:menu'
@@ -234,8 +234,11 @@ class modMenuHelper
 				$menu->addChild(new JMenuNode(JText::_('Global Checkin'), 'index.php?option=com_checkin', 'class:checkin'));
 				$menu->addSeparator();
 			}
-			$menu->addChild(new JMenuNode(JText::_('Clean Cache'), 'index.php?option=com_cache', 'class:config'));
-			$menu->addChild(new JMenuNode(JText::_('Purge Expired Cache'), 'index.php?option=com_cache&task=purgeadmin', 'class:config'));
+
+			if($user->gid == 25) {
+				$menu->addChild(new JMenuNode(JText::_('Clean Cache'), 'index.php?option=com_cache', 'class:config'));
+				$menu->addChild(new JMenuNode(JText::_('Purge Expired Cache'), 'index.php?option=com_cache&task=purgeadmin', 'class:config'));
+			}
 
 			$menu->getParent();
 		}
