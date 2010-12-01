@@ -227,29 +227,15 @@ class JURI extends JObject
 		// Get the base request path
 		if (!isset($base))
 		{
-			$config =& JFactory::getConfig();
-			$live_site = $config->getValue('config.live_site');
-			if(trim($live_site) != '') 
-			{
-				$uri =& JURI::getInstance($live_site);
-				$base['prefix'] = $uri->toString( array('scheme', 'host', 'port'));
-				$base['path'] = rtrim($uri->toString( array('path')), '/\\');
-				//if(JPATH_BASE == JPATH_ADMINISTRATOR) {
-				//	$base['path'] .= '/administrator';
-				//}
-			} 
-			else 
-			{
-				$uri	         =& JURI::getInstance();
-				$base['prefix'] = $uri->toString( array('scheme', 'host', 'port'));
+			$uri	         =& JURI::getInstance();
+			$base['prefix'] = $uri->toString( array('scheme', 'host', 'port'));
 
-				if (strpos(php_sapi_name(), 'cgi') !== false && !empty($_SERVER['REQUEST_URI'])) {
-					//Apache CGI
-					$base['path'] =  rtrim(dirname(str_replace(array('"', '<', '>', "'"), '', $_SERVER["PHP_SELF"])), '/\\');
-				} else {
-					//Others
-					$base['path'] =  rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
-				}
+			if (strpos(php_sapi_name(), 'cgi') !== false && !empty($_SERVER['REQUEST_URI'])) {
+				//Apache CGI
+				$base['path'] =  rtrim(dirname(str_replace(array('"', '<', '>', "'"), '', $_SERVER["PHP_SELF"])), '/\\');
+			} else {
+				//Others
+				$base['path'] =  rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
 			}
 		}
 
@@ -273,6 +259,10 @@ class JURI extends JObject
 		if(!isset($root))
 		{
 			$uri	        =& JURI::getInstance(JURI::base());
+			
+			//Strip administrator subdomain from if present to get the root domain
+			$uri->setHost(ltrim($uri->getHost(), 'administrator.'));
+			
 			$root['prefix'] = $uri->toString( array('scheme', 'host', 'port') );
 			$root['path']   = rtrim($uri->toString( array('path') ), '/\\');
 		}
