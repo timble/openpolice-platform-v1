@@ -261,7 +261,7 @@ class JURI extends JObject
 			$uri	        =& JURI::getInstance(JURI::base());
 			
 			//Strip administrator subdomain from if present to get the root domain
-			$uri->setHost(ltrim($uri->getHost(), 'administrator.'));
+			$uri->setHost(str_replace('administrator.', '', $uri->getHost()));
 			
 			$root['prefix'] = $uri->toString( array('scheme', 'host', 'port') );
 			$root['path']   = rtrim($uri->toString( array('path') ), '/\\');
