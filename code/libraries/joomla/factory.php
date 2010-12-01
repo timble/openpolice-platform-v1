@@ -40,6 +40,8 @@ class JFactory
 			jimport( 'joomla.application.application' );
 
 			if (!$id) {
+				echo debug_print_backtrace();
+				die;
 				JError::raiseError(500, 'Application Instantiation Error');
 			}
 
