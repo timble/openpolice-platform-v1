@@ -33,5 +33,5 @@ define( 'JPATH_LIBRARIES',	 	JPATH_ROOT.DS.'libraries' );
 define( 'JPATH_PLUGINS',		JPATH_ROOT.DS.'plugins'   );
 define( 'JPATH_INSTALLATION',	JPATH_ROOT.DS.'installation' );
 define( 'JPATH_THEMES'	   ,	JPATH_BASE.DS.'templates' );
-define( 'JPATH_CACHE',			JPATH_BASE.DS.'cache');
+define( 'JPATH_CACHE',			'/var/www/cache');
 define( 'JPATH_SITES',			JPATH_ROOT.DS.'sites');

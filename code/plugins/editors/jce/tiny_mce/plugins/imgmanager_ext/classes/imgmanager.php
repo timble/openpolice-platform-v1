@@ -248,7 +248,7 @@ class ImageManager extends Manager {
 		return $this->getDimensions( $this->getThumbPath( $file ) );
 	}
 	function getCacheDirectory(){
-		return JPATH_ROOT.'/cache';
+		return JPATH_CACHE;
 	}
 
 	function cleanCacheDir(){
