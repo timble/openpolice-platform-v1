@@ -127,25 +127,7 @@ $showRightColumn &= JRequest::getCmd('task') != 'edit'
 			</p>
 
 			<p>
-				<?php echo JText::_('Powered by');?> <a href="http://217.21.184.146/">VCLP-CPPL &copy;</a>&nbsp;
-
-<!-- Start of belstat.be Counter -->
-<script type="text/javascript">
-		<!--
-		d=document;
-		pag="";col="";scr=0;b=navigator.appName;
-		scr=screen.width+"*"+screen.height;
-		ref=escape(document.referrer);
-		pag=escape(d.URL);
-		if (b != "Netscape") {col=screen.colorDepth}
-		else {col=screen.pixelDepth}
-		if(col=="undefined"){col="";}
-		d.write("<a href=http://www.belstat.be/viewstat.asp?UserID=verkeerskrak&" + "amp;" + "lang=nl target=_blank><img border=0 src=\"http://www.belstat.be/regstat.aspx?");
-		d.write("UserID=verkeerskrak&BColor=black&refer=" + ref + "&pag=" + pag + "&b=" + b + "&col=" + col + "&scr=" + scr);
-		d.write("\" align=center width=16 height=16 alt=\"Monitored by BelStat - Your Site Counts\"><\/a>");
-		// -->
-</script>
-<!-- End of belstat.be Counter -->
+				<?php echo JText::_('Powered by');?> <a href="http://www.lokalepolitie.be/sct//">VCLP-CPPL &copy;</a>&nbsp;
 			</p>
 
 			<div class="wrap"></div>
