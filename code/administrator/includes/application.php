@@ -35,7 +35,9 @@ class JAdministrator extends JApplication
 	*/
 	function __construct($config = array())
 	{
-		$config['clientId'] = 1;
+		$config['clientId']          = 1;
+		$config['session_autostart'] = true; //override the configruation settings
+		
 		parent::__construct($config);
 
 		//Set the root in the URI based on the application name
