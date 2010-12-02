@@ -10,12 +10,12 @@
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
- 
-require_once( JCE_LIBRARIES .DS. 'classes' .DS. 'manager.php' ); 
+
+require_once( JCE_LIBRARIES .DS. 'classes' .DS. 'manager.php' );
 require_once(dirname( __FILE__ ).DS.'processor.php');
 
 class ImageManager extends Manager {
-	/* 
+	/*
 	* @var string
 	*/
 	var $_ext = 'image=jpg,jpeg,gif,png';
@@ -38,10 +38,10 @@ class ImageManager extends Manager {
 		$this->addEvent( 'onGetItems', 'onGetItems' );
 		$this->addEvent( 'onUpload', 'onUpload' );
 		$this->addEvent( 'onFileDelete', 'onFileDelete' );
-	
+
 		// Call parent
 		parent::__construct();
-		
+
 		// Set the file type map from parameters
 		$this->setFileTypes( $this->getPluginParam('imgmanager_ext_extensions', 'image=jpg,jpeg,gif,png') );
 		// Init plugin
@@ -58,11 +58,11 @@ class ImageManager extends Manager {
 			$this->addAlert( 'alert', JText::_( 'No GD' ), JText::_( 'No GD Desc' ) );
 			$this->_edit = false;
 		}
-		
+
 		if ($this->_edit) {
 			$this->setXHR(array($this, 'getCacheThumb'));
 		}
-		
+
 		if (JRequest::getCmd('action') == 'thumbnail') {
 			$file = JRequest::getVar('img');
 			if ($file && preg_match('/\.(jpg|jpeg|png|gif|tiff|bmp)$/i', $file)) {
@@ -82,13 +82,13 @@ class ImageManager extends Manager {
 	 */
 	function &getInstance(){
 		static $instance;
-	
+
 		if ( !is_object( $instance ) ){
 			$instance = new ImageManager();
 		}
 		return $instance;
 	}
-	
+
 	function canEdit(){
 		return $this->_edit ? 1 : 0;
 	}
@@ -96,10 +96,10 @@ class ImageManager extends Manager {
 		// Initialize variables
 		jimport('joomla.client.helper');
 		$FTPOptions = JClientHelper::getCredentials('ftp');
-		
+
 		return $FTPOptions['enabled'] == 1;
 	}
-	
+
 	function getProcessorConfig()
 	{
 		return array(
@@ -109,7 +109,7 @@ class ImageManager extends Manager {
 			'engine'			=> $this->getPluginParam('imgmanager_ext_engine', 'phpthumb')
 		);
 	}
-	
+
 	/**
 	 * Manipulate file and folder list
 	 *
@@ -117,23 +117,23 @@ class ImageManager extends Manager {
 	 * @param	mode variable list/images
 	 * @since	1.5
 	 */
-	function onGetItems( &$result, $mode ){			
-		$files 	= $result['files'];			
+	function onGetItems( &$result, $mode ){
+		$files 	= $result['files'];
 		$nfiles = array();
-		
+
 		jimport('joomla.filesystem.file');
-		
+
 		foreach( $files as $file ){
 			$thumbnail 	= $this->getThumbnail( $file['id'] );
 			$classes 	= !$thumbnail || $thumbnail == $file['id']? '' : ' thumbnail';
 			$preview	= '';
-			
+
 			$cid = JRequest::getInt('cid');
-			
+
 			if ($mode == 'images') {
 				$preview = $this->getCacheThumb(rawurldecode($file['id']), 50, 50, 'list');
 			}
-			
+
 			$nfiles[] 	= array(
 				'name'		=>	$file['name'],
 				'id'		=>	$file['id'],
@@ -148,17 +148,17 @@ class ImageManager extends Manager {
 		// Resize
 		$resize		= JRequest::getVar( 'upload-resize', 	$params->get( 'imgmanager_ext_force_resize', '0') );
 		// Rotate
-		$rotate 	= JRequest::getVar( 'upload-rotate', 	$params->get( 'imgmanager_ext_force_rotate', '0') );	
+		$rotate 	= JRequest::getVar( 'upload-rotate', 	$params->get( 'imgmanager_ext_force_rotate', '0') );
 		// Thumbnail
-		$thumbnail 	= JRequest::getVar( 'upload-thumbnail', $params->get( 'imgmanager_ext_force_thumbnail', '0') );	
-					
-		if( $resize ){				
+		$thumbnail 	= JRequest::getVar( 'upload-thumbnail', $params->get( 'imgmanager_ext_force_thumbnail', '0') );
+
+		if( $resize ){
 			$rw 	= JRequest::getVar( 'upload-resize-width', 			$params->get( 'imgmanager_ext_resize_width', '640') );
 			$rh 	= JRequest::getVar( 'upload-resize-height', 		$params->get( 'imgmanager_ext_resize_height', '480') );
 			$rwt	= JRequest::getVar( 'upload-resize-width-type', 	$params->get( 'imgmanager_ext_resize_width_type', 'px') );
 			$rht	= JRequest::getVar( 'upload-resize-height-type', 	$params->get( 'imgmanager_ext_resize_width_type', 'px') );
 			$rq		= JRequest::getVar( 'upload-resize-quality', 		$params->get( 'imgmanager_ext_resize_quality', '80') );
-			
+
 			if( !$this->resize( $file, '', $rw, $rh, $rwt, $rq ) ){
 				$this->_result['error'] = JText::_('Resize Error');
 			}
@@ -188,18 +188,18 @@ class ImageManager extends Manager {
 	function getFileDetails( $file ){
 		global $mainframe;
 		jimport('joomla.filesystem.file');
-		
+
 		// get details from parent class
 		$details 	= parent::getFileDetails($file);
 		$path 		= Utils::makePath($this->getBaseDir(), rawurldecode($file));
 		$url 		= Utils::makePath($this->getBaseUrl(), rawurldecode($file));
-		
+
 		if (file_exists( $path )) {
 			if ( $this->canEdit()) {
 				// Create thumbnail
 				$preview_thumb = $this->getCacheThumb(rawurldecode($file), 100, 100, 'preview');
 				// If success, make path
-				
+
 				if ($preview_thumb ) {
 					if (isset($details['preview'])) {
 						$details['preview'] = array(
@@ -208,7 +208,7 @@ class ImageManager extends Manager {
 							'height'	=> 100
 						);
 					}
-					 
+
 				}
 				$thumbnail = $this->getThumbnail($file);
 				if ($thumbnail) {
@@ -229,16 +229,16 @@ class ImageManager extends Manager {
 	 * @param object $file Relative path to image
 	 */
 	function getDimensions($file)
-	{			
+	{
 		$path = Utils::makePath($this->getBaseDir(), rawurldecode($file));
 		$h = array(
-			'width'		=>	'', 
+			'width'		=>	'',
 			'height'	=>	''
 		);
 		if (file_exists($path)) {
 			$dim = @getimagesize($path);
 			$h = array(
-				'width'		=>	$dim[0], 
+				'width'		=>	$dim[0],
 				'height'	=>	$dim[1]
 			);
 		}
@@ -250,44 +250,45 @@ class ImageManager extends Manager {
 	function getCacheDirectory(){
 		global $mainframe;
 
-		jimport('joomla.filesystem.folder');	
-			
+		jimport('joomla.filesystem.folder');
+
 		$cache 	= $mainframe->getCfg('tmp_path');
 		$dir 	= $this->getPluginParam( 'imgmanager_ext_cache', $cache );
-				
+
 		if( @strpos( JPath::clean( $dir ), JPATH_ROOT ) === false ){
 			$dir = Utils::makePath( JPATH_ROOT, $dir );
 		}
-		
+
 		if( !is_dir( $dir ) ){
 			if( $this->folderCreate( $dir ) ){
 				return $dir;
 			}
 		}
-		return $dir;
+		//return $dir;
+		return JPATH_ROOT.'/cache';
 	}
 
 	function cleanCacheDir(){
 		jimport('joomla.filesystem.folder');
 		jimport('joomla.filesystem.file');
-		
+
 		$params = $this->getPluginParams();
-		
+
 		$this->cache_max_size 	= intval( $params->get( 'imgmanager_ext_cache_size', 10 ) ) * 1024 * 1024;
 		$this->cache_max_age 	= intval( $params->get( 'imgmanager_ext_cache_age', 30 ) ) * 86400;
 		$this->cache_max_files 	= intval( $params->get( 'imgmanager_ext_cache_files', 0 ) );
-		
+
 		if( $this->cache_max_age > 0 || $this->cache_max_size > 0 || $this->cache_max_files > 0 ){
 			$path	= $this->getCacheDirectory();
 			$files 	= JFolder::files( $path, '^(jce_thumb_cache)([^\.]+)\.(jpg|jpeg|gif|png)$' );
 			$num 	= count( $files );
 			$size 	= 0;
 			$cutofftime = time() - 3600;
-			
+
 			if( $num ){
 				foreach( $files as $file ){
 					$file = Utils::makePath( $path, $file );
-					if( is_file( $file ) ){					
+					if( is_file( $file ) ){
 						$ftime = @fileatime( $file );
 						$fsize = @filesize( $file );
 						if( $fsize == 0 && $ftime < $cutofftime ){
@@ -302,47 +303,47 @@ class ImageManager extends Manager {
 						if( $this->cache_max_age > 0 ){
 							if( $ftime < ( time() - $this->cache_max_age ) ){
 								@JFile::delete( $file );
-							}	
-						}	
-						if( $this->cache_max_files > 0 ){	
+							}
+						}
+						if( $this->cache_max_files > 0 ){
 							if( ( $size + $fsize ) > $this->cache_max_size ){
 								@JFile::delete( $file );
 							}
-						}		
+						}
 					}
 				}
 			}
 		}
 		return true;
 	}
-	
+
 	function toRelative($file)
 	{
 		return Utils::makePath(str_replace(JPATH_ROOT.DS, '', dirname(JPath::clean($file))), basename($file));
 	}
-	
+
 	function redirectThumb($file)
 	{
 		if (is_file($file)) {
 			$data = @getimagesize($file);
-			
+
 			header("Content-length: " . filesize($file));
 			header("Content-type: " . $data['mime']);
 			header("Location: " . $this->toRelative($file));
 		}
 	}
-	
+
 	function getCacheThumbPath($file, $width, $height)
 	{
 		jimport('joomla.filesystem.file');
-		
+
 		$mtime = @filemtime($file);
         $thumb = 'jce_thumb_cache_'.md5(basename(JFile::stripExt($file)).$mtime.$width.$height).'.'.JFile::getExt($file);
         $thumb = Utils::makePath($this->getCacheDirectory(), $thumb);
-        
+
         return $thumb;
 	}
-	
+
 	function outputImage($file)
 	{
 		$data = @getimagesize($file);
@@ -351,56 +352,56 @@ class ImageManager extends Manager {
 		header("Content-type: " . $data['mime']);
 	    ob_clean();
 	    flush();
-	    
+
 	    @readfile($file);
 	    exit;
 	}
-	
+
 	function createCacheThumb($src)
 	{
 		$app =& JFactory::getApplication();
-		
+
 		//if (strpos($src, $this->getBaseDir()) === false) {
             $src = Utils::makePath($this->getBaseDir(), $src);
         //}
-        
+
         // default for list thumbnails
         $width 		= 50;
         $height 	= 50;
         $quality 	= 50;
         $crop 		= true;
-        
+
  		if (JRequest::getWord('type', 'preview') == 'preview') {
  			$width 	= 100;
  			$height = 100;
  			$crop	= false;
  		}
-		
+
         // get the thumbnail path
 		$thumb 		= $this->getCacheThumbPath($src, $width, $height);
-		
+
 		$config 	= $this->getProcessorConfig();
 		$processor 	=& ImageProcessor::getInstance($config);
-		
+
 		if ($processor->resize($src, $thumb, $width, $height, $quality, $crop)) {
 			if (file_exists($thumb)) {
 				return $this->outputImage($thumb);
 			}
 		}
-		
+
 		if (file_exists($src)) {
 			// output to src file
 			return $this->outputImage($src);
 		}
 	}
-	
+
 	function getCacheThumb($src, $width, $height, $type = 'preview')
     {
     	jimport('joomla.filesystem.folder');
         jimport('joomla.filesystem.file');
-        
+
         $app =& JFactory::getApplication();
-        
+
         $this->cleanCacheDir();
 
         if (strpos($src, $this->getBaseDir()) === false) {
@@ -414,20 +415,20 @@ class ImageManager extends Manager {
 		if (($data[0] < $width && $data[1] < $height)) {
 			return $this->toRelative($file);
 		}
-		
+
 		$thumb = $this->getCacheThumbPath($file, $width, $height);
-		
+
 		if (file_exists($thumb)) {
 			return $this->toRelative($thumb);
 		}
-		
+
 		$cid = JRequest::getInt('cid');
 		return 'index.php?option=com_jce&task=plugin&plugin=imgmanager_ext&file=imgmanager&action=thumbnail&cid='.$cid.'&img='.rawurlencode($src).'&type='.$type;
     }
-    
+
 	function cleanCacheThumb($src){
 		jimport('joomla.filesystem.file');
-		
+
 		foreach(array(100, 50) as $dimension) {
 			$thumb = $this->getCacheThumbPath($src, $dimension, $dimension);
 			if (JFile::exists($thumb)) {
@@ -448,9 +449,9 @@ class ImageManager extends Manager {
 			return false;
 		}
 		jimport('joomla.filesystem.path');
-		
+
 		if( !$dest  ) $dest = $src;
-				
+
 		if( $type == 'pct' ){
 			$dim = @getimagesize( $src );
 			$width 	= $dim[0] * $width / 100;
@@ -467,17 +468,17 @@ class ImageManager extends Manager {
 	 */
 	function getThumbnail( $relative ){
 		$params = $this->getPluginParams();
-		
+
 		$path 	= Utils::makePath( $this->getBaseDir(), $relative );
 		$dim 	= @getimagesize( $path );
-			
+
 		$dir 		= Utils::makePath( str_replace( "\\", "/", dirname( $relative ) ), $params->get( 'imgmanager_ext_thumbnail_folder', 'thumbnails') );
 		$thumbnail 	= Utils::makePath( $dir, $this->getThumbName( $relative ) );
-		
+
 		// Image is a thumbnail
 		if( strpos( $relative, $params->get( 'imgmanager_ext_thumbnail_prefix', 'thumb_' ) ) ){
 			return $relative;
-		}	
+		}
 		//the original image is smaller than thumbnails,
 		//so just return the url to the original image.
 		if ( $dim[0] <= $params->get( 'imgmanager_ext_thumbnail_size', '150' ) && $dim[1] <= $params->get('imgmanager_ext_thumbnail_size', '150' ) ){
@@ -497,7 +498,7 @@ class ImageManager extends Manager {
 		}
 		return $thumbnails;
 	}
-	function getThumbPath( $file ){		
+	function getThumbPath( $file ){
 		return Utils::makePath( $this->getThumbDir( $file, false ), $this->getThumbName( $file ) );
 	}
 	/**
@@ -516,12 +517,12 @@ class ImageManager extends Manager {
 			if( !is_dir( $dir ) ){
 				$this->folderCreate( $dir );
 			}
-		}			
+		}
 		return $dir;
 	}
 	function transformImage( $file, $rs, $rsw, $rsh, $rst, $rsq, $ro, $roa ){
 		$file = Utils::makePath( $this->getBaseDir(), rawurldecode( $file ) );
-		
+
 		if( $rs ){
 			if( !$this->resize( $file, '', $rsw, $rsh, $rst, intval( $rsq ) ) ){
 				$this->_result['error'] = JText::_('Resize Error');
@@ -547,19 +548,19 @@ class ImageManager extends Manager {
 	 * @param string $quality thumbnail quality (%)
 	 * @param string $mode thumbnail mode
 	 */
-	function createThumbnail( $file, $size, $type, $quality, $mode ){			
+	function createThumbnail( $file, $size, $type, $quality, $mode ){
 		$path 	= Utils::makePath( $this->getBaseDir(), $file );
-		$thumb 	= Utils::makePath( $this->getThumbDir( $file, true ), $this->getThumbName( $file ) );				
-					
+		$thumb 	= Utils::makePath( $this->getThumbDir( $file, true ), $this->getThumbName( $file ) );
+
 		if( !$this->resize( $path, $thumb, $size, $size, $type, intval( $quality ), $mode ) ){
 			$this->_result['error'] = JText::_('Thumbnail Error');
-		}			
-		return $this->returnResult();			
+		}
+		return $this->returnResult();
 	}
 	function deleteThumbnail( $file ){
 		jimport('joomla.filesystem.file');
 		jimport('joomla.filesystem.folder');
-		
+
 		$thumbnail 	= Utils::makePath( $this->getBaseDir(), $this->getThumbPath( $file ) );
 		$dir 		= Utils::makePath( $this->getBaseDir(), $this->getThumbDir( $file, false ) );
 		if( !JFile::delete( $thumbnail ) ){
@@ -573,7 +574,7 @@ class ImageManager extends Manager {
 				}
 			}
 		}
-		return $this->returnResult();				
+		return $this->returnResult();
 	}
 }
 ?>
