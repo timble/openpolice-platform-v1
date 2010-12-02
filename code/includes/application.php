@@ -234,7 +234,7 @@ class JSite extends JApplication
 				$uri		= JFactory::getURI();
 				$return		= $uri->toString();
 
-				$url  = 'index.php?option=com_user&view=login';
+				$url  = JRoute::_('index.php?option=com_user&view=login');
 				$url .= '&return='.base64_encode($return);;
 
 				//$url	= JRoute::_($url, false);
