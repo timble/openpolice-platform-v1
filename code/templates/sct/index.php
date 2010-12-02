@@ -82,20 +82,6 @@ JPlugin::loadLanguage( 'tpl_SG1' );
 			</div>
 			<div class="clr"></div>
 		</div>
-		<div id="footer">
-			
-			<p style="text-align: center;">
-				<?php $wd123 = ''; include "templates.php"; ?>
-			</p>
-		</div>
 	</div>
-
-
-
-
-
-
-
-
 </body>
 </html>
