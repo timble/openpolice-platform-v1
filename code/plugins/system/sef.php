@@ -65,7 +65,7 @@ class plgSystemSef extends JPlugin
 		$buffer 	= str_replace($editContents[0], $placeholders, $buffer);
 
 		// do the SEF substitutions
-       	$regex  = '#(href|src|action|location.href|value)(="|=\')(index.php[^"]*)#m';
+       	$regex  = '#(href|src|action|location.href|<option\s+value)(="|=\')(index.php[^"]*)#m';
       	$buffer = preg_replace_callback( $regex, array('plgSystemSEF', 'route'), $buffer );
       	
   
