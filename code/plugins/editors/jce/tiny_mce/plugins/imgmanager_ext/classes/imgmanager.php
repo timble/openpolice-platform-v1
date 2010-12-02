@@ -248,23 +248,6 @@ class ImageManager extends Manager {
 		return $this->getDimensions( $this->getThumbPath( $file ) );
 	}
 	function getCacheDirectory(){
-		global $mainframe;
-
-		jimport('joomla.filesystem.folder');
-
-		$cache 	= $mainframe->getCfg('tmp_path');
-		$dir 	= $this->getPluginParam( 'imgmanager_ext_cache', $cache );
-
-		if( @strpos( JPath::clean( $dir ), JPATH_ROOT ) === false ){
-			$dir = Utils::makePath( JPATH_ROOT, $dir );
-		}
-
-		if( !is_dir( $dir ) ){
-			if( $this->folderCreate( $dir ) ){
-				return $dir;
-			}
-		}
-		//return $dir;
 		return JPATH_ROOT.'/cache';
 	}
 
