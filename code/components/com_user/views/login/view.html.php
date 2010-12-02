@@ -105,7 +105,7 @@ class UserViewLogin extends JView
 
 		$this->assign('image' , $image);
 		$this->assign('type'  , $type);
-		$this->assign('return', $url);
+		$this->assign('return', JRoute::_($url));
 
 		$this->assignRef('params', $params);
 
