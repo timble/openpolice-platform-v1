@@ -173,7 +173,7 @@ function MM_swapImage() { //v3.0
       Nummer - Zone (Zone)<br></td>
 	 <td align="center">
 	
-    <input type="text" name="link" size="12" align="middle">
+    <input type="text" name="redirect_link" size="12" align="middle">
     <a href="#" onClick="MM_openBrWindow('help_nl_fr_de.php','','width=500,height=300')" > <img src="http://www.polfed-fedpol.be/images/help.gif" alt="help" width="10" height="10" border="0" ></a>	</td>
     </tr>
 	  <tr bgcolor="#a3c0c5">
