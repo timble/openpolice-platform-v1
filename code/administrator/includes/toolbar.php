@@ -122,7 +122,7 @@ class JToolBarHelper
 	{
 		$bar = & JToolBar::getInstance('toolbar');
 		// Add a preview button
-		$bar->appendButton( 'Popup', 'preview', 'Preview', "$url&task=preview" );
+		$bar->appendButton( 'Popup', 'preview', 'Preview', JRoute::_($url.'&task=preview') );
 	}
 
 	/**
@@ -159,7 +159,7 @@ class JToolBarHelper
 	{
 		$bar = & JToolBar::getInstance('toolbar');
 		// Add an upload button
-		$bar->appendButton( 'Popup', 'upload', $alt, "index.php?option=com_media&tmpl=component&task=popupUpload&folder=$folder", 640, 520 );
+		$bar->appendButton( 'Popup', 'upload', $alt, JRoute::('index.php?option=com_media&tmpl=component&task=popupUpload&folder='.$folder), 640, 520 );
 	}
 
 	/**
@@ -485,7 +485,7 @@ class JToolBarHelper
 		$path		= urlencode( $path );
 		$bar = & JToolBar::getInstance('toolbar');
 		// Add a configuration button
-		$bar->appendButton( 'Popup', 'config', $alt, 'index.php?option=com_config&amp;controller=component&amp;component='.$component.'&amp;path='.$path, $width, $height );
+		$bar->appendButton( 'Popup', 'config', $alt, JRoute::_('index.php?option=com_config&amp;controller=component&amp;component='.$component.'&path='.$path), $width, $height );
 	}
 }
 
