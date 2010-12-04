@@ -38,35 +38,35 @@ class HTML_DMDocman
                 <td width="55%" valign="top">
                     <div id="cpanel">
                     <?php
-                        $link = "index2.php?option=com_docman&amp;section=files";
+                        $link = "index.php?option=com_docman&amp;section=files";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_files_48.png', _DML_FILES, _DM_ICONPATH);
-                        $link = "index2.php?option=com_docman&amp;section=files&amp;task=upload";
+                        $link = "index.php?option=com_docman&amp;section=files&amp;task=upload";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_newfile_48.png', _DML_NEW_FILE, _DM_ICONPATH);
 
-                        $link = "index2.php?option=com_docman&amp;section=documents";
+                        $link = "index.php?option=com_docman&amp;section=documents";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_documents_48.png', _DML_DOCS, _DM_ICONPATH );
-                        $link = "index2.php?option=com_docman&amp;section=documents&amp;task=new";
+                        $link = "index.php?option=com_docman&amp;section=documents&amp;task=new";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_newdocument_48.png', _DML_NEW_DOCUMENT, _DM_ICONPATH );
 
-                        $link = "index2.php?option=com_docman&amp;section=categories";
+                        $link = "index.php?option=com_docman&amp;section=categories";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_categories_48.png', _DML_CATS, _DM_ICONPATH);
-                        $link = "index2.php?option=com_docman&amp;section=groups";
+                        $link = "index.php?option=com_docman&amp;section=groups";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_groups_48.png', _DML_GROUPS, _DM_ICONPATH);
-                        $link = "index2.php?option=com_docman&amp;section=licenses";
+                        $link = "index.php?option=com_docman&amp;section=licenses";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_licenses_48.png', _DML_LICENSES, _DM_ICONPATH );
 
-                        $link = "index2.php?option=com_docman&amp;task=stats";
+                        $link = "index.php?option=com_docman&amp;task=stats";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_stats_48.png', _DML_STATS, _DM_ICONPATH );
-                        $link = "index2.php?option=com_docman&amp;section=logs";
+                        $link = "index.php?option=com_docman&amp;section=logs";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_logs_48.png', _DML_DOWNLOAD_LOGS, _DM_ICONPATH);
 
-                        $link = "index2.php?option=com_docman&amp;section=config";
+                        $link = "index.php?option=com_docman&amp;section=config";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_config_48.png', _DML_CONFIG, _DM_ICONPATH);
-                        $link = "index2.php?option=com_docman&amp;section=themes";
+                        $link = "index.php?option=com_docman&amp;section=themes";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_templatemanager_48.png', _DML_THEMES, _DM_ICONPATH);
-                        $link = "index2.php?option=com_docman&amp;section=themes&amp;task=edit&amp;cid[0]=".$_DOCMAN->getCfg('icon_theme');
+                        $link = "index.php?option=com_docman&amp;section=themes&amp;task=edit&amp;cid[0]=".$_DOCMAN->getCfg('icon_theme');
                         HTML_DMDocman::_quickiconButton( $link, 'dm_edittheme_48.png', _DML_EDIT_DEFAULT_THEME, _DM_ICONPATH);
-                        $link = "index2.php?option=com_docman&amp;section=cleardata";
+                        $link = "index.php?option=com_docman&amp;section=cleardata";
                         HTML_DMDocman::_quickiconButton( $link, 'dm_cleardata_48.png', _DML_CLEARDATA, _DM_ICONPATH);
 
                         HTML_DMDocman::_quickiconButton( _DM_HELP_URL, 'dm_help_48.png', _DML_HELP, _DM_ICONPATH, '_blank');
@@ -76,7 +76,7 @@ class HTML_DMDocman
                 </td>
                 <td width="45%" valign="top">
                     <div style="width=100%;">
-                        <form action="index2.php" method="post" name="adminForm">
+                        <form action="index.php" method="post" name="adminForm">
                             <?php DOCMAN_Compat::mosLoadAdminModules('dmcpanel', 1);?>
                             <input type="hidden" name="sectionid" value="" />
                             <input type="hidden" id="cid" name="cid[]" value="" />
@@ -93,7 +93,7 @@ class HTML_DMDocman
     function showStatistics(&$row)
     {
         ?>
-       <form action="index2.php?option=com_docman" method="post" name="adminForm" id="adminForm">
+       <form action="index.php?option=com_docman" method="post" name="adminForm" id="adminForm">
 
         <?php dmHTML::adminHeading( _DML_DOCSTATS, 'stats' )?>
 
