@@ -211,11 +211,74 @@ if(!mysql_num_rows($result))
 
 mysql_free_result($result);
 
-mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
-mysql_query('UPDATE `pol_content` SET `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\'), `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
 mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
 mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
 mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_fr-fr_content\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_fr-fr_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\'), `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_fr-fr_categories\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_fr-fr_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_fr-fr_modules\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_fr-fr_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_fr-fr_sections\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_fr-fr_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_de-de_content\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_de-de_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\'), `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_de-de_categories\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_de-de_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_de-de_modules\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_de-de_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
+
+$result	= mysql_query('SHOW TABLES LIKE \'pol_de-de_sections\'');
+
+if(mysql_num_rows($result)) {
+	mysql_query('UPDATE `pol_de-de_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+}
+
+mysql_free_result($result);
 
 $tidy_options = array(
 	'show-body-only'				=> true,
