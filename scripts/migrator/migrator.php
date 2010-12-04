@@ -416,7 +416,7 @@ echo "\tOK\n";
 // Change file and directory permissions.
 echo 'Changing permissions...';
 
-shell_exec('chown -R apache:apache /var/www/sites/'.$site['new']['name']);
+shell_exec('chown -R apache:apache /var/www/public/sites/'.$site['new']['name']);
 shell_exec('find /var/www/public/sites/'.$site['new']['name'].'/ -type d -exec chmod 775 {} \;');
 shell_exec('find /var/www/public/sites/'.$site['new']['name'].'/ -type f -exec chmod 664 {} \;');
 shell_exec('chmod 444 /var/www/public/sites/'.$site['new']['name'].'/configuration.php');
