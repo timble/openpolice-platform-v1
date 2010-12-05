@@ -70,6 +70,19 @@ DROP TABLE IF EXISTS `pol_phocaguestbook_items`;
 DELETE FROM `pol_components` WHERE `option` = 'com_phocaguestbook';
 
 
+# Delete AvReloaded.
+
+DROP TABLE IF EXISTS `pol_avr_player`;
+DROP TABLE IF EXISTS `pol_avr_popup`;
+DROP TABLE IF EXISTS `pol_avr_ripper`;
+DROP TABLE IF EXISTS `pol_avr_tags`;
+DROP TABLE IF EXISTS `pol_avrbak_avr_player`;
+DROP TABLE IF EXISTS `pol_avrbak_avr_popup`;
+DROP TABLE IF EXISTS `pol_avrbak_avr_ripper`;
+DROP TABLE IF EXISTS `pol_avrbak_avr_tags`;
+DELETE FROM `pol_components` WHERE `option` = 'com_avreloaded';
+
+
 # Updated front-end template name.
 
 UPDATE `pol_templates_menu` SET `template` = 'site' WHERE `template` = 'rhuk_milkyway_police';
