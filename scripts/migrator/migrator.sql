@@ -60,6 +60,7 @@ DELETE FROM `pol_menu` WHERE LOCATE('option=com_joomap', `link`) <> 0;
 # Delete Linkr component.
 
 DROP TABLE IF EXISTS `pol_linkr`;
+DROP TABLE IF EXISTS `pol_linkr_bookmarks`;
 DELETE FROM `pol_components` WHERE `option` = 'com_linkr';
 
 
