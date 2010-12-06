@@ -166,7 +166,7 @@ echo 'Importing database...';
 
 shell_exec('cd /tmp/'.$site['old']['md5'].' && gunzip database.sql.gz');
 shell_exec('cd /tmp/'.$site['old']['md5'].' && mv database.sql database.sql.old');
-shell_exec('cd /tmp/'.$site['old']['md5'].' && sed -e \'s/http:\\/\\/217.21.184.146\\/'.$site['old']['name'].'\\///g\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site['new']['name'].'`/g\' -e \'s/href=\\\\"\\.\\/index\\.php/href=\\\\"index\\.php/g\' database.sql.old > database.sql');
+shell_exec('cd /tmp/'.$site['old']['md5'].' && sed -e \'s/http:\\/\\/217.21.184.146\\/'.$site['old']['name'].'\\///ig\' -e \'s/`jos_/`pol_/g\' -e \'s/`'.$config['mysql']['database'].'`/`police_'.$site['new']['name'].'`/g\' -e \'s/href=\\\\"\\.\\/index\\.php/href=\\\\"index\\.php/g\' database.sql.old > database.sql');
 shell_exec('cd /tmp/'.$site['old']['md5'].' && mysql --user="root" --password="RE0D321FD_EnreA9" < database.sql');
 shell_exec('mysql --user="root" --password="RE0D321FD_EnreA9" police_'.$site['new']['name'].' < migrator.sql');
 
