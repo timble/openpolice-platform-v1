@@ -39,3 +39,18 @@ div.module_menu div div {
 div.module_menu div div div {
 	background: url(../images/police/mw_box_tl.png) 0 0 no-repeat;
 }
+
+/* 5396 : styling meldingen table */
+table.meldingen {
+	border: 1px solid #CDCDCD;
+   	border-collapse: collapse;
+}
+     
+table.meldingen td {
+  	font-family: Arial;
+  	font-size: 12px;
+   	font-weight: normal;
+   	color: #333;
+   	margin: 0;
+    padding: 5px;
+}
