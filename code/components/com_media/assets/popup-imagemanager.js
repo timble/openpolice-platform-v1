@@ -32,7 +32,7 @@ var ImageManager = {
 		this.fields.align	= $("f_align");
 		this.fields.title	= $("f_title");
 		this.fields.caption	= $("f_caption");
-
+	
 		// Setup image listing objects
 		this.folderlist = $('folderlist');
 
@@ -116,7 +116,7 @@ var ImageManager = {
 				extra = extra + 'class="caption" ';
 			}
 
-			var tag = "<img src=\""+url+"\" "+extra+"/>";
+			var tag = "<img src=\""+$('sitePath')+'/'+url+"\" "+extra+"/>";
 		}
 
 		window.parent.jInsertEditorText(tag, this.editor);
