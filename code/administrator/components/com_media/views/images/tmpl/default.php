@@ -49,7 +49,7 @@ echo $params->get('image_path', 'images/stories');?>/';
 	<input type="hidden" id="dirPath" name="dirPath" />
 	<input type="hidden" id="f_file" name="f_file" />
 	<input type="hidden" id="tmpl" name="component" />
-	<input type="hidden" id="site" name="sitePath" value="sites/<?php echo JFactory::getApplication()->getSite(); ?>" />
+	<input type="hidden" id="sitePath" name="sitePath" value="sites/<?php echo JFactory::getApplication()->getSite(); ?>" />
 </form>
 <?php	$params =& JComponentHelper::getParams('com_media');
 		$acl = & JFactory::getACL();
