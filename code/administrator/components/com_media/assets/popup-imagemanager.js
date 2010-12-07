@@ -116,7 +116,7 @@ var ImageManager = {
 				extra = extra + 'class="caption" ';
 			}
 
-			var tag = "<img src=\""+url+"\" "+extra+"/>";
+			var tag = "<img src=\""+$('sitePath')+'/'+url+"\" "+extra+"/>";
 		}
 
 		window.parent.jInsertEditorText(tag, this.editor);
