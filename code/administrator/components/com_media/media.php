@@ -29,11 +29,17 @@ require_once( JPATH_COMPONENT.DS.'helpers'.DS.'media.php' );
 // Set the path definitions
 $view = JRequest::getCmd('view',null);
 $popup_upload = JRequest::getCmd('pop_up',null);
-$path = "file_path";
-if(substr(strtolower($view),0,6) == "images" || $popup_upload == 1) $path = "image_path";
 
-define('COM_MEDIA_BASE',    JPATH_IMAGES);
-define('COM_MEDIA_BASEURL', JURI::root(true).'/'.str_replace(JPATH_ROOT.'/', '', JPATH_IMAGES));
+if(substr(strtolower($view),0,6) == "images" || $popup_upload == 1) 
+{
+	define('COM_MEDIA_BASE',    JPATH_IMAGES.'/stories');
+	define('COM_MEDIA_BASEURL', JURI::root(true).'/'.str_replace(JPATH_ROOT.'/', '', JPATH_IMAGES).'/stories');	
+}
+else 
+{
+	define('COM_MEDIA_BASE',    JPATH_IMAGES);
+	define('COM_MEDIA_BASEURL', JURI::root(true).'/'.str_replace(JPATH_ROOT.'/', '', JPATH_IMAGES));
+}
 
 // Require the base controller
 require_once (JPATH_COMPONENT.DS.'controller.php');
