@@ -845,6 +845,7 @@ class JApplication extends JObject
 		}
 
 		//Set the images path
+		define('JPATH_FILES'    , JPATH_SITES.'/'.$site);
 		define('JPATH_IMAGES'   , JPATH_SITES.'/'.$site.'/images');
 		define('JPATH_DOCUMENTS', JPATH_SITES.'/'.$site.'/documents');
 
