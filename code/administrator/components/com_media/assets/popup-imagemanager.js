@@ -134,7 +134,7 @@ var ImageManager = {
 				break;
 			}
 		}
-		this.frame.location.href='index.php?option=com_media&view=imagesList&tmpl=component&folder=' + folder;
+		this.frame.location.href = window.location.pathname+'/index.php?option=com_media&view=imagesList&tmpl=component&folder=' + folder;
 	},
 
 	getFolder: function() {
