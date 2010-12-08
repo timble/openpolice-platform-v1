@@ -26,7 +26,7 @@ $limitstart = $mainframe->getUserStateFromRequest('mod_logged.limitstart', 'limi
 $query = 'SELECT COUNT(*) FROM #__users AS u'
 	    .' RIGHT JOIN #__session AS s ON s.userid = u.id'
 	    .' WHERE guest != 1 AND s.gid = u.gid AND s.username = u.username AND s.usertype = u.usertype'
-	    .' ORDER BY u.usertype, u.username' 
+	    .' ORDER BY u.usertype, u.username'; 
 $db->setQuery( $query );
 $total = $db->loadResult();
 
@@ -36,7 +36,7 @@ $pageNav = new JPagination( $total, $limitstart, $limit );
 $query = 'SELECT * FROM #__users AS u'
 	    .' RIGHT JOIN #__session AS s ON s.userid = u.id'
 	    .' WHERE guest != 1 AND s.gid = u.gid AND s.username = u.username AND s.usertype = u.usertype'
-	    .' ORDER BY u.usertype, u.username' 
+	    .' ORDER BY u.usertype, u.username';
 $db->setQuery( $query );
 $rows = $db->loadObjectList();
 
