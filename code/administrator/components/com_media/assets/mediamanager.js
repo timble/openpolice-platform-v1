@@ -36,7 +36,7 @@ var MediaManager = {
                     target = $chk(node.data.target) ? node.data.target : '_self';
                     window.frames[target].location.href = node.data.url;
                 }
-            },{ text: 'Media', open: true, data: { url: 'index.php?option=com_media&view=mediaList&tmpl=component', target: 'folderframe'}});
+            },{ text: 'Media', open: true, data: { url:  window.location.pathname+'/index.php?option=com_media&view=mediaList&tmpl=component', target: 'folderframe'}});
         this.tree.adopt('media-tree');
     },
 
@@ -105,7 +105,7 @@ var MediaManager = {
         $(viewstyle).removeClass('active');
         viewstyle = type;
         var folder = this.getFolder();
-        this._setFrameUrl('index.php?option=com_media&view=mediaList&tmpl=component&folder='+folder+'&layout='+type);
+        this._setFrameUrl( window.location.pathname+'/index.php?option=com_media&view=mediaList&tmpl=component&folder='+folder+'&layout='+type);
     },
 
     refreshFrame: function()
