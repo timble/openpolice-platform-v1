@@ -58,7 +58,7 @@ class JCache extends JObject
 		} else {
 			$options['site'] = 'default';
 		}
-		
+
 		if(isset($options['language'])) {
 			$this->_options['language'] = $options['language'];
 		} else {
@@ -68,7 +68,7 @@ class JCache extends JObject
 		if(isset($options['cachebase'])) {
 			$this->_options['cachebase'] = $options['cachebase'];
 		} else {
-			$this->_options['cachebase'] = JPATH_ROOT.DS.'cache';
+			$this->_options['cachebase'] = JPATH_CACHE;
 		}
 
 		if(isset($options['defaultgroup'])) {

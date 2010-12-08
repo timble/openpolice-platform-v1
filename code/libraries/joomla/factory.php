@@ -324,12 +324,12 @@ class JFactory
 				if (!is_null( $options['rssUrl'] ))
 				{
 					jimport ('simplepie.simplepie');
-					if(!is_writable(JPATH_BASE.DS.'cache')) {
+					if(!is_writable(JPATH_CACHE)) {
 						$options['cache_time'] = 0;
 					}
 					$simplepie = new SimplePie(
 						$options['rssUrl'],
-						JPATH_BASE.DS.'cache',
+						JPATH_CACHE,
 						isset( $options['cache_time'] ) ? $options['cache_time'] : 0
 					);
 					$simplepie->force_feed(true);
@@ -641,7 +641,7 @@ class JFactory
 
 		// patTemplate
 		if ($conf->getValue('config.caching')) {
-			 $tmpl->enableTemplateCache( 'File', JPATH_BASE.DS.'cache'.DS);
+			 $tmpl->enableTemplateCache( 'File', JPATH_CACHE.DS);
 		}
 
 		$tmpl->setNamespace( 'jtmpl' );
