@@ -22,7 +22,7 @@ $limit          = $params->get('limit', 5 );
 $desc_truncate  = $params->get('desc_truncate', 200 );
 
 // check if cache directory is writeable
-$cacheDir = JPATH_BASE.DS.'cache'.DS;
+$cacheDir = JPATH_CACHE.DS;
 if ( !is_writable( $cacheDir ) ) {
  	echo JText::_( 'Cache Directory Unwritable' );
    	return;

@@ -169,7 +169,7 @@ class  plgSystemLegacy extends JPlugin
 
 		$GLOBALS['mosConfig_live_site']		= substr_replace(JURI::root(), '', -1, 1);
 		$GLOBALS['mosConfig_absolute_path']	= JPATH_SITE;
-		$GLOBALS['mosConfig_cachepath']	= JPATH_BASE.DS.'cache';
+		$GLOBALS['mosConfig_cachepath']	= JPATH_CACHE;
 
 		$GLOBALS['mosConfig_offset_user']	= 0;
 
