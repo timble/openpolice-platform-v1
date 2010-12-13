@@ -211,10 +211,15 @@ if(!mysql_num_rows($result))
 
 mysql_free_result($result);
 
-mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\'), `fulltext` = REPLACE(`fulltext`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
-mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
-mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
-mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'\\"/images/\', \'/sites/'.$site['new']['name'].'/images/\'), `fulltext` = REPLACE(`fulltext`, \'\\"/images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'\\"/images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'\\"/images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'\\"/images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+
+mysql_query('UPDATE `pol_content` SET `introtext` = REPLACE(`introtext`, \'\\"images/\', \'/sites/'.$site['new']['name'].'/images/\'), `fulltext` = REPLACE(`fulltext`, \'\\"images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_categories` SET `description` = REPLACE(`description`, \'\\"images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_modules` SET `content` = REPLACE(`content`, \'\\"images/\', \'/sites/'.$site['new']['name'].'/images/\');');
+mysql_query('UPDATE `pol_sections` SET `description` = REPLACE(`description`, \'\\"images/\', \'/sites/'.$site['new']['name'].'/images/\');');
 
 $tidy_options = array(
 	'show-body-only'				=> true,
