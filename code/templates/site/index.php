@@ -34,6 +34,22 @@ div#logo {
 }
 </style>
 <?php endif; ?>
+
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-20242887-1']);
+ _gaq.push(['_setCookiePath', '/<?php JFactory::getApplication()->getSite(); ?>/']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+
 </head>
 <body id="page_bg" class="color_<?php echo $this->params->get('colorVariation'); ?> bg_<?php echo $this->params->get('backgroundVariation'); ?> width_<?php echo $this->params->get('widthStyle'); ?>">
 <a name="up" id="up"></a>
@@ -181,6 +197,5 @@ div#logo {
 	</div>
 </div>
 <jdoc:include type="modules" name="debug" />
-
 </body>
 </html>
