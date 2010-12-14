@@ -39,7 +39,7 @@ div#logo {
 
  var _gaq = _gaq || [];
  _gaq.push(['_setAccount', 'UA-20242887-1']);
- _gaq.push(['_setCookiePath', '/<?php JFactory::getApplication()->getSite(); ?>/']);
+ _gaq.push(['_setCookiePath', '/<?php echo JFactory::getApplication()->getSite(); ?>/']);
  _gaq.push(['_trackPageview']);
 
  (function() {
