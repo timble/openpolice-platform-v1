@@ -1,7 +1,5 @@
 #!/usr/bin/php
 <?php
-if(!is_null($_SERVER['REMOTE_ADDR'])) exit;
-
 $options = getopt(null, array('execute:', 'exclude-default'));
 
 if(!array_key_exists('execute', $options) || strlen(trim($options['execute'])) == 0) {
