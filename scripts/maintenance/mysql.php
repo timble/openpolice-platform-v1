@@ -30,5 +30,5 @@ if(array_key_exists('exclude-default', $options)) {
 foreach($sites as $site)
 {
 	mysql_query('USE `police_'.$site.'`;');
-	mysql_query($options['e']);
+	mysql_query($options['execute']);
 }
