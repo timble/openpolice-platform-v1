@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-if($_SERVER['HTTP_HOST'] != 'localhost') exit;
+if(!is_null($_SERVER['REMOTE_ADDR'])) exit;
 
 $options = getopt(null, array('execute:', 'exclude-default'));
 
