@@ -8,7 +8,7 @@ if(!array_key_exists('execute', $options) || strlen(trim($options['execute'])) =
 }
 
 // Connect to MySQL.
-include dirname(__FILE__).'/../conf/credentials.php';
+include dirname(__FILE__).'/../credentials.php';
 
 $link = mysql_connect('localhost', 'root', $credentials['mysql']['root']);
 
