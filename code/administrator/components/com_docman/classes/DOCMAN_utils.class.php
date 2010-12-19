@@ -441,7 +441,7 @@ class DOCMAN_Utils
         $row->text  = & $dataObj->$field;
 
         JPluginHelper::importPlugin( 'content' );
-        $results = $application->triggerEvent( 'onPrepareContent', array($row, $params, 0 ), true );
+        $results = $application->triggerEvent( 'onPrepareContent', array(&$row, &$params, 0 ), true );
     }
 
     /**
