@@ -840,10 +840,6 @@ class JApplication extends JObject
 			error_reporting( $error_reporting );
 		}
 
-		if ($error_reporting > 0) {
-			ini_set( 'display_errors', 1 );
-		}
-
 		//Set the images path
 		define('JPATH_FILES'    , JPATH_SITES.'/'.$site);
 		define('JPATH_IMAGES'   , JPATH_SITES.'/'.$site.'/images');
