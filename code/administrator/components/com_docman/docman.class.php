@@ -197,11 +197,12 @@ class dmMainFrame
 	/**
 	* Loads the configuration file and creates a new class
 	*/
-	function _setConfig( ) {
+	function _setConfig( ) 
+	{
 		require_once( $this->getPath('classes', 'config') );
 		$this->_config = new DOCMAN_Config('dmConfig', dirname(__FILE__)."/docman.config.php" );
 
-        $this->_checkConfig();
+        //$this->_checkConfig();
 	}
 
     /**
