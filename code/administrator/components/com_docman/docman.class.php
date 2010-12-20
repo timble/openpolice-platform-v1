@@ -259,11 +259,12 @@ class dmMainFrame
 	*/
 	function saveConfig() {
 
-        $dmpath = $this->cleanPath($this->getCfg('dmpath'));
+        /*$dmpath = $this->cleanPath($this->getCfg('dmpath'));
         $this->setCfg('dmpath', $dmpath);
-		@mkdir($dmpath, 0755, true);
+		@mkdir($dmpath, 0755, true);*/
 
 		return $this->_config->saveConfig();
+		
 	}
 
 	/**

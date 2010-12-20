@@ -95,7 +95,7 @@ class DOCMAN_Config
     */
     function saveConfig()
     {
-        $my = JFactory::getUser();
+        /*$my = JFactory::getUser();
 
         $this->check();
 
@@ -116,7 +116,7 @@ class DOCMAN_Config
             if( fputs($fp, $config) !== false AND fclose($fp) !==false) {
                 return true;
             }
-        }
+        }*/
 
         return false;
     }
