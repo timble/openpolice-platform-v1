@@ -62,11 +62,11 @@ class JSite extends JApplication
 			}
 
 		}
-		
+
 		if ( ! JLanguage::exists($options['language']) ) {
 			$options['language'] = 'en-GB';
 		}
-		
+
 		parent::initialise($options);
 	}
 
@@ -75,25 +75,25 @@ class JSite extends JApplication
 	*
 	* @access public
 	*/
-	function route() 
+	function route()
 	{
 		// get the full request URI
  		$uri = clone(JURI::getInstance());
- 		
+
  		//Redirect to the default menu item if the route is empty
- 		$route = trim(str_replace(array(JURI::base(true), 'index.php', $this->getSite()), '', $uri->getPath()), '/');
-			
+ 		$route = trim(str_replace(array(JURI::base(true), $this->getSite()), '', $uri->getPath()), '/');
+
 		if(empty($route)) {
 			$this->redirect(JRoute::_('index.php?Itemid='.$this->getMenu()->getDefault()->id));
 		}
-		
+
 		parent::route();
 	}
-	
+
 	/**
 	 * Redirect to another URL.
 	 *
-	 * We need to make sure that all the redirect URL's are routed. 
+	 * We need to make sure that all the redirect URL's are routed.
      *
 	 * @see	JApplication::redirect()
 	 */
@@ -188,12 +188,12 @@ class JSite extends JApplication
 
  		//Render the document
 		$data = $document->render( $this->getCfg('caching'), $params);
-		
+
 		//Make images paths absolute
 		$site = $this->getSite();
 		$data = str_replace(JURI::base().'images/', JURI::root(true).'/sites/'.$site.'/images/', $data);
 		$data = str_replace(array('"images/','"/images/') , '"/sites/'.$site.'/images/', $data);
-			
+
 		JResponse::setBody($data);
 	}
 
@@ -402,13 +402,13 @@ class JSite extends JApplication
 		$router =& parent::getRouter('site', $options);
 		return $router;
 	}
-	
+
 	function &_createSession( $name, $ssl = false, $auto_start = true )
 	{
 		if($this->getCfg('force_ssl') == 2) {
 			$ssl = true;
 		}
-		
+
 		return parent::_createSession($name, $ssl, $auto_start);
 	}
 }

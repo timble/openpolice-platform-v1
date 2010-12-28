@@ -814,7 +814,7 @@ class JApplication extends JObject
 	{
 		// Find the site
 		$uri =	 clone(JURI::getInstance());
-		$path = trim(str_replace(array(JURI::base(true), 'index.php'), '', $uri->getPath()), '/');
+		$path = trim(str_replace(array(JURI::base(true)), '', $uri->getPath()), '/');
 
 		$segments = array();
 		if(!empty($path)) {
