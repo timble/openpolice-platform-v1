@@ -85,7 +85,7 @@ class PHPMailer {
    * will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.
    * @var string
    */
-  var $Sender            = '';
+  var $Sender            = 'no-reply@lokalepolitie.be';
 
   /**
    * Sets the Subject of the message.
