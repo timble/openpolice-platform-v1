@@ -83,11 +83,11 @@ class ContentViewArticle extends ContentView
 				$uri		= JFactory::getURI();
 				$return		= $uri->toString();
 
-				$url  = JRoute::_('index.php?option=com_user&view=login');
-				$url .= '&return='.base64_encode($return);;
+				$url  = 'index.php?option=com_user&view=login';
+				$url .= '&return='.base64_encode($return);
 
 				//$url	= JRoute::_($url, false);
-				$mainframe->redirect($url, JText::_('You must login first') );
+				$mainframe->redirect(JRoute::_($url), JText::_('You must login first') );
 			}
 			else{
 				JError::raiseWarning( 403, JText::_('ALERTNOTAUTH') );
