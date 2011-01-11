@@ -29,7 +29,8 @@ class NookuModelComponents extends KModelTable
 	 */
 	protected $_list = array(
 		'virtuemart' => 'vm',
-		'menus' 	 => 'menu'
+		'menus' 	 => 'menu',
+		'poll'		 => 'polls'		 
 	);
 	
 	/**
