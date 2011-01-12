@@ -1,0 +1,37 @@
+/* IE ONLY CSS */
+
+body.width_fmax div#wrapper {
+	width: expression(((document.body.clientWidth)) < 750? "750px": ((document.body.clientWidth)) > 1050? "1050px": "auto" );
+}
+
+div.module_menu div div div {
+	width: 95%;
+}
+
+div.module_menured div div div {
+	width: 95%;
+}
+
+div.module_menugray div div div {
+	width: 95%;
+}
+
+div.module_menupurple div div div {
+	width: 95%;
+}
+
+div.module_menublue div div div {
+	width: 95%;
+}
+
+div.module_menublue1 div div div {
+	width: 95%;
+}
+
+div#footer {
+	width: 100%;
+}
+
+div#whitebox_b {
+	width: 100%;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<name>DOCman</name>
+	<description>DOCman is a document management and download component for Joomla! v1.5.x</description>
+	<params>
+		<param name="cat_id" type="text" default="" label="Default category ID" description="The ID of the category that should be loaded when the user clicks the DOCman menu item." />
+	</params>
+</metadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>System - Nooku</name>
+	<author>Nooku</author>
+	<creationDate>July 2010</creationDate>
+	<copyright>(C) 2007 - 2010 Joomlatools. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@nooku.org</authorEmail>
+	<authorUrl>www.nooku.org</authorUrl>
+	<version>0.6.8</version>
+	<description>Provides dynamic database support for multilingual data handling</description>
+	<files>
+		<filename plugin="nooku">nooku.php</filename>
+	</files>
+	<params>
+	</params>
+</install>

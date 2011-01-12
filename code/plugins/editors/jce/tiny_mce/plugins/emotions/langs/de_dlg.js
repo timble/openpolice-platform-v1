@@ -1,0 +1,20 @@
+tinyMCE.addI18n('de.emotions_dlg',{
+title:'Smiley einfügen',
+desc:'Smileys',
+cool:'Cool',
+cry:'Schreiend',
+embarassed:'Verlegen',
+foot_in_mouth:'Betreten',
+frown:'Stirnrunzelnd',
+innocent:'Ahnungslos',
+kiss:'Küssend',
+laughing:'Lachend',
+money_mouth:'Geldgierig',
+sealed:'Versiegelt',
+smile:'lächelnd',
+surprised:'überrascht',
+tongue_out:'Zunge raus',
+undecided:'unentschlossen',
+wink:'zwinkernd',
+yell:'schreiend'
+});

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Nooku - Language Select</name>
+	<author>Nooku</author>
+	<creationDate>July 2010</creationDate>
+	<copyright>(C) 2007 - 2010 Joomlatools. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@nooku.org</authorEmail>
+	<authorUrl>www.nooku.org</authorUrl>
+	<version>0.6.8</version>
+	<description>This module shows the language selector</description>
+	<files>
+		<filename module="mod_language_select">mod_language_select.php</filename>
+	</files>
+	<params>
+		<param name="style" type="list" default="default" label="Style" description="Pick the style of the language switcher">
+			<option value="list">List</option>
+			<option value="row">Row</option>
+			<option value="default">Select box</option>
+		</param>
+		<param name="langformat" type="list" default="name" label="Language name" description="How should the languages be displayed?">
+			<option value="name">Name (default)</option>
+			<option value="native_name">Native name</option>
+			<option value="fullname">Name and native name</option>
+			<option value="iso_code">ISO code</option>
+			<option value="alias">Alias</option>
+		</param>
+		<param name="display_flag" type="list" default="both" label="Display Flag" description="Display the flag and/or the language name. The 'Flag only' option can't be used with the select box style.">
+			<option value="flag">Flag only</option>
+			<option value="name">Name only</option>
+			<option value="both">Flag and name (default)</option>
+		</param>
+	</params>
+</install>

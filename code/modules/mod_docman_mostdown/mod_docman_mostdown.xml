@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="4.5.1">
+    <name>DOCman Most Downloaded</name>
+    <creationDate>December 2009</creationDate>
+	<author>Joomlatools</author>
+	<copyright>This extension is released under the GNU/GPL License</copyright>
+	<authorEmail>support@joomlatools.eu</authorEmail>
+	<authorUrl>www.joomlatools.eu</authorUrl>
+	<version>1.5</version>
+    <description>Show the most downloaded documents</description>
+    <files>
+      <filename module="mod_docman_mostdown">mod_docman_mostdown.php</filename>
+    </files>
+    <params>
+      <param name="limits" type="text" default="3" label="Limits" description="number of downloads to display " />
+      <param name="show_icon" type="radio" default="1" label="Show icon" description="displays a generic icon near the name of the document, using the theme defined ">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	  </param>
+	  <param name="show_counter" type="radio" default="1" label="Show counter" description="displays the number of downloads">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	  </param>
+    </params>
+  </install>

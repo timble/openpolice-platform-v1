@@ -1,0 +1,148 @@
+/**
+ * @version		$Id: doclink.css 953 2009-10-14 20:38:38Z mathias $
+ * @category	DOCman
+ * @package		DOCman15
+ * @copyright	Copyright (C) 2003 - 2009 Johan Janssens and Mathias Verraes. All rights reserved.
+ * @license	    This file can not be redistributed without the written consent of the 
+ *				original copyright holder. This file is not licensed under the GPL. 
+ * @link     	http://www.joomladocman.org
+ */
+
+html, body {
+ 	width: 630; height: 500;
+  	margin: 0px; padding: 0px;
+  	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+ 	background: #FFF;
+  	color : #333;
+}
+body{
+	padding: 5px;
+}
+table {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 0 none;
+}
+
+img 	{ border: 0 none; }
+
+iframe { background: Window; border: 1px solid #d5d5d5; }
+
+/* -- form styles ----------------------------------- */
+
+form    { padding: 0px; margin: 5px; }
+form p  { margin: 0; padding: 0; }
+
+form input, select { background: #FEFEFE; font-size: 11px;}
+form label 	  { width: 70px; display: block; float: left; padding-top: 5px;}
+
+
+button {
+	border-top : solid 1px #d5d5d5;
+	border-right : solid 1px #808080;
+	border-bottom : solid 1px #808080;
+	border-left : solid 1px #d5d5d5;
+	color : #333;
+	font-weight : bold;
+}
+
+
+/* -- id ----------------------------------------- */
+
+
+#loading {
+	position:absolute; z-index: 1; width: 184px;
+	left: 200px; top: 175px;
+	background-color: #f5f5f5;
+	border: 1px solid gray;
+	opacity: .75;
+	filter: alpha(opacity=75);
+	-moz-opacity: .75;
+}
+
+#loading div
+{
+	margin: 10px;
+	font-size: large; font-weight: bold; font-family: Helvetica, sans-serif;
+	color: gray; text-align: center;
+}
+
+/* force width to allow oveflow: auto */
+#tableContainer { overflow: auto; height: 120px; width: 540px; }
+#tableHead		 { width: 540px; }
+#tableBody      { width: 520px; }
+
+/* -- sortable table ----------------------------- */
+
+.sort-table {
+	background:	white;
+}
+
+.sort-table thead {
+	background:	buttonFace;
+}
+
+.sort-table td {
+	padding:	2px 5px;
+}
+
+.sort-table thead td {
+	border:			1px solid;
+	border-color:	ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+	cursor:			pointer;
+}
+
+.sort-table thead td:active {
+	border-color:	ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+	padding:		3px 4px 1px 6px;
+}
+
+.sort-arrow {
+	width: 11px; height: 11px;
+	background-position:	center center;
+	background-repeat: no-repeat;
+	margin: 0 2px;
+}
+
+.sort-arrow.descending {
+	background-image:		url("../images/downsimple.png");
+}
+
+.sort-arrow.ascending {
+	background-image:		url("../images/upsimple.png");
+}
+
+/* Table */
+table.adminform {
+	background-color: #f9f9f9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	padding: 10px;
+	border-collapse: collapse;
+}
+table.adminform tr.row0 {
+	background-color: #f9f9f9;
+}
+table.adminform tr.row1 {
+	background-color: #eeeeee;
+}
+table.adminform th {
+	font-size: 11px;
+	padding-top: 6px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: left;
+	height: 25px;
+	background: url(../images/background.jpg);
+	color: #000;
+	background-repeat: repeat;
+}
+table.adminform td {
+	padding: 3px;
+	text-align: left;
+}
+
+.listview {
+	background:white;

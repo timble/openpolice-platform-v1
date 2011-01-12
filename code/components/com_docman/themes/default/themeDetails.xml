@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="theme" version="1.5.0">
+  <name>Default</name>
+  <creationDate>December 2009</creationDate>
+  <author>Joomlatools</author>
+  <copyright>This template is released under GNU/GPL License.</copyright>
+  <authorEmail>support@joomlatools.eu</authorEmail>
+  <authorUrl>www.joomlatools.eu</authorUrl>
+  <version>1.5.8</version>
+  <description>DOCman default theme</description>
+  <params>
+
+   <param name="@heading" type="heading" label="General" description="" />
+   <param name="cat_image" type="radio" default="1" label="Category image">
+      	<option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="doc_image" type="radio" default="1" label="Document image">
+       <option value="0">Hide</option>
+       <option value="1">Show</option>
+    </param>
+    <param name="style" type="list" default="0" label="Style">
+      	<option value="0">Light</option>
+        <option value="1">Dark</option>
+    </param>
+
+   <param name="@heading" type="heading" label="Menu" description="" />
+   <param name="menu_home" type="radio" default="1" label="Home">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="menu_search" type="radio" default="1" label="Search">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="menu_upload" type="radio" default="1" label="Upload">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+
+   <param name="@heading" type="heading" label="Category Item" description="" />
+   <param name="cat_empty" type="radio" default="1" label="Empty">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+   </param>
+   <param name="cat_files" type="radio" default="1" label="Files">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+   </param>
+
+   <param name="@heading" type="heading" label="Document Item" />
+   <param name="item_description" type="radio" default="1" label="Description">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="item_homepage" type="radio" default="1" label="Homepage">
+       <option value="0">Hide</option>
+       <option value="1">Show</option>
+    </param>
+    <param name="item_hot" type="radio" default="1" label="Hot">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+     <param name="item_new" type="radio" default="1" label="New">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+     <param name="item_date" type="radio" default="1" label="Date Added">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="item_date_modified" type="radio" default="1" label="Date Modified">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="item_filesize" type="radio" default="1" label="Filesize">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="item_downloads" type="radio" default="1" label="Downloads">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="item_title_link" type="list" default="1" label="Title links to">
+      	<option value="0">None</option>
+        <option value="1">Direct download</option>
+        <option value="2">Details page</option>
+    </param>
+
+   <param name="@heading" type="heading" label="Document Details" />
+   <param name="details_name" type="radio" default="1" label="Name">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+   <param name="details_image" type="radio" default="1" label="Image">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_description" type="radio" default="1" label="Description">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_filename" type="radio" default="1" label="Filename">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_filesize" type="radio" default="1" label="Filesize">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_filetype" type="radio" default="1" label="Filetype">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_submitter" type="radio" default="1" label="Submitter">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_created" type="radio" default="1" label="Creation date">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_readers" type="radio" default="1" label="Readers">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+     <param name="details_maintainers" type="radio" default="1" label="Maintainers">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+    <param name="details_downloads" type="radio" default="1" label="Downloads">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+    </param>
+     <param name="details_updated" type="radio" default="1" label="Last Update">
+       <option value="0">Hide</option>
+       <option value="1">Show</option>
+    </param>
+     <param name="details_homepage" type="radio" default="1" label="Homepage">
+       <option value="0">Hide</option>
+       <option value="1">Show</option>
+    </param>
+     <param name="details_md5_checksum" type="radio" default="0" label="MD5 Checksum">
+       <option value="0">Hide</option>
+       <option value="1">Show</option>
+    </param>
+     <param name="details_crc_checksum" type="radio" default="0" label="CRC Checksum">
+       <option value="0">Hide</option>
+       <option value="1">Show</option>
+    </param>
+  </params>
+  <files>
+    <filename>index.html</filename>
+    <filename>css/index.html</filename>
+    <filename>images/index.html</filename>
+    <filename>language/index.html</filename>
+    <filename>language/english.php</filename>
+    <filename>templates/index.html</filename>
+    <filename>templates/page_docbrowse.tpl.php</filename>
+    <filename>templates/page_docmove.tpl.php</filename>
+    <filename>templates/page_docsearch.tpl.php</filename>
+    <filename>templates/page_doclicense.tpl.php</filename>
+    <filename>templates/page_docdetails.tpl.php</filename>
+    <filename>templates/page_docedit.tpl.php</filename>
+    <filename>templates/page_docupload.tpl.php</filename>
+    <filename>templates/page_msgbox.tpl.php</filename>
+    <filename>templates/script_docedit.tpl.php</filename>
+    <filename>templates/script_docupload.tpl.php</filename>
+    <filename>templates/categories/index.html</filename>
+    <filename>templates/categories/category.tpl.php</filename>
+    <filename>templates/categories/list.tpl.php</filename>
+    <filename>templates/categories/list_item.tpl.php</filename>
+    <filename>templates/documents/index.html</filename>
+    <filename>templates/documents/list.tpl.php</filename>
+    <filename>templates/documents/list_order.tpl.php</filename>
+    <filename>templates/documents/list_item.tpl.php</filename>
+    <filename>templates/documents/tasks.tpl.php</filename>
+    <filename>templates/documents/document.tpl.php</filename>
+    <filename>templates/documents/tooltip.tpl.php</filename>
+    <filename>templates/general/index.html</filename>
+    <filename>templates/general/pagenav.tpl.php</filename>
+    <filename>templates/general/menu.tpl.php</filename>
+    <filename>templates/general/pathway.tpl.php</filename>
+    <filename>templates/general/pagetitle.tpl.php</filename>
+    <filename>templates/upload/index.html</filename>
+    <filename>templates/upload/step_1.tpl.php</filename>
+    <filename>templates/upload/step_2.tpl.php</filename>
+    <filename>templates/upload/step_3.tpl.php</filename>
+    <filename>templates/scripts/index.html</filename>
+    <filename>templates/scripts/form_docedit.tpl.php</filename>
+  </files>
+  <images>
+	<filename>images/icons/16x16/cancel.png</filename>
+    <filename>images/icons/16x16/checkedout.png</filename>
+    <filename>images/icons/16x16/edit.png</filename>
+    <filename>images/icons/16x16/email.png</filename>
+    <filename>images/icons/16x16/folder.png</filename>
+    <filename>images/icons/16x16/generic.png</filename>
+    <filename>images/icons/16x16/gz.png</filename>
+    <filename>images/icons/16x16/history.png</filename>
+    <filename>images/icons/16x16/home.png</filename>
+    <filename>images/icons/16x16/lock.png</filename>
+    <filename>images/icons/16x16/no.png</filename>
+    <filename>images/icons/16x16/rar.png</filename>
+    <filename>images/icons/16x16/save.png</filename>
+    <filename>images/icons/16x16/search.png</filename>
+    <filename>images/icons/16x16/submit.png</filename>
+    <filename>images/icons/16x16/tar.png</filename>
+    <filename>images/icons/16x16/tooltip.png</filename>
+    <filename>images/icons/16x16/trash.png</filename>
+    <filename>images/icons/16x16/yes.png</filename>
+    <filename>images/icons/16x16/zip.png</filename>
+
+    <filename>images/icons/16x16/avi.png</filename>
+    <filename>images/icons/16x16/bmp.png</filename>
+    <filename>images/icons/16x16/doc.png</filename>
+    <filename>images/icons/16x16/eps.png</filename>
+    <filename>images/icons/16x16/exe.png</filename>
+    <filename>images/icons/16x16/gif.png</filename>
+    <filename>images/icons/16x16/html.png</filename>
+    <filename>images/icons/16x16/jpg.png</filename>
+    <filename>images/icons/16x16/mid.png</filename>
+    <filename>images/icons/16x16/mov.png</filename>
+    <filename>images/icons/16x16/mp3.png</filename>
+    <filename>images/icons/16x16/mpeg.png</filename>
+    <filename>images/icons/16x16/mpg.png</filename>
+    <filename>images/icons/16x16/odg.png</filename>
+    <filename>images/icons/16x16/odp.png</filename>
+    <filename>images/icons/16x16/ods.png</filename>
+    <filename>images/icons/16x16/odt.png</filename>
+    <filename>images/icons/16x16/pdf.png</filename>
+    <filename>images/icons/16x16/png.png</filename>
+    <filename>images/icons/16x16/ra.png</filename>
+    <filename>images/icons/16x16/rtf.png</filename>
+    <filename>images/icons/16x16/swf.png</filename>
+    <filename>images/icons/16x16/tex.png</filename>
+    <filename>images/icons/16x16/tif.png</filename>
+    <filename>images/icons/16x16/txt.png</filename>
+    <filename>images/icons/16x16/wav.png</filename>
+    <filename>images/icons/16x16/wma.png</filename>
+    <filename>images/icons/16x16/wmv.png</filename>
+    <filename>images/icons/16x16/xls.png</filename>
+
+
+    <filename>images/icons/32x32/avi.png</filename>
+    <filename>images/icons/32x32/bmp.png</filename>
+    <filename>images/icons/32x32/doc.png</filename>
+    <filename>images/icons/32x32/eps.png</filename>
+    <filename>images/icons/32x32/exe.png</filename>
+    <filename>images/icons/32x32/folder.png</filename>
+    <filename>images/icons/32x32/generic.png</filename>
+    <filename>images/icons/32x32/gif.png</filename>
+    <filename>images/icons/32x32/gz.png</filename>
+    <filename>images/icons/32x32/home.png</filename>
+    <filename>images/icons/32x32/html.png</filename>
+    <filename>images/icons/32x32/jpg.png</filename>
+    <filename>images/icons/32x32/mid.png</filename>
+    <filename>images/icons/32x32/mov.png</filename>
+    <filename>images/icons/32x32/mp3.png</filename>
+    <filename>images/icons/32x32/mpeg.png</filename>
+    <filename>images/icons/32x32/mpg.png</filename>
+    <filename>images/icons/32x32/odg.png</filename>
+    <filename>images/icons/32x32/odp.png</filename>
+    <filename>images/icons/32x32/ods.png</filename>
+    <filename>images/icons/32x32/odt.png</filename>
+    <filename>images/icons/32x32/pdf.png</filename>
+    <filename>images/icons/32x32/png.png</filename>
+    <filename>images/icons/32x32/ra.png</filename>
+    <filename>images/icons/32x32/rar.png</filename>
+    <filename>images/icons/32x32/rtf.png</filename>
+    <filename>images/icons/32x32/search.png</filename>
+    <filename>images/icons/32x32/submit.png</filename>
+    <filename>images/icons/32x32/swf.png</filename>
+    <filename>images/icons/32x32/tar.png</filename>
+    <filename>images/icons/32x32/tex.png</filename>
+    <filename>images/icons/32x32/tif.png</filename>
+    <filename>images/icons/32x32/txt.png</filename>
+    <filename>images/icons/32x32/wav.png</filename>
+    <filename>images/icons/32x32/wma.png</filename>
+    <filename>images/icons/32x32/wmv.png</filename>
+    <filename>images/icons/32x32/xls.png</filename>
+    <filename>images/icons/32x32/zip.png</filename>
+  </images>
+  <css>
+    <filename>css/theme.css</filename>
+    <filename>css/index.html</filename>
+  </css>
+</install>

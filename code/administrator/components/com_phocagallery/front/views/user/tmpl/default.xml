@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="PHOCAGALLERY USER CONTROL PANEL LAYOUT">
+		<message>
+			<![CDATA[PHOCAGALLERY USER CONTROL PANEL LAYOUT DESC]]>
+		</message>
+	</layout>
+	<state>
+		<name>PHOCAGALLERY USER CONTROL PANEL LAYOUT</name>
+		<description>PHOCAGALLERY USER CONTROL PANEL LAYOUT DESC</description>
+		<params>
+			
+			<param name="display_cat_name_title" type="radio" default="1" label="Display Category Name in Page Title" description="Display Category Name in Page Title DESC">
+				<option value="0">Hide</option>
+				<option value="1">Show</option>
+			</param>
+			
+			<param name="display_cat_name_breadcrumbs" type="list" default="0" label="Display Category Name in Breadcrumbs" description="Display Category Name in Breadcrumbs DESC">
+				<option value="0">Menu Item Title</option>
+				<option value="1">Menu Item Title - Category Title</option>
+				<option value="2">Category Title</option>
+			</param>
+			
+		</params>
+	</state>
+</metadata>

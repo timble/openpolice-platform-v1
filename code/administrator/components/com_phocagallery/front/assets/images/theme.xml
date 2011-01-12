@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install method="phocagallerytheme" type="component" version="1.5.0">
+	<name>Default</name>
+	<creationDate>28/02/2008</creationDate>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<authorEmail>info@phoca.cz</authorEmail>
+	<authorUrl>www.phoca.cz</authorUrl>
+	<copyright>Jan Pavelka</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>Phoca Gallery Theme File</description>
+
+	<files>
+		<filename>shadow1.gif</filename>
+		<filename>shadow2.gif</filename>
+		<filename>shadow3.gif</filename>
+		
+		<filename>icon-download.gif</filename>
+		<filename>icon-folder-medium-images.gif</filename>
+		<filename>icon-folder-medium-images-categories.gif</filename>
+		<filename>icon-folder-medium-images-shadow.gif</filename>
+		<filename>icon-folder-small.gif</filename>
+		<filename>icon-folder-small-images.gif</filename>
+		<filename>icon-folder-small-images-categories.gif</filename>
+		<filename>icon-folder-small-images-shadow.gif</filename>
+		<filename>icon-up-images.gif</filename>
+		<filename>icon-up-images-shadow.gif</filename>
+		<filename>icon-view.gif</filename>
+	</files>
+	
+	<params>
+		<param name="font_color" default="#135cae" />
+		<param name="background_color" default="#fcfcfc" />
+		<param name="background_color_hover" default="#f5f5f5" />
+		<param name="image_background_color" default="#f5f5f5" />
+		<param name="image_background_shadow" default="shadow1" />
+		<param name="border_color" default="#e8e8e8" />
+		<param name="border_color_hover" default="#135cae" />
+		<param name="image_categories_size" default="4" />
+		<param name="icon_format" default="gif" />
+		<param name="detail_window_background_color" default="#ffffff" />
+	</params>
+</install>

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<install version="1.5" type="extension" plugin="advlink" extension="docmanlinks" folder="links">
+	<name>DocMan Links for Advanced Link</name>
+	<version>1.1.2</version>
+	<creationDate>17 November 2010</creationDate>
+	<author>Ryan Demmer</author>
+	<authorEmail>info@joomlacontenteditor.net</authorEmail>
+	<authorUrl>http://www.joomlacontenteditor.net/</authorUrl>
+	<copyright>Ryan Demmer</copyright>
+	<license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<description><![CDATA[
+	<h3>Docman Links for AdvLink</h3>
+	<p>An AdvLink extensions providing links to DocMan categories and documents.</p>
+	]]></description>
+	<files>
+		<file>docmanlinks.php</file>
+		<folder>docmanlinks</folder>
+	</files>
+	<params>
+		<param name="advlink_docmanlinks" type="list" default="1" label="PARAM DOCMAN ACCESS" description="PARAM DOCMAN ACCESS DESC">
+           	<option value="1">YES</option>
+           	<option value="0">NO</option>
+		</param>
+		<param name="advlink_docmanlinks_link" type="list" default="1" label="PARAM DOCMAN LINK" description="PARAM DOCMAN LINK DESC">
+           	<option value="download">PARAM DOWNLOAD</option>
+           	<option value="details">PARAM DETAILS</option>
+		</param>
+	</params>
+	<languages>
+		<language tag="en-GB">en-GB.com_jce_advlink_docmanlinks.ini</language>
+	</languages>
+</install>

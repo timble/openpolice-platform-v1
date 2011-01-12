@@ -1,0 +1,268 @@
+<?xml version="1.0" ?>
+<install version="1.5.0" type="plugin" plugin="imgmanager_ext">
+	<name>Image Manager Extended</name>
+	<version>1.5.7.4</version>
+	<creationDate>17 November 2010</creationDate>
+	<author>Ryan Demmer</author>
+	<authorEmail>info@joomlacontenteditor.net</authorEmail>
+	<authorUrl>http://www.joomlacontenteditor.net/</authorUrl>
+	<copyright>Copyright (C) 2006 - 2010 Ryan Demmer. All rights reserved</copyright>
+	<license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<description><![CDATA[<h3>JCE Image Manager Extended 1.5.7.4</h3><p>Changelog - <a href="http://www.joomlacontenteditor.net/support/releases/changelog/image-manager-extended" title="Changelog">http://www.joomlacontenteditor.net/support/releases/changelog/image-manager-extended</a></p>]]></description>
+	<icon>imgmanager_ext</icon>
+	<layout>imgmanager_ext</layout>
+	<elements></elements>
+	<files>
+		<file>editor_plugin.js</file>
+		<file>imgmanager.php</file>
+		<file>index.html</file>
+		<file>licence.txt</file>
+		<folder>classes</folder>
+		<folder>css</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>langs</folder>
+	</files>
+	<installfile>install.php</installfile>
+	<params group="standard">
+        <param name="imgmanager_ext_dir" type="text" default="" size="50" label="MANAGER PARAM DIRECTORY" description="MANAGER PARAM DIRECTORY DESC"/>
+		<param name="imgmanager_ext_max_size" type="text" default="" label="MANAGER PARAM UPLOAD SIZE" description="MANAGER PARAM UPLOAD SIZE DESC"/>
+		<param name="imgmanager_ext_extensions" type="text" size="50" default="image=jpeg,jpg,png,gif" label="PARAM EXTENSIONS" description="PARAM EXTENSIONS DESC"/>
+	</params>
+	<params group="defaults">
+		<param name="imgmanager_ext_margin_top" type="list" default="default" label="MARGIN TOP" description="MARGIN TOP DESC">
+			<option value="default">NOT SET</option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</param>
+		<param name="imgmanager_ext_margin_right" type="list" default="default" label="MARGIN RIGHT" description="MARGIN RIGHT DESC">
+			<option value="default">NOT SET</option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</param>
+		<param name="imgmanager_ext_margin_bottom" type="list" default="default" label="MARGIN BOTTOM" description="MARGIN BOTTOM DESC">
+			<option value="default">NOT SET</option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</param>
+		<param name="imgmanager_ext_margin_left" type="list" default="default" label="MARGIN LEFT" description="MARGIN LEFT DESC">
+			<option value="default">NOT SET</option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</param>
+        <param name="imgmanager_ext_border" type="list" default="0" label="BORDER ENABLE" description="BORDER ENABLE DESC">
+				<option value="0">NO</option>
+                <option value="1">YES</option>
+		</param>
+		<param name="imgmanager_ext_border_width" type="list" default="default" label="BORDER WIDTH" description="BORDER WIDTH DESC">
+				<option value="default">NOT SET</option>
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="thin">BORDER THIN</option>
+				<option value="medium">BORDER MEDIUM</option>
+				<option value="thick">BORDER THICK</option>
+		</param>
+		<param name="imgmanager_ext_border_style" type="list" default="default" label="BORDER STYLE" description="BORDER STYLE DESC">
+				<option value="default">NOT SET</option>
+				<option value="none">BORDER NONE</option>
+				<option value="solid">BORDER SOLID</option>
+				<option value="dashed">BORDER DASHED</option>
+				<option value="dotted">BORDER DOTTED</option>
+				<option value="double">BORDER DOUBLE</option>
+				<option value="groove">BORDER GROOVE</option>
+				<option value="inset">BORDER INSET</option>
+				<option value="outset">BORDER OUTSET</option>
+			    <option value="ridge">BORDER RIDGE</option>
+		</param>
+		<param name="imgmanager_ext_border_color" type="text" default="#000000" label="BORDER COLOR" description="BORDER COLOR DESC"/>
+        <param name="imgmanager_ext_align" type="list" default="default" label="DEFAULT ALIGN" description="DEFAULT ALIGN DESC">
+                <option value="default">NOT SET</option>
+                <option value="top">ALIGN TOP</option>
+                <option value="middle">ALIGN MIDDLE</option>
+                <option value="bottom">ALIGN BOTTOM</option>
+                <option value="left">ALIGN LEFT</option>
+                <option value="right">ALIGN RIGHT</option>
+        </param>
+		<param name="imgmanager_ext_upload_resize" type="list" default="0" label="RESIZE UPLOAD" description="RESIZE UPLOAD DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_upload_rotate" type="list" default="0" label="ROTATE UPLOAD" description="ROTATE UPLOAD DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>  
+		<param name="imgmanager_ext_upload_thumbnail" type="list" default="0" label="THUMBNAIL UPLOAD" description="THUMBNAIL UPLOAD DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param> 
+	</params>
+	<params group="advanced">
+		<param name="imgmanager_ext_mode" type="list" default="list" label="MODE" description="MODE DESC">
+            <option value="list">LIST</option>
+            <option value="images">IMAGES</option>
+        </param>
+		<param name="imgmanager_ext_resize_width" type="text" default="640" label="RESIZE WIDTH" description="RESIZE WIDTH DESC"/>
+		<param name="imgmanager_ext_resize_height" type="text" default="480" label="RESIZE HEIGHT" description="RESIZE HEIGHT DESC"/>
+        <param name="imgmanager_ext_resize_quality" type="list" default="80" label="RESIZE QUALITY" description="RESIZE QUALITY DESC">        
+			<option value="100">100</option>
+			<option value="90">90</option>
+			<option value="80">80</option>
+			<option value="70">70</option>
+			<option value="60">60</option>
+			<option value="50">50</option>
+			<option value="40">40</option>
+			<option value="30">30</option>
+			<option value="20">20</option>
+			<option value="10">10</option>
+		</param>
+		<param name="imgmanager_ext_cache" type="text" size="30" default="" label="CACHE FOLDER" description="CACHE FOLDER DESC"/>
+		<param name="imgmanager_ext_cache_size" type="text" default="10" label="CACHE SIZE" description="CACHE SIZE DESC"/>
+		<param name="imgmanager_ext_cache_age" type="text" default="30" label="CACHE AGE" description="CACHE AGE DESC"/>
+		<param name="imgmanager_ext_cache_files" type="text" default="0" label="CACHE LIMIT" description="CACHE LIMIT DESC"/>
+		<param name="imgmanager_ext_engine" type="list" default="phpthumb" label="IMAGE ENGINE" description="IMAGE ENGINE DESC">
+            <option value="phpthumb">PHPThumb</option>
+            <option value="wideimage">WideImage</option>
+        </param>
+		<param name="imgmanager_ext_use_imagemagick" type="list" default="0" label="IMAGEMAGICK" description="IMAGEMAGICK DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+		<param name="imgmanager_ext_imagemagick_path" type="text" default="" label="IMAGEMAGICK PATH" description="IMAGEMAGICK PATH DESC"/>
+		
+		<param name="imgmanager_ext_thumbnail_size" type="text" default="150" label="THUMBNAIL SIZE" description="THUMBNAIL SIZE DESC"/>
+		<param name="imgmanager_ext_thumbnail_quality" type="list" default="80" label="THUMBNAIL QUALITY" description="THUMBNAIL QUALITY DESC">        
+			<option value="100">100</option>
+			<option value="90">90</option>
+			<option value="80">80</option>
+			<option value="70">70</option>
+			<option value="60">60</option>
+			<option value="50">50</option>
+			<option value="40">40</option>
+			<option value="30">30</option>
+			<option value="20">20</option>
+			<option value="10">10</option>
+		</param>
+		<param name="imgmanager_ext_thumbnail_folder" type="text" default="thumbnails" label="THUMBNAIL FOLDER" description="THUMBNAIL FOLDER DESC"/>
+		<param name="imgmanager_ext_thumbnail_prefix" type="text" default="thumb_" label="THUMBNAIL PREFIX" description="THUMBNAIL PREFIX DESC"/>		
+		<param name="imgmanager_ext_thumbnail_mode" type="list" default="0" label="THUMBNAIL MODE" description="THUMBNAIL MODE DESC">        
+			<option value="0">Proportioal</option>
+			<option value="1">Square</option>
+		</param>
+	</params>
+	<params group="access">
+ 		<param name="imgmanager_ext_allow_resize" type="list" default="1" label="RESIZE ALLOW" description="RESIZE ALLOW DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>  
+		<param name="imgmanager_ext_force_resize" type="list" default="0" label="RESIZE FORCE" description="RESIZE FORCE DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_allow_rotate" type="list" default="1" label="ROTATE ALLOW" description="ROTATE ALLOW DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>  
+		<param name="imgmanager_ext_force_rotate" type="list" default="0" label="ROTATE FORCE" description="ROTATE FORCE DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_allow_thumbnail" type="list" default="1" label="THUMBNAIL ALLOW" description="THUMBNAIL ALLOW DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>  
+		<param name="imgmanager_ext_force_thumbnail" type="list" default="0" label="THUMBNAIL FORCE" description="THUMBNAIL FORCE DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>    
+	    <param name="imgmanager_ext_upload" type="list" default="1" label="UPLOAD" description="UPLOAD DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_upload_conflict" type="list" default="" label="PARAM UPLOAD EXISTS" description="PARAM UPLOAD EXISTS DESC">
+			<option value="">NOT SET</option>
+			<option value="overwrite">PARAM UPLOAD EXISTS OVERWRITE</option>
+			<option value="unique">PARAM UPLOAD EXISTS UNIQUE</option>
+			<option value="overwrite|unique">PARAM UPLOAD EXISTS OVERWRITE PARAM UPLOAD EXISTS UNIQUE</option>
+        </param>
+		<param name="imgmanager_ext_folder_new" type="list" default="1" label="FOLDER CREATE" description="FOLDER CREATE DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_folder_delete" type="list" default="1" label="FOLDER DELETE" description="FOLDER DELETE DESC">
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_folder_rename" type="list" default="1" label="FOLDER RENAME" description="FOLDER RENAME DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_file_delete" type="list" default="1" label="FILE DELETE" description="FILE DELETE DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_file_rename" type="list" default="1" label="FILE RENAME" description="FILE RENAME DESC">
+             <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+		<param name="imgmanager_ext_file_move" type="list" default="1" label="FILE PASTE" description="FILE PASTE DESC">
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+		</param>
+    </params>
+	<languages>
+		<language tag="en-GB">en-GB.com_jce_imgmanager_ext.ini</language>
+	</languages>
+	<help>
+		<topic key="imgmanager_ext.about" title="Help About" />
+		<topic key="imgmanager_ext.interface" title="Help Interface" />
+		<topic key="imgmanager_ext.rollover" title="Help Rollover" />
+		<topic key="imgmanager_ext.popup" title="Help Popup" />
+		<topic key="imgmanager_ext.tooltip" title="Help Tooltip" />
+		<topic key="imgmanager_ext.advanced" title="Help Advanced" />
+		<topic key="imgmanager_ext.insert" title="Help Insert" />
+	</help>
+</install>

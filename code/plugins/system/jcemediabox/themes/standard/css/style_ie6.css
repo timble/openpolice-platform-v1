@@ -1,0 +1,48 @@
+/**
+ * Standard Template for IE6
+ * @version		$Id: style_ie6.css 484 2010-01-22 03:53:17Z happynoodleboy $
+ * @package		JCE MediaBox
+ * @copyright	Copyright (C) 2009 - 2010 Ryan Demmer. All rights reserved.
+ * @license		GNU/GPL
+ * This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+#jcemediabox-popup-nav {
+	height: 10px;	
+}
+#jcemediabox-popup-caption { 
+	margin-top: -1px;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-top-left {
+	background: url(../img/tip-tl.gif) no-repeat top left;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-top-right {
+	background: url(../img/tip-tr.gif) no-repeat top right;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-bottom-left {
+	background: transparent url(../img/tip-bl.gif) no-repeat bottom left;
+}
+div.jcemediabox-tooltip .jcemediabox-tooltip-bottom-right {
+	background: transparent url(../img/tip-br.gif) no-repeat bottom right;
+}
+.jcemediabox-popup-corner-tl {
+	background: url(../img/corner-tl.gif) no-repeat left top;
+}
+.jcemediabox-popup-corner-tc {
+	overflow: hidden;	
+}
+.jcemediabox-popup-corner-tr {
+	background: url(../img/corner-tr.gif) no-repeat right top;
+}
+.jcemediabox-popup-corner-bl {
+	background: url(../img/corner-bl.gif) no-repeat left bottom;
+}
+.jcemediabox-popup-corner-bc {
+	overflow: hidden;	
+}
+.jcemediabox-popup-corner-br {
+	background: url(../img/corner-br.gif) no-repeat right bottom;
+}

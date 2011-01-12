@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="language" method="upgrade">
+	<name>Français</name>
+	<tag>fr-FR</tag>
+	<version>1.5.7.6</version>
+	<creationDate>11 novembre 2010</creationDate>
+	<author>Sarki</author>
+	<authorEmail>info@sarki.ch</authorEmail>
+	<authorUrl>www.sarki.ch</authorUrl>
+	<copyright>(C) 2008 Ryan Demmer - Sarki. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description><![CDATA[ Pack de langue FR pour JCE 1.5 - Traduction par <a href="http://www.sarki.ch/jce" target="_blank">Sarki</a>]]></description>
+	<site>
+		<files folder="site">	
+			<filename>fr-FR.com_jce.ini</filename>
+			<filename>fr-FR.com_jce_advlink.ini</filename>
+			<filename>fr-FR.com_jce_advlink_docmanlinks.ini</filename>
+			<filename>fr-FR.com_jce_advlink_flexicontentlinks.ini</filename>
+			<filename>fr-FR.com_jce_advlink_k2links.ini</filename>
+			<filename>fr-FR.com_jce_advlink_rokdownloads.ini</filename>
+			<filename>fr-FR.com_jce_advlink_virtuemart.ini</filename>
+			<filename>fr-FR.com_jce_advlink_zoo.ini</filename>
+			<filename>fr-FR.com_jce_browser.ini</filename>
+			<filename>fr-FR.com_jce_caption.ini</filename>
+			<filename>fr-FR.com_jce_filemanager.ini</filename>
+			<filename>fr-FR.com_jce_iframe.ini</filename>
+			<filename>fr-FR.com_jce_imgmanager.ini</filename>
+			<filename>fr-FR.com_jce_imgmanager_ext.ini</filename>
+			<filename>fr-FR.com_jce_media.ini</filename>
+			<filename>fr-FR.com_jce_mediamanager.ini</filename>
+			<filename>fr-FR.com_jce_paste.ini</filename>
+			<filename>fr-FR.com_jce_spellchecker.ini</filename>
+			<filename>fr-FR.com_jce_templatemanager.ini</filename>
+		</files>
+	</site>
+	<tinymce>
+		<files folder="tinymce">
+			<filename>langs/fr.js</filename>
+			<filename>langs/fr_dlg.js</filename>
+			<filename>themes/advanced/langs/fr.js</filename>
+			<filename>themes/advanced/langs/fr_dlg.js</filename>
+			<filename>plugins/advcode/langs/fr.js</filename>
+			<filename>plugins/advcode/langs/fr_dlg.js</filename>
+			<filename>plugins/advlink/langs/fr_dlg.js</filename>
+			<filename>plugins/article/langs/fr.js</filename>
+			<filename>plugins/article/langs/fr_dlg.js</filename>
+			<filename>plugins/browser/langs/fr_dlg.js</filename>
+			<filename>plugins/caption/langs/fr.js</filename>
+			<filename>plugins/emotions/langs/fr_dlg.js</filename>
+			<filename>plugins/filemanager/langs/fr.js</filename>
+			<filename>plugins/filemanager/langs/fr_dlg.js</filename>
+			<filename>plugins/iframe/langs/fr.js</filename>
+			<filename>plugins/imgmanager/langs/fr_dlg.js</filename>
+			<filename>plugins/imgmanager_ext/langs/fr_dlg.js</filename>
+			<filename>plugins/mediamanager/langs/fr_dlg.js</filename>
+			<filename>plugins/searchreplace/langs/fr_dlg.js</filename>
+			<filename>plugins/style/langs/fr_dlg.js</filename>
+			<filename>plugins/table/langs/fr_dlg.js</filename>
+			<filename>plugins/templatemanager/langs/fr.js</filename>
+			<filename>plugins/templatemanager/langs/fr_dlg.js</filename>
+			<filename>plugins/xhtmlxtras/langs/fr_dlg.js</filename>
+		</files>
+	</tinymce>
+	<administration> 
+		<files folder="administration">
+			<filename>fr-FR.com_jce.ini</filename>
+			<filename>fr-FR.com_jce.menu.ini</filename>
+			<filename>fr-FR.plg_editors_jce.ini</filename>
+			<filename>fr-FR.plg_system_jceutilities.ini</filename>
+			<filename>fr-FR.plg_system_jcemediabox.ini</filename>
+			<filename>fr-FR.plg_system_jcemediabox.sys.ini</filename>
+        </files>
+    </administration>
+</install>

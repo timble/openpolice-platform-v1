@@ -1,0 +1,14 @@
+/**
+ * @version		$Id: grid.css 1121 2010-05-26 16:53:49Z johan $
+ * @package		Nooku
+ * @copyright	Copyright (C) 2007 - 2010 Johan Janssens and Mathias Verraes. All rights reserved.
+ * @license		http://www.gnu.org/copyleft/gpl.html GNU/GPLv2
+ * @link     	http://www.nooku.org
+ */
+
+#adminlist-header    { }
+#adminlist-header dl { float: left; }
+#adminlist-header dt { float: left; }
+#adminlist-header dd {  }
+#adminlist-header ul { list-style: none; float: left; padding-left: 5px;  }
+#adminlist-header li { display: inline; }
