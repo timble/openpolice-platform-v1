@@ -143,7 +143,7 @@ class PhocaGalleryCpModelPhocaGalleryM extends JModel
 		//Create thumbnail small, medium, large		
 		//file - abc.img, file_no - folder/abc.img
 		//Get folder variables from Helper
-		$refresh_url 	= 'index.php?option=com_phocagallery&controller=phocagallery&task=thumbs';	
+		$refresh_url 	= JURI::base(true).'/index.php?option=com_phocagallery&controller=phocagallery&task=thumbs';	
 		$fileThumb 		= PhocaGalleryFileThumbnail::getOrCreateThumbnail($row->filename, $refresh_url, 1, 1, 1);
 
 		//Clean Thumbs Folder if there are thumbnail files but not original file
