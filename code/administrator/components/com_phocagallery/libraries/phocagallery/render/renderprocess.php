@@ -170,9 +170,9 @@ class PhocaGalleryRenderProcess
 		
 			
 		if ($countImg ==  $currentImg || $currentImg > $countImg) {
-			echo '<meta http-equiv="refresh" content="1;url='.$refresh_url.'&imagesid='.md5(time()).'" />';
+			echo '<meta http-equiv="refresh" content="1;url='.JRoute::_($refresh_url.'&imagesid='.md5(time())).'" />';
 		} else {
-			echo '<meta http-equiv="refresh" content="0;url='.$refresh_url.'&countimg='.$countImg.'&currentimg='.$nextImg.'" />';
+			echo '<meta http-equiv="refresh" content="0;url='.JRoute::_($refresh_url.'&countimg='.$countImg.'&currentimg='.$nextImg).'" />';
 		}
 		
 		echo '</div></center></body></html>';

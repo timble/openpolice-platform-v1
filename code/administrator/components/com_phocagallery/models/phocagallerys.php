@@ -97,7 +97,7 @@ class PhocaGalleryCpModelPhocaGalleryS extends JModel
 					$this->_data[$key]->fileoriginalexist = 0;
 				} else {
 					//Create thumbnails small, medium, large
-					$refresh_url 	= JURI::base(true).'/index.php?option=com_phocagallery&view=phocagallerys';
+					$refresh_url 	= 'index.php?option=com_phocagallery&view=phocagallerys';
 					$fileThumb 		= PhocaGalleryFileThumbnail::getOrCreateThumbnail($value->filename, $refresh_url, 1, 1, 1);
 					
 					$this->_data[$key]->linkthumbnailpath 	= $fileThumb['thumb_name_s_no_rel'];

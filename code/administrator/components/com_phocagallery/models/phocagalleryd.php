@@ -41,7 +41,7 @@ class PhocaGalleryCpModelPhocaGalleryD extends JModel
 			
 			$file 	= new JObject();
 
-			$refresh_url = JURI::base(true).'/index.php?option=com_phocagallery&view=phocagalleryd&tmpl=component&cid[]='.$this->_id;
+			$refresh_url = 'index.php?option=com_phocagallery&view=phocagalleryd&tmpl=component&cid[]='.$this->_id;
 			
 			//Creata thumbnails if not exist
 			PhocaGalleryFileThumbnail::getOrCreateThumbnail($fileObject->filename, $refresh_url, 1, 1, 1);
