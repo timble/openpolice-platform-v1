@@ -102,7 +102,7 @@ function MM_swapImage() { //v3.0
              <div align="right"></div></td>
 	      </tr>
 		   <tr bgcolor="#cc6701">
-			<td bgcolor="#cc6701">&nbsp;<img src="http://www.polfed-fedpol.be/images/fleche_polfed.jpg" width="8" height="9"><span class="style5"><a href="http://www.polfed-fedpol.be/org/org_de.php" class="title_taalkeuze">Fšderale Polizei </a></span>  </div>			  <div align="right"><a href="home_nl.php" class="title_taalkeuze"></a></div></td>
+			<td bgcolor="#cc6701">&nbsp;<img src="http://www.polfed-fedpol.be/images/fleche_polfed.jpg" width="8" height="9"><span class="style5"><a href="http://www.polfed-fedpol.be/org/org_de.php" class="title_taalkeuze">F&ouml;derale Polizei </a></span>  </div>			  <div align="right"><a href="home_nl.php" class="title_taalkeuze"></a></div></td>
             <td bgcolor="#cc6701">&nbsp;<img src="http://www.polfed-fedpol.be/images/fleche_polfed.jpg" width="8" height="9"><a href="http://www.polfed-fedpol.be/org/org_en.php" class="title_taalkeuze">Federal Police</a></td>
 	      </tr>
 	  </table>    </td>
