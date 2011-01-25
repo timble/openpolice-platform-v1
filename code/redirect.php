@@ -157,8 +157,8 @@ function MM_swapImage() { //v3.0
 			<td width="137"><div align="right"><span class="texte_taalkeuze">Choisissez votre langue</span></div></td>
 		  </tr>
 		   <tr bgcolor="#a3c0c5">
-             <td>&nbsp;<img src="http://www.polfed-fedpol.be/images/fleche_poloc.jpg" width="8" height="9"><a href="http://www.police.be/intro.html" class="title_taalkeuze">Lokale Politie</a></td>
-             <td><div align="right"><img src="http://www.polfed-fedpol.be/images/fleche_poloc.jpg"><a href="http://www.police.be/fransintro.html"class="title_taalkeuze">Police locale<span class="style2">.</span></a></div></td>
+             <td>&nbsp;<img src="http://www.polfed-fedpol.be/images/fleche_poloc.jpg" width="8" height="9"><a href="http://www.lokalepolitie.be/portal/nl/home.html" class="title_taalkeuze">Lokale Politie</a></td>
+             <td><div align="right"><img src="http://www.polfed-fedpol.be/images/fleche_poloc.jpg"><a href="http://www.lokalepolitie.be/portal/fr/home.html"class="title_taalkeuze">Police locale<span class="style2">.</span></a></div></td>
 	      </tr>
 	  </table>
 	  <br>
