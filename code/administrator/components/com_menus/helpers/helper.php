@@ -30,13 +30,7 @@ class MenusHelper
 				' LEFT JOIN #__menu AS b ON b.menutype = a.menutype' .
 				' GROUP BY a.id';
 		$db->setQuery( $query );
-		$result = $db->loadObjectList();
-		
-		foreach($result as $key => $value) {
-			$result[$key]->menutype = strtolower($value->menutype);
-		}
-		
-		return $result;
+		return $db->loadObjectList();
 	}
 
 	/**
