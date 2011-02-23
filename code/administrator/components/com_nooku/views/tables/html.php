@@ -26,7 +26,7 @@ class NookuViewTables extends KViewHtml
 		$this->assignRef('tables', 		$model->getList());
 		$this->assignRef('filter', 		$model->getFilters());
 		$this->assignRef('pagination',  $model->getPagination());
-		
+
         // Mixin a menubar object
         $this->mixin( new NookuMixinMenu($this));
 
@@ -44,7 +44,7 @@ class NookuViewTables extends KViewHtml
 		JToolBarHelper::unpublishList('disable', JText::_('Disable'));
 		JToolBarHelper::divider();
 		JToolBarHelper::deleteList('Are you sure you want to delete these tables? All translations will be lost!', 'delete');
-		JToolBar::getInstance('toolbar')->appendButton( 'Popup', 'new', 'Add', "index.php?option=com_nooku&view=tables.untranslated&tmpl=component" );
+		JToolBar::getInstance('toolbar')->appendButton('Popup', 'new', 'Add', JRoute::_(JFactory::getApplication()->getSite().'/index.php?option=com_nooku&view=tables.untranslated&tmpl=component'));
 		JToolBarHelper::divider();
 
 		//$bar = JToolBar::getInstance('toolbar');
