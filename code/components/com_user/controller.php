@@ -73,10 +73,10 @@ class UserController extends JController
 		$post['username']	= JRequest::getVar('username', '', 'post', 'username');
 		$post['password']	= JRequest::getVar('password', '', 'post', 'string', JREQUEST_ALLOWRAW);
 		$post['password2']	= JRequest::getVar('password2', '', 'post', 'string', JREQUEST_ALLOWRAW);
-	
+
 		// get the redirect
 		$return = JURI::base();
-		
+
 		// do a password safety check
 		if(strlen($post['password']) || strlen($post['password2'])) { // so that "0" can be used as password e.g.
 			if($post['password'] != $post['password2']) {
@@ -109,7 +109,7 @@ class UserController extends JController
 			$msg	= $model->getError();
 		}
 
-		
+
 		$this->setRedirect( $return, $msg );
 	}
 
@@ -171,19 +171,8 @@ class UserController extends JController
 		//preform the logout action
 		$error = $mainframe->logout();
 
-		if(!JError::isError($error))
-		{
-			if ($return = JRequest::getVar('return', '', 'method', 'base64')) {
-				$return = base64_decode($return);
-				if (!JURI::isInternal($return)) {
-					$return = '';
-				}
-			}
-
-			// Redirect if the return url is not registration or login
-			if ( $return && !( strpos( $return, 'com_user' )) ) {
-				$mainframe->redirect( $return );
-			}
+		if(!JError::isError($error)) {
+			$mainframe->redirect(JRoute::_(JSite::getMenu()->getDefault()->link));
 		} else {
 			parent::display();
 		}
