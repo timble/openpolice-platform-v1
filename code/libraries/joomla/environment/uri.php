@@ -157,7 +157,7 @@ class JURI extends JObject
 				 * running on IIS and will therefore need to work some magic with the SCRIPT_NAME and
 				 * QUERY_STRING environment variables.
 				 */
-				
+
 				 	if (strlen($_SERVER['QUERY_STRING']) && strpos($_SERVER['REQUEST_URI'], $_SERVER['QUERY_STRING']) === false) {
 						$theURI .= '?'.$_SERVER['QUERY_STRING'];
 					}
@@ -167,7 +167,7 @@ class JURI extends JObject
 				 {
 					// IIS uses the SCRIPT_NAME variable instead of a REQUEST_URI variable... thanks, MS
 					$theURI = 'http' . $https . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
-		
+
 					// If the query string exists append it to the URI string
 					if (isset($_SERVER['QUERY_STRING']) && !empty($_SERVER['QUERY_STRING'])) {
 						$theURI .= '?' . $_SERVER['QUERY_STRING'];
@@ -259,10 +259,10 @@ class JURI extends JObject
 		if(!isset($root))
 		{
 			$uri =& JURI::getInstance(JURI::base());
-			
+
 			//Strip administrator subdomain from if present to get the root domain
 			$uri->setHost(str_replace('administrator.', '', $uri->getHost()));
-			
+
 			$root['prefix'] = $uri->toString( array('scheme', 'host', 'port') );
 			$root['path']   = rtrim($uri->toString( array('path') ), '/\\');
 		}
@@ -675,7 +675,7 @@ class JURI extends JObject
 		return $this->getScheme() == 'https' ? true : false;
 	}
 
-	/** 
+	/**
 	 * Checks if the supplied URL is internal
 	 *
 	 * @access	public
@@ -683,16 +683,9 @@ class JURI extends JObject
 	 * @return	boolean True if Internal
 	 * @since	1.5
 	 */
-	function isInternal($url) 
+	function isInternal($url)
 	{
-		$uri =& JURI::getInstance($url);
-		$base = $uri->toString(array('scheme', 'host', 'port', 'path'));
-		$host = $uri->toString(array('scheme', 'host', 'port'));
-	
-		if(stripos($base, JURI::current()) !== 0 && !empty($host)) {
-			return false;
-		}
-		return true;
+		return stripos($url, JURI::base()) === 0;
 	}
 
 	/**

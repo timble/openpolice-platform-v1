@@ -785,3 +785,7 @@ location ~ "^/5403[/]{0,1}$" {
 location ~ "^/neteland[/]{0,1}$" {
 	rewrite ^ /5369 permanent;
 }
+
+location ~ "^/zone/?" {
+	rewrite ^ / redirect;
+}

@@ -134,6 +134,7 @@ class modMenuHelper
 				' FROM #__components' .
 				' WHERE '.$db->NameQuote( 'option' ).' <> "com_frontpage"' .
 				' AND '.$db->NameQuote( 'option' ).' <> "com_media"' .
+				($usertype != 'Super Administrator' ? ' AND '.$db->NameQuote('option').' <> \'com_jce\'' : '').
 				' AND enabled = 1' .
 				' ORDER BY ordering, name';
 			$db->setQuery($query);
@@ -252,6 +253,14 @@ class modMenuHelper
 
 		$menu->getParent();
 
+
+		if($user->gid >= 24)
+		{
+			$menu->addChild(new JMenuNode(JText::_('Support'), 'index.php?option=com_zendesk'), true);
+
+			$menu->getParent();
+		}
+
 		$menu->renderMenu('menu', '');
 	}
 
@@ -307,6 +316,9 @@ class modMenuHelper
 
 		// Help SubMenu
 		$menu->addChild(new JMenuNode(JText::_('Help'),  null, 'disabled'));
+
+
+		$menu->addChild(new JMenuNode(JText::_('Support'), null, 'disabled'));
 
 		$menu->renderMenu('menu', 'disabled');
 	}

@@ -458,7 +458,7 @@ var MediaManagerDialog = {
 	},
 	insertAndClose : function() {
 		var n, an, args = {}, params, cls, ed = tinyMCEPopup.editor;
-		var v = dom.value('src'), w = parseInt(dom.value('width')), h = parseInt(dom.value('height'));
+		var v = dom.value('src'), t = this.getType(v), w = parseInt(dom.value('width')), h = parseInt(dom.value('height'));
 		
 		var type = dom.getSelect('media_type');
 		
