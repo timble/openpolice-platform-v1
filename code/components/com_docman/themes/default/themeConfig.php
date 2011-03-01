@@ -1,12 +1,12 @@
 <?php
 if(defined('_themeConfig')) {
 return true;
-} else { 
-define('_themeConfig',1); 
+} else {
+define('_themeConfig',1);
 
 class themeConfig
 {
-var $cat_empty = '1';
+var $cat_empty = '0';
 var $cat_files = '1';
 var $cat_image = '1';
 var $details_crc_checksum = '0';
