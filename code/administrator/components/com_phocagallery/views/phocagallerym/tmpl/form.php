@@ -178,7 +178,7 @@ if (isset($this->state->folder) && $this->state->folder != '') {
  $currentFolder = $this->state->folder;
 }*/
 
-if ($this->tmpl['displaytabs'] > 0) {
+/*if ($this->tmpl['displaytabs'] > 0) {
 	echo '<div id="phocagallery-pane">';
 	$pane =& JPane::getInstance('Tabs', array('startOffset'=> $this->tmpl['tab']));
 	echo $pane->startPane( 'pane' );
@@ -201,6 +201,6 @@ if ($this->tmpl['displaytabs'] > 0) {
 	echo $pane->endPane();
 	echo '</div>';// end phocagallery-pane
 }
-?>
+?>*/
 
 
