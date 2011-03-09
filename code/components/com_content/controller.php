@@ -240,13 +240,13 @@ class ContentController extends JController
 		{
 			$msg = $isNew ? JText::_('THANK_SUB') : JText::_('Item successfully saved.');
 		}
-		
-		$referer = JRequest::getString('ret',  base64_encode(JURI::base()), 'get');
+
+		$referer = JRequest::getString('ret',  base64_encode(JURI::base().'/'.JFactory::getApplication()->getSite()), 'get');
 		$referer = base64_decode($referer);
 		if (!JURI::isInternal($referer)) {
 			$referer = '';
 		}
-		$this->setRedirect($referer, $msg);		
+		$this->setRedirect($referer, $msg);
 	}
 
 	/**
@@ -270,7 +270,7 @@ class ContentController extends JController
 		}
 
 		// If the task was edit or cancel, we go back to the content item
-		$referer = JRequest::getString('ret', base64_encode(JURI::base()), 'get');
+		$referer = JRequest::getString('ret', base64_encode(JURI::base().'/'.JFactory::getApplication()->getSite()), 'get');
 		$referer = base64_decode($referer);
 		if (!JURI::isInternal($referer)) {
 			$referer = '';
@@ -294,7 +294,7 @@ class ContentController extends JController
 		$model = & $this->getModel('Article' );
 
 		$model->setId($id);
-		
+
 		if(!JURI::isInternal($url)) {
 			$url = JRoute::_('index.php?option=com_content&view=article&id='.$id);
 		}
