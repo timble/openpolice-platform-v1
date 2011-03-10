@@ -31,20 +31,6 @@ class ZendeskController extends JController
 			$url[] = $key.'='.urlencode($value);
 		}
 
-		curl_setopt($curl, CURLOPT_URL, 'http://support.lokalepolitie.be/access/remote/?'.implode('&', $url));
-
-		$result = curl_exec($curl);
-
-		if(preg_match('/Set-Cookie: zendesk_user_version=([^;]*);/', $result, $matches)) {
-			setcookie('zendesk_user_version', urldecode($matches[1]), 0, '/', '.lokalepolitie.be');
-		}
-
-		if(preg_match('/Set-Cookie: _zendesk_session=([^;]*);/', $result, $matches)) {
-			setcookie('_zendesk_session', urldecode($matches[1]), 0, '/', '.lokalepolitie.be');
-		}
-
-		curl_close($curl);
-
-		$application->redirect('http://support.lokalepolitie.be/home');
+		$application->redirect('http://support.lokalepolitie.be/access/remote/?'.implode('&', $url));
 	}
 }
