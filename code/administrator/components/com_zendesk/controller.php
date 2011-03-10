@@ -12,12 +12,6 @@ class ZendeskController extends JController
 			$application->redirect('index.php', JText::_('ALERTNOTAUTH'), 'error');
 		}
 
-		$curl = curl_init();
-
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, false);
-		curl_setopt($curl, CURLOPT_HEADER, true);
-
 		$token			= 'zZrkinswnaUzmFtQTGg5zblw3N7OOd7IElIRwo91n5rAOExl';
 		$attributes		= array(
 			'name'			=> $user->name,
