@@ -42,7 +42,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<script type="text/javascript" src="templates/<?php echo  $this->template ?>/js/index.js"></script>
 <?php endif; ?>
 
-<?php if(JURI::getInstance()->getHost() == 'administrator.lokalepolitie.be') ?>
+<?php if(JURI::getInstance()->getHost() == 'administrator.lokalepolitie.be') : ?>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-20242887-3']);
