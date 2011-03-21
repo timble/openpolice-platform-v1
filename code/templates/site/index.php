@@ -120,8 +120,8 @@ div#logo {
 				<div id="whitebox_m"><jdoc:include type="message" />
 					<div id="area">
 						<div id="leftcolumn">
-						<jdoc:include type="modules" name="language" style="rounded" />
 						<?php if($this->countModules('left')) : ?>
+							<jdoc:include type="modules" name="language" style="rounded" />
 							<jdoc:include type="modules" name="left" style="rounded" />
 						<?php endif; ?>
 						</div>
