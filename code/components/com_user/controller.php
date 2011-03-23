@@ -172,7 +172,7 @@ class UserController extends JController
 		$error = $mainframe->logout();
 
 		if(!JError::isError($error)) {
-			$mainframe->redirect(JRoute::_(JSite::getMenu()->getDefault()->link));
+			$mainframe->redirect(JRoute::_('index.php?Itemid='.JSite::getMenu()->getDefault()->id));
 		} else {
 			parent::display();
 		}
