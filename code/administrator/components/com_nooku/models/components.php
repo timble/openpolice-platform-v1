@@ -1,6 +1,6 @@
 <?php
 /**
- * @version     $Id: components.php 1129 2010-06-22 15:53:15Z johan $
+ * @version     $Id$
  * @category   	Nooku
  * @package     Nooku_Administrator
  * @subpackage  Models
@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 
 /**
  * Components model
- * 
+ *
  * @author      Mathias Verraes <mathias@joomlatools.org>
  * @package     Nooku
  * @subpackage  Administrator
@@ -31,7 +31,7 @@ class NookuModelComponents extends KModelTable
 		'virtuemart' => 'vm',
 		'menus' 	 => 'menu',
 	);
-	
+
 	/**
 	 * Finds the table prefix for a component
 	 *
@@ -41,18 +41,18 @@ class NookuModelComponents extends KModelTable
 	public function getTablePrefix($option)
 	{
 		$component = substr($option, 4);
-		
+
 		if('trash' == $component) {
 			$prefix = strtolower(substr(JRequest::getCmd('task'), 4));
 		} elseif(array_key_exists($component, $this->_list)) {
-			$prefix =  $this->_list[$component];			
+			$prefix =  $this->_list[$component];
 		} else {
 			$prefix = $component;
 		}
-		
+
 		return $prefix;
 	}
-	
+
 	/**
 	 * Is a component translatable?
 	 *
@@ -65,22 +65,26 @@ class NookuModelComponents extends KModelTable
 		if(empty($option)) {
 			return false;
 		}
-		
+
 		$prefix = $this->getTablePrefix($option);
 		if(!empty($view)) {
 			$prefix = $prefix.'_'.$view;
 		}
-		
+
 		$nooku  = KFactory::get('admin::com.nooku.model.tables');
 		$tables = $nooku->getTranslatedTables();
-		
+
 		foreach($tables as $table)
 		{
 			if(strpos($table, $prefix) !== FALSE) {
 				return true;
 			}
 		}
-		
+
+		if(in_array($prefix, array('poll_poll', 'poll_polls'))) {
+		    return true;
+		}
+
 		return false;
 	}
 }
