@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Sitename</name>
+	<author>Belgian Police</author>
+	<creationDate>September 2011</creationDate>
+	<copyright>Copyright (C) 2011 Timble. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.lokalepolitie.be</authorUrl>
+	<version>1.5.0</version>
+	<description></description>
+	<files>
+		<filename module="mod_sitename">mod_sitename.php</filename>
+	</files>
+	<params>
+		<param name="name" type="text" default="" label="Name" description="" />
+	</params>
+	<params group="advanced">
+		<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+</install>

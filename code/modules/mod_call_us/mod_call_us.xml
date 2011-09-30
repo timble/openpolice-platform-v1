@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Call Us</name>
+	<author>Belgian Police</author>
+	<creationDate>August 2011</creationDate>
+	<copyright>Copyright (C) 2011 Timble. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.lokalepolitie.be</authorUrl>
+	<version>1.5.0</version>
+	<description></description>
+	<files>
+		<filename module="mod_call_us">mod_call_us.php</filename>
+	</files>
+	<params>
+		<param name="phone" type="text" default="" label="Phone" description="" />
+		<param name="emergency" type="list" default="1" label="Emergency" description="Show emergency number">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+	</params>
+	<params group="advanced">
+		<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+</install>

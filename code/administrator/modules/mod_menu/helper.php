@@ -256,13 +256,6 @@ class modMenuHelper
 
 		if($user->gid >= 24)
 		{
-            $javascript[] = 'window.addEvent(\'domready\', function() {';
-            $javascript[] = '$(\'menu\').getLast().getFirst().setProperty(\'target\', \'_blank\')';
-            $javascript[] = '});';
-
-		    $document = JFactory::getDocument();
-		    $document->addScriptDeclaration(implode(PHP_EOL, $javascript));
-
 			$menu->addChild(new JMenuNode(JText::_('Support'), 'index.php?option=com_zendesk'), true);
 
 			$menu->getParent();

@@ -111,6 +111,7 @@ class modLatestNewsHelper
 				$lists[$i]->link = JRoute::_('index.php?option=com_user&view=login');
 			}
 			$lists[$i]->text = htmlspecialchars( $row->title );
+			$lists[$i]->publish_up = $row->publish_up;
 			$i++;
 		}
 

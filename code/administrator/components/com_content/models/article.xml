@@ -79,6 +79,10 @@
 			<option value="0">Hide</option>
 			<option value="1">Show</option>
 		</param>
+		<param name="show_share_icon" type="radio" default="0" label="Share Icon" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
 		<param name="language" type="languages" client="site" label="Content language" description="PARAMCONTENTLANGUAGE" />
 		<param name="keyref" type="text" size="25" default="" label="Key Reference" description="PARAMKEYREF" />
 		<param name="readmore" type="text" size="25" default="" label="Alternative Read more text" description="PARAMALTREADMORE" />
