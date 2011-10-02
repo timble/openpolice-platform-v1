@@ -50,10 +50,10 @@ CREATE TABLE `pol_groups` LIKE `police_zone`.`pol_groups`;
 INSERT `pol_groups` SELECT * FROM `police_zone`.`pol_groups`;
 
 CREATE OR REPLACE VIEW `pol_jce_groups` AS
-	SELECT * FROM `police_zone`.`pol_jce_groups`;
+    SELECT * FROM `police_zone`.`pol_jce_groups`;
 
 CREATE OR REPLACE VIEW `pol_jce_plugins` AS
-	SELECT * FROM `police_zone`.`pol_jce_plugins`;
+    SELECT * FROM `police_zone`.`pol_jce_plugins`;
 
 CREATE TABLE `pol_menu` LIKE `police_zone`.`pol_menu`;
 INSERT `pol_menu` SELECT * FROM `police_zone`.`pol_menu`;
@@ -98,7 +98,7 @@ CREATE TABLE `pol_sections` LIKE `police_zone`.`pol_sections`;
 INSERT `pol_sections` SELECT * FROM `police_zone`.`pol_sections`;
 
 CREATE OR REPLACE VIEW `pol_session` AS
-	SELECT * FROM `police_zone`.`pol_session`;
+    SELECT * FROM `police_zone`.`pol_session`;
 
 CREATE TABLE `pol_stats_agents` LIKE `police_zone`.`pol_stats_agents`;
 INSERT `pol_stats_agents` SELECT * FROM `police_zone`.`pol_stats_agents`;
@@ -110,7 +110,7 @@ CREATE TABLE `pol_users` LIKE `police_zone`.`pol_users`;
 INSERT `pol_users` SELECT * FROM `police_zone`.`pol_users`;
 
 CREATE OR REPLACE VIEW `pol_users_logs` AS
-	SELECT * FROM `police_zone`.`pol_users_logs`;
+    SELECT * FROM `police_zone`.`pol_users_logs`;
 
 CREATE TABLE `pol_weblinks` LIKE `police_zone`.`pol_weblinks`;
 INSERT `pol_weblinks` SELECT * FROM `police_zone`.`pol_weblinks`;

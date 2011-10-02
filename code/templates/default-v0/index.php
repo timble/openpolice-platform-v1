@@ -66,7 +66,8 @@ $language = $language[0];
 					<jdoc:include type="modules" name="call" style="call" />
 				</div>
 				<div id="sitename">
-					<a href="<?php echo JRoute::_('&Itemid='.JSite::getMenu()->getDefault()->id) ?>"><jdoc:include type="modules" name="sitename" style="sitename" /></a>
+                    <?php $home = JSite::getMenu()->getDefault() ?>
+					<a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>"><jdoc:include type="modules" name="sitename" style="sitename" /></a>
 				</div>
 			</div>
 			<?php if($this->countModules('user4')) : ?>

@@ -833,13 +833,23 @@ img[align="left"] {
 img[align="right"] {
   margin-left: 10px;
 }
-.group:after {
-  content: ".";
+.group:before, .group:after {
+  content: '\0020';
   display: block;
-  clear: both;
+  overflow: hidden;
   visibility: hidden;
-  line-height: 0;
+  width: 0;
   height: 0;
+}
+.group:after {
+  clear: both;
+}
+/*
+	The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem.
+*/
+.group {
+  zoom: 1;
 }
 body {
   background-color: #f0f0f0;
@@ -1151,14 +1161,6 @@ a:hover {
 #main #right .mod_mainmenu.icons ul li a span {
   line-height: 40px;
   padding: 0 0 0 10px;
-}
-#main #right .mod_mainmenu.icons ul li a:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
 }
 #main #right .mod_poll p {
   margin: 6px 8px;

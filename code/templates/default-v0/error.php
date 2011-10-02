@@ -29,7 +29,8 @@ $version = '001';
 			<div class="grid_12">
 				<div class="module">
 					<ul>
-						<li><a href="<?php echo JRoute::_('&Itemid='.JSite::getMenu()->getDefault()->id) ?>">Home</a></li>
+                        <?php $home = JSite::getMenu()->getDefault() ?>
+						<li><a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>">Home</a></li>
 					</ul>
 				</div>
 			</div>
@@ -42,7 +43,7 @@ $version = '001';
 					
 				</div>
 				<div id="sitename">
-					<a href="<?php echo JRoute::_('&Itemid='.JSite::getMenu()->getDefault()->id) ?>"><?php echo substr(JFactory::getApplication()->getCfg('sitename'), 0, 30) ?></a>
+					<a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>"><?php echo substr(JFactory::getApplication()->getCfg('sitename'), 0, 30) ?></a>
 				</div>
 			</div>
 		</div>
@@ -64,7 +65,7 @@ $version = '001';
 					<p><strong><?php echo JText::_('Please try one of the following pages:'); ?></strong></p>
 					<p>
 						<ul>
-							<li><a href="<?php echo JRoute::_('&Itemid='.JSite::getMenu()->getDefault()->id) ?>" title="<?php echo JText::_('Go to the home page'); ?>"><?php echo JText::_('Home Page'); ?></a></li>
+							<li><a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>" title="<?php echo JText::_('Go to the home page'); ?>"><?php echo JText::_('Home Page'); ?></a></li>
 						</ul>
 					</p>
 					<div id="techinfo">

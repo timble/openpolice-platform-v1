@@ -172,17 +172,27 @@ input {
 img[align="left"] {	margin-right: 10px; }
 img[align="right"] { margin-left: 10px; }
 
-.group() {
-	content: ".";
+.group:before,
+.group:after {
+	content: '\0020';
 	display: block;
-	clear: both;
+	overflow: hidden;
 	visibility: hidden;
-	line-height: 0;
+	width: 0;
 	height: 0;
 }
 
 .group:after {
-	.group();
+	clear: both;
+}
+
+/*
+	The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.group {
+	zoom: 1;
 }
 
 .container () { .shadow(0px 3px 6px #BBB); border-left: 1px solid #BBB; border-right: 1px solid #BBB; }
@@ -417,9 +427,6 @@ a:hover { color: @blue; }
 							line-height: 40px;
 							padding: 0 0 0 10px;
 						}
-					}
-					a:after {
-						.group();
 					}
 				}
 			}
