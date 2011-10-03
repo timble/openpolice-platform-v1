@@ -8,8 +8,6 @@
     <input type="hidden" name="option" value="com_nooku" />
     <input type="hidden" name="format" value="openflashchart" />
     <input type="hidden" name="layout" value="bar" />
-    <input type="hidden" name="reload-url" value="<?= @route('index.php') ?>" id="reload-url" />
-    
     <div style="float:left">
         <?= @text('Graph');?>:
         <?
