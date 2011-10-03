@@ -30,7 +30,7 @@ window.addEvent('domready', function() {
     var sels = $$('.statistics_filter');
     sels.each(function(sel, index){
     	sel.addEvent('change', function() {
-			$("graph_flash").reload('index.php?' + sel.form.toQueryString());
+			$("graph_flash").reload($('reload-url').value + '/?' + sel.form.toQueryString());
 		});
     });
 });
