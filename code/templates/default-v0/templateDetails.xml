@@ -18,5 +18,6 @@
 		<position>user2</position>
 		<position>user3</position>
 		<position>user4</position>
+		<position>call</position>
 	</positions>
 </install>
