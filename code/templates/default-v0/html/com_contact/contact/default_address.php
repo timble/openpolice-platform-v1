@@ -30,24 +30,30 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 <?php endif; ?>
 
 <?php if ( $this->contact->telephone && $this->contact->params->get('show_telephone') || $this->contact->fax && $this->contact->params->get('show_fax')
-  || $this->contact->mobile && $this->contact->params->get('show_mobile')) : ?>
+  || $this->contact->mobile && $this->contact->params->get('show_mobile') || $this->contact->email_to && $this->contact->params->get('show_email')) : ?>
   
     <ul>   
         <?php if ( $this->contact->telephone && $this->contact->params->get( 'show_telephone' ) ) : ?>
-        <li class="tel contact-tel">
+        <li>
               <strong><?php echo JText::_('Telephone'); ?>:</strong> <span class="value"><?php echo nl2br($this->escape($this->contact->telephone)); ?></span>
         </li>
         <?php endif; ?>
         
         <?php if ( $this->contact->fax && $this->contact->params->get( 'show_fax' ) ) : ?>
-        <li class="tel contact-fax">
+        <li>
               <strong><?php echo JText::_('Fax'); ?>:</strong> <span class="value"><?php echo nl2br($this->escape($this->contact->fax)); ?></span>
         </li>
         <?php endif; ?>
         
         <?php if ( $this->contact->mobile && $this->contact->params->get( 'show_mobile' ) ) :?>
-        <li class="tel contact-mob">
+        <li>
               <strong><?php echo JText::_('Mobile'); ?>:</strong> <span class="value"><?php echo nl2br($this->escape($this->contact->mobile)); ?></span>
+        </li>
+        <?php endif; ?>
+        
+        <?php if ( $this->contact->email_to && $this->contact->params->get( 'show_email' ) ) :?>
+        <li>
+              <strong><?php echo JText::_('Email'); ?>:</strong> <span class="value"><?php echo $this->contact->email_to; ?></span>
         </li>
         <?php endif; ?>
     </ul>

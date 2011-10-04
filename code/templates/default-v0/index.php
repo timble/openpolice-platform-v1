@@ -113,16 +113,21 @@ $language = $language[0];
 				<?php if($this->countModules('right')) : ?>
 				<div id="right" class="grid_<?php echo $main_right ?> omega">
 					<jdoc:include type="modules" name="right" style="xhtmls" />
-					
 				</div>
 				<?php endif; ?>
 			</div>
 		</div>
 	</div>
 	<div id="footer" class="container_12">
-		<div class="grid_12">
+		<?php if($this->countModules('syndicate')) : ?>
+		<div class="grid_2 alpha">
+			<jdoc:include type="modules" name="syndicate" style="notitle" />
+		</div>
+		<?php endif; ?>
+		<div class="grid_<?php echo $this->countModules('syndicate') ? '10 omega' : '12' ?>">
 			<ul>
-				<li>Copyright VCLP-CPPL <?php echo date("Y"); ?>©</li>
+				<li></li>
+				<li>Copyright - <?php echo JText::_('Local Police'); ?> - <jdoc:include type="modules" name="sitename" style="sitename" /> <?php echo date("Y"); ?>©</li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/disclaimer.html">Disclaimer</a></li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/privacy.html">Privacy</a></li>
 			</ul>	

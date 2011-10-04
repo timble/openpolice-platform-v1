@@ -34,7 +34,7 @@ class NookuViewStatistics extends KViewHtml
         $this->assign('year', $year);
 
         // URI
-        $uri = & JURI::getInstance(JURI::base().'index.php?option=com_nooku&format=openflashchart');
+        $uri = & JURI::getInstance(JURI::base().JRoute::_('index.php?option=com_nooku&format=openflashchart'));
 		$uri->setVar('table_name',  $table_name);
 		$uri->setVar('layout', 'bar');
 

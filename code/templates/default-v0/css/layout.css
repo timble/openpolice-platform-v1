@@ -1388,6 +1388,11 @@ a:hover {
 #footer ul li a:hover {
   color: #de791c;
 }
+#footer .mod_syndicate a {
+  background: url("../images/icon_rss.png") no-repeat left center;
+  padding: 2px 20px;
+  margin-left: 2px;
+}
 /* @group Component */
 #component table thead tr th {
   border-bottom: 1px solid #DDD;

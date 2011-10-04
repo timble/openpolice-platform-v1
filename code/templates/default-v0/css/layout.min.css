@@ -252,6 +252,7 @@ a:hover{color:#004fa3;}
 #main #left .unboxed .module{padding:20px 0 0 20px;}
 #footer{font-size:0.9em;}#footer ul{float:right;list-style:none;padding:0;margin:0;}#footer ul li{float:left;}#footer ul li a{display:block;padding:0 12px;text-decoration:none;}
 #footer ul li a:hover{color:#de791c;}
+#footer .mod_syndicate a{background:url("../images/icon_rss.png") no-repeat left center;padding:2px 20px;margin-left:2px;}
 #component table thead tr th{border-bottom:1px solid #DDD;}
 #component table.pagination{margin:17px auto 0;width:auto;}#component table.pagination tbody{display:table-row-group;vertical-align:middle;border-color:inherit;}
 #component table.pagination td{padding:0;margin:0;width:20px;text-align:center;}
