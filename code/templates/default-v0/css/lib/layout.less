@@ -439,6 +439,38 @@ a:hover { color: @blue; }
 				margin-top: 10px;
 			}
 		}
+		.mod_mainmenu {
+			/* 1st LEVEL */
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				font-weight: bold;
+				li {
+					span,
+					a {
+						display: block;
+						padding: 7px 20px 5px 0;
+						text-align: left;
+					}		
+					/* 2th LEVEL */
+					ul { 
+						li { 
+							border-bottom: 0px none;
+							
+							a {
+								padding-left: 20px;
+								border-bottom: 1px solid #FFF;
+							}
+							/* 3th LEVEL */
+							ul {
+								display: none;	
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	#left {

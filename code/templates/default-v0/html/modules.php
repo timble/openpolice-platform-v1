@@ -71,3 +71,15 @@ function modChrome_sitename($module, &$params, &$attribs)
 		<?php echo $module->content; ?>
 	<?php endif;
 }
+
+/*
+ * Syndicate module
+ */
+function modChrome_syndicate($module, &$params, &$attribs)
+{
+	if (!empty ($module->content) && $module->module == 'mod_syndicate') : ?>
+		<div class="module <?php echo $module->module; ?>">
+			<?php echo $module->content; ?>
+		</div>
+	<?php endif;
+}

@@ -1168,6 +1168,37 @@ a:hover {
 #main #right .mod_poll .buttons {
   margin-top: 10px;
 }
+#main #right .mod_mainmenu {
+  /* 1st LEVEL */
+
+}
+#main #right .mod_mainmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+}
+#main #right .mod_mainmenu ul li {
+  /* 2th LEVEL */
+
+}
+#main #right .mod_mainmenu ul li span, #main #right .mod_mainmenu ul li a {
+  display: block;
+  padding: 7px 20px 5px 0;
+  text-align: left;
+}
+#main #right .mod_mainmenu ul li ul li {
+  border-bottom: 0px none;
+  /* 3th LEVEL */
+
+}
+#main #right .mod_mainmenu ul li ul li a {
+  padding-left: 20px;
+  border-bottom: 1px solid #FFF;
+}
+#main #right .mod_mainmenu ul li ul li ul {
+  display: none;
+}
 #main #left {
   margin-left: 0;
   /* grid override */

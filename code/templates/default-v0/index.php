@@ -3,7 +3,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 include_once("includes/grid.php");
 
-$version = '7';
+$version = '8';
 $language = explode("-", $this->language);
 $language = $language[0];
 
@@ -121,7 +121,7 @@ $language = $language[0];
 	<div id="footer" class="container_12">
 		<?php if($this->countModules('syndicate')) : ?>
 		<div class="grid_2 alpha">
-			<jdoc:include type="modules" name="syndicate" style="notitle" />
+			<jdoc:include type="modules" name="syndicate" style="syndicate" />
 		</div>
 		<?php endif; ?>
 		<div class="grid_<?php echo $this->countModules('syndicate') ? '10 omega' : '12' ?>">

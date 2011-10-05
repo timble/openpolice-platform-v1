@@ -1,7 +1,22 @@
 <?php /** $Id$ */
 defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
-	
+
+<?php $cparams = JComponentHelper::getParams ('com_media'); ?>
 <?php $i = $this->pagination->limitstart; $leading = $this->params->def('num_leading_articles', 1); ?>
+
+<?php if (($this->params->def('show_description', 1)) && ($this->category->description)) : ?>
+<div class="page-header">
+	<h1><?php echo $this->escape($this->params->get('page_title')); ?></h1>
+</div>
+<div class="article clearfix">
+	<?php if ($this->category->image) : ?>
+	<img src="<?php echo $this->baseurl . '/' . $cparams->get('image_path').'/'.$this->category->image; ?>" align="right" />
+	<?php endif; ?>
+	<?php if ($this->params->get('show_description') && $this->category->description) :
+	echo $this->category->description;
+	endif; ?>
+</div>
+<?php endif; ?>
 
 <?php if($this->pagination->limitstart == '0') : ?>
 	<?php for ($y = 0; $y < $leading && $i < $this->total; $y++, $i++) : ?>
