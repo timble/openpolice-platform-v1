@@ -639,25 +639,26 @@ h6 {
   line-height: 1;
 }
 h1 {
-  font-size: 2em;
-}
-h2 {
   font-size: 1.7em;
 }
-h3 {
+h2 {
   font-size: 1.5em;
 }
-h4 {
+h3 {
   font-size: 1.3em;
 }
-h5 {
+h4 {
   font-size: 1.1em;
   font-weight: bold;
   text-transform: uppercase;
 }
+h5 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
 h6 {
   font-size: 1em;
-  text-transform: uppercase;
+  font-style: italic;
 }
 h1 img,
 h2 img,
@@ -1418,6 +1419,9 @@ a:hover {
 }
 #footer ul li a:hover {
   color: #de791c;
+}
+#footer .mod_syndicate {
+  float: left;
 }
 #footer .mod_syndicate a {
   background: url("../images/icon_rss.png") no-repeat left center;

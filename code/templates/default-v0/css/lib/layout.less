@@ -70,12 +70,12 @@ body {
 
 h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; margin-bottom: 12px; line-height: 1; }
 
-h1 { font-size: 2em; }
-h2 { font-size: 1.7em; }
-h3 { font-size: 1.5em; }
-h4 { font-size: 1.3em; }
-h5 { font-size: 1.1em; font-weight: bold; text-transform: uppercase; }
-h6 { font-size: 1em; text-transform: uppercase; }
+h1 { font-size: 1.7em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.1em; font-weight: bold; text-transform: uppercase;}
+h5 { font-size: 1.1em; text-transform: uppercase; }
+h6 { font-size: 1em; font-style: italic; }
 
 h1 img, h2 img, h3 img,
 h4 img, h5 img, h6 img {
@@ -610,10 +610,13 @@ a:hover { color: @blue; }
 			}
 		}
 	}
-	.mod_syndicate a {
-		background: url("../images/icon_rss.png") no-repeat left center;
-		padding: 2px 20px;
-		margin-left: 2px;
+	.mod_syndicate {
+		float: left;
+		a {
+			background: url("../images/icon_rss.png") no-repeat left center;
+			padding: 2px 20px;
+			margin-left: 2px;
+		}
 	}
 }
 
