@@ -289,7 +289,10 @@ a:hover { color: @blue; }
 			}
 		}
 		.mod_call_us {
-			color: #FFF;
+			color: #FFF !important;
+			a {
+				color: #FFF;
+			}
 		}
 	}
 	#banner.nl { background-image: url(../images/banner-nl.jpg); }
@@ -591,6 +594,7 @@ a:hover { color: @blue; }
 }
 
 #footer {
+	margin-top: 5px;
 	font-size: 0.9em;
 	ul {
 		float: right;

@@ -3,7 +3,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 include_once("includes/grid.php");
 
-$version = '10';
+$version = '12';
 $language = explode("-", $this->language);
 $language = $language[0];
 
@@ -118,7 +118,7 @@ $language = $language[0];
 			</div>
 		</div>
 	</div>
-	<div id="footer" class="container_12">
+	<div id="footer" class="container_12 clearfix">
 		<div class="grid_12">
 			<jdoc:include type="modules" name="syndicate" style="syndicate" />
 			<ul>
@@ -126,6 +126,7 @@ $language = $language[0];
 				<li>Copyright - <?php echo JText::_('Local Police'); ?> - <jdoc:include type="modules" name="sitename" style="sitename" /> <?php echo date("Y"); ?>©</li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/disclaimer.html">Disclaimer</a></li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/privacy.html">Privacy</a></li>
+				<li><a target="_blank" href="http://www.belgium.be"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/icon_belgium.gif" border="0"></a></li>
 			</ul>
 		</div>
 	</div>

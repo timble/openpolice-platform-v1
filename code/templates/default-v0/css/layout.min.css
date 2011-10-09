@@ -207,7 +207,7 @@ a:hover{color:#004fa3;}
 #header #banner #search input:focus{border:1px solid #f0f0f0;}
 #header #banner #search .search-button{float:left;height:20px;width:50px;margin-left:10px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;border:1px solid #40796D;background:#4787ed url("../images/icon_search.png") no-repeat center center;}
 #header #banner #search .search-button:hover{background:#357ae8 url("../images/icon_search-hover.png") no-repeat center center;}
-#header #banner .mod_call_us{color:#FFF;}
+#header #banner .mod_call_us{color:#FFF !important;}#header #banner .mod_call_us a{color:#FFF;}
 #header #banner.nl{background-image:url(../images/banner-nl.jpg);}
 #header #banner.fr{background-image:url(../images/banner-fr.jpg);}
 #header #banner.de{background-image:url(../images/banner-de.jpg);}
@@ -253,7 +253,7 @@ a:hover{color:#004fa3;}
 #main #left .boxed .mod_login form{padding:10px 20px;}
 #main #left .boxed .mod_login ul.login-links{border-top:1px solid #FFF;}
 #main #left .unboxed .module{padding:20px 0 0 20px;}
-#footer{font-size:0.9em;}#footer ul{float:right;list-style:none;padding:0;margin:0;}#footer ul li{float:left;}#footer ul li a{display:block;padding:0 12px;text-decoration:none;}
+#footer{margin-top:5px;font-size:0.9em;}#footer ul{float:right;list-style:none;padding:0;margin:0;}#footer ul li{float:left;}#footer ul li a{display:block;padding:0 12px;text-decoration:none;}
 #footer ul li a:hover{color:#de791c;}
 #footer .mod_syndicate{float:left;}#footer .mod_syndicate a{background:url("../images/icon_rss.png") no-repeat left center;padding:2px 20px;margin-left:2px;}
 #component table thead tr th{border-bottom:1px solid #DDD;}

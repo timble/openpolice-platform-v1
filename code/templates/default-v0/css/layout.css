@@ -979,6 +979,9 @@ a:hover {
   background: #357ae8 url("../images/icon_search-hover.png") no-repeat center center;
 }
 #header #banner .mod_call_us {
+  color: #FFF !important;
+}
+#header #banner .mod_call_us a {
   color: #FFF;
 }
 #header #banner.nl {
@@ -1401,6 +1404,7 @@ a:hover {
   padding: 20px 0 0 20px;
 }
 #footer {
+  margin-top: 5px;
   font-size: 0.9em;
 }
 #footer ul {
