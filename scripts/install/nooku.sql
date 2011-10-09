@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `pol_nooku_languages` (
     `image` VARCHAR( 255 ) NOT NULL DEFAULT '' COMMENT 'Custom flag image for the language',
     `ordering` BIGINT UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Ordering for the languages'
 ) ENGINE = MYISAM CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT = 'Nooku Content Languages';
-    
+  
 CREATE TABLE IF NOT EXISTS `pol_nooku_tables` (
     `nooku_table_id` SERIAL,
     `table_name` VARCHAR( 150 ) NOT NULL COMMENT 'The table name of the translatable table',
@@ -55,20 +55,23 @@ CREATE TABLE IF NOT EXISTS `pol_nooku_metadata` (
 
 INSERT INTO `pol_modules` (`id`,`title`,`content`,`ordering`,`position`,`checked_out`,`checked_out_time`,`published`,`module`,`numnews`,`access`,`showtitle`,`params`,`iscore`,`client_id`,`control`)
 VALUES
-    (0, 'Nooku', '', 2, 'status', 0, '0000-00-00 00:00:00', 1, 'mod_language_select', 0, 0, 1, 'style=default\nlangformat=name\ndisplay_flag=0\ndisplay_name=1\n\n', 0, 1, '');
-
-INSERT INTO `pol_modules` (`id`,`title`,`content`,`ordering`,`position`,`checked_out`,`checked_out_time`,`published`,`module`,`numnews`,`access`,`showtitle`,`params`,`iscore`,`client_id`,`control`)
-VALUES
-    (0, 'Nooku', '', 0, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_language_select', 0, 0, 0, 'style=row\nlangformat=name\ndisplay_flag=name\n\n', 0, 0, '');
-
-SET @module_id = LAST_INSERT_ID();
-
-INSERT INTO `pol_modules_menu` (`moduleid`,`menuid`)
-VALUES
-    (@module_id, 0);
+    (0, 'Nooku', '', 2, 'status', 0, '0000-00-00 00:00:00', 1, 'mod_language_select', 0, 0, 1, 'style=default\nlangformat=name\ndisplay_flag=0\ndisplay_name=1\n\n', 0, 1, ''),
+    (0, 'Nooku', '', 2, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_language_select', 0, 0, 0, 'style=row\nlangformat=name\ndisplay_flag=name\n\n', 0, 0, '');
 
 INSERT INTO `pol_components` (`id`,`name`,`link`,`menuid`,`parent`,`admin_menu_link`,`admin_menu_alt`,`option`,`ordering`,`admin_menu_img`,`iscore`,`params`,`enabled`)
 VALUES
     (0, 'Nooku', 'option=com_nooku', 0, 0, 'option=com_nooku', 'Nooku', 'com_nooku', 0, 'language', 0, 'primary_language=nl-NL\n', 1);
+
+INSERT INTO `pol_nooku_tables` (`nooku_table_id`,`table_name`,`unique_column`,`title_column`,`enabled`)
+VALUES
+    (0, 'categories', 'id', 'title', 1),
+    (0, 'content', 'id', 'title', 1),
+    (0, 'menu', 'id', 'name', 1),
+    (0, 'modules', 'id', 'title', 1),
+    (0, 'sections', 'id', 'title', 1),
+    (0, 'polls', 'id', 'title', 1),
+    (0, 'poll_data', 'id', 'title', 1),
+    (0, 'banner', 'id', 'title', 1),
+    (0, 'weblinks', 'id', 'title', 1);
 
 UPDATE `pol_plugins` SET `published` = '1' WHERE (`element` = 'koowa' OR `element` = 'nooku') AND `folder` = 'system';

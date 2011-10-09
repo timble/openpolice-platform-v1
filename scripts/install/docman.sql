@@ -69,20 +69,20 @@ INSERT INTO `pol_components` (`id`,`name`,`link`,`menuid`,`parent`,`admin_menu_l
 VALUES
     (0, 'DOCman', 'option=com_docman', 0, 0, 'option=com_docman', 'DOCman', 'com_docman', 0, 'components/com_docman/images/dm_logo_16.png', 0, '', 1);
 
-SET @component_id = LAST_INSERT_ID();
+SET @id = LAST_INSERT_ID();
 
 INSERT INTO `pol_components` (`id`,`name`,`link`,`menuid`,`parent`,`admin_menu_link`,`admin_menu_alt`,`option`,`ordering`,`admin_menu_img`,`iscore`,`params`,`enabled`)
 VALUES
-    (0, 'Home', '', 0, @component_id, 'option=com_docman&task=cpanel', 'Home', 'com_docman', 0, 'components/com_docman/images/dm_cpanel_16.png', 0, '', 1),
-    (0, 'Files', '', 0, @component_id, 'option=com_docman&section=files', 'Files', 'com_docman', 1, 'components/com_docman/images/dm_files_16.png', 0, '', 1),
-    (0, 'Documents', '', 0, @component_id, 'option=com_docman&section=documents', 'Documents', 'com_docman', 2, 'components/com_docman/images/dm_documents_16.png', 0, '', 1),
-    (0, 'Categories', '', 0, @component_id, 'option=com_docman&section=categories', 'Categories', 'com_docman', 3, 'components/com_docman/images/dm_categories_16.png', 0, '', 1),
-    (0, 'Groups', '', 0, @component_id, 'option=com_docman&section=groups', 'Groups', 'com_docman', 4, 'components/com_docman/images/dm_groups_16.png', 0, '', 1),
-    (0, 'Licenses', '', 0, @component_id, 'option=com_docman&section=licenses', 'Licenses', 'com_docman', 5, 'components/com_docman/images/dm_licenses_16.png', 0, '', 1),
-    (0, 'Statistics', '', 0, @component_id, 'option=com_docman&task=stats', 'Statistics', 'com_docman', 6, 'components/com_docman/images/dm_stats_16.png', 0, '', 1),
-    (0, 'Download Logs', '', 0, @component_id, 'option=com_docman&section=logs', 'Download Logs', 'com_docman', 7, 'components/com_docman/images/dm_logs_16.png', 0, '', 1),
-    (0, 'Configuration', '', 0, @component_id, 'option=com_docman&section=config', 'Configuration', 'com_docman', 8, 'components/com_docman/images/dm_config_16.png', 0, '', 1),
-    (0, 'Themes', '', 0, @component_id, 'option=com_docman&section=themes', 'Themes', 'com_docman', 9, 'components/com_docman/images/dm_templates_16.png', 0, '', 1);
+    (0, 'Home', '', 0, @id, 'option=com_docman&task=cpanel', 'Home', 'com_docman', 0, 'components/com_docman/images/dm_cpanel_16.png', 0, '', 1),
+    (0, 'Files', '', 0, @id, 'option=com_docman&section=files', 'Files', 'com_docman', 1, 'components/com_docman/images/dm_files_16.png', 0, '', 1),
+    (0, 'Documents', '', 0, @id, 'option=com_docman&section=documents', 'Documents', 'com_docman', 2, 'components/com_docman/images/dm_documents_16.png', 0, '', 1),
+    (0, 'Categories', '', 0, @id, 'option=com_docman&section=categories', 'Categories', 'com_docman', 3, 'components/com_docman/images/dm_categories_16.png', 0, '', 1),
+    (0, 'Groups', '', 0, @id, 'option=com_docman&section=groups', 'Groups', 'com_docman', 4, 'components/com_docman/images/dm_groups_16.png', 0, '', 1),
+    (0, 'Licenses', '', 0, @id, 'option=com_docman&section=licenses', 'Licenses', 'com_docman', 5, 'components/com_docman/images/dm_licenses_16.png', 0, '', 1),
+    (0, 'Statistics', '', 0, @id, 'option=com_docman&task=stats', 'Statistics', 'com_docman', 6, 'components/com_docman/images/dm_stats_16.png', 0, '', 1),
+    (0, 'Download Logs', '', 0, @id, 'option=com_docman&section=logs', 'Download Logs', 'com_docman', 7, 'components/com_docman/images/dm_logs_16.png', 0, '', 1),
+    (0, 'Configuration', '', 0, @id, 'option=com_docman&section=config', 'Configuration', 'com_docman', 8, 'components/com_docman/images/dm_config_16.png', 0, '', 1),
+    (0, 'Themes', '', 0, @id, 'option=com_docman&section=themes', 'Themes', 'com_docman', 9, 'components/com_docman/images/dm_templates_16.png', 0, '', 1);
 
 UPDATE `pol_plugins` SET `published` = 1 WHERE `element` = 'standardbuttons' AND `folder` = 'docman';
 UPDATE `pol_plugins` SET `published` = 1 WHERE `element` = 'docman.searchbot' AND `folder` = 'search';
