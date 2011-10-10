@@ -17,8 +17,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 				</span>
 			<?php endif; ?>
 		</p>
+		<?php endif; ?>
 	</div>
-	<?php endif; ?>
 	<p>
 		<?php echo substr(strip_tags($item->introtext), 0, 255);  ?>...
 	</p>
