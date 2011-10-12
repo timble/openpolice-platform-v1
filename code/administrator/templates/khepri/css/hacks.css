@@ -1,0 +1,2 @@
+/* Hide icon in editor */
+.mceToolbar a#text_pagebreak { display: none; }
