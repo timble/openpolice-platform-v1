@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id$
+ * @version		$Id: view.html.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
  * @package		Joomla Content Editor (JCE)
  * @copyright	Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
  * @license		GNU/GPL
@@ -12,12 +12,17 @@
 
 jimport('joomla.application.component.view');
 
-class JceViewPopup extends JView
+class WFViewPopup extends JView
 {
     function display($tpl = null)
     {
-        global $mainframe;
+        $app = JFactory::getApplication();
 		
+		JHTML::_('behavior.mootools');
+		
+		$this->document->addScript(JURI::root(true) . '/components/com_jce/media/js/popup.js');
+		$this->document->addStylesheet(JURI::root(true) . '/components/com_jce/media/css/popup.css');
+
 		// Get variables
         $img 	= JRequest::getVar('img');
         $title 	= JRequest::getWord('title');
@@ -25,8 +30,8 @@ class JceViewPopup extends JView
         $click 	= JRequest::getInt('click', '0');
         $print 	= JRequest::getInt('print', '0');
 
-        $width 	= JRequest::getInt('w');
-        $height = JRequest::getInt('h');
+        $width 	= JRequest::getInt('w', JRequest::getInt('width', ''));
+        $height = JRequest::getInt('h', JRequest::getInt('height', ''));
 
 		// Cleanup img variable
 		$img 	= preg_replace('/[^a-z\.\/_-]/i', '', $img);
@@ -46,10 +51,11 @@ class JceViewPopup extends JView
         	);
 
         	$this->assign('features', $features);
-        	parent::display($tpl);	
 		} else {
-			$mainframe->redirect('index.php');
+			$app->redirect('index.php');
 		}
+		
+		parent::display($tpl);	
     }
 }
 ?>

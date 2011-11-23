@@ -1,0 +1,1 @@
+(function($){$.jce.Legend={init:function(){var p=$('span.profileLayoutContainer',parent.window.document.getElementById('profileLayoutTable'));$('tr','#jce').hover(function(){$('span.mce_'+$(this).attr('title'),p).addClass('focus')},function(){$('span.mce_'+$(this).attr('title'),p).removeClass('focus')})}}})(jQuery);

@@ -236,10 +236,10 @@ a:hover{color:#004fa3;}
 #main #right .mod_mainmenu{}#main #right .mod_mainmenu ul{margin:0;padding:0;list-style:none;font-weight:bold;}#main #right .mod_mainmenu ul li{}#main #right .mod_mainmenu ul li span,#main #right .mod_mainmenu ul li a{display:block;padding:7px 20px 5px 0;text-align:left;}
 #main #right .mod_mainmenu ul li ul li{border-bottom:0px none;}#main #right .mod_mainmenu ul li ul li a{padding-left:20px;border-bottom:1px solid #FFF;}
 #main #right .mod_mainmenu ul li ul li ul{display:none;}
-#main #left{margin-left:0;}#main #left .boxed{background-color:#f0f0f0;border-right:1px solid #DDD;border-bottom:1px solid #DDD;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}#main #left .boxed .module{padding:0px 0;}#main #left .boxed .module h3{font-size:1.3em;padding:8px 20px;margin:0;text-align:left;border-bottom:1px solid #FFF;background:#e0e0e0;background:-moz-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #d3d3d3), color-stop(100%, #e0e0e0));background:-webkit-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:-o-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:-ms-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);}
+#main #left{margin-left:0;}#main #left .boxed{background-color:#f0f0f0;border-right:1px solid #DDD;border-bottom:1px solid #DDD;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}#main #left .boxed .module{padding:0px 0;}#main #left .boxed .module h3,#main #left .boxed .module ul li span{font-size:1.3em !important;font-weight:normal;line-height:1em;padding:8px 20px;margin:0;text-align:left;border-bottom:1px solid #FFF;background:#e0e0e0;background:-moz-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #d3d3d3), color-stop(100%, #e0e0e0));background:-webkit-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:-o-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:-ms-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);background:linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);}
+#main #left .boxed .module ul li span{display:block;}
 #main #left .boxed .module p{margin:7px 20px;}
-#main #left .boxed .module ul{margin:0;padding:0;list-style:none;font-weight:bold;}#main #left .boxed .module ul li{}#main #left .boxed .module ul li span,#main #left .boxed .module ul li a{display:block;padding:7px 20px 5px 20px;border-bottom:1px solid #FFF;text-align:left;}
-#main #left .boxed .module ul li span{border-bottom:1px solid #F0F0F0;}
+#main #left .boxed .module ul{margin:0;padding:0;list-style:none;font-weight:bold;}#main #left .boxed .module ul li{}#main #left .boxed .module ul li a{display:block;padding:7px 20px 5px 20px;border-bottom:1px solid #FFF;text-align:left;}
 #main #left .boxed .module ul li a:hover{background:#d6e2df;background:-moz-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #c7d7d3), color-stop(100%, #d6e2df));background:-webkit-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);background:-o-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);background:-ms-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);background:linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);color:#004fa3;}
 #main #left .boxed .module ul li ul li{}#main #left .boxed .module ul li ul li a{padding-left:40px;border-bottom:0px solid #f0f0f0;}
 #main #left .boxed .module ul li ul li ul li{}#main #left .boxed .module ul li ul li ul li a{padding-left:60px;}
@@ -271,6 +271,7 @@ a:hover{color:#004fa3;}
 #maincol .mod_breadcrumbs p{margin:4px 0 0 0;padding:0;color:#888;border-bottom:1px dotted #DDD;}
 form#filter{border:1px solid #d6e2df;background-color:#f0f0f0;padding:10px;margin-bottom:16px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}form#filter input[name="filter"]{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;padding:2px 4px;}
 #sbox-content div.row{padding:14px;}
+.mceToolbar a.mce_pagebreak{display:none;}
 label{font-weight:bold;}
 fieldset{padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0;border:1px solid #ccc;}
 legend{font-weight:bold;font-size:1.2em;margin-top:-0.2em;margin-bottom:1em;}

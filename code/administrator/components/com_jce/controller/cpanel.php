@@ -1,27 +1,47 @@
 <?php
 /**
-* @version		$Id: cpanel.php 103 2009-06-21 19:21:18Z happynoodleboy $
-* @package		JCE
-* @copyright	Copyright (C) 2009 Ryan Demmer. All rights reserved.
-* @license		GNU/GPL
-* This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
+ * @version		$Id: cpanel.php 201 2011-05-08 16:27:15Z happy_noodle_boy $
+ * @package   	JCE
+ * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright © 2005 - 2007 Open Source Matters. All rights reserved.
+ * @license   	GNU/GPL 2 or later
+ * This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
 
-// no direct access
-defined( '_JEXEC' ) or die( 'Restricted access' );
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die();
 
-// Controller
-require_once( JPATH_COMPONENT .DS. 'cpanel' .DS. 'controller.php' );
+/**
+ * Plugins Component Controller
+ *
+ * @package		Joomla
+ * @subpackage	Plugins
+ * @since 1.5
+ */
+class WFControllerCpanel extends WFController
+{
+	/**
+	 * Custom Constructor
+	 */
+	function __construct( $default = array())
+	{		
+		parent::__construct();
+	}
+	
+	function display()
+	{	
+		parent::display();
+	}
+	
+	function feed()
+	{
+		$model = $this->getModel('cpanel');
+		$feeds = $model->getFeeds();
 
-// Create the controller
-$controller	= new CpanelController( array(
-	'base_path' 	=>  JPATH_COMPONENT .DS. 'cpanel' ,
-	'template_path' =>  JPATH_COMPONENT .DS. 'cpanel' .DS. 'views' .DS. 'tmpl'
-) );
-
-$controller->execute( JRequest::getCmd( 'task' ) );
-$controller->redirect();
+		exit(json_encode(array('feeds' => $feeds)));
+	}
+}
 ?>

@@ -1,0 +1,106 @@
+/* CSS file for FileManager plugin */
+.mceActionPanel {
+	margin-top: 7px;
+}
+
+.ui-tabs-panel {
+	height: 210px;
+	overflow: auto;
+}
+
+#href, #title, #text {
+	width: 400px;
+	vertical-align: middle;
+}
+#targetlist {
+    width: 280px;
+	vertical-align: middle;
+}
+
+#advanced_tab input[type="text"], #advanced_tab select {
+	width: 250px;
+}
+
+label[for="size_class"] {
+	margin-left: 20px;
+}
+
+
+ul#options_list {
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+	white-space: nowrap;
+	position: relative;
+}
+ul#options_list li {
+	cursor: e-resize;
+	position: relative;
+	list-style: none;
+	float: left;
+	border: 1px solid #ccc;
+	padding: 1px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background-color: #FFF;
+}
+ul#options_list li label {
+	cursor: e-resize;
+	background: #FFFFFF url(../img/icons.png) no-repeat 0 0;
+	height: 20px;
+	display: inline-block;
+	padding-left: 20px;
+	vertical-align: middle;
+	line-height: 20px;
+	min-width: 30px;
+	margin: 1px 0;
+}
+ul#options_list li input {
+	cursor: default;
+	vertical-align: middle;
+}
+ul#options_list li input[type="checkbox"] {
+	border: 0 none;
+	margin: 0 2px;
+	padding: 0;
+}
+ul#options_list li#option_icon label {
+	background-position: 0 0;
+}
+ul#options_list li#option_date label {
+	background-position: 0 -60px;
+}
+ul#options_list li#option_size label {
+	background-position: 0 -40px;
+}
+ul#options_list li#option_text label {
+	background-position: 0 -20px;
+}
+ul#options_list li#option_size.loading label, ul#options_list li#option_date.loading label {
+	background: url(../../../../libraries/img/load.gif) no-repeat center left;
+}
+#option_size input, #option_date input {
+	cursor: text;
+	margin-left: 5px;
+}
+#option_size input[type="text"] {
+	width: 70px;
+}
+#option_date input[type="text"] {
+	width: 130px;
+}
+
+#option_size span, #option_date span {
+	background: url(../img/icons.png) no-repeat 0 -80px;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+ul#options_list li.ui-state-highlight {
+	height: 22px;
+	border-style: dashed; 
+}

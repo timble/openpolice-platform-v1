@@ -50,7 +50,7 @@ class plgButtonDoclink extends JPlugin
         $button->set('modal', true);
         $button->set('text', JText::_('DOClink'));
         $button->set('name', 'doclink');
-        $button->set('link', 'index.php?option=com_docman&amp;task=doclink&amp;e_name='.$name.'&amp;format=raw');
+        $button->set('link', JRoute::_('index.php?option=com_docman&amp;task=doclink&amp;e_name='.$name.'&amp;format=raw'));
         $button->set('options', "{handler: 'iframe', size: {x: 570, y: 510}}");
 
         return $button;

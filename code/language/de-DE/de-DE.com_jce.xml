@@ -1,55 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="language">
-	<name>Deutsch (Deutschland)</name>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<install version="2.0" type="language" core="1">
+	<name>Deutsch</name>
 	<tag>de-DE</tag>
-	<version>1.5.7.5</version>
-	<creationDate>2010-10-20</creationDate>
-	<author>Endres Puschner / Björn Wichern / Daniel Hoehn</author>
-	<authorEmail></authorEmail>
-	<authorUrl></authorUrl>
-	<copyright>(C) 2010 von Endres. Alle rechte vorbehalten.</copyright>
-	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<description>Erweiterte Deutsche Übersetzung, welche alle Plugins umfasst, die Standardmäßig installiert werden.</description>
-	<administration>
-		<files folder="administration">
-			<filename>de-DE.com_jce.ini</filename>
-			<filename>de-DE.com_jce.menu.ini</filename>
-			<filename>de-DE.plg_editors_jce.ini</filename>
-		</files>
-	</administration>
-	<site>
-		<files folder="site">
-			<filename>de-DE.com_jce.ini</filename>
-			<filename>de-DE.com_jce_advlink.ini</filename>
-			<filename>de-DE.com_jce_browser.ini</filename>
-			<filename>de-DE.com_jce_caption.ini</filename>
-			<filename>de-DE.com_jce_imgmanager.ini</filename>
-			<filename>de-DE.com_jce_media.ini</filename>
-			<filename>de-DE.com_jce_paste.ini</filename>
-			<filename>de-DE.com_jce_spellchecker.ini</filename>
-		</files>
+	<version>2.0.15</version>
+	<creationDate>07. Oktober 2011</creationDate>
+	<author>Hartmut Steuerwald</author>
+	<authorEmail>info@h-steuerwald.de</authorEmail>
+	<authorUrl>www.hst-pc.de</authorUrl>
+	<copyright>Copyright (C) 2006 - 2011 Ryan Demmer. All rights reserved</copyright>
+	<license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<description>Deutsches Sprachpaket fuer den JCE 2.0.15 komplett mit Mediabox und Subscription-Plugins uebersetzt von H. Steuerwald</description>
+	<site folder="language/de-DE">		
+		<file>de-DE.com_jce_caption.ini</file> 
+		<file>de-DE.com_jce_emotions.ini</file>
+		<file>de-DE.com_jce_filemanager.ini</file>
+		<file>de-DE.com_jce_fullpage.ini</file>
+		<file>de-DE.com_jce_iframe.ini</file>
+		<file>de-DE.com_jce_imgmanager_ext.ini</file>
+		<file>de-DE.com_jce_mediamanager.ini</file>
+		<file>de-DE.com_jce_templatemanager.ini</file>		
 	</site>
-	<tinymce>
-		<files folder="tinymce">
-			<filename>langs/de.js</filename>
-			<filename>langs/de_dlg.js</filename>
-			<filename>plugins/advcode/langs/de.js</filename>
-			<filename>plugins/advcode/langs/de_dlg.js</filename>
-			<filename>plugins/advlink/langs/de_dlg.js</filename>
-			<filename>plugins/article/langs/de.js</filename>
-			<filename>plugins/article/langs/de_dlg.js</filename>
-			<filename>plugins/browser/langs/de_dlg.js</filename>
-			<filename>plugins/caption/langs/de.js</filename>
-			<filename>plugins/emotions/langs/de_dlg.js</filename>
-			<filename>plugins/filemanager/langs/de.js</filename>
-			<filename>plugins/filemanager/langs/de_dlg.js</filename>
-			<filename>plugins/imgmanager/langs/de_dlg.js</filename>
-			<filename>plugins/searchreplace/langs/de_dlg.js</filename>
-			<filename>plugins/style/langs/de_dlg.js</filename>
-			<filename>plugins/table/langs/de_dlg.js</filename>
-			<filename>plugins/xhtmlxtras/langs/de_dlg.js</filename>
-			<filename>themes/advanced/langs/de.js</filename>
-			<filename>themes/advanced/langs/de_dlg.js</filename>
-		</files>
+	<tinymce folder="components/com_jce/editor/tiny_mce">
+		<file>langs/de.js</file>
+		<file>langs/de_dlg.js</file>
+		<file>themes/advanced/langs/de.js</file>
+		<file>themes/advanced/langs/de_dlg.js</file>		
+		<file>plugins/article/langs/de_dlg.js</file>
+		<file>plugins/browser/langs/de_dlg.js</file>
+		<file>plugins/imgmanager/langs/de_dlg.js</file>
+		<file>plugins/link/langs/de_dlg.js</file>
+		<file>plugins/searchreplace/langs/de_dlg.js</file>
+		<file>plugins/style/langs/de_dlg.js</file>
+		<file>plugins/table/langs/de_dlg.js</file>
+		<file>plugins/xhtmlxtras/langs/de_dlg.js</file>
+		// Optional plugin language files
+		<file>plugins/caption/langs/de.js</file>
+		<file>plugins/emotions/langs/de_dlg.js</file>		
+		<file>plugins/filemanager/langs/de_dlg.js</file>
+		<file>plugins/fullpage/langs/de_dlg.js</file>
+		<file>plugins/iframe/langs/de.js</file>
+		<file>plugins/iframe/langs/de_dlg.js</file>
+		<file>plugins/imgmanager_ext/langs/de_dlg.js</file>
+		<file>plugins/mediamanager/langs/de_dlg.js</file>
+		<file>plugins/templatemanager/langs/de.js</file>
+		<file>plugins/templatemanager/langs/de_dlg.js</file>		
 	</tinymce>
+	<administration folder="administrator/language/de-DE">
+		<file>de-DE.com_jce.ini</file>
+		<file>de-DE.com_jce.menu.ini</file>
+		<file>de-DE.com_jce.sys.ini</file>
+		<file>de-DE.plg_editors_jce.ini</file>
+		<file>de-DE.plg_editors_jce.sys.ini</file>
+		<file>de-DE.plg_system_jcemediabox.ini</file>
+		<file>de-DE.plg_system_jcemediabox.sys.ini</file>		
+	</administration>
 </install>

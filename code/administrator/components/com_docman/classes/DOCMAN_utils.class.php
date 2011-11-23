@@ -103,7 +103,7 @@ class DOCMAN_Utils
         $path_type = '';
         switch($type)
         {
-            case 1 : $path_type = JURI::root(true)."/"; ;     break;
+            case 1 : $path_type = JURI::root()."/"; ;     break;
             case 2 : $path_type = JPATH_ROOT . DS;   break;
             default : break;
         }

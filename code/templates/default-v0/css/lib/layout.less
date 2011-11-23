@@ -487,14 +487,21 @@ a:hover { color: @blue; }
 			.module {
 				padding: 0px 0;
 				
-				h3 {
-					font-size: 1.3em;
+				h3,
+				ul li span {
+					font-size: 1.3em !important;
+					font-weight: normal;
+					line-height: 1em;
 					padding: 8px 20px;
 					margin: 0;
 					text-align: left;
 					
 					border-bottom: 1px solid #FFF;
 					.gradient(darken(#E0E0E0, 5%), #E0E0E0);
+				}
+				
+				ul li span {
+					display: block;
 				}
 				
 				p {
@@ -508,16 +515,14 @@ a:hover { color: @blue; }
 					list-style: none;
 					font-weight: bold;
 					li {
-						span,
+						
 						a {
 							display: block;
 							padding: 7px 20px 5px 20px;
 							border-bottom: 1px solid #FFF;
 							text-align: left;
 						}
-						span {
-							border-bottom: 1px solid #F0F0F0;
-						}
+						
 						a:hover {
 							.gradient(darken(@5455, 5%), @5455);
 							color: @blue;
@@ -714,3 +719,6 @@ form#filter {
 #sbox-content div.row {
 	padding: 14px;
 }
+
+/* Hide icon in editor */
+.mceToolbar a.mce_pagebreak { display: none; }

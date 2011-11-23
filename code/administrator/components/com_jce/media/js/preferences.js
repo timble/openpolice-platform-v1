@@ -1,0 +1,1 @@
+(function($){$.jce.Preferences={init:function(){$('#tabs').tabs();$('#access-accordian').accordion({collapsible:true});$('.hasTip').removeClass('hasTip')},close:function(){this.init();window.setTimeout(function(){window.parent.document.location.href="index.php?option=com_jce&view=cpanel"},1000)}}})(jQuery);

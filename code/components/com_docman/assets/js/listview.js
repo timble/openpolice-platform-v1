@@ -31,7 +31,7 @@ function onclickItem(name, id, cid, ext, size, time)	{
 }
 
 function setListView(catid) {
-	location.href = "index.php?option=com_docman&task=doclink-listview&catid="+catid;
+	location.href = location.pathname + "/index.php?option=com_docman&task=doclink-listview&catid="+catid;
 }
 
 window.onload = _listview_init

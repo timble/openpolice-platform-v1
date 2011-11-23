@@ -1,6 +1,6 @@
 <?php
   /**
-	* @version		$Id: popup.php 140 2009-06-27 11:53:32Z happynoodleboy $
+	* @version		$Id: popup.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
 	* @package		Joomla Content Editor (JCE)
 	* @copyright	Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
 	* @license		GNU/GPL
@@ -11,5 +11,5 @@
 	*/	
 	defined('_JEXEC') or die('Restricted access');
 	
-	JError::raiseError(403, JText::_('Restricted access'));
+	JError::raiseError(403, WFText::_('Restricted access'));
 ?>

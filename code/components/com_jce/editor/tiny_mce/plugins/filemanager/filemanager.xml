@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<install version="2.0" type="plugin" plugin="filemanager" editable="1" core="0" row="4">
+	<name>WF_FILEMANAGER_TITLE</name>
+	<version>2.0.10</version>
+	<creationDate>11 October 2011</creationDate>
+	<author>Ryan Demmer</author>
+	<authorEmail>info@joomlacontenteditor.net</authorEmail>
+	<authorUrl>http://www.joomlacontenteditor.net/</authorUrl>
+	<copyright>Copyright (C) 2006 - 2011 Ryan Demmer. All rights reserved</copyright>
+	<license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<description>WF_FILEMANAGER_DESC</description>
+	<icon>filemanager</icon>
+	<files>
+		<file>editor_plugin.js</file>
+		<file>filemanager.php</file>
+		<folder>classes</folder>
+		<folder>css</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>langs</folder>
+		<folder>tmpl</folder>
+	</files>
+	<params group="standard">
+        <param name="dir" type="text" default="" size="50" label="WF_PARAM_DIRECTORY" description="WF_PARAM_DIRECTORY_DESC"/>
+		<param name="max_size" class="upload_size" max="" type="text" default="" label="WF_PARAM_UPLOAD_SIZE" description="WF_PARAM_UPLOAD_SIZE_DESC" />
+		<param name="extensions" type="extension" class="extensions create" default="xml=xml;html=htm,html;text=txt,rtf,pdf;office=doc,docx,ppt,xls;image=gif,jpeg,jpg,png;archive=zip,tar,gz;video=swf,mov,wmv,avi,flv,mp4,ogv,ogg,webm,mpeg,mpg;audio=wav,mp3,ogg,webm,aiff;openoffice=odt,odg,odp,ods,odf" label="WF_PARAM_EXTENSIONS" description="WF_PARAM_EXTENSIONS_DESC" />
+		<param name="text_alert" type="list" default="1" label="WF_FILEMANAGER_TEXT_ALERT" description="WF_FILEMANAGER_TEXT_ALERT_DESC">
+			 <option value="1">WF_OPTION_YES</option>
+           	 <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="name" type="filesystem" default="" label="WF_PARAM_FILESYSTEM" description="WF_PARAM_FILESYSTEM_DESC" />
+	</params>
+	<params group="defaults">
+		<param name="target" type="list" default="" label="WF_LABEL_TARGET" description="WF_FILEMANAGER_PARAM_DEFAULT_TARGET_DESC">
+        	<option value="">WF_OPTION_NOT_SET</option>
+			<option value="_self">WF_OPTION_TARGET_SELF</option>
+			<option value="_blank">WF_OPTION_TARGET_BLANK</option>
+			<option value="_parent">WF_OPTION_TARGET_PARENT</option>
+			<option value="_top">WF_OPTION_TARGET_TOP</option>	
+		</param>
+		<param name="option_icon_check" type="list" default="0" label="WF_FILEMANAGER_ICON_DEFAULT" description="WF_FILEMANAGER_ICON_DEFAULT_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="option_size_check" type="list" default="0" label="WF_FILEMANAGER_SIZE_DEFAULT" description="WF_FILEMANAGER_SIZE_DEFAULT_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="option_date_check" type="list" default="0" label="WF_FILEMANAGER_DATE_DEFAULT" description="WF_FILEMANAGER_DATE_DEFAULT_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+	</params>
+	<params group="advanced">
+		<param name="icon_path" type="text" size="80" default="media/jce/icons" label="WF_FILEMANAGER_ICON_PATH" description="WF_FILEMANAGER_ICON_PATH_DESC" />
+		<param name="icon_format" type="text" size="30" default="{$name}.png" label="WF_FILEMANAGER_ICON_FORMAT" description="WF_FILEMANAGER_ICON_FORMAT_DESC" />
+		<param name="date_format" type="text" size="30" default="%d/%m/%Y, %H:%M" label="WF_FILEMANAGER_DATE_FORMAT" description="WF_FILEMANAGER_DATE_FORMAT_DESC" />
+	</params>
+	<params group="access">
+        <param name="upload" type="list" default="1" label="WF_PARAM_UPLOAD" description="WF_PARAM_UPLOAD_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="folder_new" type="list" default="1" label="WF_PARAM_FOLDER_CREATE" description="WF_PARAM_FOLDER_CREATE_DESC">
+           <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="folder_delete" type="list" default="1" label="WF_PARAM_FOLDER_DELETE" description="WF_PARAM_FOLDER_DELETE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="folder_rename" type="list" default="1" label="WF_PARAM_FOLDER_RENAME" description="WF_PARAM_FOLDER_RENAME_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="folder_move" type="list" default="1" label="WF_PARAM_FOLDER_PASTE" description="WF_PARAM_FOLDER_PASTE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="file_delete" type="list" default="1" label="WF_PARAM_FILE_DELETE" description="WF_PARAM_FILE_DELETE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="file_rename" type="list" default="1" label="WF_PARAM_FILE_RENAME" description="WF_PARAM_FILE_RENAME_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+		<param name="file_move" type="list" default="1" label="WF_PARAM_FILE_PASTE" description="WF_PARAM_FILE_PASTE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+		</param>
+	</params>
+	<media folder="img" destination="jce">
+    	<folder>icons</folder>
+  	</media>
+	<languages>
+		<language tag="en-GB">en-GB.com_jce_filemanager.ini</language>
+	</languages>
+	<help>
+		<topic key="filemanager.about" title="WF_FILEMANAGER_HELP_ABOUT" />
+		<topic key="filemanager.interface" title="WF_FILEMANAGER_HELP_INTERFACE" />
+		<topic key="filemanager.insert" title="WF_FILEMANAGER_HELP_INSERT" />
+		<topic file="libraries/xml/help/manager.xml" />
+	</help>
+</install>

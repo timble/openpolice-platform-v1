@@ -3,9 +3,12 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 include_once("includes/grid.php");
 
-$version = '12';
+$version = '13';
 $language = explode("-", $this->language);
 $language = $language[0];
+
+$site = JFactory::getApplication()->getSite();
+//$site = null;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD xhtmls 1.0 Transitional//EN" "http://www.w3.org/TR/xhtmls1/DTD/xhtmls1-transitional.dtd">
@@ -31,10 +34,11 @@ $language = $language[0];
 	<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
 	<?php endif; ?>
 	
+	<?php if($site) : ?>
 	<script type="text/javascript">
 	 var _gaq = _gaq || [];
 	 _gaq.push(['_setAccount', 'UA-20242887-1']);
-	 _gaq.push(['_setCookiePath', '/<?php echo JFactory::getApplication()->getSite(); ?>/']);
+	 _gaq.push(['_setCookiePath', '/<?php echo $site ?>/']);
 	 _gaq.push(['_trackPageview']);
 	
 	 (function() {
@@ -43,6 +47,7 @@ $language = $language[0];
 	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	 })();
 	</script>
+	<?php endif; ?>
 </head>
 <body>
 	<?php if($this->countModules('user3') || $this->countModules('language')) : ?>
@@ -60,7 +65,7 @@ $language = $language[0];
 	</div>
 	<?php endif; ?>
 	<div id="header">
-		<div id="banner" class="container_12 clearfix inner <?php echo $language; ?>">
+		<div id="banner" class="container_12 clearfix inner site<?php echo $site; ?> <?php echo $language; ?>">
 			<div class="grid_4 alpha">
 				<div class="contact">
 					<jdoc:include type="modules" name="call" style="call" />
@@ -108,6 +113,7 @@ $language = $language[0];
 				</div>
 				<?php endif; ?>
 				<div id="component" class="grid_<?php echo $main_component ?> alpha">
+					<jdoc:include type="message" />
 					<jdoc:include type="component" />
 				</div>
 				<?php if($this->countModules('right')) : ?>
@@ -122,7 +128,6 @@ $language = $language[0];
 		<div class="grid_12">
 			<jdoc:include type="modules" name="syndicate" style="syndicate" />
 			<ul>
-				<li></li>
 				<li>Copyright - <?php echo JText::_('Local Police'); ?> - <jdoc:include type="modules" name="sitename" style="sitename" /> <?php echo date("Y"); ?>©</li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/disclaimer.html">Disclaimer</a></li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/privacy.html">Privacy</a></li>

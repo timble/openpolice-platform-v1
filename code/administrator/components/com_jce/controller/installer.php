@@ -1,44 +1,134 @@
 <?php
 /**
-* @version		$Id: installer.php 103 2009-06-21 19:21:18Z happynoodleboy $
-* @package		JCE
-* @copyright	Copyright (C) 2009 Ryan Demmer. All rights reserved.
-* @license		GNU/GPL
-* This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
-
-// no direct access
-defined('_JEXEC') or die('Restricted access');
-
-/*
- * Make sure the user is authorized to view this page
+ * @version		$Id: installer.php 201 2011-05-08 16:27:15Z happy_noodle_boy $
+ * @package   	JCE
+ * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright © 2005 - 2007 Open Source Matters. All rights reserved.
+ * @license   	GNU/GPL 2 or later
+ * This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
  */
 
-$ext = JRequest::getWord('type');
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die();
 
-$subMenus = array(
-	'Plugins' 			=> 'plugin',
-	'Languages' 		=> 'language',
-	'Plugin Extensions' => 'extension'
-);
-JSubMenuHelper::addEntry(JText::_( 'Control Panel' ), '#" onclick="javascript:document.adminForm.type.value=\'\';document.adminForm.task.value=\'\';submitbutton(\'\');');
-JSubMenuHelper::addEntry(JText::_( 'Install' ), '#" onclick="javascript:document.adminForm.type.value=\'install\';document.adminForm.task.value=\'\';submitbutton(\'\');', !in_array( $ext, $subMenus));
+/**
+ * Plugins Component Controller
+ *
+ * @package		Joomla
+ * @subpackage	Plugins
+ * @since 1.5
+ */
+class WFControllerInstaller extends WFController
+{	
+	/**
+	 * Custom Constructor
+	 */
+	function __construct( $default = array())
+	{		
+		parent::__construct();
+		
+		$this->registerTask( 'disable', 'enable' );
+				
+		$language = JFactory::getLanguage();		
+		$language->load( 'com_installer', JPATH_ADMINISTRATOR );
+	}
+		
+	function display()
+	{		
+		parent::display();
+	}
 
+	/**
+	 * Install an extension
+	 *
+	 * @access	public
+	 * @return	void
+	 * @since	1.5
+	 */
+	function install()
+	{
+		// Check for request forgeries
+		JRequest::checkToken() or jexit( 'RESTRICTED' );
+		
+		$document 	= JFactory::getDocument();
+		$view 		= $this->getView('installer', $document->getType());
+		$model 		= $this->getModel('installer');
 
-foreach ($subMenus as $name => $extension) {
-	JSubMenuHelper::addEntry(JText::_( $name ), '#" onclick="javascript:document.adminForm.type.value=\''.$extension.'\';submitbutton(\'manage\');', ($extension == $ext));
+		if ($model->install()) {
+			$cache =JFactory::getCache('mod_menu');
+			$cache->clean();
+		}
+		
+		$view->setModel($model, true);
+		
+		$method = JRequest::getWord('method');
+		
+		if ($method && $method == 'iframe') {
+			$view->setLayout('install');
+			exit($view->loadTemplate('message'));
+		}
+		
+		$view->loadHelper('toolbar');
+		$this->loadMenu();
+		
+		// load head override
+		$app =JFactory::getApplication();
+		$app->registerEvent('onAfterRender', 'WFSystemHelper');
+		
+		$view->assignRef('document', $document);	
+		$view->display();
+	}
+
+	/**
+	 * Remove (uninstall) an extension
+	 *
+	 * @static
+	 * @param	array	An array of identifiers
+	 * @return	boolean	True on success
+	 * @since 1.0
+	 */
+	function remove()
+	{
+		// Check for request forgeries
+		JRequest::checkToken() or jexit( 'RESTRICTED' );
+
+		$document 	= JFactory::getDocument();
+		$view 		= $this->getView('installer', $document->getType());
+		$model 		= $this->getModel('installer');
+		
+		$items = array(
+			'plugin'		=>	JRequest::getVar('pid', array (), '', 'array'),
+			'extension'		=>	JRequest::getVar('eid', array (), '', 'array'),
+			'language'		=>	JRequest::getVar('lid', array (), '', 'array'),
+			'related'		=>	JRequest::getVar('rid', array (), '', 'array')
+		);
+		
+		// Uninstall the chosen extensions
+		foreach ($items as $type => $ids) {
+			if (count($ids)) {
+				foreach ($ids as $id) {
+					if ($id) {
+						if ($model->remove($id, $type)) {
+							$cache =JFactory::getCache('mod_menu');
+							$cache->clean();
+						}
+					}
+				}
+			}
+		}
+		$view->loadHelper('toolbar');
+		$this->loadMenu();
+		
+		// load head override
+		$app =JFactory::getApplication();
+		$app->registerEvent('onAfterRender', 'WFSystemHelper');
+		
+		$view->assignRef('document', $document);
+		$view->setModel($model, true);		
+		$view->display();
+	}
 }
-require_once( JPATH_COMPONENT .DS. 'installer' .DS. 'controller.php' );
-$controller = new InstallerController( array(
-	'default_task' => 'installform', 
-	'base_path' =>  JPATH_COMPONENT .DS. 'installer'
-) );
-$task = JRequest::getWord('task');
-if( $task == 'install' ){
-	$task = 'doInstall';
-}
-$controller->execute( $task );
-$controller->redirect();
+?>

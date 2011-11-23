@@ -40,10 +40,10 @@ class HTML_DMDoclink
                     <div id="selector">
                     <label for="listctrl"><?php echo _DML_DCL_CATEGORY; ?></label>
                     <?php echo HTML_DMDoclink::createListCtrl($rows, 'listctrl', 'listctrl'); ?>
-                    <button class="button" type="button" "name="updir"  onclick="javascript:changeListCtrl('up');"><img src="<?php echo JURI::root(0)?>/components/com_docman/assets/images/btnFolderUp.gif" alt="<?php echo _DML_DCL_UP ?>" /></button>
+                    <button class="button" type="button" "name="updir"  onclick="javascript:changeListCtrl('up');"><img src="<?php echo JURI::root()?>components/com_docman/assets/images/btnFolderUp.gif" alt="<?php echo _DML_DCL_UP ?>" /></button>
                     </div>
                     <div id="browser">
-                        <iframe src="<?php echo JURI::base()?>index.php?option=com_docman&amp;task=doclink-listview" id="listview" name="listview" width="545" height="150" marginwidth="0" marginheight="0" align="top" scrolling="no" frameborder="0" hspace="0" vspace="0"></iframe>
+                        <iframe src="<?php echo JURI::base().JRoute::_('index.php?option=com_docman&amp;task=doclink-listview') ?>" id="listview" name="listview" width="545" height="150" marginwidth="0" marginheight="0" align="top" scrolling="no" frameborder="0" hspace="0" vspace="0"></iframe>
                     </div>
                 </td></tr>
             </tbody>
@@ -184,7 +184,7 @@ class HTML_DMDoclink
             ?>
             <tr>
                 <td><img src="<?php echo $icon ?>" alt="<?php echo $details->name ?>" /></td>
-                <td><a href="<?php echo JURI::base()?>index.php?option=com_docman&amp;task=doclink-listview&amp;catid=<?php echo $cid ?>" onclick="onclickFolder(<?php echo $pid ?>, <?php echo $cid ?>, '<?php echo $details->name ?>', '<?php echo $url ?>', '<?php echo $icon ?>');"><?php echo $details->name ?></a></td>
+                <td><a href="<?php echo JURI::base().JRoute::_('index.php?option=com_docman&amp;task=doclink-listview&amp;catid='.$cid) ?>" onclick="onclickFolder(<?php echo $pid ?>, <?php echo $cid ?>, '<?php echo $details->name ?>', '<?php echo $url ?>', '<?php echo $icon ?>');"><?php echo $details->name ?></a></td>
                 <td><?php echo _DML_FOLDER ?></td>
                 <td>&nbsp;</td>
             </tr>

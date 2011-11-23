@@ -13,7 +13,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 		</td>
 		<?php if ($this->params->get('show_date')) : ?>
 		<td>
-			<?php echo $item->publish_up; ?>
+			<?php echo JHTML::_('date', $this->item->publish_up, JText::_('%a %d/%m/%Y - %H:%M')); ?>
 		</td>
 		<?php endif; ?>
 	</tr>

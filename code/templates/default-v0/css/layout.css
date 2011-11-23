@@ -1221,8 +1221,10 @@ a:hover {
   /* 1st LEVEL */
 
 }
-#main #left .boxed .module h3 {
-  font-size: 1.3em;
+#main #left .boxed .module h3, #main #left .boxed .module ul li span {
+  font-size: 1.3em !important;
+  font-weight: normal;
+  line-height: 1em;
   padding: 8px 20px;
   margin: 0;
   text-align: left;
@@ -1249,6 +1251,9 @@ a:hover {
   /* W3C */
 
 }
+#main #left .boxed .module ul li span {
+  display: block;
+}
 #main #left .boxed .module p {
   margin: 7px 20px;
 }
@@ -1262,14 +1267,11 @@ a:hover {
   /* 2th LEVEL */
 
 }
-#main #left .boxed .module ul li span, #main #left .boxed .module ul li a {
+#main #left .boxed .module ul li a {
   display: block;
   padding: 7px 20px 5px 20px;
   border-bottom: 1px solid #FFF;
   text-align: left;
-}
-#main #left .boxed .module ul li span {
-  border-bottom: 1px solid #F0F0F0;
 }
 #main #left .boxed .module ul li a:hover {
   background: #d6e2df;
@@ -1525,6 +1527,10 @@ form#filter input[name="filter"] {
 #sbox-content div.row {
   padding: 14px;
 }
+/* Hide icon in editor */
+.mceToolbar a.mce_pagebreak {
+  display: none;
+}
 /* --------------------------------------------------------------
 
    forms.css
@@ -1729,3 +1735,8 @@ label.invalid {
 .caption {
   text-align: center!important;
 }
+/*
+#header #banner.site5388 { background-image: url(../images/banners/5388-nl.jpg); }
+#header #banner.site5398 { background-image: url(../images/banners/5398-nl.jpg); }
+#header #banner.site5434 { background-image: url(../images/banners/5434-nl.jpg); }
+*/
