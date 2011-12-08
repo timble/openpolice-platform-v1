@@ -83,6 +83,7 @@ h4 img, h5 img, h6 img {
 }
 
 #component h2 { margin-top: 24px; }
+#component h3 { margin-top: 24px; }
 #component .article-info + h2 { margin-top: 0px; }
 
 /* Text elements
@@ -239,7 +240,7 @@ a:hover { color: @blue; }
 
 #header {
 	#banner {
-		background: @282 url(../images/banner-nl.jpg) 0 0 no-repeat;
+		background: @282 url(../images/banners/local-nl.jpg) 0 0 no-repeat;
 		height: 135px;
 		.contact {
 			height: 20px;
@@ -295,9 +296,9 @@ a:hover { color: @blue; }
 			}
 		}
 	}
-	#banner.nl { background-image: url(../images/banner-nl.jpg); }
-	#banner.fr { background-image: url(../images/banner-fr.jpg); }
-	#banner.de { background-image: url(../images/banner-de.jpg); }
+	#banner.nl { background-image: url(../images/banners/local-nl.jpg); }
+	#banner.fr { background-image: url(../images/banners/local-fr.jpg); }
+	#banner.de { background-image: url(../images/banners/local-de.jpg); }
 }
 
 #main {	
@@ -686,6 +687,16 @@ a:hover { color: @blue; }
 				a {
 					display: block;
 					padding: 4px 0 4px 5px;
+				}
+			}
+		}
+	}
+	.mod_latestnews {
+		ul {
+			li {
+				a {
+					float: left;
+					width: 150px;
 				}
 			}
 		}

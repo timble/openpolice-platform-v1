@@ -146,6 +146,7 @@ h5{font-size:1.1em;text-transform:uppercase;}
 h6{font-size:1em;font-style:italic;}
 h1 img,h2 img,h3 img,h4 img,h5 img,h6 img{margin:0;}
 #component h2{margin-top:24px;}
+#component h3{margin-top:24px;}
 #component .article-info+h2{margin-top:0px;}
 p{margin:0 0 12px 0;}
 .left{float:left !important;}
@@ -201,16 +202,16 @@ a:hover{color:#004fa3;}
 #top ul li a:hover{color:#de791c;}
 #top ul li.active a{background-color:#FFF;color:#de791c;}
 #top ul.language_select li{float:right;}
-#header #banner{background:#021b55 url(../images/banner-nl.jpg) 0 0 no-repeat;height:135px;}#header #banner .contact{height:20px;margin:8px 0 0 10px;}
+#header #banner{background:#021b55 url(../images/banners/local-nl.jpg) 0 0 no-repeat;height:135px;}#header #banner .contact{height:20px;margin:8px 0 0 10px;}
 #header #banner #sitename{text-align:left;}#header #banner #sitename a{color:#FFF;padding-top:77px;text-indent:80px;display:block;height:100%;text-decoration:none;font-size:110%;}
 #header #banner #search{margin-top:95px;padding:5px;text-align:center;background-color:#021b55;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}#header #banner #search input{float:left;width:135px;margin:0 0 0 5px;padding:2px 5px;border:1px solid #f0f0f0;font-size:0.9em;}
 #header #banner #search input:focus{border:1px solid #f0f0f0;}
 #header #banner #search .search-button{float:left;height:20px;width:50px;margin-left:10px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;border:1px solid #40796D;background:#4787ed url("../images/icon_search.png") no-repeat center center;}
 #header #banner #search .search-button:hover{background:#357ae8 url("../images/icon_search-hover.png") no-repeat center center;}
 #header #banner .mod_call_us{color:#FFF !important;}#header #banner .mod_call_us a{color:#FFF;}
-#header #banner.nl{background-image:url(../images/banner-nl.jpg);}
-#header #banner.fr{background-image:url(../images/banner-fr.jpg);}
-#header #banner.de{background-image:url(../images/banner-de.jpg);}
+#header #banner.nl{background-image:url(../images/banners/local-nl.jpg);}
+#header #banner.fr{background-image:url(../images/banners/local-fr.jpg);}
+#header #banner.de{background-image:url(../images/banners/local-de.jpg);}
 #main #pre-component{font-size:105%;}#main #pre-component .module{margin-top:10px;}#main #pre-component .module h3{font-size:1.2em;padding:0 0 10px 0;margin:0;text-align:center;border-bottom:1px solid #EEE;}
 #main #component{font-size:105%;margin-top:20px;}#main #component ul,#main #component ol{margin:0 0 12px 12px;}#main #component ul ul,#main #component ol ul,#main #component ul ol,#main #component ol ol{margin-bottom:0px;}
 #main #component .article{margin-bottom:20px;}
@@ -268,6 +269,7 @@ a:hover{color:#004fa3;}
 .module .nooku_language_select{text-align:center;padding:5px 0;}
 #maincol .mod_mainmenu ul,#maincol .mod_mostread ul,#maincol .mod_latestnews ul{list-style:none;margin:0;padding:0;}#maincol .mod_mainmenu ul li,#maincol .mod_mostread ul li,#maincol .mod_latestnews ul li{display:block;margin:0 2px 0 2px;padding:0px 0 0 0;border-bottom:1px solid #EEE;}#maincol .mod_mainmenu ul li span,#maincol .mod_mostread ul li span,#maincol .mod_latestnews ul li span{float:left;padding:4px 6px 4px 0;}
 #maincol .mod_mainmenu ul li a,#maincol .mod_mostread ul li a,#maincol .mod_latestnews ul li a{display:block;padding:4px 0 4px 5px;}
+#maincol .mod_latestnews ul li a{float:left;width:150px;}
 #maincol .mod_breadcrumbs p{margin:4px 0 0 0;padding:0;color:#888;border-bottom:1px dotted #DDD;}
 form#filter{border:1px solid #d6e2df;background-color:#f0f0f0;padding:10px;margin-bottom:16px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}form#filter input[name="filter"]{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;padding:2px 4px;}
 #sbox-content div.row{padding:14px;}
@@ -312,3 +314,6 @@ label.invalid{color:#ff0000;}
 .caption.none{margin-left:auto;margin-right:auto;}
 .caption{text-align:center!important;}
 #header #banner.site5434{background-image:url(../images/banners/5434-nl.jpg);}
+#header #banner.sitecentrex.nl{background-image:url(../images/banners/federal-nl.jpg);}
+#header #banner.sitecentrex.fr{background-image:url(../images/banners/federal-fr.jpg);}
+#header #banner.sitecentrex.de{background-image:url(../images/banners/federal-de.jpg);}

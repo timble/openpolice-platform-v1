@@ -73,6 +73,30 @@ function modChrome_sitename($module, &$params, &$attribs)
 }
 
 /*
+ * Contact module
+ */
+function modChrome_user3($module, &$params, &$attribs)
+{
+	if (!empty ($module->content) && $module->module == 'mod_mainmenu') : ?>
+		<div class="module <?php echo $module->module; ?>">
+			<?php echo $module->content; ?>
+		</div>
+	<?php endif;
+}
+
+/*
+ * Contact module
+ */
+function modChrome_language($module, &$params, &$attribs)
+{
+	if (!empty ($module->content) && $module->module == 'mod_language_select') : ?>
+		<div class="module <?php echo $module->module; ?>">
+			<?php echo $module->content; ?>
+		</div>
+	<?php endif;
+}
+
+/*
  * Syndicate module
  */
 function modChrome_syndicate($module, &$params, &$attribs)

@@ -3,7 +3,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 include_once("includes/grid.php");
 
-$version = '14';
+$version = '15';
 $language = explode("-", $this->language);
 $language = $language[0];
 
@@ -54,11 +54,11 @@ $site = JFactory::getApplication()->getSite();
 	<div id="top">
 		<div class="container_12 clearfix inner">
 			<div class="grid_<?php echo $this->countModules('language') ? '9' : '12' ?>">
-				<jdoc:include type="modules" name="user3" style="notitle" />
+				<jdoc:include type="modules" name="user3" style="user3" />
 			</div>
 			<?php if($this->countModules('language')) : ?>
 			<div class="grid_3">
-				<jdoc:include type="modules" name="language" style="xhtmls" />
+				<jdoc:include type="modules" name="language" style="language" />
 			</div>
 			<?php endif; ?>
 		</div>

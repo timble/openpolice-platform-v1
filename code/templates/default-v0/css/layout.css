@@ -671,6 +671,9 @@ h6 img {
 #component h2 {
   margin-top: 24px;
 }
+#component h3 {
+  margin-top: 24px;
+}
 #component .article-info + h2 {
   margin-top: 0px;
 }
@@ -925,7 +928,7 @@ a:hover {
   float: right;
 }
 #header #banner {
-  background: #021b55 url(../images/banner-nl.jpg) 0 0 no-repeat;
+  background: #021b55 url(../images/banners/local-nl.jpg) 0 0 no-repeat;
   height: 135px;
 }
 #header #banner .contact {
@@ -985,13 +988,13 @@ a:hover {
   color: #FFF;
 }
 #header #banner.nl {
-  background-image: url(../images/banner-nl.jpg);
+  background-image: url(../images/banners/local-nl.jpg);
 }
 #header #banner.fr {
-  background-image: url(../images/banner-fr.jpg);
+  background-image: url(../images/banners/local-fr.jpg);
 }
 #header #banner.de {
-  background-image: url(../images/banner-de.jpg);
+  background-image: url(../images/banners/local-de.jpg);
 }
 #main #pre-component {
   font-size: 105%;
@@ -1500,6 +1503,10 @@ a:hover {
   display: block;
   padding: 4px 0 4px 5px;
 }
+#maincol .mod_latestnews ul li a {
+  float: left;
+  width: 150px;
+}
 #maincol .mod_breadcrumbs p {
   margin: 4px 0 0 0;
   padding: 0;
@@ -1741,4 +1748,13 @@ label.invalid {
 */
 #header #banner.site5434 {
   background-image: url(../images/banners/5434-nl.jpg);
+}
+#header #banner.sitecentrex.nl {
+  background-image: url(../images/banners/federal-nl.jpg);
+}
+#header #banner.sitecentrex.fr {
+  background-image: url(../images/banners/federal-fr.jpg);
+}
+#header #banner.sitecentrex.de {
+  background-image: url(../images/banners/federal-de.jpg);
 }
