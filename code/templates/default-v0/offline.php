@@ -5,6 +5,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $version = '12';
 $language = explode("-", $this->language);
 $language = $language[0];
+
+$site = JFactory::getApplication()->getSite();
+//$site = null;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -13,10 +16,11 @@ $language = $language[0];
 	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout.min.css?version=<?php echo $version ?>" type="text/css" />
 	
+	<?php if($site) : ?>
 	<script type="text/javascript">
 	 var _gaq = _gaq || [];
 	 _gaq.push(['_setAccount', 'UA-20242887-1']);
-	 _gaq.push(['_setCookiePath', '/<?php echo JFactory::getApplication()->getSite(); ?>/']);
+	 _gaq.push(['_setCookiePath', '/<?php echo $site ?>/']);
 	 _gaq.push(['_trackPageview']);
 	
 	 (function() {
@@ -25,10 +29,11 @@ $language = $language[0];
 	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	 })();
 	</script>
+	<?php endif; ?>
 </head>
 <body>
 	<div id="header">
-		<div id="banner" class="container_12 clearfix inner <?php echo $language; ?>">
+		<div id="banner" class="container_12 clearfix inner site<?php echo $site; ?> <?php echo $language; ?>">
 			<div class="grid_4 alpha">
 				<div class="contact">
 					<jdoc:include type="modules" name="call" style="call" />
