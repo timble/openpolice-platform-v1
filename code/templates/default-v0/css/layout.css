@@ -1009,6 +1009,9 @@ a:hover {
   text-align: center;
   border-bottom: 1px solid #EEE;
 }
+#main #pre-component .mod_latestnews ul li a {
+  width: 290px;
+}
 #main #component {
   font-size: 105%;
   margin-top: 20px;

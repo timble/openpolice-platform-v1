@@ -213,6 +213,7 @@ a:hover{color:#004fa3;}
 #header #banner.fr{background-image:url(../images/banners/local-fr.jpg);}
 #header #banner.de{background-image:url(../images/banners/local-de.jpg);}
 #main #pre-component{font-size:105%;}#main #pre-component .module{margin-top:10px;}#main #pre-component .module h3{font-size:1.2em;padding:0 0 10px 0;margin:0;text-align:center;border-bottom:1px solid #EEE;}
+#main #pre-component .mod_latestnews ul li a{width:290px;}
 #main #component{font-size:105%;margin-top:20px;}#main #component ul,#main #component ol{margin:0 0 12px 12px;}#main #component ul ul,#main #component ol ul,#main #component ul ol,#main #component ol ol{margin-bottom:0px;}
 #main #component .article{margin-bottom:20px;}
 #main #component .article.separator{padding-bottom:15px;border-bottom:1px solid #EEE;}
