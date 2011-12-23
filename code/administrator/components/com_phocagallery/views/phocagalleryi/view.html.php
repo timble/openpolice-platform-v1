@@ -25,7 +25,7 @@ class PhocaGalleryCpViewPhocagalleryI extends JView
 
 		$document->addCustomTag("<!--[if lt IE 8]>\n<link rel=\"stylesheet\" href=\"../administrator/components/com_phocagallery/assets/phocagalleryieall.css\" type=\"text/css\" />\n<![endif]-->");
 		
-		$tmpl['large_image_width']	= $params->get( 'large_image_width', 640 );
+		/*$tmpl['large_image_width']	= $params->get( 'large_image_width', 640 );
 		$tmpl['large_image_height']	= $params->get( 'large_image_height', 480 );
 		$tmpl['javaresizewidth'] 	= $params->get( 'java_resize_width', -1 );
 		$tmpl['javaresizeheight'] 	= $params->get( 'java_resize_height', -1 );
@@ -35,7 +35,7 @@ class PhocaGalleryCpViewPhocagalleryI extends JView
 		$tmpl['uploadmaxsizeread'] 	= PhocaGalleryFile::getFileSizeReadable($tmpl['uploadmaxsize']);
 		$tmpl['uploadmaxreswidth'] 	= $params->get( 'upload_maxres_width', 3072 );
 		$tmpl['uploadmaxresheight'] = $params->get( 'upload_maxres_height', 2304 );
-		$tmpl['enablejavaadmin'] 	= $params->get( 'enable_java_admin', 1 );
+		$tmpl['enablejavaadmin'] 	= $params->get( 'enable_java_admin', 1 );*/
 		// Do not allow cache
 		JResponse::allowCache(false);
 
@@ -46,7 +46,7 @@ class PhocaGalleryCpViewPhocagalleryI extends JView
 		$this->assignRef('folders', $this->get('folders'));
 		$this->assignRef('state', $this->get('state'));
 		
-		// Upload Form ------------------------------------
+		/*// Upload Form ------------------------------------
 		JHTML::_('behavior.mootools');
 		$document->addStyleSheet('components/com_phocagallery/assets/upload/mediamanager.css');
 
@@ -81,7 +81,7 @@ class PhocaGalleryCpViewPhocagalleryI extends JView
 		
 		$this->assignRef('session', JFactory::getSession());
 		$this->assign('tmpl', $tmpl);
-		$this->assign('require_ftp', $ftp);
+		$this->assign('require_ftp', $ftp);*/
 
 		parent::display($tpl);
 		echo JHTML::_('behavior.keepalive');

@@ -18,7 +18,7 @@ if (JFile::exists( $this->_tmp_img->linkthumbnailpathabs )) {
 	
 	$imageRes	= PhocaGalleryImage::getRealImageSize($this->_tmp_img->nameno, 'medium');
 	$correctImageRes = PhocaGalleryImage::correctSizeWithRate($imageRes['w'], $imageRes['h'], 100, 100);
-	echo JHTML::_( 'image', $this->_tmp_img->linkthumbnailpath, null, array('width' => $image['width'], 'height' => $image['height']), '', null); ?></a>
+	echo JHTML::_( 'image', JURI::root(false, '').substr($this->_tmp_img->linkthumbnailpath, 1), null, array('width' => $image['width'], 'height' => $image['height']), '', null); ?></a>
 					</center>
 				</div>
 			</div>
