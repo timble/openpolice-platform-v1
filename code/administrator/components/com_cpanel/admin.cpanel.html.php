@@ -43,6 +43,29 @@ class HTML_cpanel
 			echo $pane->endPanel();
 		}
 
+		echo $pane->startPanel(JText::_('Analytics'), 'cpanel-panel-analytics');
+		?>
+
+		<script>
+            window.addEvent('load', function() {
+                var url = "<?php echo JURI::base() ?><?php echo JFactory::getApplication()->getSite() ?>/index.php?option=com_analytics&tmpl=component";
+                new Ajax(url, {
+                    method: 'get',
+                    update: $('analytics'),
+                    onComplete: function() {
+                        $('cpanel-panel-analytics').getNext().setStyle('height', '420px');
+                    }
+                }).request();
+            });
+        </script>
+        <div id="analytics">
+            <div style="padding: 4px">
+                <?php echo JText::_('Loading...') ?>
+            </div>
+        </div>
+
+		<?php
+		echo $pane->endPanel();
 		echo $pane->endPane();
 	}
 }
