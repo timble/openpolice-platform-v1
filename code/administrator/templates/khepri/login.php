@@ -61,7 +61,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 </head>
 <body onload="javascript:setFocus()">
-	<div id="border-top" class="<?php echo $this->params->get('headerColor','green');?>">
+	<div id="border-top" class="<?php echo $this->params->get('headerColor','green');?> <?php echo $this->language ?>">
 		<div>
 			<div>
 				<span class="title"><?php echo $this->params->get('showSiteName') ? $mainframe->getCfg( 'sitename' ) : JText::_('Administration'); ?></span>
@@ -78,7 +78,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 				</div>
 				<div class="m">
 
-					<h1><?php echo JText::_('Joomla! Administration Login') ?></h1>
+					<h1><?php echo JText::_('Administrator') ?></h1>
 					<jdoc:include type="message" />
 					<jdoc:include type="component" />
 					<p><?php echo JText::_('DESCUSEVALIDLOGIN') ?></p>

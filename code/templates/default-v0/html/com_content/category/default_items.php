@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 			<?php echo JHTML::_('icon.edit', $item, $this->params, $this->access); ?>
 		</td>
 		<?php if ($this->params->get('show_date')) : ?>
-		<td>
+		<td nowrap="true">
 			<?php echo JHTML::_('date', $item->publish_up, JText::_('%a %d/%m/%Y - %H:%M')); ?>
 		</td>
 		<?php endif; ?>

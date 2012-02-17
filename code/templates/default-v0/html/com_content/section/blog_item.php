@@ -7,7 +7,7 @@ $canEdit = ($this->user->authorize('com_content', 'edit', 'content', 'all') || $
 ?>
 <div class="page-header">
 	<h1>
-		<?php if ($this->item->readmore != '0') : ?>
+		<?php if ($this->item->params->get('link_titles') || $this->item->readmore != '0') : ?>
 		<a href="<?php echo $this->item->readmore_link; ?>"><?php echo $this->escape($this->item->title); ?></a>
 		<?php else : ?>
 		<?php echo $this->escape($this->item->title); ?>

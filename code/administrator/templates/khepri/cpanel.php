@@ -58,7 +58,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 </head>
 <body id="minwidth-body">
-	<div id="border-top" class="<?php echo $this->params->get('headerColor','green');?>">
+	<div id="border-top" class="<?php echo $this->params->get('headerColor','green');?> <?php echo $this->language ?>">
 		<div>
 			<div>
 				<span class="version"></span>

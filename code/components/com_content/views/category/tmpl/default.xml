@@ -23,26 +23,11 @@
 				<option value="100">NUMBER 100</option>
 				<option value="0">All</option>
 			</param>
-			<param name="show_headings" type="radio" default="1" label="Table Headings" description="Show/Hide the Table Headings">
-				<option value="0">Hide</option>
-				<option value="1">Show</option>
-			</param>
 			<param name="show_date" type="list" default="" label="Date Column" description="Show/Hide the Date column">
 				<option value="0">Hide</option>
 				<option value="1">Show</option>
 			</param>
 			<param name="date_format" type="text" size="15" default="" label="Date Format" description="PARAMDATEFORMAT" />
-
-			<param name="@spacer" type="spacer" default="" label="" description="" />
-			<param name="filter" type="radio" default="1" label="Filter" description="Show/Hide the Filter ability">
-				<option value="0">Hide</option>
-				<option value="1">Show</option>
-			</param>
-			<param name="filter_type" type="list" default="title" label="Filter Field" description="Which field shall the filter apply to">
-				<option value="title">Title</option>
-				<option value="author">Author</option>
-				<option value="hits">Hits</option>
-			</param>
 		</params>
 		<advanced>
 			<param name="orderby_sec" type="list" default="" label="Primary Order" description="Order that the items will be displayed in.">
@@ -60,10 +45,6 @@
 
 			<param name="@spacer" type="spacer" default="" label="" description="" />
 			<param name="show_pagination" type="list" default="1" label="Pagination" description="Show/Hide Pagination support">
-				<option value="0">Hide</option>
-				<option value="1">Show</option>
-			</param>
-			<param name="show_pagination_limit" type="radio" default="1" label="Display Select" description="Show/Hide the Display Select dropdown">
 				<option value="0">Hide</option>
 				<option value="1">Show</option>
 			</param>

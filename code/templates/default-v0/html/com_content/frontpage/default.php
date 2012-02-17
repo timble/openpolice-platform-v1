@@ -28,9 +28,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 
 <?php if ($this->params->def('show_pagination', 2) == 1  || ($this->params->get('show_pagination') == 2 && $this->pagination->get('pages.total') > 1)) : ?>
 	<div id="pagination-wrap">
-		<?php if ($this->params->def('show_pagination_results', 1)) : ?>
-			<?php echo $this->pagination->getPagesLinks(); ?>
-		<?php endif; ?>
+		<?php echo $this->pagination->getPagesLinks(); ?>
 	</div>
 <?php endif; ?>
 <?php endif; ?>

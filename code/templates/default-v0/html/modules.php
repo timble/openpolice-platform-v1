@@ -39,7 +39,7 @@ function modChrome_notitle($module, &$params, &$attribs)
 }
 
 /*
- * Search module
+ * Search style (only mod_search)
  */
 function modChrome_search($module, &$params, &$attribs)
 {
@@ -51,7 +51,7 @@ function modChrome_search($module, &$params, &$attribs)
 }
 
 /*
- * Contact module
+ * Call style (only mod_call_us)
  */
 function modChrome_call($module, &$params, &$attribs)
 {
@@ -63,7 +63,7 @@ function modChrome_call($module, &$params, &$attribs)
 }
 
 /*
- * Contact module
+ * Sitename style (only mod_sitename)
  */
 function modChrome_sitename($module, &$params, &$attribs)
 {
@@ -73,7 +73,7 @@ function modChrome_sitename($module, &$params, &$attribs)
 }
 
 /*
- * Contact module
+ * User3 style (only mod_mainmenu)
  */
 function modChrome_user3($module, &$params, &$attribs)
 {
@@ -85,7 +85,7 @@ function modChrome_user3($module, &$params, &$attribs)
 }
 
 /*
- * Contact module
+ * Language style (only mod_language_select)
  */
 function modChrome_language($module, &$params, &$attribs)
 {
@@ -97,7 +97,19 @@ function modChrome_language($module, &$params, &$attribs)
 }
 
 /*
- * Syndicate module
+ * Breadcrumbs style (only mod_breadcrumbs)
+ */
+function modChrome_breadcrumbs($module, &$params, &$attribs)
+{
+	if (!empty ($module->content) && $module->module == 'mod_breadcrumbs') : ?>
+		<div class="module <?php echo $module->module; ?>">
+			<?php echo $module->content; ?>
+		</div>
+	<?php endif;
+}
+
+/*
+ * Syndicate style (only mod_syndicate)
  */
 function modChrome_syndicate($module, &$params, &$attribs)
 {
