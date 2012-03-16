@@ -6,22 +6,44 @@ if (!isset($this->error)) {
 	$this->debug = false; 
 }
 
-$version = '001';
+$version = '2';
+$language = explode("-", $this->language);
+$language = $language[0];
+
+$site = JFactory::getApplication()->getSite();
+//$site = null;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<title><?php echo $this->error->code ?> - <?php echo $this->title; ?></title>
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css?version=<?php echo $version ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css?version=<?php echo $version ?>" type="text/css" />
 	
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/blueprint/reset.css?version=<?php echo $version ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/blueprint/forms.css?version=<?php echo $version ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/blueprint/print.css?version=<?php echo $version ?>" type="text/css" media="print" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout.min.css?version=<?php echo $version ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/print.css?version=<?php echo $version ?>" type="text/css" media="print" />
 	
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/grid.css?version=<?php echo $version ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout.css?version=<?php echo $version ?>" type="text/css" />
+	<!--[if lt IE 7]>
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ie6.css?version=<?php echo $version ?>" type="text/css" />
+	<![endif]-->
+	
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ie7.css?version=<?php echo $version ?>" type="text/css" />
+	<![endif]-->
+	
+	<?php if($site) : ?>
+	<script type="text/javascript">
+	 var _gaq = _gaq || [];
+	 _gaq.push(['_setAccount', 'UA-20242887-1']);
+	 _gaq.push(['_setCookiePath', '/<?php echo $site ?>/']);
+	 _gaq.push(['_trackPageview']);
+	
+	 (function() {
+	   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	 })();
+	</script>
+	<?php endif; ?>
 </head>
 <body>
 	<div id="top">
@@ -37,7 +59,7 @@ $version = '001';
 		</div>
 	</div>
 	<div id="header">
-		<div id="banner" class="container_12 clearfix inner">
+		<div id="banner" class="container_12 clearfix inner site<?php echo $site; ?> <?php echo $language; ?>">
 			<div class="grid_12 alpha">
 				<div class="contact">
 					

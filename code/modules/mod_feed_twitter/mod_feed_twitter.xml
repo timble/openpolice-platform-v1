@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Twitter Feed</name>
+	<author>Tom Janssens</author>
+	<creationDate>February 2011</creationDate>
+	<copyright></copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>tom@timble.eu</authorEmail>
+	<authorUrl>www.timble.eu</authorUrl>
+	<version>1.5.0</version>
+	<description>This module displays recent tweets from a specific Twitter account.</description>
+	<files>
+		<filename module="mod_feed_twitter">mod_feed_twitter.php</filename>
+	</files>
+	<params>
+		<param name="account" type="text" size="50" default="" label="Username" description="" />
+		<param name="hashtag" type="text" size="50" default="" label="Hashtag" description="" />
+		<param name="rssitems" type="list" default="1" label="Tweets" description="">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</param>
+        <param name="cache" type="hidden" default="1" />
+        <param name="cache_time" type="hidden" default="15" />
+	</params>
+</install>
