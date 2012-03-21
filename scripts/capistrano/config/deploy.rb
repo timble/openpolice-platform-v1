@@ -1,5 +1,10 @@
+# Staging settings.
+require "capistrano/ext/multistage"
+
+set :stages, ["staging", "production"]
+set :default_stage, "staging"
+
 set :application, "portal"
-server "s.pol-nl.be", :app, :web, :db, :primary => true
 
 # Server user settings.
 set :user, "deploy"
