@@ -1,4 +1,4 @@
-# Staging settings.
+# Stages settings.
 require "capistrano/ext/multistage"
 
 set :stages, ["staging", "production"]
