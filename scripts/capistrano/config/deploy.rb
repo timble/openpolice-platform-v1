@@ -33,6 +33,7 @@ namespace :deploy do
     task :symlink_shared, :roles => :app do
         run "ln -nfs #{shared_path}/cache #{release_path}/code/cache"
         run "ln -nfs #{shared_path}/sites #{release_path}/code/sites"
+        run "ln -nfs #{shared_path}/analytics.config.php #{release_path}/code/analytics.config.php"
         run "ln -nfs #{shared_path}/configuration.php #{release_path}/code/configuration.php"
     end
     
