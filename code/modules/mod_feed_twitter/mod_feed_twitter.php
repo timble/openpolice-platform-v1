@@ -21,7 +21,7 @@ $account	= $params->get('account', '');
 $hashtag	= $params->get('hashtag', '');
 
 //check if cache diretory is writable as cache files will be created for the feed
-$cacheDir = realpath(JPATH_CACHE);
+$cacheDir = JPATH_CACHE;
 if (!is_writable($cacheDir))
 {
 	echo '<div>';
