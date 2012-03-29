@@ -1,4 +1,3 @@
-# Stages settings.
 require "capistrano/ext/multistage"
 require "new_relic/recipes"
 
@@ -21,7 +20,6 @@ set :keep_releases, 3
 set :repository,  "git@git.assembla.com:timble-police.git"
 set :scm, :git
 set :scm_username, "deploy@timble.net"
-set :branch, "develop"
 
 namespace :deploy do
     # Overwrite :finalize_update to prevent unrelevant command executions.
