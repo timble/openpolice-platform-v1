@@ -91,12 +91,16 @@ table {
   border-spacing: 0;
 }
 /* float:none prevents the span-x classes from breaking table-cell display */
-caption, th, td {
+caption,
+th,
+td {
   text-align: left;
   font-weight: normal;
   float: none !important;
 }
-table, th, td {
+table,
+th,
+td {
   vertical-align: middle;
 }
 /* Remove possible quote marks (") from <q>, <blockquote>. */
@@ -106,7 +110,8 @@ q:before,
 q:after {
   content: '';
 }
-blockquote, q {
+blockquote,
+q {
   quotes: "" "";
 }
 /* Remove annoying border on linked images. */
@@ -135,7 +140,8 @@ body {
 }
 /* `Containers
 ----------------------------------------------------------------------------------------------------*/
-.container_12, .container_16 {
+.container_12,
+.container_16 {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
@@ -195,16 +201,20 @@ body {
 .pull_15 {
   position: relative;
 }
-.container_12 .grid_3, .container_16 .grid_4 {
+.container_12 .grid_3,
+.container_16 .grid_4 {
   width: 220px;
 }
-.container_12 .grid_6, .container_16 .grid_8 {
+.container_12 .grid_6,
+.container_16 .grid_8 {
   width: 460px;
 }
-.container_12 .grid_9, .container_16 .grid_12 {
+.container_12 .grid_9,
+.container_16 .grid_12 {
   width: 700px;
 }
-.container_12 .grid_12, .container_16 .grid_16 {
+.container_12 .grid_12,
+.container_16 .grid_16 {
   width: 940px;
 }
 /* `Grid >> Children (Alpha ~ First, Omega ~ Last)
@@ -281,13 +291,16 @@ body {
 }
 /* `Prefix Extra Space >> Global
 ----------------------------------------------------------------------------------------------------*/
-.container_12 .prefix_3, .container_16 .prefix_4 {
+.container_12 .prefix_3,
+.container_16 .prefix_4 {
   padding-left: 240px;
 }
-.container_12 .prefix_6, .container_16 .prefix_8 {
+.container_12 .prefix_6,
+.container_16 .prefix_8 {
   padding-left: 480px;
 }
-.container_12 .prefix_9, .container_16 .prefix_12 {
+.container_12 .prefix_9,
+.container_16 .prefix_12 {
   padding-left: 720px;
 }
 /* `Prefix Extra Space >> 12 Columns
@@ -356,13 +369,16 @@ body {
 }
 /* `Suffix Extra Space >> Global
 ----------------------------------------------------------------------------------------------------*/
-.container_12 .suffix_3, .container_16 .suffix_4 {
+.container_12 .suffix_3,
+.container_16 .suffix_4 {
   padding-right: 240px;
 }
-.container_12 .suffix_6, .container_16 .suffix_8 {
+.container_12 .suffix_6,
+.container_16 .suffix_8 {
   padding-right: 480px;
 }
-.container_12 .suffix_9, .container_16 .suffix_12 {
+.container_12 .suffix_9,
+.container_16 .suffix_12 {
   padding-right: 720px;
 }
 /* `Suffix Extra Space >> 12 Columns
@@ -431,13 +447,16 @@ body {
 }
 /* `Push Space >> Global
 ----------------------------------------------------------------------------------------------------*/
-.container_12 .push_3, .container_16 .push_4 {
+.container_12 .push_3,
+.container_16 .push_4 {
   left: 240px;
 }
-.container_12 .push_6, .container_16 .push_8 {
+.container_12 .push_6,
+.container_16 .push_8 {
   left: 480px;
 }
-.container_12 .push_9, .container_16 .push_12 {
+.container_12 .push_9,
+.container_16 .push_12 {
   left: 720px;
 }
 /* `Push Space >> 12 Columns
@@ -506,13 +525,16 @@ body {
 }
 /* `Pull Space >> Global
 ----------------------------------------------------------------------------------------------------*/
-.container_12 .pull_3, .container_16 .pull_4 {
+.container_12 .pull_3,
+.container_16 .pull_4 {
   left: -240px;
 }
-.container_12 .pull_6, .container_16 .pull_8 {
+.container_12 .pull_6,
+.container_16 .pull_8 {
   left: -480px;
 }
-.container_12 .pull_9, .container_16 .pull_12 {
+.container_12 .pull_9,
+.container_16 .pull_12 {
   left: -720px;
 }
 /* `Pull Space >> 12 Columns
@@ -591,7 +613,8 @@ body {
   height: 0;
 }
 /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
-.clearfix:before, .clearfix:after {
+.clearfix:before,
+.clearfix:after {
   content: '\0020';
   display: block;
   overflow: hidden;
@@ -700,7 +723,8 @@ p .right {
   margin: 1.5em 0 1.5em 1.5em;
   padding: 0;
 }
-a:focus, a:hover {
+a:focus,
+a:hover {
   color: #09f;
   text-decoration: underline;
 }
@@ -713,16 +737,20 @@ blockquote {
   color: #666;
   font-style: italic;
 }
-strong, dfn {
+strong,
+dfn {
   font-weight: bold;
 }
-em, dfn {
+em,
+dfn {
   font-style: italic;
 }
-sup, sub {
+sup,
+sub {
   line-height: 0;
 }
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
 }
 address {
@@ -736,16 +764,20 @@ pre {
   margin: 1.5em 0;
   white-space: pre;
 }
-pre, code, tt {
+pre,
+code,
+tt {
   font: 1em 'andale mono', 'lucida console', monospace;
   line-height: 1.5;
 }
 /* Lists
 -------------------------------------------------------------- */
-li ul, li ol {
+li ul,
+li ol {
   margin: 0;
 }
-ul, ol {
+ul,
+ol {
   margin: 0 1.5em 1.5em 0;
   padding-left: 1.5em;
 }
@@ -778,7 +810,9 @@ dd {
 th {
   font-weight: bold;
 }
-th, td, caption {
+th,
+td,
+caption {
   padding: 4px;
 }
 /*
@@ -837,7 +871,8 @@ img[align="left"] {
 img[align="right"] {
   margin-left: 10px;
 }
-.group:before, .group:after {
+.group:before,
+.group:after {
   content: '\0020';
   display: block;
   overflow: hidden;
@@ -1016,7 +1051,8 @@ a:hover {
   font-size: 105%;
   margin-top: 20px;
 }
-#main #component ul, #main #component ol {
+#main #component ul,
+#main #component ol {
   margin: 0 0 12px 12px;
 }
 #main #component ul ul,
@@ -1032,17 +1068,20 @@ a:hover {
   padding-bottom: 15px;
   border-bottom: 1px solid #EEE;
 }
-#main #component p.article-info, #main #component p.modified {
+#main #component p.article-info,
+#main #component p.modified {
   margin-top: -10px;
   color: #999;
   font-size: 0.9em;
 }
-#main #component p.article-info span.modified, #main #component p.modified span.modified {
+#main #component p.article-info span.modified,
+#main #component p.modified span.modified {
   border-left: 1px solid gray;
   margin-left: 3px;
   padding-left: 3px;
 }
-#main #component p.article-info .st_sharethis, #main #component p.modified .st_sharethis {
+#main #component p.article-info .st_sharethis,
+#main #component p.modified .st_sharethis {
   float: right;
 }
 #main #component .readon {
@@ -1192,7 +1231,8 @@ a:hover {
   /* 2th LEVEL */
 
 }
-#main #right .mod_mainmenu ul li span, #main #right .mod_mainmenu ul li a {
+#main #right .mod_mainmenu ul li span,
+#main #right .mod_mainmenu ul li a {
   display: block;
   padding: 7px 20px 5px 0;
   text-align: left;
@@ -1227,7 +1267,8 @@ a:hover {
   /* 1st LEVEL */
 
 }
-#main #left .boxed .module h3, #main #left .boxed .module ul li span {
+#main #left .boxed .module h3,
+#main #left .boxed .module ul li span {
   font-size: 1.3em !important;
   font-weight: normal;
   line-height: 1em;
@@ -1462,7 +1503,8 @@ a:hover {
 #component table.pagination td.active {
   font-weight: bold;
 }
-#component table.pagination td.previous, #component table.pagination td.next {
+#component table.pagination td.previous,
+#component table.pagination td.next {
   width: 100px;
   font-weight: bold;
   text-decoration: underline;
@@ -1478,7 +1520,8 @@ a:hover {
 #component table.pagination td a {
   display: block;
 }
-#component table.pagination td.previous span.off, #component table.pagination td.next span.off {
+#component table.pagination td.previous span.off,
+#component table.pagination td.next span.off {
   display: none;
 }
 /* @end */
@@ -1487,22 +1530,30 @@ a:hover {
   text-align: center;
   padding: 5px 0;
 }
-#maincol .mod_mainmenu ul, #maincol .mod_mostread ul, #maincol .mod_latestnews ul {
+#maincol .mod_mainmenu ul,
+#maincol .mod_mostread ul,
+#maincol .mod_latestnews ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-#maincol .mod_mainmenu ul li, #maincol .mod_mostread ul li, #maincol .mod_latestnews ul li {
+#maincol .mod_mainmenu ul li,
+#maincol .mod_mostread ul li,
+#maincol .mod_latestnews ul li {
   display: block;
   margin: 0 2px 0 2px;
   padding: 0px 0 0 0;
   border-bottom: 1px solid #EEE;
 }
-#maincol .mod_mainmenu ul li span, #maincol .mod_mostread ul li span, #maincol .mod_latestnews ul li span {
+#maincol .mod_mainmenu ul li span,
+#maincol .mod_mostread ul li span,
+#maincol .mod_latestnews ul li span {
   float: left;
   padding: 4px 6px 4px 0;
 }
-#maincol .mod_mainmenu ul li a, #maincol .mod_mostread ul li a, #maincol .mod_latestnews ul li a {
+#maincol .mod_mainmenu ul li a,
+#maincol .mod_mostread ul li a,
+#maincol .mod_latestnews ul li a {
   display: block;
   padding: 4px 0 4px 5px;
 }
@@ -1569,10 +1620,12 @@ legend {
   margin-top: -0.2em;
   margin-bottom: 1em;
 }
-fieldset, #IE8#HACK {
+fieldset,
+#IE8#HACK {
   padding-top: 1.4em;
 }
-legend, #IE8#HACK {
+legend,
+#IE8#HACK {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1612,7 +1665,8 @@ textarea,
 select {
   margin: 0.5em 0;
 }
-input.text, input.title {
+input.text,
+input.title {
   width: 300px;
   padding: 5px;
 }
@@ -1749,6 +1803,9 @@ label.invalid {
 #header #banner.site5388 { background-image: url(../images/banners/5388-nl.jpg); }
 #header #banner.site5398 { background-image: url(../images/banners/5398-nl.jpg); }
 */
+#header #banner.site5356 {
+  background-image: url(../images/banners/5356-nl.jpg);
+}
 #header #banner.site5360 {
   background-image: url(../images/banners/5360-nl.jpg);
 }
