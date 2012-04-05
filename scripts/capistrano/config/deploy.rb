@@ -1,5 +1,5 @@
-# Stages settings.
 require "capistrano/ext/multistage"
+require "new_relic/recipes"
 
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
@@ -20,7 +20,6 @@ set :keep_releases, 3
 set :repository,  "git@git.assembla.com:timble-police.git"
 set :scm, :git
 set :scm_username, "deploy@timble.net"
-set :branch, "develop"
 
 namespace :deploy do
     # Overwrite :finalize_update to prevent unrelevant command executions.
@@ -32,6 +31,7 @@ namespace :deploy do
     task :symlink_shared, :roles => :app do
         run "ln -nfs #{shared_path}/cache #{release_path}/code/cache"
         run "ln -nfs #{shared_path}/sites #{release_path}/code/sites"
+        run "ln -nfs #{shared_path}/analytics.config.php #{release_path}/code/analytics.config.php"
         run "ln -nfs #{shared_path}/configuration.php #{release_path}/code/configuration.php"
     end
     
@@ -47,3 +47,4 @@ end
 # Hook into default tasks.
 after "deploy:update_code", "deploy:symlink_shared"
 after "deploy:update", "deploy:cleanup"
+after "deploy:update", "newrelic:notice_deployment"
