@@ -1,5 +1,4 @@
 require "capistrano/ext/multistage"
-require "new_relic/recipes"
 
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
@@ -47,4 +46,3 @@ end
 # Hook into default tasks.
 after "deploy:update_code", "deploy:symlink_shared"
 after "deploy:update", "deploy:cleanup"
-after "deploy:update", "newrelic:notice_deployment"
