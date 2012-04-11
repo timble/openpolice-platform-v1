@@ -1,6 +1,6 @@
 require "capistrano/ext/multistage"
 
-## State settings.
+## Stage settings.
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
 
