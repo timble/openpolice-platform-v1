@@ -30,7 +30,7 @@ namespace :deploy do
     end
     
     # Create symbolink links for shared directories.
-    task :symlink_shared, :roles => :app, :except => { :no_release => true } do
+    task :symlink_shared, :roles => :app do
         if app_symlinks
             app_symlinks.each do |link|
                 run "ln -fns #{shared_path}/#{link} #{release_path}/code/#{link}"
