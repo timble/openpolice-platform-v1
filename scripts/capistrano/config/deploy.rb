@@ -1,9 +1,12 @@
 require "capistrano/ext/multistage"
 
+## State settings.
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
 
+## Application settings.
 set :application, "portal"
+set :app_symlinks, ["cache", "sites", "analytics.config.php", "configuration.php"]
 
 # Server user settings.
 set :user, "deploy"
@@ -27,11 +30,12 @@ namespace :deploy do
     end
     
     # Create symbolink links for shared directories.
-    task :symlink_shared, :roles => :app do
-        run "ln -nfs #{shared_path}/cache #{release_path}/code/cache"
-        run "ln -nfs #{shared_path}/sites #{release_path}/code/sites"
-        run "ln -nfs #{shared_path}/analytics.config.php #{release_path}/code/analytics.config.php"
-        run "ln -nfs #{shared_path}/configuration.php #{release_path}/code/configuration.php"
+    task :symlink_shared, :roles => :app, :except => { :no_release => true } do
+        if app_symlinks
+            app_symlinks.each do |link|
+                run "ln -fns #{shared_path}/#{link} #{release_path}/code/#{link}"
+            end
+        end
     end
     
     # Do nothing in these tasks.
