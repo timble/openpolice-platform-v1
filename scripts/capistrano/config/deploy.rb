@@ -19,7 +19,7 @@ set :deploy_via, :remote_cache
 set :keep_releases, 3
 
 # Repository settings.
-set :repository,  "git@git.assembla.com:timble-police.git"
+set :repository, "git@git.assembla.com:timble-police.git"
 set :scm, :git
 set :scm_username, "deploy@timble.net"
 
@@ -29,7 +29,7 @@ namespace :deploy do
         run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
     end
     
-    # Create symbolink links for shared directories.
+    # Create symbolic links for shared directories.
     task :symlink_shared, :roles => :app do
         if app_symlinks
             app_symlinks.each do |link|
