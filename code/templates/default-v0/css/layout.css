@@ -1846,11 +1846,8 @@ label.invalid {
   background-image: url(../images/banners/5447-nl.jpg);
 }
 #header #banner.sitecentrex.nl {
-  background-image: url(../images/banners/federal-nl.jpg);
+  background-image: url(../images/banners/centrex-nl.jpg);
 }
 #header #banner.sitecentrex.fr {
-  background-image: url(../images/banners/federal-fr.jpg);
-}
-#header #banner.sitecentrex.de {
-  background-image: url(../images/banners/federal-de.jpg);
+  background-image: url(../images/banners/centrex-fr.jpg);
 }
