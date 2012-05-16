@@ -6,7 +6,7 @@ if (!isset($this->error)) {
 	$this->debug = false; 
 }
 
-$version = '27';
+$version = '28';
 $language = explode("-", $this->language);
 $language = $language[0];
 
