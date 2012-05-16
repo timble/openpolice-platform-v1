@@ -2,7 +2,7 @@
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-$version = '28';
+$version = '29';
 $language = explode("-", $this->language);
 $language = $language[0];
 
