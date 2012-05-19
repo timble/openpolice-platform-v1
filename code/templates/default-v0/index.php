@@ -3,7 +3,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 include_once("includes/grid.php");
 
-$version = '26';
+$version = '30';
 $language = explode("-", $this->language);
 $language = $language[0];
 
