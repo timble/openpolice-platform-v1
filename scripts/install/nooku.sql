@@ -62,16 +62,17 @@ INSERT INTO `pol_components` (`id`,`name`,`link`,`menuid`,`parent`,`admin_menu_l
 VALUES
     (0, 'Nooku', 'option=com_nooku', 0, 0, 'option=com_nooku', 'Nooku', 'com_nooku', 0, 'language', 0, 'primary_language=nl-NL\n', 1);
 
-INSERT INTO `pol_nooku_tables` (`nooku_table_id`,`table_name`,`unique_column`,`title_column`,`enabled`)
-VALUES
-    (0, 'categories', 'id', 'title', 1),
-    (0, 'content', 'id', 'title', 1),
-    (0, 'menu', 'id', 'name', 1),
-    (0, 'modules', 'id', 'title', 1),
-    (0, 'sections', 'id', 'title', 1),
-    (0, 'polls', 'id', 'title', 1),
-    (0, 'poll_data', 'id', 'title', 1),
-    (0, 'banner', 'id', 'title', 1),
-    (0, 'weblinks', 'id', 'title', 1);
+#INSERT INTO `pol_nooku_tables` #(`nooku_table_id`,`table_name`,`unique_column`,`title_column`,`enabled`)
+#VALUES
+#   (0, 'categories', 'id', 'title', 1),
+#   (0, 'contact_details', 'id', 'name', 1),
+#   (0, 'content', 'id', 'title', 1),
+#   (0, 'menu', 'id', 'name', 1),
+#   (0, 'modules', 'id', 'title', 1),
+#   (0, 'sections', 'id', 'title', 1),
+#   (0, 'polls', 'id', 'title', 1),
+#   (0, 'poll_data', 'id', 'title', 1),
+#   (0, 'banner', 'id', 'title', 1),
+#   (0, 'weblinks', 'id', 'title', 1);
 
 UPDATE `pol_plugins` SET `published` = '1' WHERE (`element` = 'koowa' OR `element` = 'nooku') AND `folder` = 'system';
