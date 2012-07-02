@@ -7,18 +7,17 @@ $sql = '';
 $options = array('exclude-default' => true);
 
 // Connect to MySQL.
-include dirname(__FILE__).'/../credentials.php';
-
-$link = mysql_connect('localhost', 'police', $credentials['mysql']['police']);
+include dirname(__FILE__).'/../../code/configuration.php';
+$config = new JConfig();
+$mysqli = new mysqli('localhost', $config->user, $config->password);
 
 // Get a list of installed sites.
-$result = mysql_query('SHOW DATABASES LIKE \'police_%\';');
-
-while($row = mysql_fetch_row($result)) {
+$result = $mysqli->query('SHOW DATABASES LIKE \'police_%\';');
+while($row = $result->fetch_row()) {
     $sites[] = substr($row[0], 7);
 }
 
-mysql_free_result($result);
+$result->close();
 
 if($options['exclude-default']) {
     unset($sites['default']);
@@ -27,6 +26,6 @@ if($options['exclude-default']) {
 // Execute the query.
 foreach($sites as $site)
 {
-    mysql_query('USE `police_'.$site.'`;');
-    mysql_query($sql);
+    $mysqli->select_db('police_'.$site);
+    $mysqli->query($sql);
 }

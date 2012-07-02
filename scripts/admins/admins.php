@@ -1,40 +1,42 @@
 #!/usr/bin/php
 <?php
-// Connect to MySQL.
-include dirname(__FILE__).'/../credentials.php';
+// The SQL query to execute.
+$sql = 'SELECT `gid`, `email` FROM `pol_users` WHERE `gid` IN (23, 24);';
 
-$link = mysql_connect('localhost', 'fedpol', $credentials['mysql']['fedpol']);
+// Optional settings.
+$options = array('exclude-default' => true);
+
+// Connect to MySQL.
+include dirname(__FILE__).'/../../code/configuration.php';
+$config = new JConfig();
+$mysqli = new mysqli('localhost', $config->user, $config->password);
 
 // Get a list of installed sites.
-$result = mysql_query('SHOW DATABASES LIKE \'police_%\';');
-
-while($row = mysql_fetch_row($result))
-{
-    $site = substr($row[0], 7);
-    
-    if($site != 'default') {
-        $sites[$site] = $site;
-    }
+$result = $mysqli->query('SHOW DATABASES LIKE \'police_%\';');
+while($row = $result->fetch_row()) {
+    $sites[] = substr($row[0], 7);
 }
 
-mysql_free_result($result);
+$result->close();
+
+if($options['exclude-default']) {
+    unset($sites['default']);
+}
 
 // Execute the query.
 foreach($sites as $site)
 {
-    mysql_select_db('police_'.$site);
+    $mysqli->select_db('police_'.$site);
+    $result = $mysqli->query($sql);
     
-    $result = mysql_query('SELECT `gid`, `email` FROM `pol_users` WHERE `gid` IN (23, 24);');
-    
-    while($row = mysql_fetch_assoc($result)) {
+    while($row = $result->fetch_assoc()) {
         $users[$row['email']] = array($row['email'], $site, $row['gid']);
     }
     
-    mysql_free_result($result);
+    $result->close();
 }
 
 $output = '"email","site","gid"';
-
 foreach($users as $user) {
     $output .= PHP_EOL.'"'.implode('","', $user).'"';
 }
