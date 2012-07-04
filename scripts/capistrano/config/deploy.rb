@@ -14,7 +14,7 @@ set :port, 9999
 set :use_sudo, false
 
 # Deployment settings.
-set :deploy_to, "/var/www/capistrano"
+set :deploy_to, "/var/www/lokalepolitie.be/capistrano"
 set :deploy_via, :remote_cache
 set :keep_releases, 3
 
