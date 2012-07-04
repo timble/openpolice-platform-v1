@@ -38,13 +38,17 @@ namespace :deploy do
         end
     end
     
+    desc "Restart the application."
+    task :restart do
+        run "curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
+    end
+    
     # Do nothing in these tasks.
     task :migrate do; end
     task :migrations do; end
     task :cold do; end
     task :start do; end
     task :stop do; end
-    task :restart do; end
 end
 
 # Hook into default tasks.
