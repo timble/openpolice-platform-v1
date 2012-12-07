@@ -1800,7 +1800,6 @@ label.invalid {
   text-align: center!important;
 }
 /*
-#header #banner.site5388 { background-image: url(../images/banners/5388-nl.jpg); }
 #header #banner.site5398 { background-image: url(../images/banners/5398-nl.jpg); }
 */
 #header #banner.site5352 {
@@ -1817,6 +1816,9 @@ label.invalid {
 }
 #header #banner.site5372 {
   background-image: url(../images/banners/5372-nl.jpg);
+}
+#header #banner.site5388 {
+  background-image: url(../images/banners/5388-nl.jpg);
 }
 #header #banner.site5339.fr {
   background-image: url(../images/banners/5339-fr.jpg);
@@ -1856,6 +1858,9 @@ label.invalid {
 }
 #header #banner.site5447 {
   background-image: url(../images/banners/5447-nl.jpg);
+}
+#header #banner.site5448 {
+  background-image: url(../images/banners/5448-nl.jpg);
 }
 #header #banner.sitecentrex.nl {
   background-image: url(../images/banners/centrex-nl.jpg);
