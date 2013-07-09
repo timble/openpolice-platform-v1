@@ -39,5 +39,5 @@ if (empty($account) && empty($hashtag))
 	return;
 }
 
-$feed = modFeedTwitterHelper::getFeed($params);
+//$feed = modFeedTwitterHelper::getFeed($params);
 require(JModuleHelper::getLayoutPath('mod_feed_twitter'));

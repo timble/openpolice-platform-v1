@@ -1802,6 +1802,9 @@ label.invalid {
 /*
 #header #banner.site5398 { background-image: url(../images/banners/5398-nl.jpg); }
 */
+#header #banner.site5282 {
+  background-image: url(../images/banners/5282-fr.jpg);
+}
 #header #banner.site5323 {
   background-image: url(../images/banners/5323-fr.jpg);
 }
@@ -1867,6 +1870,9 @@ label.invalid {
 }
 #header #banner.site5448 {
   background-image: url(../images/banners/5448-nl.jpg);
+}
+#header #banner.site5461 {
+  background-image: url(../images/banners/5461-nl.jpg);
 }
 #header #banner.sitecentrex.nl {
   background-image: url(../images/banners/centrex-nl.jpg);
