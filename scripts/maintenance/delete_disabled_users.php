@@ -12,8 +12,12 @@ while($row = $result->fetch_row()) {
 
 $result->close();
 
-unset($sites['default']);
-unset($sites['zone']);
+foreach($sites as $key => $site)
+{
+    if(in_array($site, array('default', 'zone'))) {
+        unset($sites[$key]);
+    }
+}
 
 // Execute the query.
 foreach($sites as $site)
