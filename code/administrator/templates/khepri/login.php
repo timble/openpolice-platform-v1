@@ -80,6 +80,19 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 					<h1><?php echo JText::_('Administrator') ?></h1>
 					<jdoc:include type="message" />
+
+                    <!-- Temporary migration notice -->
+                    <dl id="system-message">
+                        <dt class="notice">Login disabled temporarily</dt>
+                        <dd class="notice message fade">
+                            <ul>
+                                <li>Login is disabled during server migration. <a href="http://campaign.lokalepolitie.be/t/ViewEmail/r/39E5E6A0CAF460E72540EF23F30FEDED/934F25DDBC1BE6ECC67FD2F38AC4859C">More information</a>.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <!-- End temporary notice -->
+
+
 					<jdoc:include type="component" />
 					<p><?php echo JText::_('DESCUSEVALIDLOGIN') ?></p>
 					<p>
