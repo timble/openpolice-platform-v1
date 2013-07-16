@@ -86,7 +86,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
                         <dt class="notice">Login disabled temporarily</dt>
                         <dd class="notice message fade">
                             <ul>
-                                <li>Login is disabled during server migration. <a href="http://campaign.lokalepolitie.be/t/ViewEmail/r/39E5E6A0CAF460E72540EF23F30FEDED/934F25DDBC1BE6ECC67FD2F38AC4859C">More information</a>.</li>
+                                <li>Login is disabled from 17 July (21:00) until 22 July (08:00). <a href="http://campaign.lokalepolitie.be/t/ViewEmail/r/39E5E6A0CAF460E72540EF23F30FEDED/934F25DDBC1BE6ECC67FD2F38AC4859C">More information</a>.</li>
                             </ul>
                         </dd>
                     </dl>
