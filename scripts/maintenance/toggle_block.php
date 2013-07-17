@@ -1,12 +1,5 @@
 #!/usr/bin/php
 <?php
-// The SQL query to execute.
-$sql = '';
-
-// Optional settings.
-$options = array('exclude-default' => true);
-
-// Connect to MySQL.
 include dirname(__FILE__).'/../../code/configuration.php';
 $config = new JConfig();
 $mysqli = new mysqli('localhost', $config->user, $config->password);
@@ -19,19 +12,17 @@ while($row = $result->fetch_row()) {
 
 $result->close();
 
-if($options['exclude-default'])
+foreach($sites as $key => $site)
 {
-    foreach($sites as $key => $site)
-    {
-        if($site == 'default') {
-            unset($sites[$key]);
-        }
+    if(in_array($site, array('default', 'zone'))) {
+        unset($sites[$key]);
     }
 }
 
-// Execute the query.
 foreach($sites as $site)
 {
     $mysqli->select_db('police_'.$site);
+
+    $sql = "UPDATE pol_users SET block = 1 - block WHERE gid > 18 AND gid < 25";
     $mysqli->query($sql);
 }
