@@ -1,6 +1,6 @@
 require "new_relic/recipes"
 
-server "p.pol-nl.be", :app, :web, :db, :primary => true
+server "police-production", :app, :web, :db, :primary => true
 
 set :rails_env, "production"
 set :branch, "master"
