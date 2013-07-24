@@ -131,7 +131,7 @@ $site = JFactory::getApplication()->getSite();
 				<li>Copyright - <?php echo JText::_('Local Police'); ?> - <jdoc:include type="modules" name="sitename" style="sitename" /> <?php echo date("Y"); ?>©</li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/disclaimer.html">Disclaimer</a></li>
 				<li><a target="_blank" href="http://www.lokalepolitie.be/portal/<?php echo $language == 'de' ? 'nl' : $language; ?>/privacy.html">Privacy</a></li>
-				<li><a target="_blank" href="http://www.belgium.be"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/icon_belgium.gif" border="0"></a></li>
+				<li><a target="_blank" href="http://www.belgium.be"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/icon_belgium.gif" border="0"></a> SS</li>
 			</ul>
 		</div>
 	</div>
