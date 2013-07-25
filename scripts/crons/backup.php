@@ -9,7 +9,6 @@ $backup = new Backup('/var/backups/');
 
 // Step 1 - create the daily dumps
 $backup->dumpDatabases($config);
-$backup->archiveFiles('/var/www/lokalepolitie.be');
 
 // Step 2 - execute the weekly rotation on the database dumps every sunday
 if(date('N') == date('N'))//7)
