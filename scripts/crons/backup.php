@@ -14,7 +14,7 @@ $backup->dumpDatabases($config);
 if(date('N') == date('N'))//7)
 {
     $filename = 'databases'.DS.'weekly'.DS.'police-'.date('Y-\w\e\e\kW').'.'.date('Ymd').'.tgz';
-    $backup->rotate('databases'.DS.'daily', 'tar', $filename);
+    $backup->rotate('databases'.DS.'daily', 'tar.gz', $filename);
 }
 
 // Step 3 - execute the monthly rotation on the database dumps, the last day of each month
@@ -96,6 +96,10 @@ class Backup
         }
 
         rmdir($tmp);
+
+        // Make sure to compress the resulting tarball
+        $cmd = 'gzip -f ' . $filename;
+        exec($cmd);
 
         return $filename;
     }
