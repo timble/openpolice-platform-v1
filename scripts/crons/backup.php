@@ -11,14 +11,14 @@ $backup = new Backup('/var/backups/');
 $backup->dumpDatabases($config);
 
 // Step 2 - execute the weekly rotation on the database dumps every sunday
-if(date('N') == date('N'))//7)
+if(date('N') == 7)
 {
     $filename = 'databases'.DS.'weekly'.DS.'police-'.date('Y-\w\e\e\kW').'.'.date('Ymd').'.tgz';
     $backup->rotate('databases'.DS.'daily', 'tar.gz', $filename);
 }
 
 // Step 3 - execute the monthly rotation on the database dumps, the last day of each month
-if(date('j') == date('j'))//== date('t'))
+if(date('j') == date('t'))
 {
     $filename = 'databases'.DS.'monthly'.DS.'police-'.date('Ymd').'.tgz';
     $backup->rotate('databases'.DS.'weekly', 'tgz', $filename);
