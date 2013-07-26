@@ -23,17 +23,20 @@ $filename = exec("ssh -p 9999 deploy@172.18.150.10 \"ls -alhr /var/backups/datab
 if(empty($filename)) exit('No MySQL dump found!');
 
 // Download the file and extract
+echo "Downloading " . $filename . ' archive' . ÒPHP_EOL;
 exec('scp -P 9999 deploy@172.18.150.10:/var/backups/databases/daily/' . $filename . ' ' . $dumps_dir.$filename);
 exec('tar -xvf ' . $filename);
 
 // Now loop over all the databases and import
 foreach(glob("police_*.sql") as $file)
 {
+    echo "Importing " . $file . PHP_EOL;
     $database = substr($file, 0, -4);
     exec("mysql -uimport -p'Danf_d296npwAZRf' ".$database." < " . $file);
 }
 
 // Now rsync the source files
+echo "-- Syncing shared folders".PHP_EOL;
 exec('rsync --rsh "ssh -p 9999" deploy@172.18.150.10:/var/www/lokalepolitie.be/capistrano/shared/ /var/www/lokalepolitie.be/capistrano/shared/ --update --perms --owner --group --recursive --times --links');
 
 // Get rid of our temporary directories and files
