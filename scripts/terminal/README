@@ -1,0 +1,14 @@
+The scripts and files in this folder are used on the Terminal machine,
+which acts as the gateway into the police servers and is located at Timble HQ.
+
+These files should be placed at /Users/terminal/Sites/lokalepolitie.be/ on the terminal machine.
+
+Note:
+
+- Make sure to install rsync 3.0.9 with iconv support. See rsync.sh.
+
+List of files and their purpose:
+--------------------------------
+
+- rsync.sh is used to backup the files and mysql dumps from the production server
+  (rsync.exclude is a list of files/folders that should not be synced when backing up)
