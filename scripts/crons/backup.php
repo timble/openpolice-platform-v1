@@ -1,14 +1,10 @@
 <?php
-define('JPATH_SITE', dirname(__FILE__).'/../../code');
 define('DS', DIRECTORY_SEPARATOR);
 
-require_once JPATH_SITE.'/configuration.php';
-
-$config = new JConfig();
 $backup = new Backup('/var/backups/');
 
 // Step 1 - create the daily dumps
-$backup->dumpDatabases($config);
+$backup->dumpDatabases();
 
 // Step 2 - execute the weekly rotation on the database dumps every sunday
 if(date('N') == 7)
@@ -51,16 +47,18 @@ class Backup
      * Creates a MySQL dump file of all databases
      *
      * @param string $filename	name of dump output file
-     * @param string $config containing database connection settings
      * @return string the full path to the backup file
      */
-    public function dumpDatabases($config)
+    public function dumpDatabases()
     {
+        $user = 'fedpol';
+        $password = 'VNW6eatrdtyknQ';
+
         $filename = 'databases'.DS.'daily'.DS.'police.'.date('Ymd').'.sql.tar';
         $filename = $this->_getPath($filename);
 
         // Get a list of all the databases
-        $cmd = 'mysql -h'.$config->host.' -u'.escapeshellarg($config->user).' -p'.escapeshellarg($config->password);
+        $cmd = 'mysql -u'.escapeshellarg($user).' -p'.escapeshellarg($password);
         $cmd .= ' --raw --skip-column-names -e "SHOW DATABASES;"';
 
         exec($cmd, $databases);
@@ -84,7 +82,7 @@ class Backup
             $destination = $tmp.$database.'.sql';
 
             $cmd = 'mysqldump --complete-insert --add-drop-table --extended-insert --quote-names';
-            $cmd .= ' -h'.$config->host.' -u'.escapeshellarg($config->user).' -p'.escapeshellarg($config->password).' '.escapeshellarg($config->db);
+            $cmd .= ' -u'.escapeshellarg($user).' -p'.escapeshellarg($password).' '.escapeshellarg($database);
             $cmd .= ' > ' . $destination;
 
             exec($cmd);
