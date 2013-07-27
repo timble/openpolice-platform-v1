@@ -23,11 +23,12 @@ $filename = exec("ssh -p 9999 deploy@172.18.150.10 \"ls -alhr /var/backups/datab
 if(empty($filename)) exit('No MySQL dump found!');
 
 // Download the file and extract
-echo "Downloading " . $filename . ' archive' . ÒPHP_EOL;
+echo "-- Downloading " . $filename . ' archive' . PHP_EOL;
 exec('scp -P 9999 deploy@172.18.150.10:/var/backups/databases/daily/' . $filename . ' ' . $dumps_dir.$filename);
 exec('tar -xvf ' . $filename);
 
 // Now loop over all the databases and import
+echo "-- Importing all databases".PHP_EOL;
 foreach(glob("police_*.sql") as $file)
 {
     echo "Importing " . $file . PHP_EOL;
