@@ -494,6 +494,13 @@ class gapi
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //CURL doesn't like google's cert
 
+    // @TODO : this change will be lost if we update the gapi library.
+    // but we have no other choice - we cannot set the proxy value permanently on
+    // the environment level.
+    if(in_array(gethostname(), array('web-staging.politie.be', 'lokalepolitie.be'))) {
+        curl_setopt($ch, CURLOPT_PROXY, 'proxy.yourict.net:8080');
+    }
+
     if(is_array($post_variables))
     {
       curl_setopt($ch, CURLOPT_POST, true);
