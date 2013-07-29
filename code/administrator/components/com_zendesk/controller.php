@@ -12,19 +12,20 @@ class ZendeskController extends JController
 			$application->redirect('index.php', JText::_('ALERTNOTAUTH'), 'error');
 		}
 
-		$token			= 'zZrkinswnaUzmFtQTGg5zblw3N7OOd7IElIRwo91n5rAOExl';
-		$attributes		= array(
-			'name'			=> $user->name,
-			'email'			=> $user->email,
-			'timestamp'		=> time()
-		);
+        require_once JPATH_LIBRARIES.DS.'php-jwt'.DS.'Authentication'.DS.'JWT.php';
 
-		$attributes['hash'] = md5($attributes['name'].$attributes['email'].$token.$attributes['timestamp']);
+        $key       = "4DbI0vrQfmQqhZuIAp6NapeI92kEL8CJpb2n4vIT0aGeGiu0";
+        $now       = time();
 
-		foreach($attributes as $key => $value) {
-			$url[] = $key.'='.urlencode($value);
-		}
+        $token = array(
+            "jti"   => md5($now . rand()),
+            "iat"   => $now,
+            "name"  => $user->name,
+            "email" => $user->email
+        );
 
-		$application->redirect('http://support.lokalepolitie.be/access/remote/?'.implode('&', $url));
+        $jwt = JWT::encode($token, $key);
+
+		$application->redirect('http://support.lokalepolitie.be/access/jwt?jwt=' . $jwt);
 	}
 }
