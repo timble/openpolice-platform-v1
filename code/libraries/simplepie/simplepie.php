@@ -7684,6 +7684,14 @@ class SimplePie_File
 				curl_setopt($fp, CURLOPT_REFERER, $url);
 				curl_setopt($fp, CURLOPT_USERAGENT, $useragent);
 				curl_setopt($fp, CURLOPT_HTTPHEADER, $headers2);
+
+                // @TODO : this change will be lost if we update the gapi library.
+                // but we have no other choice - we cannot set the proxy value permanently on
+                // the environment level. (Ticket #526)
+                if(in_array(gethostname(), array('web-staging.politie.be', 'lokalepolitie.be'))) {
+                    curl_setopt($fp, CURLOPT_PROXY, 'proxy.yourict.net:8080');
+                }
+
 				if (!ini_get('open_basedir') && !ini_get('safe_mode') && version_compare(SimplePie_Misc::get_curl_version(), '7.15.2', '>='))
 				{
 					curl_setopt($fp, CURLOPT_FOLLOWLOCATION, 1);

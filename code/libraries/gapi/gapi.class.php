@@ -496,7 +496,7 @@ class gapi
 
     // @TODO : this change will be lost if we update the gapi library.
     // but we have no other choice - we cannot set the proxy value permanently on
-    // the environment level.
+    // the environment level. (Ticket #526)
     if(in_array(gethostname(), array('web-staging.politie.be', 'lokalepolitie.be'))) {
         curl_setopt($ch, CURLOPT_PROXY, 'proxy.yourict.net:8080');
     }
