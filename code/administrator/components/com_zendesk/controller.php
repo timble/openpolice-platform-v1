@@ -26,6 +26,6 @@ class ZendeskController extends JController
 
         $jwt = JWT::encode($token, $key);
 
-		$application->redirect('http://support.lokalepolitie.be/access/jwt?jwt=' . $jwt);
+		$application->redirect('https://police.zendesk.com/access/jwt?jwt=' . $jwt);
 	}
 }
