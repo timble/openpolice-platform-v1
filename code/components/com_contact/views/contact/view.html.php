@@ -130,6 +130,17 @@ class ContactViewContact extends JView
 			$contact->params->set('address_check', 0);
 		}
 
+        // Assign captcha details
+        $secret = JFactory::getConfig()->getValue('secret');
+        $a = rand(1, 5);
+        $b = rand(1, 5);
+        $score = $a + $b;
+        $hash = md5($score.':'.JFactory::getConfig()->getValue('secret'));
+
+        $this->assign('a', $a);
+        $this->assign('b', $b);
+        $this->assign('hash', $hash);
+
 		 // Manage the display mode for contact detail groups
 		switch ($contact->params->get('contact_icons'))
 		{
