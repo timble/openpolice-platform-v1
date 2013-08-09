@@ -89,6 +89,10 @@
 			<option value="0">Hide</option>
 			<option value="1">Show</option>
 		</param>
+        <param name="captcha" type="radio" default="0" label="Captcha">
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
 		<param name="email_description" type="text" size="30" default="" label="Description text" description="PARAMEMAILDESCTEXT" />
 		<param name="show_email_copy" type="radio" default="1" label="Email Copy" description="PARAMEMAILCOPY">
 			<option value="0">Hide</option>
