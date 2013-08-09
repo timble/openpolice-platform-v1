@@ -69,13 +69,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
     <?php if($this->contact->params->get('captcha', false)): ?>
     <div class="clearfix">
         <label id="contact_captchamsg" for="captcha" class="label-captcha">
-            <?= JText::sprintf('What is the sum of', $this->a, $this->b) ?>:
+            <?php echo JText::sprintf('What is the sum of', $this->a, $this->b) ?>:
         </label>
         <div class="input">
             <input type="text" name="captcha" id="captcha" maxlength="2" size="30" class="text required" value="" />
         </div>
     </div>
-    <? endif; ?>
+    <?php endif; ?>
 
 	<?php if ($this->contact->params->get( 'show_email_copy' )) : ?>
 	<div class="clearfix">
