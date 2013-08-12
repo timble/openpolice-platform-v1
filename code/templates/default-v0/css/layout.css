@@ -1743,7 +1743,7 @@ textarea {
 /* Duplicate of templates/system/general.css */
 /* Form validation */
 .invalid {
-  border-color: #ff0000;
+  border-color: #ff0000 !important;
 }
 label.invalid {
   color: #ff0000;

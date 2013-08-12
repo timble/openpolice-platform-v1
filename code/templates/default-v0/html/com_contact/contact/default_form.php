@@ -65,7 +65,18 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 			<textarea cols="50" rows="10" name="text" id="contact_text" class="required"></textarea>
 		</div>
 	</div>
-	
+
+    <?php if($this->contact->params->get('captcha', false)): ?>
+    <div class="clearfix">
+        <label id="contact_captchamsg" for="captcha" class="label-captcha">
+            <?php echo JText::sprintf('What is the sum of', $this->a, $this->b) ?>:
+        </label>
+        <div class="input">
+            <input type="text" name="captcha" id="captcha" maxlength="2" size="30" class="text required" value="" />
+        </div>
+    </div>
+    <?php endif; ?>
+
 	<?php if ($this->contact->params->get( 'show_email_copy' )) : ?>
 	<div class="clearfix">
 		<div class="input">
@@ -84,5 +95,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 	<input type="hidden" name="view" value="contact" />
 	<input type="hidden" name="id" value="<?php echo $this->contact->id; ?>" />
 	<input type="hidden" name="task" value="submit" />
+    <input type="hidden" value="<?php echo $this->hash ?>" name="hash" />
 	<?php echo JHTML::_( 'form.token' ); ?>
 </form>

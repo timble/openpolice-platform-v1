@@ -159,8 +159,13 @@ class ContactController extends JController
 		$dispatcher	=& JDispatcher::getInstance();
 
 		// Input validation
-		if  (!$this->_validateInputs( $contact, $email, $subject, $body ) ) {
-			JError::raiseWarning( 0, $this->getError() );
+		if  (!$this->_validateInputs( $contact, $email, $subject, $body ) )
+        {
+            $msg = $this->getError();
+            $link = JRoute::_('index.php?option=com_contact&view=contact&id='.$contact->slug.'&catid='.$contact->catslug, false);
+            $this->setRedirect($link, $msg, 'error');
+
+			// JError::raiseWarning( 0, $this->getError() );
 			return false;
 		}
 
@@ -342,6 +347,21 @@ class ContactController extends JController
 		// Get params and component configurations
 		$params		= new JParameter($contact->params);
 		$pparams	= &$mainframe->getParams('com_contact');
+
+        // Validate the captcha
+        if($params->get('captcha', false))
+        {
+            $score = JRequest::getInt('captcha', 0, 'post');
+            $validation = md5($score.':'.JFactory::getConfig()->getValue('secret'));
+
+            $hash = JRequest::getString('hash', '', 'post');
+
+            if($hash != $validation)
+            {
+                $this->setError(JText::_('Incorrect captcha answer'));
+                return false;
+            }
+        }
 
 		// check for session cookie
 		$sessionCheck 	= $pparams->get( 'validate_session', 1 );
