@@ -7,3 +7,5 @@
 
 /usr/local/bin/rsync -avz --delete -e "ssh -p 9999" deploy@127.0.10.10:/var/backups/databases/ /Users/terminal/Sites/lokalepolitie.be/backups/databases
 /usr/local/bin/rsync -avz --delete --iconv=UTF8-MAC,UTF8 -e "ssh -p 9999" --no-links --exclude-from 'rsync.exclude' deploy@127.0.10.10:/var/www/lokalepolitie.be/ /Users/terminal/Sites/lokalepolitie.be/backups/files/
+
+/usr/local/bin/rsync -avz --delete -e "ssh -p 9999" deploy@127.0.10.10:/etc/nginx/ /Users/terminal/Sites/lokalepolitie.be/backups/nginx
