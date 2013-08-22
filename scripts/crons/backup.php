@@ -227,8 +227,7 @@ class Backup
     {
         $parts = explode('.', $filename);
 
-        $len = count($parts);
-        $date = $parts[$len-2];
+        $date = $parts[1];
 
         $stamp = strtotime($date);
 
