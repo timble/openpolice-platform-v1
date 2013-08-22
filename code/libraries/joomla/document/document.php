@@ -82,7 +82,7 @@ class JDocument extends JObject
 	 * @var		string
 	 * @access	public
 	 */
-	 var $_generator = 'Joomla! 1.5 - Open Source Content Management';
+	 var $_generator = 'Belgian Police Web Platform';
 
 	/**
 	 * Document modified date
