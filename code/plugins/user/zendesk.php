@@ -71,6 +71,10 @@ class plgUserZendesk extends JPlugin
 		curl_setopt($curl, CURLOPT_URL, 'http://support.lokalepolitie.be/'.$url);
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
 
+        if(in_array(gethostname(), array('web-staging.politie.be', 'lokalepolitie.be'))) {
+            curl_setopt($curl, CURLOPT_PROXY, 'proxy.yourict.net:8080');
+        }
+
 		if(!empty($xml))
 		{
 			$headers = array(
