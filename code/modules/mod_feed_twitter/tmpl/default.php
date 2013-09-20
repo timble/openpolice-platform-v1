@@ -1,31 +1,11 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access'); ?>
 <?php
-if( $feed != false )
-{
-	$actualItems 	= count( $feed->items );
-	$setItems    	= $params->get('rssitems', 5);
-	$account    	= $params->get('account', '');
+    $account = str_replace('@', '', $params->get('account', ''));
+?>
 
-	if ($setItems > $actualItems) {
-		$totalItems = $actualItems;
-	} else {
-		$totalItems = $setItems;
-	}
-		for ($j = 0; $j < $totalItems; $j ++)
-		{
-			$currItem = & $feed->items[$j];
-			// item title
-			?>
-			<p>
-			<?php
-				// item description
-				$text = $currItem->get_description();
-				$text = str_replace('&apos;', "'", $text);
-				?>
-				<?php echo $text; ?>
-			</p>
-			<?php
-		}
-	} ?>
+<a class="twitter-timeline" width="200" href="https://twitter.com/<?php echo $account ?>" data-screen-name="<?php echo $account ?>" data-widget-id="344729335502086144" data-tweet-limit="1" data-chrome="noheader nofooter transparent">Tweets by @<?php echo $account ?></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
 <p><?php echo JText::_( 'Follow us on' ); ?> <a href="http://twitter.com/<?php echo $account ?>">twitter.com/<?php echo $account ?></a></p>
