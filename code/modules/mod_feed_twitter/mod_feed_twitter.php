@@ -14,24 +14,8 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Direct Access to this location is not allowed.');
 
-// Include the syndicate functions only once
-require_once (dirname(__FILE__).DS.'helper.php');
-
-$account	= $params->get('account', '');
-$hashtag	= $params->get('hashtag', '');
-
-//check if cache diretory is writable as cache files will be created for the feed
-$cacheDir = JPATH_CACHE;
-if (!is_writable($cacheDir))
-{
-	echo '<div>';
-	echo JText::_('Please make cache directory writable.');
-	echo '</div>';
-	return;
-}
-
 //check if feed URL has been set
-if (empty($account) && empty($hashtag))
+if (!$params->get('account', ''))
 {
 	echo '<div>';
 	echo JText::_('No Twitter account specified.');
@@ -39,5 +23,4 @@ if (empty($account) && empty($hashtag))
 	return;
 }
 
-//$feed = modFeedTwitterHelper::getFeed($params);
 require(JModuleHelper::getLayoutPath('mod_feed_twitter'));

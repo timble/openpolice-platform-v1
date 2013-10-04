@@ -14,13 +14,5 @@
 	</files>
 	<params>
 		<param name="account" type="text" size="50" default="" label="Username" description="" />
-		<param name="hashtag" type="text" size="50" default="" label="Hashtag" description="" />
-		<param name="rssitems" type="list" default="1" label="Tweets" description="">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</param>
-        <param name="cache" type="hidden" default="1" />
-        <param name="cache_time" type="hidden" default="15" />
 	</params>
 </install>
