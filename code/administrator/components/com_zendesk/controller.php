@@ -14,7 +14,7 @@ class ZendeskController extends JController
 
         require_once JPATH_LIBRARIES.DS.'php-jwt'.DS.'Authentication'.DS.'JWT.php';
 
-        $key       = "4DbI0vrQfmQqhZuIAp6NapeI92kEL8CJpb2n4vIT0aGeGiu0";
+        $key       = "8Rs5RSUA4OL8luwHi3UCQp5U3hOIXWj3c2bvedRa3LvdmtfY";
         $now       = time();
 
         $token = array(
