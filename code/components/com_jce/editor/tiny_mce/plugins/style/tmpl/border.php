@@ -1,40 +1,40 @@
 <?php
-
 /**
- * @package   	JCE
- * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
- * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * JCE is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
- */
-
-defined('_JEXEC') or die('RESTRICTED');
+* @version    $Id: border.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
+* @package      JCE
+* @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
+* @author   Ryan Demmer
+* @license      GNU/GPL
+* JCE is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+*/
+defined('_JEXEC') or die('ERROR_403');
 ?>
 <table border="0" width="100%">
   <tr>
     <td class="tdelim">&nbsp;</td>
     <td class="tdelim delim">&nbsp;</td>
-    <td class="tdelim"><?php echo WFText::_('WF_STYLES_STYLE');?></td>
+    <td class="tdelim">{#style_dlg.style}</td>
     <td class="tdelim delim">&nbsp;</td>
-    <td class="tdelim"><?php echo WFText::_('WF_STYLES_WIDTH');?></td>
+    <td class="tdelim">{#style_dlg.width}</td>
     <td class="tdelim delim">&nbsp;</td>
-    <td class="tdelim"><?php echo WFText::_('WF_STYLES_COLOR');?></td>
+    <td class="tdelim">{#style_dlg.color}</td>
   </tr>
   
   <tr>
     <td>&nbsp;</td>
     <td class="delim">&nbsp;</td>
-    <td><input type="checkbox" id="border_style_same" name="border_style_same" class="checkbox" checked="checked" onClick="StyleDialog.toggleSame(this,'border_style');" /> <label for="border_style_same"><?php echo WFText::_('WF_STYLES_SAME');?></label></td>
+    <td><input type="checkbox" id="border_style_same" name="border_style_same" class="checkbox" checked="checked" onClick="StyleDialog.toggleSame(this,'border_style');" /> <label for="border_style_same">{#style_dlg.same}</label></td>
     <td class="delim">&nbsp;</td>
-    <td><input type="checkbox" id="border_width_same" name="border_width_same" class="checkbox" checked="checked" onClick="StyleDialog.toggleSame(this,'border_width');" /> <label for="border_width_same"><?php echo WFText::_('WF_STYLES_SAME');?></label></td>
+    <td><input type="checkbox" id="border_width_same" name="border_width_same" class="checkbox" checked="checked" onClick="StyleDialog.toggleSame(this,'border_width');" /> <label for="border_width_same">{#style_dlg.same}</label></td>
     <td class="delim">&nbsp;</td>
-    <td><input type="checkbox" id="border_color_same" name="border_color_same" class="checkbox" checked="checked" onClick="StyleDialog.toggleSame(this,'border_color');" /> <label for="border_color_same"><?php echo WFText::_('WF_STYLES_SAME');?></label></td>
+    <td><input type="checkbox" id="border_color_same" name="border_color_same" class="checkbox" checked="checked" onClick="StyleDialog.toggleSame(this,'border_color');" /> <label for="border_color_same">{#style_dlg.same}</label></td>
   </tr>
   
   <tr>
-    <td><?php echo WFText::_('WF_STYLES_TOP');?></td>
+    <td>{#style_dlg.top}</td>
     <td class="delim">&nbsp;</td>
     <td><select id="border_style_top" name="border_style_top" class="mceEditableSelect"></select></td>
     <td class="delim">&nbsp;</td>
@@ -58,7 +58,7 @@ defined('_JEXEC') or die('RESTRICTED');
   </tr>
   
   <tr>
-    <td><?php echo WFText::_('WF_STYLES_RIGHT');?></td>
+    <td>{#style_dlg.right}</td>
     <td class="delim">&nbsp;</td>
     <td><select id="border_style_right" name="border_style_right" class="mceEditableSelect" disabled="disabled"></select></td>
     <td class="delim">&nbsp;</td>
@@ -82,7 +82,7 @@ defined('_JEXEC') or die('RESTRICTED');
   </tr>
   
   <tr>
-    <td><?php echo WFText::_('WF_STYLES_BOTTOM');?></td>
+    <td>{#style_dlg.bottom}</td>
     <td class="delim">&nbsp;</td>
     <td><select id="border_style_bottom" name="border_style_bottom" class="mceEditableSelect" disabled="disabled"></select></td>
     <td class="delim">&nbsp;</td>
@@ -106,7 +106,7 @@ defined('_JEXEC') or die('RESTRICTED');
   </tr>
   
   <tr>
-    <td><?php echo WFText::_('WF_STYLES_LEFT');?></td>
+    <td>{#style_dlg.left}</td>
     <td class="delim">&nbsp;</td>
     <td><select id="border_style_left" name="border_style_left" class="mceEditableSelect" disabled="disabled"></select></td>
     <td class="delim">&nbsp;</td>

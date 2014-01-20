@@ -1,62 +1,60 @@
 <?php
-
 /**
+ * @version		$Id: textarea.php 201 2011-05-08 16:27:15Z happy_noodle_boy $
  * @package   	JCE
- * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * JCE is free software. This version may have been modified pursuant
+ * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright © 2005 - 2007 Open Source Matters. All rights reserved.
+ * @license   	GNU/GPL 2 or later
+ * This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-defined('JPATH_BASE') or die('RESTRICTED');
+
+// Check to ensure this file is within the rest of the framework
+defined('JPATH_BASE') or die();
 
 /**
  * Renders a textarea element
  *
- * @package 	JCE
+ * @package 	Joomla.Framework
+ * @subpackage		Parameter
+ * @since		1.5
  */
-class WFElementTextarea extends WFElement {
 
-    /**
-     * Element name
-     *
-     * @access	protected
-     * @var		string
-     */
-    var $_name = 'Textarea';
+class JElementTextarea extends JElement
+{
+	/**
+	* Element name
+	*
+	* @access	protected
+	* @var		string
+	*/
+	var	$_name = 'Textarea';
 
-    function fetchElement($name, $value, &$node, $control_name) {
-        $attribs = ' ';
+	function fetchElement($name, $value, &$node, $control_name)
+	{
+		$attribs 	= ' ';
+		
+		$attributes = array(
+			'placeholder'	=> ''
+		);
+		
+		foreach ($attributes as $k => $v) {
+			$av = $node->attributes($k);
+			if ($av || $v) {
+				$v = !$av ? $v : $av;
+				$attribs .= ' '.$k.'="'.$v.'"';
+			}
+		}
+		
+		$rows = $node->attributes('rows');
+		$cols = $node->attributes('cols');
+		$class = ( $node->attributes('class') ? 'class="'.$node->attributes('class').'"' : 'class="text_area"' );
+		// convert <br /> tags so they are not visible when editing
+		$value = str_replace('<br />', "\n", $value);
 
-        $attributes = array(
-            'placeholder' => ''
-        );
-
-        foreach ($attributes as $k => $v) {
-            $av = (string) $node->attributes()->$k;
-            if ($av || $v) {
-                $v = !$av ? $v : $av;
-                $attribs .= ' ' . $k . '="' . $v . '"';
-            }
-        }
-        
-        // pattern data attribute for editable select input box
-        if ((string) $node->attributes()->parent) {
-            $attribs .= 'data-parent="' . preg_replace(array('#^params#', '#([^\w]+)#'), '', $control_name) . (string) $node->attributes()->parent . '"';
-        }
-
-        $rows = (string) $node->attributes()->rows;
-        $cols = (string) $node->attributes()->cols;
-        
-        $class = ((string) $node->attributes()->class ? 'class="' . (string) $node->attributes()->class . '"' : 'class="text_area"' );
-        // convert <br /> tags so they are not visible when editing
-        $value = str_replace('<br />', "\n", $value);
-
-        return '<textarea name="' . $control_name . '[' . $name . ']" cols="' . $cols . '" rows="' . $rows . '" ' . $class . ' id="' . $control_name . $name . '"' . $attribs . '>' . $value . '</textarea>';
-    }
-
+		return '<textarea name="'.$control_name.'['.$name.']" cols="'.$cols.'" rows="'.$rows.'" '.$class.' id="'.$control_name.$name.'"'.$attribs.'>'.$value.'</textarea>';
+	}
 }
-
 ?>

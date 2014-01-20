@@ -1,2 +1,100 @@
-/*JCE Editor - 2.3.4.4 | 12 December 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html*/
-#jce-tooltip.jce-tooltip h4,#jce-tooltip.jce-tooltip p,#jce-tooltip.jce-tooltip ul{font-size:1em;margin:0;padding:0;word-wrap:normal;}#jce-tooltip.jce-tooltip ul{margin:0 0 0 20px;}#jce-tooltip.jce-tooltip h4{font-weight:bold;font-size:1.1em;}#jce-tooltip.jce-tooltip a{text-decoration:underline;}#jce-tooltip.jce-tooltip{padding:.8em;min-width:10em;max-width:30em;border-width:2px!important;position:absolute;z-index:9999;visibility:hidden;margin:0;font-size:11px;border:1px solid #ccc;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}label.hasTip,span.hasTip,label.hastip,span.hastip,label.tooltip,span.tooltip,label.wf-tooltip,span.wf-tooltip{cursor:help;}#jce-tooltip span.ui-icon-close{position:absolute;right:0;top:0;cursor:pointer;}#jce-tooltip span.ui-icon-close:after{content:"\00d7";display:block;font-family:arial;font-size:16px;font-weight:bold;line-height:10px;padding:6px;}#jce-tooltip .jce-tooltip-pointer,#jce-tooltip .jce-tooltip-pointer:after,#jce-tooltip .jce-tooltip-pointer-inner{border-color:transparent;border-style:solid;display:inline-block;height:0;position:absolute;width:0;}#jce-tooltip .jce-tooltip-pointer:after{content:"";z-index:-1;}#jce-tooltip .jce-tooltip-pointer.top,#jce-tooltip .jce-tooltip-pointer.top .jce-tooltip-pointer-inner{border-top-color:#FFF;border-width:7px 7px 0;bottom:-7px;left:50%;margin-left:-7px;}#jce-tooltip .jce-tooltip-pointer.top .jce-tooltip-pointer-inner{bottom:0;}#jce-tooltip .jce-tooltip-pointer.top:after{border-top-color:#ccc;border-width:8px 8px 0;bottom:-3px;left:-8px;}#jce-tooltip .jce-tooltip-pointer.right,#jce-tooltip .jce-tooltip-pointer.right .jce-tooltip-pointer-inner{border-right-color:#FFF;border-width:7px 7px 7px 0;left:-7px;margin-top:-7px;top:50%;}#jce-tooltip .jce-tooltip-pointer.right .jce-tooltip-pointer-inner{left:0;}#jce-tooltip .jce-tooltip-pointer.right:after{border-right-color:#ccc;border-width:8px 8px 8px 0;bottom:-8px;left:-3px;}#jce-tooltip .jce-tooltip-pointer.bottom,#jce-tooltip .jce-tooltip-pointer.bottom .jce-tooltip-pointer-inner{border-bottom-color:#FFF;border-width:0 7px 7px;left:50%;margin-left:-7px;top:-7px;}#jce-tooltip .jce-tooltip-pointer.bottom .jce-tooltip-pointer-inner{top:0;}#jce-tooltip .jce-tooltip-pointer.bottom:after{border-bottom-color:#ccc;border-width:0 8px 8px;left:-8px;top:-3px;}#jce-tooltip .jce-tooltip-pointer.left,#jce-tooltip .jce-tooltip-pointer.left .jce-tooltip-pointer-inner{border-left-color:#FFF;border-width:7px 0 7px 7px;margin-top:-7px;right:-7px;top:50%;}#jce-tooltip .jce-tooltip-pointer.left .jce-tooltip-pointer-inner{right:0;}#jce-tooltip .jce-tooltip-pointer.left:after{border-left-color:#ccc;border-width:8px 0 8px 8px;bottom:-8px;right:-3px;}#jce-tooltip.wf-colorpicker{box-shadow:0 5px 10px rgba(0,0,0,0.2);}
+/**
+ * @version		$Id: tips.css 203 2011-06-01 19:02:19Z happy_noodle_boy $
+ * @package   	JCE
+ * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later
+ * This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ *
+ * Based on tooltip idea by Filament Group - http://www.filamentgroup.com/lab/image_free_css_tooltip_pointers_a_use_for_polygonal_css/
+ *
+ */
+#jce-tooltip.jce-tooltip h4, #jce-tooltip.jce-tooltip p, #jce-tooltip.jce-tooltip ul {
+    font-size: 1em;
+    margin: 0;
+    padding:0;
+}
+#jce-tooltip.jce-tooltip ul {
+    margin: 0 0 0 20px;
+}
+#jce-tooltip.jce-tooltip h4 {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+#jce-tooltip.jce-tooltip a {
+    text-decoration: underline;
+}
+/*Tooltip and Pointer CSS*/
+#jce-tooltip.jce-tooltip {
+    padding: .8em;
+    min-width: 10em;
+    max-width: 30em;
+    border-width: 2px !important;
+    position: absolute;
+    z-index: 9999;
+    visibility: hidden;
+    margin: 0;
+    font-size: 11px;
+}
+#jce-tooltip.jce-tooltip div.jce-tooltip-pointer, #jce-tooltip.jce-tooltip div.jce-tooltip-pointer-inner {
+    position: absolute;
+    width:0;
+    height:0;
+    border-bottom-width: 0;
+    background: none;
+}
+#jce-tooltip.jce-tooltip.jce-tooltip-bottom div.jce-tooltip-pointer, #jce-tooltip.jce-tooltip.jce-tooltip-bottom div.jce-tooltip-pointer-inner {
+    border-top-width: 0;
+}
+#jce-tooltip.jce-tooltip div.jce-tooltip-pointer {
+    border-left: 7px dotted transparent;
+    border-right: 7px dotted transparent;
+    right: auto;
+    left: 50%;
+    margin-left: -7px;
+}
+#jce-tooltip.jce-tooltip div.jce-tooltip-pointer {
+    border-top-width: 14px;
+    bottom:	-14px;
+}
+#jce-tooltip.jce-tooltip div.jce-tooltip-pointer-inner {
+    border-left: 5px dotted transparent;
+    border-right: 5px dotted transparent;
+    left: -5px;
+}
+#jce-tooltip.jce-tooltip div.jce-tooltip-pointer-inner {
+    border-top: 10px solid #fff;
+    bottom:	auto;
+    top: -14px;
+}
+#jce-tooltip.jce-tooltip.jce-tooltip-bottom div.jce-tooltip-pointer {
+    border-bottom-width: 14px;
+    top:	-14px;
+}
+#jce-tooltip.jce-tooltip.jce-tooltip-bottom div.jce-tooltip-pointer-inner {
+    border-bottom: 10px solid #fff;
+    top:	auto;
+    bottom: -14px;
+}
+label.hasTip, span.hasTip, label.hastip, span.hastip, label.tooltip, span.tooltip {
+    cursor: help;
+}
+#jce-tooltip span.ui-icon-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+}
+#jce-tooltip canvas {
+    position: absolute;
+    right:50%;
+    margin-left: -7px;
+}
+#jce-tooltip canvas {
+    bottom: -14px;
+}
+#jce-tooltip.jce-tooltip.jce-tooltip-bottom canvas {
+    top: -14px;
+}

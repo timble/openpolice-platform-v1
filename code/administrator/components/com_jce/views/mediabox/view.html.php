@@ -1,98 +1,108 @@
-<?php
-
+<?php 
 /**
+ * @version		$Id: view.html.php 234 2011-06-15 09:26:44Z happy_noodle_boy $
  * @package   	JCE
- * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
- * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * JCE is free software. This version may have been modified pursuant
+ * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+ * @license   	GNU/GPL 2 or later
+ * This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-defined('_JEXEC') or die('RESTRICTED');
 
-wfimport('admin.classes.view');
+defined('_JEXEC') or die('ERROR_403');
 
-class WFViewMediabox extends WFView {
+jimport('joomla.application.component.view');
 
-    function getParams($data) {
 
-        jimport('joomla.form.form');
-
-        if (class_exists('JForm')) {
-            //JForm::addFormPath(JPATH_PLUGINS . '/system/jcemediabox');
-
-            $xml = JPATH_PLUGINS . '/system/jcemediabox/jcemediabox.xml';
-
-            $params = new WFParameter($data, $xml, '', array('control' => 'config:fields:fieldset'));
-            $params->addElementPath(JPATH_PLUGINS . '/system/jcemediabox/elements');
-            
-            $groups = array();
-            $array  = array();
-
-            foreach ($params->getGroups() as $group) {
-                $groups[] = $params->getParams('params', $group);
-            }
-
-            foreach ($groups as $group) {
-                $array = array_merge($array, $group);
-            }
-
-            return $array;
-            
+/**
+ * MediaBox View
+ *
+ * @package		JCE
+ * @since		1.6
+ */
+class WFViewMediabox extends JView
+{
+	function getParams($data)
+    {
+    	// get params definitions
+        $params = new JParameter($data);
+        
+    	if (WF_JOOMLA15) {
+        	$xml = JPATH_PLUGINS.DS.'system'.DS.'jcemediabox.xml';
+        	$params->loadSetupFile($xml);
+        	
+        	return $params->getParams();
         } else {
-            // get params definitions
-            $params = new JParameter($data, JPATH_PLUGINS . '/system/jcemediabox.xml');
+        	$xml = JPATH_PLUGINS.DS.'system'.DS.'jcemediabox'.DS.'jcemediabox.xml';
+        	
+        	$parser = JFactory::getXMLParser('Simple');
 
-            $xml = JPATH_PLUGINS . '/system/jcemediabox.xml';
-            $params->loadSetupFile($xml);
+			if ($parser->loadFile($xml)) {
+				if ($fieldsets = $parser->document->getElementByPath('config')->getElementByPath('fields')->children()) {
+					foreach ($fieldsets as $fieldset) {
+						$params->setXML($fieldset);
+					}
+				}
+			}
+			
+			$groups = array();
+			$array = array();
 
-            return $params->getParams();
+			foreach ($params->getGroups() as $group => $num) {
+				$groups[] = $params->getParams('params', $group);
+			}
+			
+			foreach($groups as $group) {
+				$array = array_merge($array, $group);
+			}
+			
+			return $array;
         }
     }
-
-    function display($tpl = null) {
+	
+	function display($tpl = null)
+    {
         $db = JFactory::getDBO();
 
         $lang = JFactory::getLanguage();
         $lang->load('plg_system_jcemediabox');
 
         $client = JRequest::getWord('client', 'site');
-        $model = $this->getModel();
-
-        $plugin = JPluginHelper::getPlugin('system', 'jcemediabox');
-
-        $params = $this->getParams($plugin->params);
-
-        $this->assign('params', $params);
-        $this->assign('client', $client);
-
-        $this->addScript(JURI::root(true) . '/components/com_jce/editor/libraries/js/colorpicker.js');
-        $this->addStyleSheet('components/com_jce/media/css/colorpicker.css');
+		$model = $this->getModel();
         
-        wfimport('admin.models.editor');
-
+		$plugin = JPluginHelper::getPlugin('system', 'jcemediabox');
+        
+        $params = $this->getParams($plugin->params);
+        
+        $this->assignRef('params', $params);
+        $this->assignRef('client', $client);
+        
+        $this->document->addScript(JURI::root(true) . '/components/com_jce/editor/libraries/js/colorpicker.js?version=' . $model->getVersion());
+        $this->document->addStyleSheet('components/com_jce/media/css/colorpicker.css?version=' . $model->getVersion());
+        
         $options = array(
-            'stylesheets' => (array) WFModelEditor::getStyleSheets(),
-            'labels' => array(
-                'picker' => WFText::_('WF_COLORPICKER_PICKER'),
-                'palette' => WFText::_('WF_COLORPICKER_PALETTE'),
-                'named' => WFText::_('WF_COLORPICKER_NAMED'),
-                'template' => WFText::_('WF_COLORPICKER_TEMPLATE'),
-                'color' => WFText::_('WF_COLORPICKER_COLOR'),
-                'apply' => WFText::_('WF_COLORPICKER_APPLY'),
-                'name' => WFText::_('WF_COLORPICKER_NAME')
-            ),
-            'parent' => '#jce'
+			'template_colors' 	=> WFToolsHelper::getTemplateColors(),
+			'custom_colors' 	=> '',
+			'labels' => array(					
+				'picker'	=> WFText::_('WF_COLORPICKER_PICKER'),
+				'palette'	=> WFText::_('WF_COLORPICKER_PALETTE'),
+				'named'		=> WFText::_('WF_COLORPICKER_NAMED'),
+				'template'	=> WFText::_('WF_COLORPICKER_TEMPLATE'),
+				'custom'	=> WFText::_('WF_COLORPICKER_CUSTOM'),
+				'color'		=> WFText::_('WF_COLORPICKER_COLOR'),
+				'apply'		=> WFText::_('WF_COLORPICKER_APPLY'),
+				'name'		=> WFText::_('WF_COLORPICKER_NAME')
+			)
         );
 
-        $this->addScriptDeclaration('jQuery(document).ready(function($){$("input.color").colorpicker(' . json_encode($options) . ');});');
+		$this->document->addScriptDeclaration('jQuery(document).ready(function($){$("input.color").colorpicker('.json_encode($options).');});');
 
-        WFToolbarHelper::apply();
-        WFToolbarHelper::save();
-        WFToolbarHelper::help('mediabox.config');
+		WFToolbarHelper::save();
+		WFToolbarHelper::apply();
+		WFToolbarHelper::help('mediabox.config');
 
         parent::display($tpl);
     }
-
 }
