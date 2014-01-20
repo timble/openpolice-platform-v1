@@ -1,131 +1,127 @@
 <?php
+
 /**
- * @version   $Id: help.php 201 2011-05-08 16:27:15Z happy_noodle_boy $
  * @package   	JCE
- * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
- * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
- * @license   	GNU/GPL 2 or later
- * This version may have been modified pursuant
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-
-// Check to ensure this file is included in Joomla!
-defined('_JEXEC') or die();
+defined('_JEXEC') or die('RESTRICTED');
 
 // load base model
-require_once (dirname(__FILE__) . DS . 'model.php');
+require_once (dirname(__FILE__) . '/model.php');
 
 class WFModelHelp extends WFModel {
-	function getLanguage()
-	{
-		$language =JFactory::getLanguage();
-		$tag = $language->getTag();
 
-		return   substr($tag, 0, strpos($tag, '-'));
-	}
+    function getLanguage() {
+        $language = JFactory::getLanguage();
+        $tag = $language->getTag();
 
-	function getTopics($file)
-	{
+        return substr($tag, 0, strpos($tag, '-'));
+    }
 
-		$result = '';
+    function getTopics($file) {
 
-		if(file_exists($file)) {
-			// load xml
-			$xml = WFXMLElement::getXML($file);
+        $result = '';
 
-			if($xml) {
-				foreach($xml->help->children() as $topic) {
-					$subtopics = $topic->subtopic;
-					$class = count($subtopics) ? ' class="subtopics"' : '';
+        if (file_exists($file)) {
+            // load xml
+            $xml = WFXMLElement::load($file);
 
-					$key = $topic->attributes()->key;
-					$title = $topic->attributes()->title;
-					$file = $topic->attributes()->file;
+            if ($xml) {
+                foreach ($xml->help->children() as $topic) {
+                    $subtopics = $topic->subtopic;
+                    $class = count($subtopics) ? ' class="subtopics"' : '';
 
-					// if file attribute load file
-					if($file) {
-						$result .= $this->getTopics(WF_EDITOR . DS . $file);
-					} else {
-						$result .= '<dd' . $class . ' id="' . $key . '">' . trim(WFText::_($title)) . '</dd>';
-					}
+                    $key    = (string) $topic->attributes()->key;
+                    $title  = (string) $topic->attributes()->title;
+                    $file   = (string) $topic->attributes()->file;
 
-					if(count($subtopics)) {
-						$result .= '<dl class="hidden">';
-						foreach($subtopics as $subtopic) {
-							$sub_subtopics = $subtopic->subtopic;
+                    // if file attribute load file
+                    if ($file) {
+                        $result .= $this->getTopics(WF_EDITOR . '/' . $file);
+                    } else {
+                        $result .= '<dd' . $class . ' id="' . $key . '">' . trim(WFText::_($title)) . '</dd>';
+                    }
 
-							// if a file is set load it as sub-subtopics
-							if($file = $subtopic->attributes()->file) {
-								$result .= '<dd class="subtopics">' . trim(WFText::_($subtopic->attributes()->title)) . '</dd>';
-								$result .= '<dl class="hidden">';
-								$result .= $this->getTopics(WF_EDITOR . DS . $file);
-								$result .= '</dl>';
-							} else {
-								$id = $subtopic->attributes()->key ? ' id="' . $subtopic->attributes()->key . '"' : '';
+                    if (count($subtopics)) {
+                        $result .= '<dl class="hidden">';
+                        foreach ($subtopics as $subtopic) {
+                            $sub_subtopics = $subtopic->subtopic;
 
-								$class = count($sub_subtopics) ? ' class="subtopics"' : '';
-								$result .= '<dd' . $class . $id . '>' . trim(WFText::_($subtopic->attributes()->title)) . '</dd>';
+                            // if a file is set load it as sub-subtopics
+                            if ($file = (string) $subtopic->attributes()->file) {
+                                $result .= '<dd class="subtopics">' . trim(WFText::_((string) $subtopic->attributes()->title)) . '</dd>';
+                                $result .= '<dl class="hidden">';
+                                $result .= $this->getTopics(WF_EDITOR . '/' . $file);
+                                $result .= '</dl>';
+                            } else {
+                                $id = $subtopic->attributes()->key ? ' id="' . (string) $subtopic->attributes()->key . '"' : '';
 
-								if(count($sub_subtopics)) {
-									$result .= '<dl class="hidden">';
-									foreach($sub_subtopics as $sub_subtopic) {
-										$result .= '<dd id="' . $sub_subtopic->attributes('key') . '">' . trim(WFText::_($sub_subtopic->attributes()->title)) . '</dd>';
-									}
-									$result .= '</dl>';
-								}
-							}
-						}
-						$result .= '</dl>';
-					}
-				}
-			}
-		}
-		return $result;
-	}
+                                $class = count($sub_subtopics) ? ' class="subtopics"' : '';
+                                $result .= '<dd' . $class . $id . '>' . trim(WFText::_((string) $subtopic->attributes()->title)) . '</dd>';
 
-	/**
-	 * Returns a formatted list of help topics
-	 *
-	 * @access  public
-	 * @return  String
-	 * @since 1.5
-	 */
-	function renderTopics()
-	{
-		$section = JRequest::getWord('section', 'admin');
-		$category = JRequest::getWord('category', 'cpanel');
+                                if (count($sub_subtopics)) {
+                                    $result .= '<dl class="hidden">';
+                                    foreach ($sub_subtopics as $sub_subtopic) {
+                                        $result .= '<dd id="' . (string) $sub_subtopic->attributes()->key . '">' . trim(WFText::_((string) $sub_subtopic->attributes()->title)) . '</dd>';
+                                    }
+                                    $result .= '</dl>';
+                                }
+                            }
+                        }
+                        $result .= '</dl>';
+                    }
+                }
+            }
+        }
+        return $result;
+    }
 
-		$document =JFactory::getDocument();
-		$language =JFactory::getLanguage();
+    /**
+     * Returns a formatted list of help topics
+     *
+     * @access  public
+     * @return  String
+     * @since 1.5
+     */
+    function renderTopics() {
+        $section = JRequest::getWord('section', 'admin');
+        $category = JRequest::getWord('category', 'cpanel');
 
-		$document->setTitle(WFText::_('WF_HELP') . ' : ' . WFText::_('WF_' . strtoupper($category) . '_TITLE'));
+        $document = JFactory::getDocument();
+        $language = JFactory::getLanguage();
 
-		$file = WF_EDITOR_PLUGINS . DS . $category . DS . $category . ".xml";
+        $document->setTitle(WFText::_('WF_HELP') . ' : ' . WFText::_('WF_' . strtoupper($category) . '_TITLE'));
 
-		switch ($section) {
-			case 'admin' :
-				$file = JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_jce' . DS . 'models' . DS . $category . '.xml';
-				break;
-			case 'editor' :
-				$file = WF_EDITOR_PLUGINS . DS . $category . DS . $category . ".xml";
-				if(!is_file($file)) {
-					$file = WF_EDITOR_LIBRARIES . DS . 'xml' . DS . 'help' . DS . 'editor.xml';
-				} else {
-					$language->load('com_jce_' . $category, JPATH_SITE);
-				}
-				break;
-		}
+        $file = WF_EDITOR_PLUGINS . '/' . $category . '/' . $category . ".xml";
 
-		$result = '';
+        switch ($section) {
+            case 'admin' :
+                $file = JPATH_ADMINISTRATOR . '/components/com_jce/models/' . $category . '.xml';
+                break;
+            case 'editor' :
+                $file = WF_EDITOR_PLUGINS . '/' . $category . '/' . $category . ".xml";
+                if (!is_file($file)) {
+                    $file = WF_EDITOR_LIBRARIES . '/xml/help/editor.xml';
+                } else {
+                    $language->load('com_jce_' . $category, JPATH_SITE);
+                }
+                break;
+        }
 
-		$result .= '<dl><dt><span>' . WFText::_('WF_' . strtoupper($category) . '_TITLE') . '</span></dt>';
-		$result .= $this->getTopics($file);
-		$result .= '</dl>';
+        $result = '';
 
-		return $result;
-	}
+        $result .= '<dl><dt><span>' . WFText::_('WF_' . strtoupper($category) . '_TITLE') . '</span></dt>';
+        $result .= $this->getTopics($file);
+        $result .= '</dl>';
+
+        return $result;
+    }
 
 }
+
 ?>

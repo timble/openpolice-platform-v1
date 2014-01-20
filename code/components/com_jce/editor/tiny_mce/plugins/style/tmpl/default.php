@@ -1,29 +1,30 @@
 <?php
+
 /**
- * $Id: default.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
- * @package     JCE Style
- * @copyright 	Copyright (C) 2005 - 2010 Ryan Demmer. All rights reserved.
- * @copyright 	Copyright (C) 2010 Moxiecode Systems AB. All rights reserved.
- * @author		Ryan Demmer
- * @author		Moxiecode
- * @license 	http://www.gnu.org/copyleft/lgpl.html GNU/LGPL, see licence.txt
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
- * to the GNU Lesser General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU Lesser General Public License or
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-defined( '_JEXEC' ) or die('ERROR_403');
+defined('_JEXEC') or die('RESTRICTED');
 
-$tabs = WFTabs::getInstance(); 
+$tabs = WFTabs::getInstance();
 ?>
 <form>
-<?php $tabs->render();?>
-<div class="mceActionPanel">
-	<button type="submit" id="insert" name="insert" onclick="StyleDialog.updateAction();">{#update}</button>
-	<button type="button" class="button" id="apply" name="apply" onclick="StyleDialog.applyAction();">{#style_dlg.apply}</button>
-	<button type="button" id="cancel">{#cancel}</button>
-</div>
+    <?php $tabs->render(); ?>
+    <div class="panel_toggle_insert_span">
+        <input type="checkbox" class="checkbox" id="toggle_insert_span" name="toggle_insert_span" onclick="StyleDialog.toggleApplyAction();" />
+        <label for="toggle_insert_span"><?php echo WFText::_('WF_STYLES_TOGGLE_INSERT_SPAN');?></label>
+    </div>
+    <div class="mceActionPanel">
+        <button type="submit" id="insert" name="insert" onclick="StyleDialog.updateAction();"><?php echo WFText::_('WF_LABEL_UPDATE');?></button>
+        <button type="button" class="button" id="apply" name="apply" onclick="StyleDialog.applyAction();"><?php echo WFText::_('WF_STYLES_APPLY');?></button>
+        <button type="button" id="cancel"><?php echo WFText::_('WF_LABEL_CANCEL');?></button>
+    </div>
 </form>
 <div style="display: none">
-	<div id="container"></div>
+    <div id="container"></div>
 </div>

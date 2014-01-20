@@ -1,18 +1,15 @@
 <?php
+
 /**
- * @version		$Id: config.php 201 2011-05-08 16:27:15Z happy_noodle_boy $
- * @package   JCE
- * @copyright Copyright © 2009-2011 Ryan Demmer. All rights reserved.
- * @copyright Copyright © 2005 - 2007 Open Source Matters. All rights reserved.
- * @license   GNU/GPL 2 or later
- * This version may have been modified pursuant
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-
-// Check to ensure this file is included in Joomla!
-defined('_JEXEC') or die();
+defined('_JEXEC') or die('RESTRICTED');
 
 /**
  * Plugins Component Controller
@@ -21,67 +18,63 @@ defined('_JEXEC') or die();
  * @subpackage	Plugins
  * @since 1.5
  */
-class WFControllerConfig extends WFController
-{
-	/**
-	 * Custom Constructor
-	 */
-	function __construct( $default = array())
-	{		
-		parent::__construct();
-		
-		$this->registerTask( 'apply', 'save' );
-	}
-	
-	function display()
-	{
-		parent::display();
-	}
+class WFControllerConfig extends WFController {
 
-	function save()
-	{
-		// Check for request forgeries
-		JRequest::checkToken() or die('RESTRICTED');
+    /**
+     * Custom Constructor
+     */
+    public function __construct($default = array()) {
+        parent::__construct();
 
-		$db 	= JFactory::getDBO();
+        $this->registerTask('apply', 'save');
+    }
 
-		$task 	= $this->getTask();
+    public function save() {
+        // Check for request forgeries
+        JRequest::checkToken() or die('RESTRICTED');
 
-		$client = JRequest::getWord( 'client', 'site' );
-		
-		// get params
-		$component 	= WFExtensionHelper::getComponent();
-		// create params object from json string
-		$params 	= json_decode($component->params);
+        $db     = JFactory::getDBO();
+        $task   = $this->getTask();
 
-		$registry = new JRegistry();
-		$registry->loadArray(JRequest::getVar('params', '', 'POST', 'ARRAY'));
-		// set preference object
-		$params->editor = $registry->toObject();
-		// set params as JSON string
-		$component->params = json_encode($params);
+        // get plugin
+        $plugin = WFExtensionHelper::getPlugin();
 
-		if (!$component->check()) {
-			JError::raiseError(500, $component->getError() );
-		}
-		if (!$component->store()) {
-			JError::raiseError(500, $component->getError() );
-		}
-		$component->checkin();
-	
-		$msg = JText::sprintf('WF_CONFIG_SAVED');		
-	
-		switch ( $task )
-		{
-			case 'apply':
-				$this->setRedirect( 'index.php?option=com_jce&view=config', $msg );
-				break;
+        // get params data
+        $data   = JRequest::getVar('params', '', 'POST', 'ARRAY');
+        // clean input data
+        $data   = $this->cleanInput($data);
+        
+        // store data
+        $plugin->params = json_encode($data);
+        
+        // remove "id"
+        if (isset($plugin->extension_id)) {
+            unset($plugin->id);
+        }
 
-			case 'save':
-			default:
-				$this->setRedirect( 'index.php?option=com_jce&view=cpanel', $msg );
-				break;
-		}
-	}
+        if (!$plugin->check()) {
+            JError::raiseError(500, $plugin->getError());
+        }
+        if (!$plugin->store()) {
+            JError::raiseError(500, $plugin->getError());
+        }
+        
+        $plugin->checkin();
+
+        $msg = JText::sprintf('WF_CONFIG_SAVED');
+
+        switch ($task) {
+            case 'apply':
+                $this->setRedirect('index.php?option=com_jce&view=config', $msg);
+                break;
+
+            case 'save':
+            default:
+                $this->setRedirect('index.php?option=com_jce&view=cpanel', $msg);
+                break;
+        }
+    }
+
 }
+
 ?>
