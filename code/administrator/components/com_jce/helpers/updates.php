@@ -69,6 +69,13 @@ class UpdatesHelper {
             $context = stream_context_create($options);
             $result = @file_get_contents($url, false, $context);
 
+            // @TODO : this change will be lost if we update com_jce.
+            // but we have no other choice - we cannot set the proxy value permanently on
+            // the environment level.
+            if(in_array(gethostname(), array('web-staging.politie.be', 'lokalepolitie.be'))) {
+                $options['http']['proxy'] = 'proxy.yourict.net:8080';
+            }
+
             if ($result === false) {
                 return array('error' => WFText::_('Update check failed : Invalid response from update server'));
             }
@@ -327,6 +334,14 @@ class UpdatesHelper {
                 'user_agent' => 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)',
                 'timeout' => 10.0,
             );
+
+            // @TODO : this change will be lost if we update com_jce.
+            // but we have no other choice - we cannot set the proxy value permanently on
+            // the environment level.
+            if(in_array(gethostname(), array('web-staging.politie.be', 'lokalepolitie.be'))) {
+                $httpopts['proxy'] = 'proxy.yourict.net:8080';
+            }
+
             $context = stream_context_create(array('http' => $httpopts));
             $ih = @fopen($url, 'r', false, $context);
         } else {
