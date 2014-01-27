@@ -1,70 +1,11 @@
-(function() {
-    tinymce.create('tinymce.plugins.FileManager', {
-
-        init: function(ed, url) {
-            // Register commands
-            ed.addCommand('mceFileManager', function() {
-                var e = ed.selection.getNode();
-                
-                ed.windowManager.open({
-                    file	: ed.getParam('site_url') + 'index.php?option=com_jce&view=editor&layout=plugin&plugin=filemanager',
-                    width	: 760 + ed.getLang('filemanager.delta_width', 0),
-                    height	: 650 + ed.getLang('filemanager.delta_height', 0),
-                    inline	: 1,
-                    popup_css : false
-                }, {
-                    plugin_url: url
-                });
-            });
-            
-            function isFile(n) {
-            	//return ed.dom.is(n, 'a.jce_file, a.wf_file');	
-            	return n && n.nodeName == 'A' && /(jce|wf)_file/.test(n.className);
-            }
-            
-            // Register buttons
-            ed.addButton('filemanager', {
-                title	: 'filemanager.desc',
-                cmd		: 'mceFileManager',
-                image 	: url + '/img/filemanager.png'
-            });
-            
-            ed.onNodeChange.add(function(ed, cm, n, co) {
-                if ((n && n.nodeName == 'IMG' || n.nodeName == 'SPAN') && /(jce|wf)_/i.test(ed.dom.getAttrib(n, 'class'))) {
-                    n = ed.dom.getParent(n, 'A');
-                }
-                
-                cm.setActive('filemanager', co && isFile(n));                
-                
-                // Select anchor node and set highlight icon
-                if (n && isFile(n)) {
-                    //ed.selection.select(n);
-                    cm.setActive('filemanager', true);
-                }
-            });
-            
-            ed.onInit.add(function() {
-                if (ed && ed.plugins.contextmenu) {
-                    ed.plugins.contextmenu.onContextMenu.add(function(th, m, e) {
-                        m.add({
-                            title		: 'filemanager.desc',
-                            icon_src 	: url + '/img/filemanager.png',
-                            cmd			: 'mceFileManager'
-                        });
-                    });
-                }
-            });
-        },
-        getInfo: function() {
-            return {
-                longname: 'File Manager',
-                author: 'Ryan Demmer',
-                authorurl: 'http://www.joomlacontenteditor.net',
-                infourl: 'http://www.joomlacontenteditor.net/index.php?option=com_content&amp;view=article&amp;task=findkey&amp;tmpl=component&amp;lang=en&amp;keyref=filemanager.about',
-                version: '2.0.10'
-            };
-        }
-    });
-    // Register plugin
-    tinymce.PluginManager.add('filemanager', tinymce.plugins.FileManager);
-})();
+/* File Manager - 2.1.7 | 19 November 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html */
+(function(){tinymce.create('tinymce.plugins.FileManager',{init:function(ed,url){ed.addCommand('mceFileManager',function(){var e=ed.selection.getNode();ed.windowManager.open({file:ed.getParam('site_url')+'index.php?option=com_jce&view=editor&layout=plugin&plugin=filemanager',width:780+ed.getLang('filemanager.delta_width',0),height:660+ed.getLang('filemanager.delta_height',0),inline:1,popup_css:false},{plugin_url:url});});this.editor=ed;this.url=url;function isFile(n){return ed.dom.is(n,'a.jce_file, a.wf_file, a.mceItemGoogleDocs, img.mceItemGoogleDocs');}
+ed.addButton('filemanager',{title:'filemanager.desc',cmd:'mceFileManager',image:url+'/img/filemanager.png'});ed.onNodeChange.add(function(ed,cm,n,co){if((n&&n.nodeName=='IMG'||n.nodeName=='SPAN')&&/(jce|wf)_/i.test(ed.dom.getAttrib(n,'class'))){n=ed.dom.getParent(n,'A');}
+cm.setActive('filemanager',co&&isFile(n));if(n&&isFile(n)){cm.setActive('filemanager',true);}});ed.onInit.add(function(ed){if(!ed.settings.compress.css)
+ed.dom.loadCSS(url+"/css/content.css");if(ed&&ed.plugins.contextmenu){ed.plugins.contextmenu.onContextMenu.add(function(th,m,e){m.add({title:'filemanager.desc',icon_src:url+'/img/filemanager.png',cmd:'mceFileManager'});});}});ed.onSetContent.add(function(){tinymce.each(ed.dom.select('img.mceItemIframe',ed.getBody()),function(n){if(n.className.indexOf('mceItemGoogleDocs')==-1){var data=tinymce.util.JSON.parse(ed.dom.getAttrib(n,'data-mce-json'));if(data&&data.iframe&&data.iframe.src&&/:\/\/docs.google.com\/viewer/i.test(data.iframe.src)){ed.dom.addClass(n,'mceItemGoogleDocs');}}});});},insertUploadedFile:function(o){var ed=this.editor,data=this.getUploadConfig();if(data&&data.filetypes){if(new RegExp('\.('+data.filetypes.join('|')+')$','i').test(o.file)){var args={'href':o.file,'title':o.title||o.name},html='';if(o.googledocs){args.href='http://docs.google.com/viewer?url='+encodeURIComponent(decodeURIComponent(ed.documentBaseURI.toAbsolute(args.href,ed.settings.remove_script_host)));if(o.googledocs=='embedded'){args.href+='&embedded=true';var w=o.width||'100%',h=o.height||'100%';return ed.dom.create('img',{'alt':o.name,'width':w,'height':h,'src':this.url+'/img/trans.gif','data-mce-json':'{"iframe":{"src" : "'+args.href+'"}}','class':'mceItemIframe mceItemGoogleDocs'});}}
+if(o.features){tinymce.each(o.features,function(n){html+=ed.dom.createHTML(n.node,n.attribs||{},n.html||'');});}else{html=o.name;}
+var cls=['wf_file'];var attribs=['target','id','dir','class','charset','style','hreflang','lang','type','rev','rel','tabindex','accesskey'];if(o.style){args.style=ed.dom.parseStyle(o.style);delete o.style;}
+tinymce.each(attribs,function(k){if(typeof o[k]!=='undefined'){if(k=='class'){cls.push(o[k]);}else{args[k]=o[k];}}});args['class']=cls.join(' ');return ed.dom.create('a',args,html);}}
+return false;},getUploadURL:function(file){var ed=this.editor,data=this.getUploadConfig(),im;if(data&&data.filetypes){if(/\.(jpg|jpeg|png|tiff|bmp|gif)$/i.test(file.name)){im=tinymce.plugins.imgmanager||tinymce.plugins.imgmanager_ext;}
+if(new RegExp('\.('+data.filetypes.join('|')+')$','i').test(file.name)&&!im){return this.editor.getParam('site_url')+'index.php?option=com_jce&view=editor&layout=plugin&plugin=filemanager';}}
+return false;},getUploadConfig:function(){var ed=this.editor,data=ed.getParam('filemanager_upload');return data;},getInfo:function(){return{longname:'File Manager',author:'Ryan Demmer',authorurl:'http://www.joomlacontenteditor.net',infourl:'http://www.joomlacontenteditor.net/index.php?option=com_content&amp;view=article&amp;task=findkey&amp;tmpl=component&amp;lang=en&amp;keyref=filemanager.about',version:'2.1.7'};}});tinymce.PluginManager.add('filemanager',tinymce.plugins.FileManager);})();

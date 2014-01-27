@@ -6,7 +6,7 @@
  *
  * @author        Tommy Lacroix <tlacroix@quantiksolutions.com>
  * @license        LGPL
- * Modified for JCE Media Manager Ryan Demmer <@@e-mail@@>
+ * Modified for JCE Media Manager Ryan Demmer <info@joomlacontenteditor.net>
  */
 
 require_once 'amfo.php';

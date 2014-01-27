@@ -1,105 +1,182 @@
 <?xml version="1.0" ?>
 <install version="2.0" type="plugin" plugin="filemanager" editable="1" core="0" row="4">
-	<name>WF_FILEMANAGER_TITLE</name>
-	<version>2.0.10</version>
-	<creationDate>11 October 2011</creationDate>
-	<author>Ryan Demmer</author>
-	<authorEmail>info@joomlacontenteditor.net</authorEmail>
-	<authorUrl>http://www.joomlacontenteditor.net/</authorUrl>
-	<copyright>Copyright (C) 2006 - 2011 Ryan Demmer. All rights reserved</copyright>
-	<license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
-	<description>WF_FILEMANAGER_DESC</description>
-	<icon>filemanager</icon>
-	<files>
-		<file>editor_plugin.js</file>
-		<file>filemanager.php</file>
-		<folder>classes</folder>
-		<folder>css</folder>
-		<folder>img</folder>
-		<folder>js</folder>
-		<folder>langs</folder>
-		<folder>tmpl</folder>
-	</files>
-	<params group="standard">
+    <name>WF_FILEMANAGER_TITLE</name>
+    <version>2.1.7</version>
+    <creationDate>19 November 2013</creationDate>
+    <author>Ryan Demmer</author>
+    <authorEmail>info@joomlacontenteditor.net</authorEmail>
+    <authorUrl>http://www.joomlacontenteditor.net/</authorUrl>
+    <copyright>Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved</copyright>
+    <license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <description>WF_FILEMANAGER_DESC</description>
+    <icon>filemanager</icon>
+    <files>
+        <file>editor_plugin.js</file>
+        <file>filemanager.php</file>
+        <folder>classes</folder>
+        <folder>css</folder>
+        <folder>img</folder>
+        <folder>js</folder>
+        <folder>langs</folder>
+        <folder>tmpl</folder>
+    </files>
+    <params group="standard">
         <param name="dir" type="text" default="" size="50" label="WF_PARAM_DIRECTORY" description="WF_PARAM_DIRECTORY_DESC"/>
-		<param name="max_size" class="upload_size" max="" type="text" default="" label="WF_PARAM_UPLOAD_SIZE" description="WF_PARAM_UPLOAD_SIZE_DESC" />
-		<param name="extensions" type="extension" class="extensions create" default="xml=xml;html=htm,html;text=txt,rtf,pdf;office=doc,docx,ppt,xls;image=gif,jpeg,jpg,png;archive=zip,tar,gz;video=swf,mov,wmv,avi,flv,mp4,ogv,ogg,webm,mpeg,mpg;audio=wav,mp3,ogg,webm,aiff;openoffice=odt,odg,odp,ods,odf" label="WF_PARAM_EXTENSIONS" description="WF_PARAM_EXTENSIONS_DESC" />
-		<param name="text_alert" type="list" default="1" label="WF_FILEMANAGER_TEXT_ALERT" description="WF_FILEMANAGER_TEXT_ALERT_DESC">
-			 <option value="1">WF_OPTION_YES</option>
-           	 <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="name" type="filesystem" default="" label="WF_PARAM_FILESYSTEM" description="WF_PARAM_FILESYSTEM_DESC" />
-	</params>
-	<params group="defaults">
-		<param name="target" type="list" default="" label="WF_LABEL_TARGET" description="WF_FILEMANAGER_PARAM_DEFAULT_TARGET_DESC">
-        	<option value="">WF_OPTION_NOT_SET</option>
-			<option value="_self">WF_OPTION_TARGET_SELF</option>
-			<option value="_blank">WF_OPTION_TARGET_BLANK</option>
-			<option value="_parent">WF_OPTION_TARGET_PARENT</option>
-			<option value="_top">WF_OPTION_TARGET_TOP</option>	
-		</param>
-		<param name="option_icon_check" type="list" default="0" label="WF_FILEMANAGER_ICON_DEFAULT" description="WF_FILEMANAGER_ICON_DEFAULT_DESC">
+        <param name="max_size" class="upload_size" max="" type="text" default="" label="WF_PARAM_UPLOAD_SIZE" description="WF_PARAM_UPLOAD_SIZE_DESC" />
+        <param name="extensions" type="extension" class="extensions create" default="acrobat=pdf;office=doc,docx,ppt,xls,xlsx;image=gif,jpeg,jpg,png;archive=zip,tar,gz;video=swf,mov,wmv,avi,flv,mp4,ogv,ogg,webm,mpeg,mpg;audio=wav,mp3,ogg,webm,aiff;openoffice=odt,odg,odp,ods,odf" label="WF_PARAM_EXTENSIONS" description="WF_PARAM_EXTENSIONS_DESC" />
+        <param name="replace_text" type="radio" default="1" label="WF_FILEMANAGER_REPLACE_TEXT" description="WF_FILEMANAGER_REPLACE_TEXT_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="option_size_check" type="list" default="0" label="WF_FILEMANAGER_SIZE_DEFAULT" description="WF_FILEMANAGER_SIZE_DEFAULT_DESC">
+        </param>
+        <param name="text_alert" type="radio" default="1" label="WF_FILEMANAGER_TEXT_ALERT" description="WF_FILEMANAGER_TEXT_ALERT_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="option_date_check" type="list" default="0" label="WF_FILEMANAGER_DATE_DEFAULT" description="WF_FILEMANAGER_DATE_DEFAULT_DESC">
+        </param>
+        <param name="name" type="filesystem" group="filesystem" default="" label="WF_PARAM_FILESYSTEM" description="WF_PARAM_FILESYSTEM_DESC" />
+    </params>
+    <params group="defaults">
+        <param name="target" type="list" default="" label="WF_LABEL_TARGET" description="WF_FILEMANAGER_PARAM_DEFAULT_TARGET_DESC">
+            <option value="">WF_OPTION_NOT_SET</option>
+            <option value="_self">WF_OPTION_TARGET_SELF</option>
+            <option value="_blank">WF_OPTION_TARGET_BLANK</option>
+            <option value="_parent">WF_OPTION_TARGET_PARENT</option>
+            <option value="_top">WF_OPTION_TARGET_TOP</option>	
+        </param>
+        
+        <param type="text" name="id" default="" size="50" label="WF_LABEL_ID" description="WF_LABEL_ID_DESC" />
+        <param type="text" name="style" default="" size="50" label="WF_LABEL_STYLE" description="WF_LABEL_STYLE_DESC" />
+        <param type="text" name="classes" default="" size="50" label="WF_LABEL_CLASSES" description="WF_LABEL_CLASSES_DESC" />
+        <param type="list" name="direction" default="" label="WF_LABEL_DIR" description="WF_LABEL_DIR_DESC">
+            <option value="">WF_OPTION_NOT_SET</option>
+            <option value="ltr">WF_OPTION_LTR</option>
+            <option value="rtl">WF_OPTION_RTL</option>
+        </param>
+        <param type="text" name="hreflang" default="" size="50" label="WF_LABEL_HREFLANG" description="WF_LABEL_HREFLANG_DESC" />
+        <param type="text" name="lang" default="" size="50" label="WF_LABEL_LANG" description="WF_LABEL_LANG_DESC" />
+        <param type="text" name="charset" default="" size="50" label="WF_LABEL_CHARSET" description="WF_LABEL_CHARSET_DESC" />
+        <param type="text" name="type" default="" size="50" label="WF_LABEL_TYPE" description="WF_LABEL_TYPE_DESC" />
+        <param type="list" name="rel" default="" class="editable" label="WF_LABEL_REL" description="WF_LABEL_REL_DESC">
+            <option value="">WF_OPTION_NOT_SET</option>
+            <option value="nofollow">No Follow</option>
+            <option value="alternate">Alternate</option>
+            <option value="designates">Designates</option>
+            <option value="stylesheet">Stylesheet</option>
+            <option value="start">Start</option>
+            <option value="next">Next</option>
+            <option value="prev">Prev</option>
+            <option value="contents">Contents</option>
+            <option value="index">Index</option>
+            <option value="glossary">Glossary</option>
+            <option value="copyright">Copyright</option>
+            <option value="chapter">Chapter</option>
+            <option value="subsection">Subsection</option>
+            <option value="appendix">Appendix</option>
+            <option value="help">Help</option>
+            <option value="bookmark">Bookmark</option>
+        </param>
+        <param type="list" name="rev" default="" label="WF_LABEL_REV" description="WF_LABEL_REV_DESC">
+            <option value="">WF_OPTION_NOT_SET</option>
+            <option value="alternate">Alternate</option>
+            <option value="designates">Designates</option>
+            <option value="stylesheet">Stylesheet</option>
+            <option value="start">Start</option>
+            <option value="next">Next</option>
+            <option value="prev">Prev</option>
+            <option value="contents">Contents</option>
+            <option value="index">Index</option>
+            <option value="glossary">Glossary</option>
+            <option value="copyright">Copyright</option>
+            <option value="chapter">Chapter</option>
+            <option value="subsection">Subsection</option>
+            <option value="appendix">Appendix</option>
+            <option value="help">Help</option>
+            <option value="bookmark">Bookmark</option>
+        </param>
+        <param type="text" name="tabindex" default="" size="50" label="WF_LABEL_TABINDEX" description="WF_LABEL_TABINDEX_DESC" />
+        <param type="text" name="accesskey" default="" size="50" label="WF_LABEL_ACCESSKEY" description="WF_LABEL_ACCESSKEY_DESC" />
+        
+        <param name="option_icon_check" type="radio" default="0" label="WF_FILEMANAGER_ICON_DEFAULT" description="WF_FILEMANAGER_ICON_DEFAULT_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-	</params>
-	<params group="advanced">
-		<param name="icon_path" type="text" size="80" default="media/jce/icons" label="WF_FILEMANAGER_ICON_PATH" description="WF_FILEMANAGER_ICON_PATH_DESC" />
-		<param name="icon_format" type="text" size="30" default="{$name}.png" label="WF_FILEMANAGER_ICON_FORMAT" description="WF_FILEMANAGER_ICON_FORMAT_DESC" />
-		<param name="date_format" type="text" size="30" default="%d/%m/%Y, %H:%M" label="WF_FILEMANAGER_DATE_FORMAT" description="WF_FILEMANAGER_DATE_FORMAT_DESC" />
-	</params>
-	<params group="access">
-        <param name="upload" type="list" default="1" label="WF_PARAM_UPLOAD" description="WF_PARAM_UPLOAD_DESC">
+        </param>
+        <param name="option_size_check" type="radio" default="0" label="WF_FILEMANAGER_SIZE_DEFAULT" description="WF_FILEMANAGER_SIZE_DEFAULT_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="folder_new" type="list" default="1" label="WF_PARAM_FOLDER_CREATE" description="WF_PARAM_FOLDER_CREATE_DESC">
-           <option value="1">WF_OPTION_YES</option>
-            <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="folder_delete" type="list" default="1" label="WF_PARAM_FOLDER_DELETE" description="WF_PARAM_FOLDER_DELETE_DESC">
+        </param>
+        <param name="option_date_check" type="radio" default="0" label="WF_FILEMANAGER_DATE_DEFAULT" description="WF_FILEMANAGER_DATE_DEFAULT_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="folder_rename" type="list" default="1" label="WF_PARAM_FOLDER_RENAME" description="WF_PARAM_FOLDER_RENAME_DESC">
+        </param>
+     </params>
+     <params group="googledocs">   
+        <param name="googledocs_enable" type="list" default="1" label="WF_LABEL_ENABLE" description="WF_FILEMANAGER_GOOGLEDOCS_ENABLE_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="folder_move" type="list" default="1" label="WF_PARAM_FOLDER_PASTE" description="WF_PARAM_FOLDER_PASTE_DESC">
+        </param>
+        
+        <param name="googledocs_type" type="list" default="" label="WF_FILEMANAGER_GOOGLEDOCS" description="WF_FILEMANAGER_GOOGLEDOCS_DESC" parent="googledocs_enable[1]">
+            <option value="">WF_OPTION_NOT_SET</option>
+            <option value="link">WF_FILEMANAGER_GOOGLEDOCS_LINK</option>
+            <option value="embed">WF_FILEMANAGER_GOOGLEDOCS_EMBED</option>
+        </param>
+        <param name="googledocs_width" type="text" default="" placeholder="100%" size="10" pattern="([0-9]+)(%|px)?" label="WF_FILEMANAGER_GOOGLEDOCS_WIDTH" description="WF_FILEMANAGER_GOOGLEDOCS_WIDTH_DESC"  parent="googledocs_enable[1]"/>
+        <param name="googledocs_height" type="text" default="" placeholder="100%" size="10" pattern="([0-9]+)(%|px)?" label="WF_FILEMANAGER_GOOGLEDOCS_HEIGHT" description="WF_FILEMANAGER_GOOGLEDOCS_HEIGHT_DESC"  parent="googledocs_enable[1]"/>
+    </params>
+    <params group="advanced">
+        <param name="icon_path" type="text" size="80" default="media/jce/icons" label="WF_FILEMANAGER_ICON_PATH" description="WF_FILEMANAGER_ICON_PATH_DESC" />
+        <param name="icon_format" type="text" size="30" default="{$name}.png" label="WF_FILEMANAGER_ICON_FORMAT" description="WF_FILEMANAGER_ICON_FORMAT_DESC" />
+        <param name="date_format" type="text" size="30" default="%d/%m/%Y, %H:%M" label="WF_FILEMANAGER_DATE_FORMAT" description="WF_FILEMANAGER_DATE_FORMAT_DESC" />
+        
+        <param name="inline_upload" type="radio" default="1" label="WF_PARAM_INLINE_UPLOAD" description="WF_PARAM_INLINE_UPLOAD_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="file_delete" type="list" default="1" label="WF_PARAM_FILE_DELETE" description="WF_PARAM_FILE_DELETE_DESC">
+        </param>
+    </params>
+    <params group="access">
+        <param name="upload" type="radio" default="1" label="WF_PARAM_UPLOAD" description="WF_PARAM_UPLOAD_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="file_rename" type="list" default="1" label="WF_PARAM_FILE_RENAME" description="WF_PARAM_FILE_RENAME_DESC">
+        </param>
+        <param name="folder_new" type="radio" default="1" label="WF_PARAM_FOLDER_CREATE" description="WF_PARAM_FOLDER_CREATE_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-		<param name="file_move" type="list" default="1" label="WF_PARAM_FILE_PASTE" description="WF_PARAM_FILE_PASTE_DESC">
+        </param>
+        <param name="folder_delete" type="radio" default="1" label="WF_PARAM_FOLDER_DELETE" description="WF_PARAM_FOLDER_DELETE_DESC">
             <option value="1">WF_OPTION_YES</option>
             <option value="0">WF_OPTION_NO</option>
-		</param>
-	</params>
-	<media folder="img" destination="jce">
-    	<folder>icons</folder>
-  	</media>
-	<languages>
-		<language tag="en-GB">en-GB.com_jce_filemanager.ini</language>
-	</languages>
-	<help>
-		<topic key="filemanager.about" title="WF_FILEMANAGER_HELP_ABOUT" />
-		<topic key="filemanager.interface" title="WF_FILEMANAGER_HELP_INTERFACE" />
-		<topic key="filemanager.insert" title="WF_FILEMANAGER_HELP_INSERT" />
-		<topic file="libraries/xml/help/manager.xml" />
-	</help>
+        </param>
+        <param name="folder_rename" type="radio" default="1" label="WF_PARAM_FOLDER_RENAME" description="WF_PARAM_FOLDER_RENAME_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+        </param>
+        <param name="folder_move" type="radio" default="1" label="WF_PARAM_FOLDER_PASTE" description="WF_PARAM_FOLDER_PASTE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+        </param>
+        <param name="file_delete" type="radio" default="1" label="WF_PARAM_FILE_DELETE" description="WF_PARAM_FILE_DELETE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+        </param>
+        <param name="file_rename" type="radio" default="1" label="WF_PARAM_FILE_RENAME" description="WF_PARAM_FILE_RENAME_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+        </param>
+        <param name="file_move" type="radio" default="1" label="WF_PARAM_FILE_PASTE" description="WF_PARAM_FILE_PASTE_DESC">
+            <option value="1">WF_OPTION_YES</option>
+            <option value="0">WF_OPTION_NO</option>
+        </param>
+    </params>
+    <media folder="img" destination="jce">
+        <folder>icons</folder>
+    </media>
+    <extensions>popups</extensions>
+    <languages>
+        <language tag="en-GB">en-GB.com_jce_filemanager.ini</language>
+    </languages>
+    <help>
+        <topic key="filemanager.about" title="WF_FILEMANAGER_HELP_ABOUT" />
+        <topic key="filemanager.interface" title="WF_FILEMANAGER_HELP_INTERFACE" />
+        <topic key="filemanager.insert" title="WF_FILEMANAGER_HELP_INSERT" />
+        <topic file="libraries/xml/help/manager.xml" />
+    </help>
 </install>

@@ -11,6 +11,4 @@
  */
 
 defined( '_JEXEC' ) or die('RESTRICTED');
-
-echo $this->plugin->getAggregatorTemplate();
 ?>

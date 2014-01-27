@@ -9,8 +9,17 @@
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
+class WFMediamanagerPluginConfig {
 
-defined( '_JEXEC' ) or die('RESTRICTED');
+    public static function getConfig(&$settings) {
+        $wf     = WFEditor::getInstance();
+        $model  = new WFModelEditor();
 
-echo $this->plugin->getAggregatorTemplate();
+        if ($wf->getParam('mediamanager.aggregator.youtube.enable', 1) || $wf->getParam('mediamanager.aggregator.vimeo.enable', 1)) {
+            $model->removeKeys($settings['invalid_elements'], array('iframe'));
+        }
+    }
+
+}
+
 ?>
