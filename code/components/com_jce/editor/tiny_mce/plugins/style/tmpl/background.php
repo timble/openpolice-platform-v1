@@ -1,20 +1,20 @@
 <?php
+
 /**
-* @version    $Id: background.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
-* @package      JCE
-* @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
-* @author   Ryan Demmer
-* @license      GNU/GPL
-* JCE is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
-defined('_JEXEC') or die('ERROR_403');
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+defined('_JEXEC') or die('RESTRICTED');
 ?>
 <table border="0">
       <tr>
-        <td><label for="background_color">{#style_dlg.background_color}</label></td>
+        <td><label for="background_color"><?php echo WFText::_('WF_STYLES_BACKGROUND_COLOR');?></label></td>
         <td>
           <table border="0" cellpadding="0" cellspacing="0">
             <tr>
@@ -25,7 +25,7 @@ defined('_JEXEC') or die('ERROR_403');
       </tr>
   
       <tr>
-        <td><label for="background_image">{#style_dlg.background_image}</label></td>
+        <td><label for="background_image"><?php echo WFText::_('WF_STYLES_BACKGROUND_IMAGE');?></label></td>
         <td><table border="0" cellspacing="0" cellpadding="0">
           <tr> 
             <td><input id="background_image" name="background_image" class="browser image" type="text" /></td> 
@@ -35,17 +35,17 @@ defined('_JEXEC') or die('ERROR_403');
       </tr>
   
       <tr>
-        <td><label for="background_repeat">{#style_dlg.background_repeat}</label></td>
+        <td><label for="background_repeat"><?php echo WFText::_('WF_STYLES_BACKGROUND_REPEAT');?></label></td>
         <td><select id="background_repeat" name="background_repeat" class="mceEditableSelect"></select></td>
       </tr>
   
       <tr>
-        <td><label for="background_attachment">{#style_dlg.background_attachment}</label></td>
+        <td><label for="background_attachment"><?php echo WFText::_('WF_STYLES_BACKGROUND_ATTACHMENT');?></label></td>
         <td><select id="background_attachment" name="background_attachment" class="mceEditableSelect"></select></td>
       </tr>
   
       <tr>
-        <td><label for="background_hpos">{#style_dlg.background_hpos}</label></td>
+        <td><label for="background_hpos"><?php echo WFText::_('WF_STYLES_BACKGROUND_HPOS');?></label></td>
         <td>
           <table border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -58,7 +58,7 @@ defined('_JEXEC') or die('ERROR_403');
       </tr>
   
       <tr>
-        <td><label for="background_vpos">{#style_dlg.background_vpos}</label></td>
+        <td><label for="background_vpos"><?php echo WFText::_('WF_STYLES_BACKGROUND_VPOS');?></label></td>
         <td>
           <table border="0" cellspacing="0" cellpadding="0">
             <tr>

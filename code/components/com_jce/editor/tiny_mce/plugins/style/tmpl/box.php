@@ -1,20 +1,20 @@
 <?php
+
 /**
-* @version    $Id: box.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
-* @package      JCE
-* @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
-* @author   Ryan Demmer
-* @license      GNU/GPL
-* JCE is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
-defined('_JEXEC') or die('ERROR_403');
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+defined('_JEXEC') or die('RESTRICTED');
 ?>
 <table border="0">
     <tr>
-      <td><label for="box_width">{#style_dlg.box_width}</label></td>
+      <td><label for="box_width"><?php echo WFText::_('WF_STYLES_BOX_WIDTH');?></label></td>
       <td>
         <table border="0" cellspacing="0" cellpadding="0">
           <tr>
@@ -24,12 +24,12 @@ defined('_JEXEC') or die('ERROR_403');
           </tr>
         </table>
       </td>
-      <td>&nbsp;&nbsp;&nbsp;<label for="box_float">{#style_dlg.box_float}</label></td>
+      <td>&nbsp;&nbsp;&nbsp;<label for="box_float"><?php echo WFText::_('WF_STYLES_BOX_FLOAT');?></label></td>
       <td><select id="box_float" name="box_float" class="mceEditableSelect"></select></td>
     </tr>
   
     <tr>
-      <td><label for="box_height">{#style_dlg.box_height}</label></td>
+      <td><label for="box_height"><?php echo WFText::_('WF_STYLES_BOX_HEIGHT');?></label></td>
       <td>
         <table border="0" cellspacing="0" cellpadding="0">
           <tr>
@@ -39,21 +39,21 @@ defined('_JEXEC') or die('ERROR_403');
           </tr>
         </table>
       </td>
-      <td>&nbsp;&nbsp;&nbsp;<label for="box_clear">{#style_dlg.box_clear}</label></td>
+      <td>&nbsp;&nbsp;&nbsp;<label for="box_clear"><?php echo WFText::_('WF_STYLES_BOX_CLEAR');?></label></td>
       <td><select id="box_clear" name="box_clear" class="mceEditableSelect"></select></td>
     </tr>
   </table>
   <div style="float: left; width: 49%">
     <fieldset>
-      <legend>{#style_dlg.padding}</legend>
+      <legend><?php echo WFText::_('WF_STYLES_PADDING');?></legend>
   
       <table border="0">
         <tr>
           <td>&nbsp;</td>
-          <td><input type="checkbox" id="box_padding_same" name="box_padding_same" class="checkbox" checked="checked" onclick="StyleDialog.toggleSame(this,'box_padding');" /> <label for="box_padding_same">{#style_dlg.same}</label></td>
+          <td><input type="checkbox" id="box_padding_same" name="box_padding_same" class="checkbox" checked="checked" onclick="StyleDialog.toggleSame(this,'box_padding');" /> <label for="box_padding_same"><?php echo WFText::_('WF_STYLES_SAME');?></label></td>
         </tr>
         <tr>
-          <td><label for="box_padding_top">{#style_dlg.top}</label></td>
+          <td><label for="box_padding_top"><?php echo WFText::_('WF_STYLES_TOP');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -65,7 +65,7 @@ defined('_JEXEC') or die('ERROR_403');
           </td>
         </tr>
         <tr>
-          <td><label for="box_padding_right">{#style_dlg.right}</label></td>
+          <td><label for="box_padding_right"><?php echo WFText::_('WF_STYLES_RIGHT');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -77,7 +77,7 @@ defined('_JEXEC') or die('ERROR_403');
           </td>
         </tr>
         <tr>
-          <td><label for="box_padding_bottom">{#style_dlg.bottom}</label></td>
+          <td><label for="box_padding_bottom"><?php echo WFText::_('WF_STYLES_BOTTOM');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -89,7 +89,7 @@ defined('_JEXEC') or die('ERROR_403');
           </td>
         </tr>
         <tr>
-          <td><label for="box_padding_left">{#style_dlg.left}</label></td>
+          <td><label for="box_padding_left"><?php echo WFText::_('WF_STYLES_LEFT');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -105,15 +105,15 @@ defined('_JEXEC') or die('ERROR_403');
    </div>
    <div style="float: right; width: 49%">
     <fieldset>
-      <legend>{#style_dlg.margin}</legend>
+      <legend><?php echo WFText::_('WF_STYLES_MARGIN');?></legend>
   
       <table border="0">
         <tr>
           <td>&nbsp;</td>
-          <td><input type="checkbox" id="box_margin_same" name="box_margin_same" class="checkbox" checked="checked" onclick="StyleDialog.toggleSame(this,'box_margin');" /> <label for="box_margin_same">{#style_dlg.same}</label></td>
+          <td><input type="checkbox" id="box_margin_same" name="box_margin_same" class="checkbox" checked="checked" onclick="StyleDialog.toggleSame(this,'box_margin');" /> <label for="box_margin_same"><?php echo WFText::_('WF_STYLES_SAME');?></label></td>
         </tr>
         <tr>
-          <td><label for="box_margin_top">{#style_dlg.top}</label></td>
+          <td><label for="box_margin_top"><?php echo WFText::_('WF_STYLES_TOP');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -125,7 +125,7 @@ defined('_JEXEC') or die('ERROR_403');
           </td>
         </tr>
         <tr>
-          <td><label for="box_margin_right">{#style_dlg.right}</label></td>
+          <td><label for="box_margin_right"><?php echo WFText::_('WF_STYLES_RIGHT');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -137,7 +137,7 @@ defined('_JEXEC') or die('ERROR_403');
           </td>
         </tr>
         <tr>
-          <td><label for="box_margin_bottom">{#style_dlg.bottom}</label></td>
+          <td><label for="box_margin_bottom"><?php echo WFText::_('WF_STYLES_BOTTOM');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -149,7 +149,7 @@ defined('_JEXEC') or die('ERROR_403');
           </td>
         </tr>
         <tr>
-          <td><label for="box_margin_left">{#style_dlg.left}</label></td>
+          <td><label for="box_margin_left"><?php echo WFText::_('WF_STYLES_LEFT');?></label></td>
           <td>
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>

@@ -1,20 +1,18 @@
 <?php
+
 /**
- * @version		$Id: text.php 203 2011-06-01 19:02:19Z happy_noodle_boy $
- * @package   JCE
- * @copyright Copyright © 2009-2011 Ryan Demmer. All rights reserved.
- * @copyright Copyright © 2005 - 2007 Open Source Matters. All rights reserved.
- * @license   GNU/GPL 2 or later
- * This version may have been modified pursuant
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
 
-// Check to ensure this file is included in Joomla!
-defined('_JEXEC') or die();
+defined('_JEXEC') or die('RESTRICTED');
 
-class WFText
+abstract class WFText
 {
 	/**
 	 * Transalate a language string.
@@ -23,7 +21,7 @@ class WFText
 	 */
 	public static function _($string, $default = '')
 	{
-		$language =& JFactory::getLanguage();
+		$language = JFactory::getLanguage();
 
 		// replace legacy JCE_ prefix
 		$string 	= str_replace('JCE_', 'WF_', $string);		
@@ -35,8 +33,9 @@ class WFText
 			}
 			
 			if (strpos($string, 'WF_') !== false) {
+				$view = JRequest::getWord('view', '');
 				// remove prefix
-				$translated = preg_replace(array('#^(WF_)#', '#(LABEL|OPTION|FILEGROUP)_#', '#_(DESC|TITLE)#'), '', $string);			
+				$translated = preg_replace(array('#^(WF_)#', '#(LABEL|OPTION|FILEGROUP|' . strtoupper($view) . ')_#', '#_(DESC|TITLE)#'), '', $string);			
 				$translated = ucwords(strtolower(str_replace('_', ' ', $translated)));
 			}
 		}
@@ -44,9 +43,14 @@ class WFText
 		return $translated;
 	}
 	
+	/**
+	 * Translate a string with variables
+	 * @param string $string
+	 * @copyright 	Copyright (c) 2005 - 2007 Open Source Matters. All rights reserved.
+	 */
 	public static function sprintf($string)
 	{
-		$language =& JFactory::getLanguage();
+		$language = JFactory::getLanguage();
 		
 		$args = func_get_args();
 		

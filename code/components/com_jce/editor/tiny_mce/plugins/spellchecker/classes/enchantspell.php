@@ -1,9 +1,13 @@
 <?php
+
 /**
- * This class was contributed by Michel Weimerskirch.
- *
- * @author Moxiecode
- * @copyright Copyright © 2004-2007, Moxiecode Systems AB, All rights reserved.
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
  */
 
 class EnchantSpell extends SpellChecker {
@@ -31,7 +35,7 @@ class EnchantSpell extends SpellChecker {
 			return $returnData;
 			enchant_broker_free_dict($d);
 		} else {
-
+                    $this->throwError("Language not installed");
 		}
 		enchant_broker_free($r);
 	}
@@ -53,7 +57,7 @@ class EnchantSpell extends SpellChecker {
 
 			enchant_broker_free_dict($d);
 		} else {
-
+                    $this->throwError("Language not installed");
 		}
 		enchant_broker_free($r);
 

@@ -1,160 +1,148 @@
 <?php
+
 /**
- * @version		$Id: aggregator.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
- * @package      JCE
- * @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
- * @author		Ryan Demmer
- * @license      GNU/GPL
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-// no direct access
-defined('_JEXEC') or die('ERROR_403');
+defined('_JEXEC') or die('RESTRICTED');
 
 class WFAggregatorExtension extends WFExtension {
-	/*
-	 *  @var varchar
-	 */
-	var $extensions = array();
-	/**
-	 * Constructor activating the default information of the class
-	 *
-	 * @access	protected
-	 */
-	function __construct($config = array())
-	{
-		parent::__construct($config);
-	}
 
-	/**
-	 * Returns a reference to a plugin object
-	 *
-	 * This method must be invoked as:
-	 * 		<pre>  $advlink =AdvLink::getInstance();</pre>
-	 *
-	 * @access	public
-	 * @return	JCE  The editor object.
-	 * @since	1.5
-	 */
-	function & getInstance($config = array())
-	{
-		static $instance;
+    protected static $instance;
 
-		if(!is_object($instance)) {
-			$instance = new WFAggregatorExtension($config);
-		}
+    /**
+     * Constructor activating the default information of the class
+     *
+     * @access	protected
+     */
+    public function __construct($config = array()) {
+        parent::__construct($config);
+    }
 
-		return $instance;
-	}
+    /**
+     * Returns a reference to a plugin object
+     *
+     * This method must be invoked as:
+     * 		<pre>  $advlink =AdvLink::getInstance();</pre>
+     *
+     * @access	public
+     * @return	JCE  The editor object.
+     * @since	1.5
+     */
+    public static function getInstance($config = array()) {
+        if (!isset(self::$instance)) {
+            self::$instance = new WFAggregatorExtension($config);
+        }
 
-	function getName()
-	{
-		return $this->get('name');
-	}
+        return self::$instance;
+    }
 
-	function getTitle()
-	{
-		return $this->get('title');
-	}
+    public function getName() {
+        return $this->get('name');
+    }
 
-	function display()
-	{
-		parent::display();
+    public function getTitle() {
+        return $this->get('title');
+    }
 
-		$document =WFDocument::getInstance();
+    public function display() {
+        parent::display();
 
-		// Load javascript
-		$document->addScript( array('extensions/aggregator'), 'libraries');
+        $document = WFDocument::getInstance();
 
-		$aggregators =$this->getAggregators();
+        // Load javascript
+        $document->addScript(array('extensions/aggregator'), 'libraries');
 
-		foreach($aggregators as $aggregator) {
-			$aggregator->display();
+        $aggregators = $this->getAggregators();
 
-			$params = $aggregator->getParams();
+        foreach ($aggregators as $aggregator) {
+            $aggregator->display();
 
-			if(!empty($params)) {
-				$document->addScriptDeclaration('WFExtensions.Aggregator.setParams("' . $aggregator->getName() . '",' . json_encode($params) . ');');
-			}
-		}
-	}
+            $params = $aggregator->getParams();
 
-	function & getAggregators()
-	{
-		static $aggregators;
+            if (!empty($params)) {
+                $document->addScriptDeclaration('WFExtensions.Aggregator.setParams("' . $aggregator->getName() . '",' . json_encode($params) . ');');
+            }
+        }
+    }
 
-		if(!isset($aggregators)) {
-			$aggregators = array();
-		}
+    public function & getAggregators() {
+        static $aggregators;
 
-		// get the aggregator format for this instance
-		$format = $this->get('format');
+        if (!isset($aggregators)) {
+            $aggregators = array();
+        }
 
-		if(empty($aggregators[$format])) {
-			jimport('joomla.filesystem.folder');
+        // get the aggregator format for this instance
+        $format = $this->get('format');
 
-			// get a plugin instance
-			$plugin = WFEditorPlugin::getInstance();
+        if (empty($aggregators[$format])) {
+            jimport('joomla.filesystem.folder');
 
-			$aggregators[$format] = array();
+            // get a plugin instance
+            $plugin = WFEditorPlugin::getInstance();
 
-			$path = WF_EDITOR_EXTENSIONS . DS . 'aggregator';
-			$files = JFolder::files($path, '\.php$', false, true);
+            $aggregators[$format] = array();
 
-			foreach($files as $file) {
-				require_once ($file);
+            $path = WF_EDITOR_EXTENSIONS . '/aggregator';
+            $files = JFolder::files($path, '\.php$', false, true);
 
-				$name = basename($file, '.php');
-				$classname = 'WFAggregatorExtension_' . ucfirst($name);
+            foreach ($files as $file) {
+                require_once ($file);
 
-				// only load if enabled
-				if(class_exists($classname)) {
-					$aggregator = new $classname();
-					
-					// check if enabled
-					if ($aggregator->isEnabled()) {
-						if($aggregator->get('format') == $format) {
-							$aggregator->set('name', $name);
-							$aggregator->set('title', 'WF_AGGREGATOR_' . strtoupper($name) . '_TITLE');
-							$aggregators[$format][] = $aggregator;
-						}
-					}
-				}
-			}
-		}
+                $name = basename($file, '.php');
+                $classname = 'WFAggregatorExtension_' . ucfirst($name);
 
-		return $aggregators[$format];
-	}
+                // only load if enabled
+                if (class_exists($classname)) {
+                    $aggregator = new $classname();
 
-	/**
-	 *
-	 * @param object $player
-	 * @return
-	 */
-	function loadTemplate($name, $tpl ='')
-	{
-		$path = WF_EDITOR_EXTENSIONS . DS . 'aggregator' . DS . $name;
+                    // check if enabled
+                    if ($aggregator->isEnabled()) {
+                        if ($aggregator->get('format') == $format) {
+                            $aggregator->set('name', $name);
+                            $aggregator->set('title', 'WF_AGGREGATOR_' . strtoupper($name) . '_TITLE');
+                            $aggregators[$format][] = $aggregator;
+                        }
+                    }
+                }
+            }
+        }
 
-		$output = '';
+        return $aggregators[$format];
+    }
 
-		$file = 'default.php';
+    /**
+     *
+     * @param object $player
+     * @return
+     */
+    public function loadTemplate($name, $tpl = '') {
+        $path = WF_EDITOR_EXTENSIONS . '/aggregator/' . $name;
 
-		if($tpl) {
-			$file = 'default_' . $tpl . '.php';
-		}
+        $output = '';
 
-		if(file_exists($path . DS . 'tmpl' . DS . $file)) {
-			ob_start();
+        $file = 'default.php';
 
-			include $path . DS . 'tmpl' . DS . $file;
+        if ($tpl) {
+            $file = 'default_' . $tpl . '.php';
+        }
 
-			$output .= ob_get_contents();
-			ob_end_clean();
-		}
+        if (file_exists($path . '/tmpl/' . $file)) {
+            ob_start();
 
-		return $output;
-	}
+            include $path . '/tmpl/' . $file;
+
+            $output .= ob_get_contents();
+            ob_end_clean();
+        }
+
+        return $output;
+    }
 
 }
