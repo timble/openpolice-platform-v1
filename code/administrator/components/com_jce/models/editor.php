@@ -176,7 +176,7 @@ class WFModelEditor extends WFModelBase {
 
         // set compression
         if ($compress['css']) {
-            $this->addStyleSheet(JURI::base(true) . '/index.php?option=com_jce&view=editor&layout=editor&task=pack&type=css&component_id=' . $component_id . '&' . $token . '=1');
+            $this->addStyleSheet(JURI::base(true) . '/' . JFactory::getApplication()->getSite() . '/index.php?option=com_jce&view=editor&layout=editor&task=pack&type=css&component_id=' . $component_id . '&' . $token . '=1');
         } else {
             // CSS
             $this->addStyleSheet($this->getURL(true) . '/libraries/css/editor.css');
@@ -188,7 +188,7 @@ class WFModelEditor extends WFModelBase {
 
         // set compression
         if ($compress['javascript']) {
-            $this->addScript(JURI::base(true) . '/index.php?option=com_jce&view=editor&layout=editor&task=pack&component_id=' . $component_id . '&' . $token . '=1');
+            $this->addScript(JURI::base(true) . '/' . JFactory::getApplication()->getSite() . '/index.php?option=com_jce&view=editor&layout=editor&task=pack&component_id=' . $component_id . '&' . $token . '=1');
         } else {
             $this->addScript($this->getURL(true) . '/tiny_mce/tiny_mce.js');
             // Editor
@@ -196,7 +196,7 @@ class WFModelEditor extends WFModelBase {
 
             if (array_key_exists('language_load', $settings)) {
                 // language
-                $this->addScript(JURI::base(true) . '/index.php?option=com_jce&view=editor&layout=editor&task=loadlanguages&lang=' . $this->language . '&component_id=' . $component_id . '&' . $token . '=1');
+                $this->addScript(JURI::base(true) . '/' . JFactory::getApplication()->getSite() . '/index.php?option=com_jce&view=editor&layout=editor&task=loadlanguages&lang=' . $this->language . '&component_id=' . $component_id . '&' . $token . '=1');
             }
         }
 
@@ -867,7 +867,7 @@ class WFModelEditor extends WFModelBase {
             $token = WFToken::getToken();
             $version = self::getVersion();
 
-            return JURI::base(true) . '/index.php?option=com_jce&view=editor&layout=editor&task=compileless&' . $token . '=1';
+            return JURI::base(true) . '/' . JFactory::getApplication()->getSite() . '/index.php?option=com_jce&view=editor&layout=editor&task=compileless&' . $token . '=1';
         }
 
         return $stylesheets;
