@@ -1,61 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install version="2.0" type="language" method="upgrade">
-	<name>Français(France)</name>
-	<tag>fr-FR</tag>
-	<version>2.0.15</version>
-	<creationDate>10 octobre 2011</creationDate>
-	<author>Mihàly Marti alias Sarki</author>
-	<authorEmail>info@sarki.ch</authorEmail>
-	<authorUrl>www.sarki.ch/jce</authorUrl>
-	<copyright>(C) 2011 Mihàly Marti. Tous droits réservés.</copyright>
-	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<description>Pack de fichiers langue FR pour JCE 2.0.15</description>
-		<site folder="language/fr-FR">
-		<file>fr-FR.com_jce.ini</file>
-		<file>fr-FR.com_jce_caption.ini</file> 
+<install version="2.0" type="language" core="0" method="upgrade">
+    <name>French</name>
+    <tag>fr-FR</tag>
+    <version>2.3.4</version>
+    <creationDate>2014-01-27</creationDate>
+    <author>Mihàly Marti alias Sarki</author>
+    <authorEmail>info@joomlatutos.com</authorEmail>
+    <authorUrl>https://www.transifex.com/projects/p/jce/language/fr_FR/</authorUrl>
+    <copyright>© Copyright (C) 2006 - 2013 Widget Factory Limited. Tous droits réservés</copyright>
+    <license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <description>Pack langue français (France) pour JCE 2.x</description>
+    <site folder="language/fr-FR">
+		<file>fr-FR.com_jce_caption.ini</file>
 		<file>fr-FR.com_jce_emotions.ini</file>
 		<file>fr-FR.com_jce_filemanager.ini</file>
-		<file>fr-FR.com_jce_filesystem_joomla.ini</file>
 		<file>fr-FR.com_jce_fullpage.ini</file>
 		<file>fr-FR.com_jce_iframe.ini</file>
 		<file>fr-FR.com_jce_imgmanager_ext.ini</file>
+		<file>fr-FR.com_jce.ini</file>
 		<file>fr-FR.com_jce_mediamanager.ini</file>
-		<file>fr-FR.com_jce_name_jceplayer.ini</file>
-		<file>fr-FR.com_jce_popups_widgetkit.ini</file>
+		<file>fr-FR.com_jce_microdata.ini</file>
 		<file>fr-FR.com_jce_templatemanager.ini</file>
-		<file>fr-FR.plg_system_jcemediabox.ini</file>
-	</site>
-	<tinymce folder="components/com_jce/editor/tiny_mce">
-		<file>langs/fr.js</file>
-		<file>langs/fr_dlg.js</file>
-		<file>themes/advanced/langs/fr.js</file>
-		<file>themes/advanced/langs/fr_dlg.js</file>
-		<file>plugins/article/langs/fr_dlg.js</file>
-		<file>plugins/browser/langs/fr_dlg.js</file>
-		<file>plugins/imgmanager/langs/fr_dlg.js</file>
-		<file>plugins/imgmanager_ext/langs/fr_dlg.js</file>
-		<file>plugins/link/langs/fr_dlg.js</file>
-		<file>plugins/searchreplace/langs/fr_dlg.js</file>
-		<file>plugins/style/langs/fr_dlg.js</file>
-		<file>plugins/table/langs/fr_dlg.js</file>
-		<file>plugins/xhtmlxtras/langs/fr_dlg.js</file>
-		<file>plugins/caption/langs/fr.js</file>
-		<file>plugins/emotions/langs/fr_dlg.js</file>
-		<file>plugins/filemanager/langs/fr_dlg.js</file>
-		<file>plugins/fullpage/langs/fr_dlg.js</file>
-		<file>plugins/iframe/langs/fr.js</file>
-		<file>plugins/iframe/langs/fr_dlg.js</file>
-		<file>plugins/mediamanager/langs/fr_dlg.js</file>
-		<file>plugins/templatemanager/langs/fr.js</file>
-		<file>plugins/templatemanager/langs/fr_dlg.js</file>
-	</tinymce>
-	<administration folder="administrator/language/fr-FR">
+    </site>
+    <administration folder="administrator/language/fr-FR">
 		<file>fr-FR.com_jce.ini</file>
 		<file>fr-FR.com_jce.menu.ini</file>
 		<file>fr-FR.com_jce.sys.ini</file>
 		<file>fr-FR.plg_editors_jce.ini</file>
 		<file>fr-FR.plg_editors_jce.sys.ini</file>
+		<file>fr-FR.plg_quickicon_jcefilebrowser.ini</file>
+		<file>fr-FR.plg_quickicon_jcefilebrowser.sys.ini</file>
 		<file>fr-FR.plg_system_jcemediabox.ini</file>
 		<file>fr-FR.plg_system_jcemediabox.sys.ini</file>
-	</administration>
+    </administration>
 </install>
