@@ -123,7 +123,7 @@ class WFMediaManager extends WFEditorPlugin {
         $filetypes  = $this->getParam('extensions', $this->get('_filetypes', 'images=jpg,jpeg,png,gif'));
 
         $config = array(
-            'dir' => $this->getParam('dir', '', '', 'string', false),
+            'dir' => $this->getParam('dir', 'sites/'.JFactory::getApplication()->getSite().'/images', '', 'string', false),
             'filesystem' => $filesystem,
             'filetypes' => $filetypes,
             'upload' => array(
