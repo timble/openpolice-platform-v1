@@ -146,6 +146,8 @@ class WFModelEditor extends WFModelBase {
             $settings['width'] = $wf->getParam('editor.width');
             $settings['height'] = $wf->getParam('editor.height');
 
+            $settings['site_url'] = JFactory::getApplication()->getSite().'/';
+
             // 'Look & Feel'
 
             $skin = explode('.', $wf->getParam('editor.toolbar_theme', 'default', 'default'));
