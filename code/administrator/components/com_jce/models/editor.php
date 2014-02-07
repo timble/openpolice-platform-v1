@@ -146,8 +146,6 @@ class WFModelEditor extends WFModelBase {
             $settings['width'] = $wf->getParam('editor.width');
             $settings['height'] = $wf->getParam('editor.height');
 
-            $settings['site_url'] = JFactory::getApplication()->getSite().'/';
-
             // 'Look & Feel'
 
             $skin = explode('.', $wf->getParam('editor.toolbar_theme', 'default', 'default'));
@@ -207,6 +205,9 @@ class WFModelEditor extends WFModelBase {
 
         // remove 'rows' key from $settings
         unset($settings['rows']);
+
+        // Always set the site url
+        $settings['site_url'] = JFactory::getApplication()->getSite().'/';
 
         // pass compresison states to settings
         $settings['compress'] = json_encode($compress);
