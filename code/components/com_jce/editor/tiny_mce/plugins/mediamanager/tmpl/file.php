@@ -1,19 +1,17 @@
 <?php
-/**
-* @version		$Id: file.php 199 2011-05-06 16:45:28Z happy_noodle_boy $
-* @package      JCE
-* @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
-* @author		Ryan Demmer
-* @license      GNU/GPL
-* JCE is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
-$document 	= WFDocument::getInstance();
-$plugin 	= WFMediaManagerPlugin::getInstance();
 
-defined('_JEXEC') or die('ERROR_403');
+/**
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+defined('_JEXEC') or die('RESTRICTED');
+
 ?>
     <table border="0" cellpadding="0">
         <tr>
@@ -23,8 +21,8 @@ defined('_JEXEC') or die('ERROR_403');
                     <table cellpadding="3" cellspacing="0" border="0" style="height:150px;">
                         <tr>
 							<td><label for="media_type"><?php echo WFText::_('WF_LABEL_MEDIA_TYPE');?></label></td>
-							<td colspan="3"><select id="media_type" onchange="MediaManagerDialog.changeType();">
-								<?php echo $plugin->getMediaOptions();?>
+							<td colspan="3"><select id="media_type" onchange="MediaManagerDialog.changeType(this.value);">
+								<?php echo $this->plugin->getMediaOptions();?>
 							</select></td>
 						</tr>
                         <tr>
@@ -83,7 +81,7 @@ defined('_JEXEC') or die('ERROR_403');
                     <tr>
                         <td style="vertical-align:top;">
                         	<div class="preview">
-                        		<img id="sample" src="<?php echo $document->image('sample.jpg', 'libraries');?>" alt="sample.jpg" />
+                        		<img id="sample" src="<?php echo $this->plugin->image('sample.jpg', 'libraries');?>" alt="sample.jpg" />
                         		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                         	</div>
                         </td>

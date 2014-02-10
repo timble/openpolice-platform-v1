@@ -1,15 +1,16 @@
 <?php
+
 /**
- * @package      JCE Media Manager
- * @copyright 	Copyright (C) 2005 - 2010 Ryan Demmer. All rights reserved.
- * @author		Ryan Demmer
- * @license 		http://www.gnu.org/copyleft/gpl.html GNU/GPL, see licence.txt
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-defined( '_JEXEC' ) or die('ERROR_403');
+
+defined( '_JEXEC' ) or die('RESTRICTED');
 ?>
 <fieldset><legend><?php echo WFText::_('WF_LABEL_ATTRIBUTES');?></legend>
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
@@ -58,7 +59,7 @@ defined( '_JEXEC' ) or die('ERROR_403');
 		<td><label for="border" class="hastip"
 			title="<?php echo WFText::_('WF_LABEL_BORDER_DESC');?>"><?php echo WFText::_('WF_LABEL_BORDER');?></label></td>
 		<td colspan="3"><input type="checkbox" class="checkbox" id="border"
-			onclick="ImageManagerDialog.setBorder();"> <label for="border_width"
+			onclick="MediaManagerDialog.setBorder();"> <label for="border_width"
 			class="hastip"
 			title="<?php echo WFText::_('WF_LABEL_BORDER_WIDTH_DESC');?>"><?php echo WFText::_('WF_LABEL_WIDTH');?></label>
 		<select id="border_width"
@@ -94,7 +95,7 @@ defined( '_JEXEC' ) or die('ERROR_403');
 			<option value="ridge"><?php echo WFText::_('WF_OPTION_BORDER_RIDGE');?></option>
 		</select> <label for="border_color" class="hastip"
 			title="<?php echo WFText::_('WF_LABEL_BORDER_COLOR_DESC');?>"><?php echo WFText::_('WF_LABEL_COLOR');?></label>
-		<input id="border_color" class="color" type="text" value="#000000" />
+		<input id="border_color" class="color" type="text" value="#000000" onchange="MediaManagerDialog.updateStyles();" />
 		</td>
 	</tr>
 	<tr>

@@ -1,146 +1,143 @@
 <?php
+
 /**
-* @version		$Id: preview.php 221 2011-06-11 17:30:33Z happy_noodle_boy $
-* @package      JCE
-* @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
-* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
-* @author		Ryan Demmer
-* @license      GNU/GPL
-* JCE is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
-// no direct access
-defined('_JEXEC') or die('Restricted access');
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+defined('_JEXEC') or die('RESTRICTED');
 
 // Load class dependencies
-require_once(WF_EDITOR_LIBRARIES .DS. 'classes' .DS. 'plugin.php');
+require_once(WF_EDITOR_LIBRARIES . '/classes/plugin.php');
 
-class WFPreviewPlugin extends WFEditorPlugin 
-{
-	/**
-	* Constructor activating the default information of the class
-	*
-	* @access	protected
-	*/
-	function __construct()
-	{
-		parent::__construct();
-		
-		$request = WFRequest::getInstance();
-		// Setup plugin XHR callback functions 
-		$request->setRequest(array($this, 'showPreview'));
-		
-		$this->execute();
-	}
-	/**
-	 * Returns a reference to a plugin object
-	 *
-	 * This method must be invoked as:
-	 * 		<pre>  $advlink =AdvLink::getInstance();</pre>
-	 *
-	 * @access	public
-	 * @return	JCE  The editor object.
-	 * @since	1.5
-	 */
-	function &getInstance()
-	{
-		static $instance;
+class WFPreviewPlugin extends WFEditorPlugin {
 
-		if (!is_object($instance)) {
-			$instance = new WFPreviewPlugin();
-		}
-		return $instance;
-	}
-	
-	/**
-	 * Display Preview content
-	 * @return void
-	 */
-	public function showPreview()
-	{						
-		$db 		= JFactory::getDBO();
-		$user		= JFactory::getUser();
-		$dispatcher	= JDispatcher::getInstance();
-		$language 	= JFactory::getLanguage();
-		
-		// reset document type
-		$document	= &JFactory::getDocument();
-		$document->setType('html');
-		// required by module loadposition
-		jimport('joomla.application.module.helper');
-		
-		wfimport('admin.helpers.extension');
+    /**
+     * Constructor activating the default information of the class
+     *
+     * @access	protected
+     */
+    function __construct() {
+        parent::__construct();
 
-		// Get variables
-		$component_id 	= JRequest::getInt('component_id');
-		// get post data
-		$data   		= JRequest::getVar('data', '', 'POST', 'STRING', JREQUEST_ALLOWRAW );
-		
-		// cleanup data
-		$data   	= preg_replace(array('#<!DOCTYPE([^>]+)>#i', '#<(head|title|meta)([^>]*)>([\w\W]+)<\/1>#i', '#<\/?(html|body)([^>]*)>#i'), '', rawurldecode($data));
+        $request = WFRequest::getInstance();
+        // Setup plugin XHR callback functions 
+        $request->setRequest(array($this, 'showPreview'));
 
-		$component 	= WFExtensionHelper::getComponent($component_id);
+        $this->execute();
+    }
 
-		$params  	= new JParameter($component->params);
-		$article 	= JTable::getInstance('content');
+    /**
+     * Display Preview content
+     * @return void
+     */
+    public function showPreview() {
+        $db = JFactory::getDBO();
+        $user = JFactory::getUser();
+        $dispatcher = JDispatcher::getInstance();
+        $language = JFactory::getLanguage();
 
-		$article->id			= 0;
-		$article->created_by	= $user->get('id');
-		$article->parameters	= new JParameter('');
-		$article->text			= $data;
-		
-		$limitstart = 0;
-		JPluginHelper::importPlugin('content');
-		
-		require_once(JPATH_SITE .DS. 'components' .DS. 'com_content' .DS. 'helpers' .DS. 'route.php');
-		
-		// set error reporting to error only
-		error_reporting(E_ERROR);
+        // reset document type
+        $document = &JFactory::getDocument();
+        $document->setType('html');
+        // required by module loadposition
+        jimport('joomla.application.module.helper');
+        // load paramter class
+        jimport('joomla.html.parameter');
 
-		$dispatcher->trigger('onPrepareContent', array (& $article, & $params, $limitstart));
+        wfimport('admin.helpers.extension');
 
-		$this->processURLS($article);
+        // Get variables
+        $component_id = JRequest::getInt('component_id');
+        // get post data
+        $data = JRequest::getVar('data', '', 'POST', 'STRING', JREQUEST_ALLOWRAW);
 
-		return $article->text;
-	}
-	/**
-	 * Convert URLs
-	 * @param object $article Article object
-	 * @return void
-	 */
-	private function processURLS(&$article)
-	{
-		$base 		= JURI::root(true).'/';
-		$buffer 	= $article->text;
-		
-		$protocols 	= '[a-zA-Z0-9]+:'; //To check for all unknown protocals (a protocol must contain at least one alpahnumeric fillowed by :
-      	$regex     	= '#(src|href)="(?!/|'.$protocols.'|\#|\')([^"]*)"#m';
-        $buffer    	= preg_replace($regex, "$1=\"$base\$2\"", $buffer);
-		$regex     	= '#(onclick="window.open\(\')(?!/|'.$protocols.'|\#)([^/]+[^\']*?\')#m';
-		$buffer    	= preg_replace($regex, '$1'.$base.'$2', $buffer);
-		
-		// ONMOUSEOVER / ONMOUSEOUT
-		$regex 		= '#(onmouseover|onmouseout)="this.src=([\']+)(?!/|'.$protocols.'|\#|\')([^"]+)"#m';
-		$buffer 	= preg_replace($regex, '$1="this.src=$2'. $base .'$3$4"', $buffer);
-		
-		// Background image
-		$regex 		= '#style\s*=\s*[\'\"](.*):\s*url\s*\([\'\"]?(?!/|'.$protocols.'|\#)([^\)\'\"]+)[\'\"]?\)#m';
-		$buffer 	= preg_replace($regex, 'style="$1: url(\''. $base .'$2$3\')', $buffer);
-		
-		// OBJECT <param name="xx", value="yy"> -- fix it only inside the <param> tag
-		$regex 		= '#(<param\s+)name\s*=\s*"(movie|src|url)"[^>]\s*value\s*=\s*"(?!/|'.$protocols.'|\#|\')([^"]*)"#m';
-		$buffer 	= preg_replace($regex, '$1name="$2" value="' . $base . '$3"', $buffer);
-		
-		// OBJECT <param value="xx", name="yy"> -- fix it only inside the <param> tag
-		$regex 		= '#(<param\s+[^>]*)value\s*=\s*"(?!/|'.$protocols.'|\#|\')([^"]*)"\s*name\s*=\s*"(movie|src|url)"#m';
-		$buffer 	= preg_replace($regex, '<param value="'. $base .'$2" name="$3"', $buffer);
+        // cleanup data
+        $data = preg_replace(array('#<!DOCTYPE([^>]+)>#i', '#<(head|title|meta)([^>]*)>([\w\W]+)<\/1>#i', '#<\/?(html|body)([^>]*)>#i'), '', rawurldecode($data));
 
-		// OBJECT data="xx" attribute -- fix it only in the object tag
-		$regex 		= '#(<object\s+[^>]*)data\s*=\s*"(?!/|'.$protocols.'|\#|\')([^"]*)"#m';
-		$buffer 	= preg_replace($regex, '$1data="' . $base . '$2"$3', $buffer);
-		
-		$article->text = $buffer;
-	}
+        $component = WFExtensionHelper::getComponent($component_id);
+        
+        // create params registry object
+        $params = new JRegistry();
+        
+        // create empty params string
+        if (!isset($component->params)) {
+            $component->params = '';
+        }
+        
+        // process attribs (com_content etc.)
+        if ($component->attribs) {
+            $params->loadString($component->attribs); 
+        } else {
+            if (class_exists('JParameter')) {
+                $params = new JParameter($component->params);
+            } else {
+                $params->loadString($component->params);
+            }
+        }
+
+        $article = JTable::getInstance('content');
+
+        $article->id = 0;
+        $article->created_by = $user->get('id');
+        $article->parameters = new JRegistry();
+        $article->text = $data;
+
+        $limitstart = 0;
+        JPluginHelper::importPlugin('content');
+
+        require_once(JPATH_SITE . '/components/com_content/helpers/route.php');
+
+        // set error reporting to error only
+        error_reporting(E_ERROR);
+
+        $dispatcher->trigger('onPrepareContent', array(& $article, & $params, $limitstart));
+
+        $this->processURLS($article);
+
+        return $article->text;
+    }
+
+    /**
+     * Convert URLs
+     * @param object $article Article object
+     * @return void
+     */
+    private function processURLS(&$article) {
+        $base = JURI::root(true) . '/';
+        $buffer = $article->text;
+
+        $protocols = '[a-zA-Z0-9]+:'; //To check for all unknown protocals (a protocol must contain at least one alpahnumeric fillowed by :
+        $regex = '#(src|href|poster)="(?!/|' . $protocols . '|\#|\')([^"]*)"#m';
+        $buffer = preg_replace($regex, "$1=\"$base\$2\"", $buffer);
+        $regex = '#(onclick="window.open\(\')(?!/|' . $protocols . '|\#)([^/]+[^\']*?\')#m';
+        $buffer = preg_replace($regex, '$1' . $base . '$2', $buffer);
+
+        // ONMOUSEOVER / ONMOUSEOUT
+        $regex = '#(onmouseover|onmouseout)="this.src=([\']+)(?!/|' . $protocols . '|\#|\')([^"]+)"#m';
+        $buffer = preg_replace($regex, '$1="this.src=$2' . $base . '$3$4"', $buffer);
+
+        // Background image
+        $regex = '#style\s*=\s*[\'\"](.*):\s*url\s*\([\'\"]?(?!/|' . $protocols . '|\#)([^\)\'\"]+)[\'\"]?\)#m';
+        $buffer = preg_replace($regex, 'style="$1: url(\'' . $base . '$2$3\')', $buffer);
+
+        // OBJECT <param name="xx", value="yy"> -- fix it only inside the <param> tag
+        $regex = '#(<param\s+)name\s*=\s*"(movie|src|url)"[^>]\s*value\s*=\s*"(?!/|' . $protocols . '|\#|\')([^"]*)"#m';
+        $buffer = preg_replace($regex, '$1name="$2" value="' . $base . '$3"', $buffer);
+
+        // OBJECT <param value="xx", name="yy"> -- fix it only inside the <param> tag
+        $regex = '#(<param\s+[^>]*)value\s*=\s*"(?!/|' . $protocols . '|\#|\')([^"]*)"\s*name\s*=\s*"(movie|src|url)"#m';
+        $buffer = preg_replace($regex, '<param value="' . $base . '$2" name="$3"', $buffer);
+
+        // OBJECT data="xx" attribute -- fix it only in the object tag
+        $regex = '#(<object\s+[^>]*)data\s*=\s*"(?!/|' . $protocols . '|\#|\')([^"]*)"#m';
+        $buffer = preg_replace($regex, '$1data="' . $base . '$2"$3', $buffer);
+
+        $article->text = $buffer;
+    }
+
 }

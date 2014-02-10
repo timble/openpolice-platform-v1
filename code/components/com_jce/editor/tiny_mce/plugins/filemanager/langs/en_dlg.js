@@ -1,10 +1,2 @@
-// UK lang variables
-tinyMCE.addI18n('en.filemanager_dlg',{
-icon: 'Icon',
-size: 'Size',
-text: 'Text',
-date: 'Date',
-'replace_text': 'Replace file link text with file name?',
-no_src: 'Please select a file or ent a file URL',
-no_text: 'Text for the file link is required'
-});
+/* File Manager - 2.1.7 | 19 November 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html */
+tinyMCE.addI18n('en.filemanager_dlg',{icon:'Icon',size:'Size',text:'Text',date:'Date',replace_text:'Replace file link text with file name?',no_src:'Please select a file or enter a file URL',no_text:'Text for the file link is required'});

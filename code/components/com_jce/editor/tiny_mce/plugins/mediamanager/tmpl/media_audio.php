@@ -1,18 +1,18 @@
 <?php
+
 /**
-* @version		$Id: media_audio.php 199 2011-05-06 16:45:28Z happy_noodle_boy $
-* @package      JCE
-* @copyright    Copyright (C) 2005 - 2009 Ryan Demmer. All rights reserved.
-* @author		Ryan Demmer
-* @license      GNU/GPL
-* JCE is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
-defined( '_JEXEC' ) or die('ERROR_403');
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * JCE is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+defined( '_JEXEC' ) or die('RESTRICTED');
 ?>
-<fieldset class="media_option" id="audio_options"><legend><?php echo WFText::_('WF_MEDIAMANAGER_AUDIO_OPTIONS');?></legend>			
+<fieldset class="media_option audio"><legend><?php echo WFText::_('WF_MEDIAMANAGER_AUDIO_OPTIONS');?></legend>			
 	<table border="0" cellpadding="4" cellspacing="0">
 		<tr>
 			<td>
@@ -27,7 +27,7 @@ defined( '_JEXEC' ) or die('ERROR_403');
 			<td>
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tr>
-					<td><input type="checkbox" class="checkbox" id="audio_controls" /></td>
+					<td><input type="checkbox" class="checkbox" id="audio_controls" checked="checked" /></td>
 					<td><label for="audio_controls"><?php echo WFText::_('WF_MEDIAMANAGER_LABEL_CONTROLS');?></label></td>
 				</tr>
 			</table>

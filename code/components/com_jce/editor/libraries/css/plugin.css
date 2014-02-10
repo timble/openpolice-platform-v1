@@ -1,14 +1,2 @@
-/**
- * @version		$Id: plugin.css 221 2011-06-11 17:30:33Z happy_noodle_boy $
- * @package		JCE
- * @copyright	Copyright (C) 2009 Ryan Demmer. All rights reserved.
- * @license		GNU/GPL
- * This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
- */
-@import url("reset.css");
-@import url("dialog.css");
-@import url("tips.css");
-@import url("select.css");
+/*JCE Editor - 2.3.4.4 | 12 December 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html*/
+@import url("../jquery/css/jquery-ui.custom.css?6b8996ebb8dabc4977b5842c04e164de");@import url("reset.css?6b8996ebb8dabc4977b5842c04e164de");@import url("dialog.css?6b8996ebb8dabc4977b5842c04e164de");@import url("tips.css?6b8996ebb8dabc4977b5842c04e164de");@import url("select.css?6b8996ebb8dabc4977b5842c04e164de");@import url("colorpicker.css?6b8996ebb8dabc4977b5842c04e164de");
