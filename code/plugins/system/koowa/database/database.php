@@ -274,13 +274,29 @@ class KDatabase extends KPatternProxy
 	 *
 	 * @return object KDatabaseQuery
 	 */
-	public function getQuery(array $options = array())
+	public function getQuery($options = array())
 	{
-		if(!isset($options['dbo'])) {
+        // @TODO This is a major hack. JCE will call JFActory::getDBO()->getQuery(true)
+        // and will receive the KDatabaseQuery object back. It thinks this is now a valid Joomla query object (available in newer Joomla versions)
+        // and treat it accordingly. That's why we want to make sure the query is returned as a string if the argument was a boolean.
+        // See: components/com_jce/editor/libraries/classes/editor.php#82
+        $returnAsString = false;
+        if(!is_array($options))
+        {
+            $returnAsString = true;
+            $options = array();
+        }
+
+        if(!isset($options['dbo'])) {
 			$options['dbo'] = $this;
 		}
 
 		$query = new KDatabaseQuery($options);
+
+        if($returnAsString) {
+            return ''.$query;
+        }
+
 		return $query;
 	}
 
