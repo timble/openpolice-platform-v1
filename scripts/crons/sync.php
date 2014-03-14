@@ -31,8 +31,15 @@ exec('tar -xvf ' . $filename);
 echo "-- Importing all databases".PHP_EOL;
 foreach(glob("police_*.sql") as $file)
 {
-    echo "Importing " . $file . PHP_EOL;
     $database = substr($file, 0, -4);
+
+    echo "Drop existing database " . $database . PHP_EOL;
+    exec("mysql -uimport -p'Danf_d296npwAZRf' -e 'DROP DATABASE IF EXISTS `".$database."`;'");
+
+    echo "Re-creating database " . $database . PHP_EOL;
+    exec("mysql -uimport -p'Danf_d296npwAZRf' -e 'CREATE DATABASE IF NOT EXISTS `".$database."`;'");
+
+    echo "Importing " . $file . PHP_EOL;
     exec("mysql -uimport -p'Danf_d296npwAZRf' ".$database." < " . $file);
 }
 
