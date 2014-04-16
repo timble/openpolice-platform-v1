@@ -10,41 +10,23 @@ $version = '34';
 $language = explode("-", $this->language);
 $language = $language[0];
 
-$site = JFactory::getApplication()->getSite();
-//$site = null;
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<title><?php echo $this->error->code ?> - <?php echo $this->title; ?></title>
 	
-	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout.min.css?version=<?php echo $version ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/print.css?version=<?php echo $version ?>" type="text/css" media="print" />
+	<link href="<?php echo $this->baseurl ?>/templates/default-v0/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/default-v0/css/layout.min.css?version=<?php echo $version ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/default-v0/css/print.css?version=<?php echo $version ?>" type="text/css" media="print" />
 	
 	<!--[if lt IE 7]>
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ie6.css?version=<?php echo $version ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/default-v0/css/ie6.css?version=<?php echo $version ?>" type="text/css" />
 	<![endif]-->
 	
 	<!--[if lt IE 8]>
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ie7.css?version=<?php echo $version ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/default-v0/css/ie7.css?version=<?php echo $version ?>" type="text/css" />
 	<![endif]-->
-	
-	<?php if($site) : ?>
-	<script type="text/javascript">
-	 var _gaq = _gaq || [];
-	 _gaq.push(['_setAccount', 'UA-20242887-1']);
-	 _gaq.push(['_setCookiePath', '/<?php echo $site ?>/']);
-	 _gaq.push(['_trackPageview']);
-	
-	 (function() {
-	   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	 })();
-	</script>
-	<?php endif; ?>
 </head>
 <body>
 	<div id="top">
@@ -52,21 +34,20 @@ $site = JFactory::getApplication()->getSite();
 			<div class="grid_12">
 				<div class="module">
 					<ul>
-                        <?php $home = JSite::getMenu()->getDefault() ?>
-						<li><a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>">Home</a></li>
+						<li><a href="http://www.police.be">Home</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="header">
-		<div id="banner" class="container_12 clearfix inner site<?php echo $site; ?> <?php echo $language; ?>">
+		<div id="banner" class="container_12 clearfix inner sitedefault <?php echo $language; ?>">
 			<div class="grid_12 alpha">
 				<div class="contact">
 					
 				</div>
 				<div id="sitename">
-					<a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>"><?php echo substr(JFactory::getApplication()->getCfg('sitename'), 0, 30) ?></a>
+					<a href="http://www.police.be"></a>
 				</div>
 			</div>
 		</div>
@@ -88,7 +69,7 @@ $site = JFactory::getApplication()->getSite();
 					<p><strong><?php echo JText::_('Please try one of the following pages:'); ?></strong></p>
 					<p>
 						<ul>
-							<li><a href="<?php echo JRoute::_($home->link.'&Itemid='.$home->id) ?>" title="<?php echo JText::_('Go to the home page'); ?>"><?php echo JText::_('Home Page'); ?></a></li>
+							<li><a href="http://www.police.be" title="<?php echo JText::_('Go to the home page'); ?>"><?php echo JText::_('Home Page'); ?></a></li>
 						</ul>
 					</p>
 					<div id="techinfo">
@@ -105,7 +86,7 @@ $site = JFactory::getApplication()->getSite();
 	<div id="footer" class="container_12">
 		<div class="grid_12">
 			<ul>
-				<li>Copyright <?php echo JFactory::getApplication()->getCfg('sitename') ?> <?php echo date('Y') ?>©</li>
+				<li>Copyright Belgian Police <?php echo date('Y') ?>©</li>
 			</ul>	
 		</div>
 	</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-GB" dir="ltr">
+<head>
+    <base href="http://www.lokalepolitie.be/" />
+
+    <title>Page not found - 404</title>
+
+    <link type="text/css" rel="stylesheet" href="http://www.lokalepolitie.be/theme/mobile/css/default.css"  />
+    <!--[if IE 8]>
+    <link type="text/css" rel="stylesheet" href="http://www.lokalepolitie.be/theme/mobile/css/ie.css"  />
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link type="text/css" rel="stylesheet" href="http://www.lokalepolitie.be/theme/mobile/css/ie7.css"  />
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="container container__header">
+            <div class="organization" itemscope itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="/9999">
+                    <img class="organization__logo" width="160" height="42" itemprop="logo" alt="Police logo" src="/theme/mobile/images/logo-en.jpg" />
+                    <div class="organization__name"></div>
+                </a>
+            </div>
+            <div class="navigation">
+            </div>
+        </div>
+
+        <div class="container container__content">
+            <h1>Page not found - 404</h1>
+
+            <div class="exception">
+                <div class="exception__message component">
+                    <p><strong>You may not be able to visit this page because of:</strong></p>
+                    <ul>
+                        <li>an <strong>out-of-date bookmark/favourite</strong></li>
+                        <li>a search engine that has an <strong>out-of-date listing for this site</strong></li>
+                        <li>a <strong>mistyped address</strong></li>
+                        <li>The requested resource was not found.</li>
+                        <li>An error has occurred while processing your request</li>
+                    </ul>
+                </div>
+                <div class="exception__image">
+                    <img class="thumbnail" src="/theme/mobile/images/error.jpg" />
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 30px; clear: both">
+                <a class="button button--primary button--large" href="http://www.police.be" id="homepage" title="Home Page">Back to the Home Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+            var link = 'http://www.police.be/';
+            var matches = window.location.pathname.match(/\/(5[0-9]{3})\//);
+
+            if(matches != null && matches.length == 2)
+            {
+                zone = matches[1];
+                link = 'http://www.lokalepolitie.be/' + zone;
+            }
+
+            document.getElementById('homepage').setAttribute('href', link);
+        })();
+    </script>
+</body>
+</html>
