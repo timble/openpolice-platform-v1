@@ -31,7 +31,6 @@ $site = JFactory::getApplication()->getSite();
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ie7.css?version=<?php echo $version ?>" type="text/css" />
 	<![endif]-->
 	
-	<?php if($site) : ?>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -41,7 +40,6 @@ $site = JFactory::getApplication()->getSite();
         ga('create', 'UA-20242887-1', 'auto');
         ga('send', 'pageview');
     </script>
-	<?php endif; ?>
 </head>
 <body>
 	<div id="top">
