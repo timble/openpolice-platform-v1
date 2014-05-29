@@ -42,7 +42,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<script type="text/javascript" src="templates/<?php echo  $this->template ?>/js/index.js"></script>
 <?php endif; ?>
 
-<?php if(JURI::getInstance()->getHost() == 'administrator.lokalepolitie.be') : ?>
+<?php if(JFactory::getApplication()->getSite()) : ?>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
