@@ -69,6 +69,16 @@ function MM_swapImage() { //v3.0
 }
 //-->
 </script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-20242887-1', 'lokalepolitie.be');
+    ga('send', 'pageview');
+</script>
 </head>
 
 <body onLoad="MM_preloadImages('http://www.polfed-fedpol.be/images/bann_eupresidency_nl_mO.png','http://www.polfed-fedpol.be/images/bann_eupresidency_fr_mO.png','http://www.polfed-fedpol.be/images/bann_eupresidency_en_mO.png','http://www.polfed-fedpol.be/images/bann_eupresidency_de_mO.png')">
