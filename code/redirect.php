@@ -199,55 +199,44 @@ function MM_swapImage() { //v3.0
         <area shape="rect" coords="0,27,148,53" href="http://www.polfed-fedpol.be/police/ops/ops_nl.php">
       </map>
 	  <!--new-->
-      <table width="750" border="0" align="center" cellpadding="2" cellspacing="2">
-        <tr>
-          <?php
-			if (date("m-d-Y H:i:s") > "05-28-2010 14:00:00")
-			{
-			?>
-			<map name="Map3">
-			  <area shape="rect" coords="53,3,81,32" href="http://www.footballfraud.be">
-			  <area shape="rect" coords="4,55,29,82" href="http://www.fussballbetrug.be">
-<area shape="rect" coords="4,4,34,33" href="http://www.voetbalfraude.be">
-			<area shape="rect" coords="51,57,81,85" href="http://www.fraudefootball.be">
-		  </map>
-		  <td width="25%" rowspan="2"><img src="http://www.polfed-fedpol.be/images/bann_logo_voetbalfraude.jpg" width="85" height="85" border="0" usemap="#Map3"></td>
-          <?php
-			}
-			?>
-		  <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/ops/ops_nl.php" class="notabene">Opsporingen</a></div></td>
-          <td width="25%"></td>
-          <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/faq/faq_contact_police-on-web_fr.php" class="notabene">FAQ police-on-web (FR) </a></div></td>
-		  <td width="25%" rowspan="2"><div align="center"><a href="http://www.police-eu2010.be" target="_blank"><img src="http://www.polfed-fedpol.be/images/bann_eupresidency_ML.png" alt="European presidency 2010" name="Image1" width="150"border="0" usemap="#Map2" id="Image1"/></a></div></td>
-        </tr>
-        <tr>
-          <td><div align="center">
-          <img src="http://www.polfed-fedpol.be/images/bann_front_ops.gif" width="150" height="55" border="0" usemap="#Map"></td>
-          <td><div align="center"><a href="http://www.ecops.be" target="_blank"><img src="http://www.polfed-fedpol.be/images/ban_ecops.gif" alt="ECOPS" width="150" height="55" border="0" ></a></div></td>
-          <td><div align="center"><a href="https://www.epol.be/" target="_blank"><img src="http://www.polfed-fedpol.be/images/police_on_web_150.jpg" alt="police-on-web" border="0"/></a></div></td>
-          <td><div align="center"><img src="http://www.polfed-fedpol.be/images/help-sos.gif" alt="help noodnummers emergency numbers num&eacute;ros de secours" width="150" height="55" border="0" usemap="#MapMap">
-              <map name="MapMap">
-                <area shape="rect" coords="82,39,101,56" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_de.php','Police','scrollbars=yes,width=600,height=700')">
-                <area shape="rect" coords="130,40,154,55" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_en.php','Police','scrollbars=yes,width=600,height=700')">
-                <area shape="rect" coords="39,39,63,54" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_fr.php','Police','scrollbars=yes,width=600,height=700')">
-                <area shape="rect" coords="0,35,20,55" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_nl.php','Police','scrollbars=yes,width=600,height=700')">
-              </map>
-          </div></td>
-        </tr>
-        <tr>
-			<?php
-			if (date("m-d-Y H:i:s") > "05-28-2010 14:00:00")
-			{
-			?>
-			<td width="25%"><div align="center"><a href="http://www.footballfraud.be" class="notabene">Football fraud </a></div></td>
-			<?php
-			}
-			?>
-          <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/ops/ops_fr.php" class="notabene">Avis de recherche </a></div></td>
-          <td width="25%"></td>
-          <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/faq/faq_contact_police-on-web_nl.php" class="notabene">FAQ police-on-web (NL) </a></div></td>
-        </tr>
-      </table>    
+        <table width="750" border="0" align="center" cellpadding="2" cellspacing="2">
+            <tr>
+
+                <map name="Map3">
+                    <area shape="rect" coords="53,3,81,32" href="http://www.footballfraud.be">
+                    <area shape="rect" coords="4,55,29,82" href="http://www.fussballbetrug.be">
+                    <area shape="rect" coords="4,4,34,33" href="http://www.voetbalfraude.be">
+                    <area shape="rect" coords="51,57,81,85" href="http://www.fraudefootball.be">
+                </map>
+                <td width="25%" rowspan="2"><img src="http://www.polfed-fedpol.be/images/bann_logo_voetbalfraude.jpg" width="85" height="85" border="0" usemap="#Map3"></td>
+
+                <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/ops/ops_nl.php" class="notabene">Opsporingen</a></div></td>
+
+                <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/faq/faq_contact_police-on-web_fr.php" class="notabene">FAQ police-on-web (FR) </a></div></td>
+            </tr>
+            <tr>
+                <td><div align="center">
+                        <img src="http://www.polfed-fedpol.be/images/bann_front_ops.gif" width="150" height="55" border="0" usemap="#Map"></td>
+                <td><div align="center"><a href="https://www.epol.be/" target="_blank"><img src="http://www.polfed-fedpol.be/images/police_on_web_150.jpg" alt="police-on-web" border="0"/></a></div></td>
+                <td><div align="center"><a href="http://www.ecops.be" target="_blank"><img src="http://www.polfed-fedpol.be/images/ban_ecops.gif" alt="ECOPS" width="150" height="55" border="0" ></a></div></td>
+                <td><div align="center"><img src="http://www.polfed-fedpol.be/images/help-sos.gif" alt="help noodnummers emergency numbers num&eacute;ros de secours" width="150" height="55" border="0" usemap="#MapMap">
+                        <map name="MapMap">
+                            <area shape="rect" coords="82,39,101,56" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_de.php','Police','scrollbars=yes,width=600,height=700')">
+                            <area shape="rect" coords="130,40,154,55" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_en.php','Police','scrollbars=yes,width=600,height=700')">
+                            <area shape="rect" coords="39,39,63,54" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_fr.php','Police','scrollbars=yes,width=600,height=700')">
+                            <area shape="rect" coords="0,35,20,55" href="#" align="center" class="texte_taalkeuze" onClick="MM_openBrWindow('http://www.polfed-fedpol.be/hulp_nl.php','Police','scrollbars=yes,width=600,height=700')">
+                        </map>
+                    </div></td>
+            </tr>
+            <tr>
+
+                <td width="25%"><div align="center"><a href="http://www.footballfraud.be" class="notabene">Football fraud </a></div></td>
+
+                <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/ops/ops_fr.php" class="notabene">Avis de recherche </a></div></td>
+                <td width="25%"><div align="center"><a href="http://www.polfed-fedpol.be/faq/faq_contact_police-on-web_nl.php" class="notabene">FAQ police-on-web (NL) </a></div></td>
+                <td width="25%">&nbsp;</td>
+            </tr>
+        </table>
     </td>
   </tr>
   <tr background="http://www.polfed-fedpol.be/images/spacerNav.jpg"  height="51px">
