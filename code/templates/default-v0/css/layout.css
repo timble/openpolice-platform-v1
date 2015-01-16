@@ -69,7 +69,8 @@ section {
   font-family: inherit;
   vertical-align: baseline;
 }
-/* This helps to make newer HTML5 elements behave like DIVs in older browers */article,
+/* This helps to make newer HTML5 elements behave like DIVs in older browers */
+article,
 aside,
 dialog,
 figure,
@@ -802,7 +803,8 @@ dd {
 	Because of the need for padding on TH and TD, the vertical rhythm 
 	on table cells has to be 27px, instead of the standard 18px or 36px 
 	of other elements. 
- */table {
+ */
+table {
   margin-bottom: 1.4em;
   width: 100%;
   border-color: red;
@@ -1112,49 +1114,35 @@ a:hover {
   border: 1px solid #40796D;
   background: #4787ed;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #4d90fe 0%, #4787ed 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4d90fe), color-stop(100%, #4787ed));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #4d90fe 0%, #4787ed 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #4d90fe 0%, #4787ed 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #4d90fe 0%, #4787ed 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #4d90fe 0%, #4787ed 100%);
   /* W3C */
-
 }
 #main #component .search-button:hover {
   border: 1px solid #2F5BB7;
   background: #357ae8;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #4d90fe 0%, #357ae8 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4d90fe), color-stop(100%, #357ae8));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #4d90fe 0%, #357ae8 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #4d90fe 0%, #357ae8 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #4d90fe 0%, #357ae8 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #4d90fe 0%, #357ae8 100%);
   /* W3C */
-
 }
 #main #component.grid_12 img {
   max-width: 700px;
@@ -1201,7 +1189,6 @@ a:hover {
 #main #right .mod_mainmenu.icons ul li a {
   padding-left: 0;
   /*override*/
-
 }
 #main #right .mod_mainmenu.icons ul li a img {
   height: 40px;
@@ -1219,7 +1206,6 @@ a:hover {
 }
 #main #right .mod_mainmenu {
   /* 1st LEVEL */
-
 }
 #main #right .mod_mainmenu ul {
   margin: 0;
@@ -1229,7 +1215,6 @@ a:hover {
 }
 #main #right .mod_mainmenu ul li {
   /* 2th LEVEL */
-
 }
 #main #right .mod_mainmenu ul li span,
 #main #right .mod_mainmenu ul li a {
@@ -1240,7 +1225,6 @@ a:hover {
 #main #right .mod_mainmenu ul li ul li {
   border-bottom: 0px none;
   /* 3th LEVEL */
-
 }
 #main #right .mod_mainmenu ul li ul li a {
   padding-left: 20px;
@@ -1252,7 +1236,6 @@ a:hover {
 #main #left {
   margin-left: 0;
   /* grid override */
-
 }
 #main #left .boxed {
   background-color: #f0f0f0;
@@ -1265,7 +1248,6 @@ a:hover {
 #main #left .boxed .module {
   padding: 0px 0;
   /* 1st LEVEL */
-
 }
 #main #left .boxed .module h3,
 #main #left .boxed .module ul li span {
@@ -1278,25 +1260,18 @@ a:hover {
   border-bottom: 1px solid #FFF;
   background: #e0e0e0;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d3d3d3), color-stop(100%, #e0e0e0));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #d3d3d3 0%, #e0e0e0 100%);
   /* W3C */
-
 }
 #main #left .boxed .module ul li span {
   display: block;
@@ -1312,7 +1287,6 @@ a:hover {
 }
 #main #left .boxed .module ul li {
   /* 2th LEVEL */
-
 }
 #main #left .boxed .module ul li a {
   display: block;
@@ -1323,30 +1297,22 @@ a:hover {
 #main #left .boxed .module ul li a:hover {
   background: #d6e2df;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c7d7d3), color-stop(100%, #d6e2df));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* W3C */
-
   color: #004fa3;
 }
 #main #left .boxed .module ul li ul li {
   /* 3th LEVEL */
-
 }
 #main #left .boxed .module ul li ul li a {
   padding-left: 40px;
@@ -1354,7 +1320,6 @@ a:hover {
 }
 #main #left .boxed .module ul li ul li ul li {
   /* limit to 3 levels */
-
 }
 #main #left .boxed .module ul li ul li ul li a {
   padding-left: 60px;
@@ -1368,49 +1333,35 @@ a:hover {
 #main #left .boxed .module ul li#current a {
   background: #de791c;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e89345), color-stop(100%, #de791c));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #e89345 0%, #de791c 100%);
   /* W3C */
-
   color: #FFF;
 }
 #main #left .boxed .module ul li#current a:hover {
   background: #de791c;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e89345), color-stop(100%, #de791c));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #e89345 0%, #de791c 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #e89345 0%, #de791c 100%);
   /* W3C */
-
 }
 #main #left .boxed .module ul li#current ul li a {
   background-color: #EEE;
@@ -1420,25 +1371,18 @@ a:hover {
 #main #left .boxed .module ul li#current ul li a:hover {
   background: #d6e2df;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c7d7d3), color-stop(100%, #d6e2df));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* Opera11.10+ */
-
   background: -ms-linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* IE10+ */
-
   background: linear-gradient(top, #c7d7d3 0%, #d6e2df 100%);
   /* W3C */
-
 }
 #main #left .boxed .module ul li.parent.active > a {
   border-bottom: 0px none;
@@ -1606,7 +1550,8 @@ form#filter input[name="filter"] {
 /* 
 	A special hack is included for IE8 since it does not apply padding 
 	correctly on fieldsets
- */label {
+ */
+label {
   font-weight: bold;
 }
 fieldset {
@@ -1816,9 +1761,6 @@ label.invalid {
 }
 #header #banner.site5356 {
   background-image: url(../images/banners/5356-nl.jpg);
-}
-#header #banner.site5360 {
-  background-image: url(../images/banners/5360-nl.jpg);
 }
 #header #banner.site5371 {
   background-image: url(../images/banners/5371-nl.jpg);
