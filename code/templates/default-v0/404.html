@@ -5,12 +5,13 @@
 
     <title>Page not found - 404</title>
 
-    <link type="text/css" rel="stylesheet" href="http://www.lokalepolitie.be/theme/mobile/css/default.css"  />
-    <!--[if IE 8]>
-    <link type="text/css" rel="stylesheet" href="http://www.lokalepolitie.be/theme/mobile/css/ie.css"  />
+    <link type="text/css" rel="stylesheet" href="/theme/mobile/css/default.css"  />
+    <link type="text/css" rel="stylesheet" href="/theme/mobile/css/grid.css"  />
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="/theme/mobile/css/ie.css"  />
     <![endif]-->
-    <!--[if lte IE 7]>
-    <link type="text/css" rel="stylesheet" href="http://www.lokalepolitie.be/theme/mobile/css/ie7.css"  />
+    <!--[if lte IE 9]>
+    <link type="text/css" rel="stylesheet" href="/theme/mobile/css/ie9.css"  />
     <![endif]-->
 
     <script>
@@ -28,13 +29,15 @@
 
     <div id="wrap">
         <div class="container container__header">
-            <div class="organization" itemscope itemtype="http://schema.org/Organization">
-                <a itemprop="url" href="/9999">
-                    <img class="organization__logo" width="160" height="42" itemprop="logo" alt="Police logo" src="/theme/mobile/images/logo-en.jpg" />
-                    <div class="organization__name"></div>
-                </a>
-            </div>
-            <div class="navigation">
+            <div class="header">
+                <div class="organization" itemscope itemtype="http://schema.org/Organization">
+                    <a id="logo" itemprop="url" href="http://www.police.be">
+                        <img class="organization__logo" width="160" height="42" itemprop="logo" alt="Police logo" src="/theme/mobile/images/logo/logo-loc-en.png" />
+                        <div class="organization__name"></div>
+                    </a>
+                </div>
+                <div class="navigation">
+                </div>
             </div>
         </div>
 
@@ -74,6 +77,7 @@
                 link = 'http://www.lokalepolitie.be/' + zone;
             }
 
+            document.getElementById('logo').setAttribute('href', link);
             document.getElementById('homepage').setAttribute('href', link);
         })();
     </script>
